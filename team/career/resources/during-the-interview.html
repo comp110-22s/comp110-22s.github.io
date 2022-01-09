@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" data-scroll="0" data-nav1="true">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> During the Interview - COMP110 - 21f</title>
+    <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css?v=1641698999.220791">
+</head>
+
+<body id="body" class="absolute-page">
+     <script>
+        const lat = 35.912005; // latitude and longitude for Chapel Hill
+        const long = -79.051210; // Replace with some way to gain User location if/when desired
+    </script>
+    <script>
+        // resets user pref in the event of styling overhaul
+        if ((localStorage.getItem('mode') == "halloween-mode") || (localStorage.getItem('userPref') == "halloween-mode")) {
+            localStorage.setItem('userPref', null);
+            localStorage.setItem('mode', null);
+        }
+    
+        var datetime = new Date(); // NOTE: This is my additional scripting to check whereabouts the sun is
+        var time = datetime.getHours() + (datetime.getMinutes() / 60);
+        var timer = 240000000; // a very big number
+        if(localStorage.getItem('userPref') === null) {
+            if(time < getSunrise(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = getSunrise(lat, long) - time;
+            } else if(time > getSunset(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = (getSunrise(lat, long) + 24) - time;
+            } else {
+                localStorage.setItem('mode', 'light-mode');
+                timer = getSunset(lat, long) - time;
+            }
+        }
+    </script>
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('userPref')); // userPref holds which mode the user prefers
+        document.body.classList.add(localStorage.getItem('mode')); // mode holds the current state of the site
+    </script>
+    <div onKeyPress="return myFunction(event)">
+        <form id="log-in" class="center-text" id="form01" action="demo_form.asp" onsubmit="return false;" >
+            <h3 style="margin-bottom: 20px">Team Login</h3>
+            <input id="username" type="text" placeholder="username" style="margin-bottom: 10px">
+            <input id="password" type="text" placeholder="password">
+            <input class="hidden" type="button" value="Submit" onclick="myFunction(0)">
+        </form>
+    </div>
+    <a name="top"></a>
+    <div id="page-container">
+    <div id="content-wrapper">
+    <script src="/static/scripts/log-in-element.js"></script>
+    <div class="wrapper">
+        <nav id="navbarStick" class="navbar navbar-expand">
+            <div class="container-fluid d-flex">
+                <div class = 'hide-during-scroll'>
+                    <div class="container nav-const">
+                        <a class="navbar-brand" href="/team"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/team/allocations">allocations</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/team/documentation">documentation</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/team/career">career</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/team/yearbook">yearbook</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="ms-auto form-check form-switch mode">
+                    <div class="switches">
+                        <input type="checkbox" id="1" onclick="
+                            if (localStorage.getItem('mode') === 'dark-mode') {
+                                localStorage.setItem('userPref', 'light-mode');
+                                localStorage.setItem('mode', 'light-mode');
+                            } else {
+                                localStorage.setItem('userPref', 'dark-mode');
+                                localStorage.setItem('mode', 'dark-mode);
+                            }
+                            location.reload();">
+                        <label for="1">
+                            <span id="mode-label">Dark Mode</span>
+                            <span></span>
+                        </label>
+                        <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="resource-page" class="container">
+            <div class="row pt-4">
+                <div class="col-12">
+                    <h1 class="display-5">During the Interview</h1>
+                    <hr class="title"/>
+                </div>
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+    
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            
+            <div id="button-box class="link-pag box">
+            </div>
+
+            <div id="menu-overview" class="link-page box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul><li><a href="#relax-and-have-fun-with-it">Relax and have fun with it</a></li>
+<li><a href="#stay-confident">Stay confident</a></li>
+<li><a href="#keep-talking">Keep talking</a></li>
+<li><a href="#be-honest">Be honest</a><ul>
+<li><a href="#about-your-experiences">about your experiences</a></li>
+<li><a href="#about-what-you-know-and-dont-know">about what you know and don’t know</a></li>
+</ul></li>
+<li><a href="#ask-questions">Ask questions</a><ul>
+<li><a href="#during-technical-or-coding-questions">during technical or coding questions</a></li>
+<li><a href="#when-the-interviewer-asks-if-you-have-any-questions-for-them">when the interviewer asks if you have any questions for them</a></li>
+</ul></li>
+<li><a href="#listen-to-the-interviewer">Listen to the interviewer</a><ul>
+<li><a href="#while-working-on-technical-questions">while working on technical questions</a></li>
+<li><a href="#in-general-during-the-interview">in general during the interview</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><p>In an interview, keeping the following guidelines in mind will hopefully help make it less stressful.</p>
+<h2 id="relax-and-have-fun-with-it">Relax and have fun with it</h2>
+<p>You get to talk about the things you do, what you find exciting, and your interests, and you maybe even get to think about challenging technical problems too — it’s okay to let your personality show in the interview!</p>
+<h2 id="stay-confident">Stay confident</h2>
+<p>You got the interview because the company thinks you might be a good fit with them. They’re rooting for you and on your side. Plus, even though technical questions can be intimidating, by working office hours as a TA you’ve got lots of experience working through hard problems with people!</p>
+<h2 id="keep-talking">Keep talking</h2>
+<p>Do all your thinking out loud. It’s not always about finding an answer to a technical question, but what is always important is how you think. Talk about the decisions you make, test cases you come up with, tricky edge cases or problems you can identify along the way, what’s stopping you where you get stuck, changes or improvements you’d make if you had more time to be more methodical. . . really anything going through your head that’s relevant.</p>
+<h2 id="be-honest">Be honest</h2>
+<h3 id="about-your-experiences">about your experiences</h3>
+<p>There’s a differene between embellishing what you’ve done to make it sound fancy and making stuff up or taking credit for things you never did. Be careful of that since you don’t want to get yourself into a bind if it comes up in more detail later, and since the experiences you do have are valuable on their own. On that note, don’t sell yourself short! You’ve accomplished and learned a lot, and recruiting is a great time to acknowledge that!</p>
+<h3 id="about-what-you-know-and-dont-know">about what you know and don’t know</h3>
+<p>Interviewers are there to help you. If they ask something you’re unfamiliar with, it’s okay to acknowledge that, and good to follow that up by mentioning that even though you don’t know it yet, you’re interested in learning it, or maybe whether it’ll come up later on in courses you’re taking. If you think you’re partially there with what you know, you can talk about the stuff you do know that’s related and explain any connections you try to make from there. Trying to pretend you know something you don’t can backfire — you might get asked more detailed questions about it since you claimed to know the topic, and it’s likely the interviewer will be able to tell if you’re making stuff up. The other benefit to being honest is that they may even explain things to you or give you different questions based on what you actually do know.</p>
+<h2 id="ask-questions">Ask questions</h2>
+<h3 id="during-technical-or-coding-questions">during technical or coding questions</h3>
+<p>Asking clarifying questions is always a good thing. It gives you a better idea of what’s going on, resolves ambiguity in the problem so that you don’t go in the wrong direction, and shows that you are thoughtful and know how to recognize potential challenges.</p>
+<h3 id="when-the-interviewer-asks-if-you-have-any-questions-for-them">when the interviewer asks if you have any questions for them</h3>
+<p>Asking your interviewer questions shows you’re interested in the company or role and gives you insight into what it’s really like, more than what it says on their website. On that note, do some research about the company beforehand — you don’t want to ask something that is already clearly answered online somewhere, and you might also find things you actually want to know more about. It’s good to have one or two go-to questions ready, but also good to ask questions you’re genuinely curious about or about things that are important to you. This is your chance to get the inside scoop on what it’s like to work there!</p>
+<h2 id="listen-to-the-interviewer">Listen to the interviewer</h2>
+<h3 id="while-working-on-technical-questions">while working on technical questions</h3>
+<p>If your interviewer makes comments, asks questions, or chimes in while you’re working on a technical question, chances are good that they’re trying to steer you in the right direction. It’s always good to listen to them and ask follow-up questions (or your own clarifying questions in general) while you’re working. Not all interviewers will be able to help you to the same degree, but they usually don’t say things to try to throw you off track.</p>
+<h3 id="in-general-during-the-interview">in general during the interview</h3>
+<p>An interview is a chance for you to get a feel for the company too and see if they’d be a good fit for you. You’ll know if things feel super uncomfortable or if the interviewer is rude or unprofessional. It’s hard to judge a whole company based off one interview, but it can definitely be part of your overall analysis or impression of the company. If things feel off to you, trust that and keep it mind as you deal with the company in the future. This goes both ways, so it can also turn out that they’re really great and that you get even more excited about the company as a result of the interview.</p>
+</div>
+
+    </div> 
+            
+            <div class='link-page wrapper'>
+            <footer>
+                    <p class="footer-content">&copy; 2021 <a href="https://krisjordan.com">Kris Jordan</a>
+                        - <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScQMteEvnQpBfGsAYP5TpuqokQenhZUIf8CNvfAUUZEjMCWZQ/viewform?usp=sf_link">Feedback
+                            Form</a> - <a href="https://forms.gle/AjcyFHirwegBKXbq9">Grievances Form</a> - Made with 💛in <a href="https://cs.unc.edu/">Chapel Hill</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"
+        integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- Load our React components. -->
+
+    <script type="text/babel" src="/static/components//Itinerary/EventSection.tsx?cache=1641698999.220791"></script>
+    <script type="text/babel" src="/static/components//Itinerary/DateSection.tsx?cache=1641698999.220791"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dates.tsx?cache=1641698999.220791"></script>
+        <script type="text/babel" src="/static/components//Itinerary/DropdownButton.tsx?cache=1641698999.220791"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dropdown.tsx?cache=1641698999.220791"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Search.tsx?cache=1641698999.220791"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButtons.tsx?cache=1641698999.220791"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButton.tsx?cache=1641698999.220791"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Itinerary.jsx?cache=1641698999.220791"></script>
+    <script src="/static/scripts/log-in-handler.js"></script>
+
+    
+</body>
+
+</html>

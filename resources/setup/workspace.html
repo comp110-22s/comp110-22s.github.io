@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Workspace Repository Setup - COMP110 - 21f</title>
+    <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css?v=1641698963.1739242">
+    <script src="/static/scripts/scroll-handler.js"></script>
+    <script src="/static/scripts/sunset_sunrise.js"></script>
+
+</head>
+
+<body class="scrolling-page" >
+    <script>
+        const lat = 35.912005; // latitude and longitude for Chapel Hill
+        const long = -79.051210; // Replace with some way to gain User location if/when desired
+    </script>
+    <script>
+        // resets user pref in the event of styling overhaul
+        if ((localStorage.getItem('mode') == "halloween-mode") || (localStorage.getItem('userPref') == "halloween-mode")) {
+            localStorage.setItem('userPref', null);
+            localStorage.setItem('mode', null);
+        }
+    
+        var datetime = new Date(); // NOTE: This is my additional scripting to check whereabouts the sun is
+        var time = datetime.getHours() + (datetime.getMinutes() / 60);
+        var timer = 240000000; // a very big number
+        if(localStorage.getItem('userPref') === null) {
+            if(time < getSunrise(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = getSunrise(lat, long) - time;
+            } else if(time > getSunset(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = (getSunrise(lat, long) + 24) - time;
+            } else {
+                localStorage.setItem('mode', 'light-mode');
+                timer = getSunset(lat, long) - time;
+            }
+        }
+    </script>
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('userPref')); // userPref holds which mode the user prefers
+        document.body.classList.add(localStorage.getItem('mode')); // mode holds the current state of the site
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <a name="top"></a>
+    <div id="page-container">
+    <div id="content-wrapper">
+    <div class="wrapper">
+        <nav id="navbarStick" class="navbar navbar-scroll navbar-expand">
+            <div class="container-fluid">
+                <div class = 'show-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-small" onClick="window.scroll({top: 0, left: 0, behavior: 'smooth'});"> back to top </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+                </div>
+                <div class = 'hide-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand web" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav web">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/resources">resources</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/topics">topics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/support">support </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/explore">explore</a>
+                            </li>
+                        </ul>
+                        <a href="javascript:void(0);" class="icon" id="hamburger">
+                            <i class="fa fa-bars fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+                    <div class="switches">
+                        <input type="checkbox" id="1" onclick="
+                            if (localStorage.getItem('mode') === 'dark-mode') {
+                                localStorage.setItem('userPref', 'light-mode');
+                                localStorage.setItem('mode', 'light-mode');
+                            } else {
+                                localStorage.setItem('userPref', 'dark-mode');
+                                localStorage.setItem('mode', 'dark-mode');
+                            }
+                            location.reload();">
+                        <label for="1">
+                            <span id="mode-label">spooky_mode</span>
+                            <span></span>
+                        </label>
+                        <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                        <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+                    </div>
+                </div>
+            </div>
+            <a class="navbar-brand mobile" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/halloweenbrand.png"
+                alt="COMP110 - Spring - 2021">
+            </a>
+        </nav>
+        <ul class="navbar-nav mobile" id="mobile">
+            <li class="nav-item" id="link1">
+                <a class="nav-link" href="/resources">resources</a>
+            </li>
+            <li class="nav-item" id="link2">
+                <a class="nav-link" href="/topics">topics</a>
+            </li>
+            <li class="nav-item" id="link3">
+                <a class="nav-link" href="/support">support</a>
+            </li>
+             <li class="nav-item" id="link4">
+                <a class="nav-link" href="/explore">explore</a>
+            </li>
+        </ul>
+
+        <script>
+            document.getElementById("hamburger").addEventListener("click", function() {
+            var x = [];
+            x[0] = document.getElementById("link1");
+            x[1] = document.getElementById("link2");
+            x[2] = document.getElementById("link3");
+            x[3] = document.getElementById("link4");
+            for (let i = 0; i < 4; i++) {
+                if (x[i].style.display === "block") {
+                    x[i].style.display = "none";
+                    document.getElementById("mobile").style.paddingTop="0";
+                    document.getElementById("mobile").style.paddingBottom="0";
+                } else {
+                    x[i].style.display = "block";
+                    document.getElementById("mobile").style.paddingTop="20px";
+                    document.getElementById("mobile").style.paddingBottom="20px";
+                }
+            }
+            });
+        </script>
+
+        <div id="resource-page" class="container">
+            <div class="row pt-4">
+
+
+                <div class="col-12">
+                    <h1 class="display-5">Workspace Repository Setup</h1>
+                    <hr class="title"/>
+                </div>
+            </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+    
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            
+            <div id="button-box class="link-pag box">
+            </div>
+
+            <div id="menu-overview" class="link-page box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul><li><a href="#find-your-official-unc-e-mail-address">0. Find Your Official UNC E-mail Address</a></li>
+<li><a href="#register-for-github">1. Register for GitHub</a></li>
+<li><a href="#setup-your-workspace-in-visual-studio-code">2. Setup your Workspace in Visual Studio Code</a></li>
+<li><a href="#installing-vscode-extensions">3. Installing VSCode Extensions</a></li>
+<li><a href="#installing-python-libraries">4. Installing Python Libraries</a><ul>
+<li><a href="#for-students-with-a-new-m1-macbook-only-follow-these-steps-5-6">FOR STUDENTS WITH A NEW M1 Macbook ONLY, follow these steps 5-6:</a></li>
+<li><a href="#everyone-else-follow-these-steps-7-8">Everyone else, follow these steps 7-8:</a></li>
+</ul></li>
+<li><a href="#setup-your-backup-workspace-on-github">5. Setup your Backup Workspace on GitHub</a></li>
+<li><a href="#configure-your-git-name-and-e-mail">6. Configure your <code>git</code> Name and E-mail</a></li>
+<li><a href="#operating-system-specific-configuration">7. Operating System Specific Configuration</a><ul>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#macos">macOS</a></li>
+</ul></li>
+<li><a href="#confirm-everything-is-good-to-go">8. Confirm Everything is Good to Go</a></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><p>Before beginning these instructions you should have first <a href="/resources/setup/os-update.html">updated your operating system</a> and then <a href="/resources/setup/software.html">installed the required software (Python 3.9, Visual Studio Code, and git)</a>.</p>
+<h2 id="find-your-official-unc-e-mail-address">0. Find Your Official UNC E-mail Address</h2>
+<p><em><strong>Primary UNC e-mail addresses typically end in <span class="citation" data-cites="live.unc.edu">@live.unc.edu</span> or <span class="citation" data-cites="email.unc.edu">@email.unc.edu</span></strong>!</em></p>
+<p>Find your primary e-mail address by logging into Sakai, clicking on your name / profile picture / avatar in the top right corner, selecting Profile, and looking under the Email field: <a href="https://sakai.unc.edu/" target="_blank">https://sakai.unc.edu/</a></p>
+<p>Use your primary e-mail address when you register for GitHub.</p>
+<h2 id="register-for-github">1. Register for GitHub</h2>
+<p>GitHub is for backing up your course Workspace Repository and for downloading course materials.</p>
+<p>You can think of GitHub as a social network where people and organizations share and collaborate on code with one another. Organizations like NASA, NOAA, Peace Corps, Washington Post, New York Times, and so on, host projects publicly (and privately) on GitHub. It’s a valuable service for data scientists, software engineers, research teams, and more.</p>
+<p>Your coursework will have its own private “git repository”. The technology we use for backing up versions of our projects and transmitting them to or from the internet, hosted on GitHub, is called <em>git</em>. Visual Studio Code has git support built into it. Git is a professional <em>version control</em> tool we use in limited ways in COMP110, but if you continue on in a field that involves programming and data you’ll likely encounter it again.</p>
+<ol type="1">
+<li>Register for a GitHub account with your primary UNC address: <a href="https://github.com/" target="_blank">https://github.com/</a>
+<ul>
+<li>You are encouraged to choose your ONYEN as your username, if it is available (not required)</li>
+</ul></li>
+<li>After registering, edit your profile from this page: <a href="https://github.com/settings/profile" target="_blank">https://github.com/settings/profile</a>
+<ul>
+<li>Be sure your name and email match what you used on Course.Care</li>
+<li>Fill out the rest of your GitHub profile with a high quality photo of yourself, a brief bio, UNC Chapel Hill as your “company”, and Chapel Hill (or home) as your location if you are going to continue in a field that involves programming (computer science, data science, information science, and so on). Think of this as a secondary LinkedIn when it comes to future opportunities, because that’s often how employers and graduate schools look at it.</li>
+</ul></li>
+</ol>
+<h2 id="setup-your-workspace-in-visual-studio-code">2. Setup your Workspace in Visual Studio Code</h2>
+<ol type="1">
+<li>Open Visual Studio Code</li>
+<li>Open the <em>View</em> menu and select <em>Command Palette</em>
+<ul>
+<li>You’ll use the Command Palette a lot so it’s worth trying to remember its shortcut!</li>
+<li>Windows: <code>Control+Shift+P</code></li>
+<li>Mac: <code>Command+Shift+P</code></li>
+</ul></li>
+<li>Type in “Git: Clone” (without the quotes) and press <code>Enter</code>.
+<ul>
+<li>If you do not see this option after installing course software previously, try rebooting your computer.</li>
+</ul></li>
+<li>Copy the following URL: <code>https://github.com/comp110-21f/comp110-21f-workspace.git</code>
+<ul>
+<li>Right Click and Paste the copied URL into the text box that appeared in VS Code after the previous step.</li>
+<li>Or use the Paste keyboard shortcut: <code>Control+V</code> Windows / <code>Command+V</code> Mac</li>
+</ul></li>
+<li>Press Enter and you will be asked where you want your course workspace repository to be saved on your computer. Just accepting the default suggestion is OK.</li>
+<li>Visual Studio Code may ask you to enter your GitHub username and password in the same place you just entered your Workspace Repository URL. If you don’t see this prompt you can proceed to step 7.
+<ul>
+<li>If it asks for your GitHub username, type it in and press enter. Your username can be found in the top left of your GitHub profile at <a href="https://github.com/settings/profile" target="_blank">https://github.com/settings/profile</a>.</li>
+<li>If it asks for your GitHub password, type it in and press enter. Your password will show up as dots as you type.</li>
+</ul></li>
+<li>Press OK when asked if you would like to Open the repository after it downloads.</li>
+</ol>
+<h2 id="installing-vscode-extensions">3. Installing VSCode Extensions</h2>
+<p>VSCode can be customized with extensions specific to the types of work you use it for. We will install extensions that help us this this course. We recommend limiting the number of additional extensions you install, you shouldn’t need any more for our course, because they can slow down VSCode and not cooperate with one another nicely in some configurations.</p>
+<ol type="1">
+<li>If you see a popup notifying you “This workspace has extension recommendations.” then click “Install All”
+<ul>
+<li>VSCode will ask you to restart for the Pylance extension. Allow it to.</li>
+<li>Press ignore for any additional prompts to install additional plugins such as <code>pytest</code> or <code>flake8</code>. For these you can click the gear icon and ask VSCode to stop recommending them.</li>
+</ul></li>
+<li>Confirm you have the correct VS Code extensions installed by clicking the <code>View</code> menu and selecting <code>Extensions</code>. If you do not see the following listed under “Installed”, find them under Recommended, click on each, and click install.
+<ol type="1">
+<li>Python</li>
+<li>Pylance</li>
+<li>Jupyter</li>
+<li>Edit csv</li>
+</ol></li>
+<li>Restart VSCode by going to File &gt; Exit and then opening VSCode.</li>
+</ol>
+<h2 id="installing-python-libraries">4. Installing Python Libraries</h2>
+<p>We will use some popular 3rd party libraries this semester in COMP110. These are freely available, open source packages that other software developers made and shared. The packages installed will help us with some data science concerns when we reach that segment of the course.</p>
+<ol type="1">
+<li>Open the <em>File</em> menu, followed by <em>Open Recent</em> and you should see the top entry listed as something like “comp110-21f-workspace”
+<ul>
+<li>If you do not, try closing and reopening VSCode.</li>
+</ul></li>
+<li>In the future, if you open VS Code and need to get back to your COMP110 Workspace, the easiest way is to repeat step 1 above.</li>
+<li>In the bottom “status bar” of VSCode, to the right of “master” and a refresh icon, you should now see Python followed by a version number. If the version number is not there or is not 3.9 or greater, follow the next bullet:
+<ul>
+<li>Open the <em>View</em> menu and <em>Command Palette</em>. Type “Python: Select Interpreter” (without the quotes) and press Enter. From the list that pops up choose Python 3.9 or greater.</li>
+</ul></li>
+<li>Open the <em>View</em> menu and select <em>Terminal</em> to bring up the built-in terminal.</li>
+</ol>
+<h3 id="for-students-with-a-new-m1-macbook-only-follow-these-steps-5-6">FOR STUDENTS WITH A NEW M1 Macbook ONLY, follow these steps 5-6:</h3>
+<ol start="5" type="1">
+<li>In the <em>Terminal</em> type the following command, being careful to match it <em>exactly</em> to install the <code>numpy</code> library.</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1">    <span class="ex">python</span> -m pip install --only-binary=:all: numpy==1.21.rc01</a></code></pre></div>
+<ol start="6" type="1">
+<li>Press <code>Enter</code> to run the command. This command installs additional Python libraries, which give you functionalities we’ll use later in the course.</li>
+</ol>
+<h3 id="everyone-else-follow-these-steps-7-8">Everyone else, follow these steps 7-8:</h3>
+<ol start="7" type="1">
+<li>In the <em>Terminal</em> type the following command, being careful to match it <em>exactly</em>.</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1">    <span class="ex">python</span> -m pip install pip -r requirements.txt --user</a></code></pre></div>
+<ol start="8" type="1">
+<li>Press <code>Enter</code> to run the command. This command installs additional Python libraries, which give you functionalities we’ll use later in the course.</li>
+</ol>
+<h2 id="setup-your-backup-workspace-on-github">5. Setup your Backup Workspace on GitHub</h2>
+<ol type="1">
+<li>Navigate a web browser to <a href="https://classroom.github.com/a/zgjDwIVk" target="_blank">https://classroom.github.com/a/zgjDwIVk</a></li>
+<li>Clicking “Skip to the next step” when prompted to select your user / identification</li>
+<li>Click “Accept this Assignment”</li>
+<li>When the workspace is getting setup you may need to refresh until it tells you you’re ready to go!</li>
+<li>Click the link to your personal backup repository that looks something like this <code>https://github.com/comp110-21f/comp110-workspace-krisjordan</code> (except instead of <code>krisjordan</code> you will see your GitHub username).</li>
+<li>Toward the top of the page there will be a green button that says <code>Code</code>. Click this and you will see two options: HTTPS and SSH. Click HTTPS.</li>
+<li>Copy the text in the box to the right of the HTTPS/SSH buttons (or click the clipboard icon). This is the URL to your backup repository.</li>
+<li>In VSCode, ppen the <em>View</em> menu and select <em>Command Palette</em>, the shortcut for this menu is:
+<ul>
+<li>Windows: <code>Control+Shift+P</code></li>
+<li>Mac: <code>Command+Shift+P</code></li>
+</ul></li>
+<li>In VSCode, type in <em>Git: Add Remote</em> and press enter with the option selected.</li>
+<li>In the blank text box that appears, paste in the URL to your backup repository that you just copied. Press enter.</li>
+<li>When asked for “Remote name” type in: <code>backup</code></li>
+<li>Open up the <em>Command Palette</em> once more, just as in step 8.</li>
+<li>Begin typing in: <code>Git: Push to...</code> and press <code>Enter</code> once it is the first option.</li>
+<li>Select the <code>backup</code> remote that is your personal workspace on GitHub.
+<ul>
+<li>You may see a spinning “refresh” icon in your status bar at the bottom of VSCode. Unless an error backing up occurs, you will not see any confirmation. It succeeds silently.</li>
+<li>If you want to see your backed up work on Github, back in your web browser, refresh the page you had open and you should see files in it now.</li>
+</ul></li>
+<li>If steps 13 and 14 do not work, do the following:
+<ul>
+<li>If your <em>Terminal</em> window from above is still open from section 3, great! If not, open a new <em>Terminal</em> pane in VS Code.</li>
+<li>At the prompt, type the following command and press enter: <code>git push --force backup main</code></li>
+</ul></li>
+</ol>
+<h2 id="configure-your-git-name-and-e-mail">6. Configure your <code>git</code> Name and E-mail</h2>
+<ol type="1">
+<li>If your <em>Terminal</em> window from above is still open from section 3, great! If not, open a new <em>Terminal</em> pane in VS Code.</li>
+<li>At the prompt, type the following command and press enter with your primary e-mail address inside the double quotes:</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">git</span> config --global user.email <span class="st">&quot;your@primary.email&quot;</span></a></code></pre></div>
+<ol start="3" type="1">
+<li>Then, type tye following command and press enter with your first and last name inside the double quotes:</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">git</span> config --global user.name <span class="st">&quot;Your Name&quot;</span></a></code></pre></div>
+<p>After doing this, when you make backup commits in <code>git</code> (which you’ll do shortly!) they’ll be correctly attributed to you.</p>
+<h2 id="operating-system-specific-configuration">7. Operating System Specific Configuration</h2>
+<h3 id="windows">Windows</h3>
+<p>If your laptop is running Windows, you should change the default shell in VSCode to be Git Bash.</p>
+<ol type="1">
+<li>Open the <em>View</em> menu and select <em>Command Palette</em> (or press Control + Shift + P)</li>
+<li>Type: Select Default Profile</li>
+<li>Press Enter</li>
+<li>From the dropdown list, you should see Git Bash. Select it.</li>
+</ol>
+<h3 id="macos">macOS</h3>
+<p>If your laptop is running macOS, you should confirm the default shell in VSCode is <code>zsh</code>. This should already be the case, but to be sure, run these steps:</p>
+<ol type="1">
+<li>Open the <em>View</em> menu and select <em>Command Palette</em> (or press Command + Shift + P)</li>
+<li>Type: Select Default Profile</li>
+<li>Press Enter</li>
+<li>From the dropdown list, you should see <code>zsh</code> in one of the options. Select it.</li>
+</ol>
+<p>It is handy to be able to open Visual Studio Code from your Terminal using the <code>code</code> command in the future. To register this:</p>
+<ol type="1">
+<li>Open the <em>View</em> menu and select <em>Command Palette</em> (or press Command + Shift + P)</li>
+<li>Type: Install code command</li>
+<li>Press Enter</li>
+</ol>
+<hr />
+<h2 id="confirm-everything-is-good-to-go">8. Confirm Everything is Good to Go</h2>
+<p>From the View Menu, select Explorer. You should see a left-hand sidebar with comp110-WORKSPACE at the top and if you expand it you should see <code>exercises</code>, <code>lessons</code>, <code>projects</code>, <code>sandbox</code>, and <code>README.md</code>. These are folders, which we refer to more technically as directories, and files in your workspace.</p>
+<p>Let’s be sure you are able to exit out of VSCode and find your work again. Go ahead and close VSCode. Then open new window. If you see the same files in the left-hand sidebar: great! Keep reading, though, so you know what to do in the future if you do not see your workspace.</p>
+<p>If you do not see your workspace files in the Explorer sidebar, go to File, select Open Recent, and look for the topmost entry that is <code>comp110-21f-workspace</code> and select it. This is how you can get back to your workspace most easily in the future.</p>
+<p>Great work! Your software setup is now ready for COMP110!</p>
+</div>
+
+    </div> 
+
+            <div class="authors-box">
+                <span> Contributor(s): Kris Jordan</span>
+            </div>
+            
+            <div class='link-page wrapper'>
+            <footer>
+                    <p class="footer-content">&copy; 2021 <a href="https://krisjordan.com">Kris Jordan</a>
+                        - <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScQMteEvnQpBfGsAYP5TpuqokQenhZUIf8CNvfAUUZEjMCWZQ/viewform?usp=sf_link">Feedback
+                            Form</a> - <a href="https://forms.gle/AjcyFHirwegBKXbq9">Grievances Form</a> - Made with 💛in <a href="https://cs.unc.edu/">Chapel Hill</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"
+        integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>

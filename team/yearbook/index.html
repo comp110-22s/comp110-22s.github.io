@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en" data-scroll="0" data-nav1="true">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Team 110 - COMP110 - 21f</title>
+    <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css?v=1641699006.3607612">
+</head>
+
+<body id="body" class="absolute-page">
+     <script>
+        const lat = 35.912005; // latitude and longitude for Chapel Hill
+        const long = -79.051210; // Replace with some way to gain User location if/when desired
+    </script>
+    <script>
+        // resets user pref in the event of styling overhaul
+        if ((localStorage.getItem('mode') == "halloween-mode") || (localStorage.getItem('userPref') == "halloween-mode")) {
+            localStorage.setItem('userPref', null);
+            localStorage.setItem('mode', null);
+        }
+    
+        var datetime = new Date(); // NOTE: This is my additional scripting to check whereabouts the sun is
+        var time = datetime.getHours() + (datetime.getMinutes() / 60);
+        var timer = 240000000; // a very big number
+        if(localStorage.getItem('userPref') === null) {
+            if(time < getSunrise(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = getSunrise(lat, long) - time;
+            } else if(time > getSunset(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = (getSunrise(lat, long) + 24) - time;
+            } else {
+                localStorage.setItem('mode', 'light-mode');
+                timer = getSunset(lat, long) - time;
+            }
+        }
+    </script>
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('userPref')); // userPref holds which mode the user prefers
+        document.body.classList.add(localStorage.getItem('mode')); // mode holds the current state of the site
+    </script>
+    <div onKeyPress="return myFunction(event)">
+        <form id="log-in" class="center-text" id="form01" action="demo_form.asp" onsubmit="return false;" >
+            <h3 style="margin-bottom: 20px">Team Login</h3>
+            <input id="username" type="text" placeholder="username" style="margin-bottom: 10px">
+            <input id="password" type="text" placeholder="password">
+            <input class="hidden" type="button" value="Submit" onclick="myFunction(0)">
+        </form>
+    </div>
+    <a name="top"></a>
+    <div id="page-container">
+    <div id="content-wrapper">
+    <script src="/static/scripts/log-in-element.js"></script>
+    <div class="wrapper">
+        <nav id="navbarStick" class="navbar navbar-expand">
+            <div class="container-fluid d-flex">
+                <div class = 'hide-during-scroll'>
+                    <div class="container nav-const">
+                        <a class="navbar-brand" href="/team"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/team/allocations">allocations</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/team/documentation">documentation</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/team/career">career</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/team/yearbook">yearbook</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="ms-auto form-check form-switch mode">
+                    <div class="switches">
+                        <input type="checkbox" id="1" onclick="
+                            if (localStorage.getItem('mode') === 'dark-mode') {
+                                localStorage.setItem('userPref', 'light-mode');
+                                localStorage.setItem('mode', 'light-mode');
+                            } else {
+                                localStorage.setItem('userPref', 'dark-mode');
+                                localStorage.setItem('mode', 'dark-mode);
+                            }
+                            location.reload();">
+                        <label for="1">
+                            <span id="mode-label">Dark Mode</span>
+                            <span></span>
+                        </label>
+                        <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="home-page" class="container">
+            <div class="row pt-4">
+                <div class="col-12">
+                    <h1 class="display-5">Team 110</h1>
+                    <hr class="title"/>
+                </div>
+    <div class="container"><div class="row"><div class="col">
+                <div class="content"><h1 id="class-of-2007">Class of 2007</h1>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/krisj.jpg" class="profile-image"> </a>
+<figcaption>
+Kris Jordan
+</figcaption>
+</figure>
+<p></div>
+            </div><div class="col">
+                <div class="content"> </div>
+            </div><div class="col">
+                <div class="content"> </div>
+            </div><div class="col">
+                <div class="content"> </div>
+            </div></div><div class="row"><div class="col">
+                <div class="content"></p>
+<h1 id="class-of-2020">Class of 2020</h1>
+<p></div>
+            </div><div class="col">
+                <div class="content"></p>
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/kakiryan.png" class="profile-image"> </a>
+<figcaption>
+Kaki Ryan
+</figcaption>
+</figure>
+<p></div>
+            </div><div class="col">
+                <div class="content"></p>
+<ul>
+<li>Ansley Ussery</li>
+<li>Armando Jimenez</li>
+<li>Tony Bird</li>
+<li>Natalie Russell</li>
+<li>Kristina Nickel</li>
+<li>Emily Heckel</li>
+<li>Zak Lintz</li>
+<li>Jeremiah Alfaro</li>
+</ul>
+<p></div>
+            </div><div class="col">
+                <div class="content"></p>
+<ul>
+<li>Haley DeZwaan</li>
+<li>Kassi Dibert</li>
+<li>Lydia Heater</li>
+<li>Izzi Hinks</li>
+<li>Heather Crew</li>
+<li>Mary Gibeau</li>
+<li>Katherine Buige</li>
+<li>JC Weber</li>
+</ul>
+<p></div>
+            </div><div class="col">
+                <div class="content"> </div>
+            </div></div><div class="row"><div class="col">
+                <div class="content"></p>
+<h1 id="class-of-2021">Class of 2021</h1>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/fiordali.png" class="profile-image"> </a>
+<figcaption>
+Alana Fiordalisi
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/chrisdis.jpg" class="profile-image"> </a>
+<figcaption>
+Chris Diserafino
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/elisakad.JPG" class="profile-image"> </a>
+<figcaption>
+Elisa Kadackal
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/iford.JPG" class="profile-image"> </a>
+<figcaption>
+Isabella Ford
+</figcaption>
+</figure>
+</div>
+            </div></div><div class="row"><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/julialp.jpg" class="profile-image"> </a>
+<figcaption>
+Jules Perkins
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/kkpatel4.png" class="profile-image"> </a>
+<figcaption>
+Kush Patel
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/ruochen.jpg" class="profile-image"> </a>
+<figcaption>
+Larry Li
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/lillyw.jpeg" class="profile-image"> </a>
+<figcaption>
+Lilly Whalen
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/hubermm.jpg" class="profile-image"> </a>
+<figcaption>
+Maddie Huber
+</figcaption>
+</figure>
+</div>
+            </div></div><div class="row"><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/kenzieob.png" class="profile-image"> </a>
+<figcaption>
+Makenzie O’Brien
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/mjlake.jpg" class="profile-image"> </a>
+<figcaption>
+Margaret Lake
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/mkirby28.jpg" class="profile-image"> </a>
+<figcaption>
+Matthew Kirby
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/sanbae.jpg" class="profile-image"> </a>
+<figcaption>
+San Bae
+</figcaption>
+</figure>
+<p></div>
+            </div><div class="col">
+                <div class="content"></p>
+<ul>
+<li>Lizzie Abouchar</li>
+<li>Sneha Senthilkumar</li>
+<li>Spencer Jones</li>
+<li>Kitty Lindrum</li>
+<li>Kristen Lennon</li>
+</ul>
+<p></div>
+            </div></div><div class="row"><div class="col">
+                <div class="content"></p>
+<h1 id="class-of-2022">Class of 2022</h1>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/chelene.jpg" class="profile-image"> </a>
+<figcaption>
+Chelsea Rowe
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/ccoving.jpg" class="profile-image"> </a>
+<figcaption>
+Clayton Covington
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/ezri.JPG" class="profile-image"> </a>
+<figcaption>
+Ezri White
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/helendc.png" class="profile-image"> </a>
+<figcaption>
+Helen Charbonnet
+</figcaption>
+</figure>
+</div>
+            </div></div><div class="row"><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/irisiris.jpg" class="profile-image"> </a>
+<figcaption>
+Iris Chien
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/jasp.jpg" class="profile-image"> </a>
+<figcaption>
+Jasper Christie
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/jblovett.jpg" class="profile-image"> </a>
+<figcaption>
+Josh Lovett
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/madysonb.jpg" class="profile-image"> </a>
+<figcaption>
+Madyson Barber
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/marc8.PNG" class="profile-image"> </a>
+<figcaption>
+Marc Lewis
+</figcaption>
+</figure>
+</div>
+            </div></div><div class="row"><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/marleenw.png" class="profile-image"> </a>
+<figcaption>
+Marlee Walls
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/mzhang88.jpg" class="profile-image"> </a>
+<figcaption>
+Megan Zhang
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/moshe22.png" class="profile-image"> </a>
+<figcaption>
+Moshe Ikechukwu
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/rainethai.JPG" class="profile-image"> </a>
+<figcaption>
+Raine Thai
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/seawellr.jpg" class="profile-image"> </a>
+<figcaption>
+Rebekah Seawell
+</figcaption>
+</figure>
+</div>
+            </div></div><div class="row"><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/torih.jpg" class="profile-image"> </a>
+<figcaption>
+Victoria Hoffmann
+</figcaption>
+</figure>
+<p></div>
+            </div><div class="col">
+                <div class="content"></p>
+<ul>
+<li>Alfred Matthew</li>
+<li>Anna Xu</li>
+<li>Hannah Tischer</li>
+<li>Lindsay Zhou</li>
+<li>Yang Chen</li>
+</ul>
+<p></div>
+            </div><div class="col">
+                <div class="content"> </div>
+            </div><div class="col">
+                <div class="content"> </div>
+            </div><div class="col">
+                <div class="content"></p>
+<h1 id="class-of-2023">Class of 2023</h1>
+</div>
+            </div></div><div class="row"><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/azswim.jpg" class="profile-image"> </a>
+<figcaption>
+Andrew Zheng
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/aneka.jpg" class="profile-image"> </a>
+<figcaption>
+Aneka Happer
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/austinfw.jpg" class="profile-image"> </a>
+<figcaption>
+Austin Wade
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/bjhites.jpg" class="profile-image"> </a>
+<figcaption>
+Ben Hites
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/clairehh.jpg" class="profile-image"> </a>
+<figcaption>
+Claire Helms
+</figcaption>
+</figure>
+</div>
+            </div></div><div class="row"><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/davidnassif.jpeg" class="profile-image"> </a>
+<figcaption>
+David Nassif
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/ferngarc.jpg" class="profile-image"> </a>
+<figcaption>
+Fernando Garcia
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/tpgarris.jpg" class="profile-image"> </a>
+<figcaption>
+Garrison Parrish
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/hacrz95.png" class="profile-image"> </a>
+<figcaption>
+Hannah Cruz
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/mbuguaj.png" class="profile-image"> </a>
+<figcaption>
+Janet Mbugua
+</figcaption>
+</figure>
+</div>
+            </div></div><div class="row"><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/jenn.jpg" class="profile-image"> </a>
+<figcaption>
+Jenn Kang
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/jessew13.jpg" class="profile-image"> </a>
+<figcaption>
+Jesse Wei
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/kjs20.jpg" class="profile-image"> </a>
+<figcaption>
+Kyle Sorensen
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/manuela7.jpg" class="profile-image"> </a>
+<figcaption>
+Manuela Danso-Fordjour
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/naomi04.jpg" class="profile-image"> </a>
+<figcaption>
+Naomi Smith
+</figcaption>
+</figure>
+</div>
+            </div></div><div class="row"><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/quinting.png" class="profile-image"> </a>
+<figcaption>
+Quintin Gay
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/raven61.jpg" class="profile-image"> </a>
+<figcaption>
+Raven Taylor
+</figcaption>
+</figure>
+<p></div>
+            </div><div class="col">
+                <div class="content"></p>
+<ul>
+<li>Milen Patel</li>
+<li>Lucy Conway</li>
+<li>Langston Luck</li>
+<li>Eric Schneider</li>
+<li>Dylan Binley</li>
+</ul>
+<p></div>
+            </div><div class="col">
+                <div class="content"></p>
+<ul>
+<li>Cindy Wang</li>
+<li>Izzie Estes</li>
+<li>Harman Martin</li>
+<li>Mazin Shaaeldin</li>
+<li>Mira Rajesh</li>
+</ul>
+<p></div>
+            </div><div class="col">
+                <div class="content"></p>
+<h1 id="class-of-2024">Class of 2024</h1>
+<p></div>
+            </div></div><div class="row"><div class="col">
+                <div class="content"></p>
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/abigailkessel.jpg" class="profile-image"> </a>
+<figcaption>
+Abigail Kessel
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/adinzimmerman.jpeg" class="profile-image"> </a>
+<figcaption>
+Adin Zimmerman
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/aryonnarice.jpeg" class="profile-image"> </a>
+<figcaption>
+Aryonna Rice
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/catherineroberts.jpg" class="profile-image"/><a>
+<figcaption>
+Catherine Roberts
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/ctine987.jpg" class="profile-image"> </a>
+<figcaption>
+Christine Mendoza
+</figcaption>
+</figure>
+</div>
+            </div></div><div class="row"><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/dwkarash.png" class="profile-image"> </a>
+<figcaption>
+David Karash
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/emmaleex.jpg" class="profile-image"> </a>
+<figcaption>
+Emma Jia
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/ebbyrd.jpg" class="profile-image"> </a>
+<figcaption>
+Erin Byrd
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/madeleinegenova.png" class="profile-image"> </a>
+<figcaption>
+Madeleine Genova
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/mattkolsch.jpg" class="profile-image"> </a>
+<figcaption>
+Matt Kolsch
+</figcaption>
+</figure>
+</div>
+            </div></div><div class="row"><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/meghansun.png" class="profile-image"> </a>
+<figcaption>
+Meghan Sun
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/oliviaw7.jpg" class="profile-image"> </a>
+<figcaption>
+Olivia Wen
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/robertsusewell.jpg" class="profile-image"> </a>
+<figcaption>
+Robert Susewell
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/sadieamato.jpg" class="profile-image"> </a>
+<figcaption>
+Sadie Amato
+</figcaption>
+</figure>
+</div>
+            </div><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/shaurikd.png" class="profile-image"> </a>
+<figcaption>
+Shaurik Deshpande
+</figcaption>
+</figure>
+</div>
+            </div></div><div class="row"><div class="col">
+                <div class="content">
+<figure class="profile">
+<a href="/team/yearbook"><img src="/static/profile-photos/sophiejiang.jpeg" class="profile-image"> </a>
+<figcaption>
+Sophie Jiang
+</figcaption>
+</figure>
+</div>
+            </div></div></div>
+            
+            <div class='link-page wrapper'>
+            <footer>
+                    <p class="footer-content">&copy; 2021 <a href="https://krisjordan.com">Kris Jordan</a>
+                        - <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScQMteEvnQpBfGsAYP5TpuqokQenhZUIf8CNvfAUUZEjMCWZQ/viewform?usp=sf_link">Feedback
+                            Form</a> - <a href="https://forms.gle/AjcyFHirwegBKXbq9">Grievances Form</a> - Made with 💛in <a href="https://cs.unc.edu/">Chapel Hill</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"
+        integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- Load our React components. -->
+
+    <script type="text/babel" src="/static/components//Itinerary/EventSection.tsx?cache=1641699006.3607612"></script>
+    <script type="text/babel" src="/static/components//Itinerary/DateSection.tsx?cache=1641699006.3607612"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dates.tsx?cache=1641699006.3607612"></script>
+        <script type="text/babel" src="/static/components//Itinerary/DropdownButton.tsx?cache=1641699006.3607612"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dropdown.tsx?cache=1641699006.3607612"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Search.tsx?cache=1641699006.3607612"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButtons.tsx?cache=1641699006.3607612"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButton.tsx?cache=1641699006.3607612"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Itinerary.jsx?cache=1641699006.3607612"></script>
+    <script src="/static/scripts/log-in-handler.js"></script>
+
+    
+</body>
+
+</html>

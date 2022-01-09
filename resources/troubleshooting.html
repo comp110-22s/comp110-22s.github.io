@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Troubleshooting - COMP110 - 21f</title>
+    <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css?v=1641698963.7843425">
+    <script src="/static/scripts/scroll-handler.js"></script>
+    <script src="/static/scripts/sunset_sunrise.js"></script>
+
+</head>
+
+<body class="scrolling-page" >
+    <script>
+        const lat = 35.912005; // latitude and longitude for Chapel Hill
+        const long = -79.051210; // Replace with some way to gain User location if/when desired
+    </script>
+    <script>
+        // resets user pref in the event of styling overhaul
+        if ((localStorage.getItem('mode') == "halloween-mode") || (localStorage.getItem('userPref') == "halloween-mode")) {
+            localStorage.setItem('userPref', null);
+            localStorage.setItem('mode', null);
+        }
+    
+        var datetime = new Date(); // NOTE: This is my additional scripting to check whereabouts the sun is
+        var time = datetime.getHours() + (datetime.getMinutes() / 60);
+        var timer = 240000000; // a very big number
+        if(localStorage.getItem('userPref') === null) {
+            if(time < getSunrise(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = getSunrise(lat, long) - time;
+            } else if(time > getSunset(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = (getSunrise(lat, long) + 24) - time;
+            } else {
+                localStorage.setItem('mode', 'light-mode');
+                timer = getSunset(lat, long) - time;
+            }
+        }
+    </script>
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('userPref')); // userPref holds which mode the user prefers
+        document.body.classList.add(localStorage.getItem('mode')); // mode holds the current state of the site
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <a name="top"></a>
+    <div id="page-container">
+    <div id="content-wrapper">
+    <div class="wrapper">
+        <nav id="navbarStick" class="navbar navbar-scroll navbar-expand">
+            <div class="container-fluid">
+                <div class = 'show-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-small" onClick="window.scroll({top: 0, left: 0, behavior: 'smooth'});"> back to top </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+                </div>
+                <div class = 'hide-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand web" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav web">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/resources">resources</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/topics">topics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/support">support </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/explore">explore</a>
+                            </li>
+                        </ul>
+                        <a href="javascript:void(0);" class="icon" id="hamburger">
+                            <i class="fa fa-bars fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+                    <div class="switches">
+                        <input type="checkbox" id="1" onclick="
+                            if (localStorage.getItem('mode') === 'dark-mode') {
+                                localStorage.setItem('userPref', 'light-mode');
+                                localStorage.setItem('mode', 'light-mode');
+                            } else {
+                                localStorage.setItem('userPref', 'dark-mode');
+                                localStorage.setItem('mode', 'dark-mode');
+                            }
+                            location.reload();">
+                        <label for="1">
+                            <span id="mode-label">spooky_mode</span>
+                            <span></span>
+                        </label>
+                        <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                        <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+                    </div>
+                </div>
+            </div>
+            <a class="navbar-brand mobile" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/halloweenbrand.png"
+                alt="COMP110 - Spring - 2021">
+            </a>
+        </nav>
+        <ul class="navbar-nav mobile" id="mobile">
+            <li class="nav-item" id="link1">
+                <a class="nav-link" href="/resources">resources</a>
+            </li>
+            <li class="nav-item" id="link2">
+                <a class="nav-link" href="/topics">topics</a>
+            </li>
+            <li class="nav-item" id="link3">
+                <a class="nav-link" href="/support">support</a>
+            </li>
+             <li class="nav-item" id="link4">
+                <a class="nav-link" href="/explore">explore</a>
+            </li>
+        </ul>
+
+        <script>
+            document.getElementById("hamburger").addEventListener("click", function() {
+            var x = [];
+            x[0] = document.getElementById("link1");
+            x[1] = document.getElementById("link2");
+            x[2] = document.getElementById("link3");
+            x[3] = document.getElementById("link4");
+            for (let i = 0; i < 4; i++) {
+                if (x[i].style.display === "block") {
+                    x[i].style.display = "none";
+                    document.getElementById("mobile").style.paddingTop="0";
+                    document.getElementById("mobile").style.paddingBottom="0";
+                } else {
+                    x[i].style.display = "block";
+                    document.getElementById("mobile").style.paddingTop="20px";
+                    document.getElementById("mobile").style.paddingBottom="20px";
+                }
+            }
+            });
+        </script>
+
+        <div id="resources-page" class="container">
+            <div class="row pt-4">
+
+
+                <div class="col-12">
+                    <h1 class="display-5">Troubleshooting</h1>
+                    <hr class="title"/>
+                </div>
+            </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+    
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            
+            <div id="button-box class="link-pag box">
+            </div>
+
+            <div id="menu-overview" class="link-page box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul><li><a href="#general-assingment-issues">General Assingment Issues</a><ul>
+<li><a href="#theres-a-bug-in-my-code-i-think">There’s a bug in my code… I think?</a></li>
+</ul></li>
+<li><a href="#issues-with-git">Issues with Git</a></li>
+<li><a href="#issues-with-pythonvscode">Issues with Python/VSCode</a><ul>
+<li><a href="#general">General</a></li>
+<li><a href="#mac">Mac</a></li>
+<li><a href="#windows">Windows</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><p>Before you hop in the Office Hours queue, check out these common issues and their solutions!</p>
+<h2 id="general-assingment-issues">General Assingment Issues</h2>
+<h3 id="theres-a-bug-in-my-code-i-think">There’s a bug in my code… I think?</h3>
+<p>A software ‘bug’ is an error or flaw in code that causes the program to behave in unintended ways. In office hours, we’re available to help spot bugs, but there are also ways for you to debug yourself!</p>
+<ol type="1">
+<li><strong>Use environment diagrams!</strong> Environment diagrams are super effective for tracing code. You can write your own environment diagrams for your program to track what goes wrong. Here’s a refresher on environment diagrams.</li>
+<li><strong>Review applicable concepts.</strong> Are you working with the modulo (%) operator? Factorials? Functions? You may have forgot a characteristic of the concept, such as that 0! == 1 and function definitions require specific syntax. Brush up on concepts to be sure you understand them!</li>
+<li><strong>Take it to paper.</strong> If you’re really stuck, you might want to revisit reworking the steps of your program. One way programmers do this is by writing <em>pseudocode</em>, which is a simplified outline of a program that contains its necessary steps. Once you have written down pseudocode for the assignment, you can compare it with your code’s implementation! This is also a great way to start writing a program. Check out this <a href="https://www.geeksforgeeks.org/how-to-write-a-pseudo-code/" target="_blank">GeeksforGeeks article</a> for more info on pseudocode.</li>
+</ol>
+<h2 id="issues-with-git">Issues with Git</h2>
+<p>Issues with Git can seem really scary; the reality is, though, you can solve them yourself! Here are some common Git issues and their solutions:</p>
+<ul>
+<li><strong>Problem: “Pull from upstram not working : can’t integrate …”:</strong>
+<ul>
+<li>Possible solution:
+<ol type="1">
+<li>Make sure you have committed and backed up everything before pulling. Any uncommitted changes could prevent you from pulling new material.</li>
+</ol></li>
+</ul></li>
+<li><strong>Problem: the <em>Source Control</em> panel in VSCode says “The folder open currently doesn’t have a git respository…”, and you can’t push, pull, commit, etc.:</strong>
+<ul>
+<li>This indicates that there is no valid git instillation, and this has been happening frequently to Mac users after their computer upates.
+<ul>
+<li>Solution:
+<ol type="1">
+<li>In the terminal, run <code>xcode-select --install</code>
+<ol type="a">
+<li>In the popups, accept the request to start an installation</li>
+</ol></li>
+<li>Restart VSCode (don’t just X out of it)
+<ol type="a">
+<li>Click “Code” at the top of the screen, next to the Apple symbol</li>
+<li>Click “Quit Visual Studio Code” at the bottom of the dropdown menu</li>
+</ol></li>
+</ol></li>
+<li>The Source Control panel should now look normal, so go ahead and retry the operation you were trying to do originally!</li>
+</ul></li>
+</ul></li>
+<li><strong>Problem: You can’t get characters to show up when you start typing in a file in VSCode/it takes a while for the keyboard to “start working”:</strong>
+<ul>
+<li>You have probably installed and enabled the <em>Vim extension</em> in VSCode accidentally (this happens frequently when VSCode recommends extensions).
+<ul>
+<li>Solution:
+<ol type="1">
+<li>On the left side of VSCode, where we access the file explorer and the source control panel, click the button that looks like four squares with one square separated from the group.</li>
+<li>You should see a list of extensions under the title “Installed.” If you just see “Installed” without a list of items underneath it, click on the “Installed” line.</li>
+<li>Click on the “Vim” extension in this “Installed” list.</li>
+<li>page about the Vim extension should open up to the right. Under the title of the page, you should see and click on the “Disable” button.</li>
+<li>Another button that says “Reload Required” should now appear in the same location. Click this button and wait for VSCode to quit and reopen.</li>
+</ol></li>
+<li>Vim should now be disabled and should no longer have any effect over your experience typing in VSCode.</li>
+</ul></li>
+</ul></li>
+<li><strong>Problem: error message “invalid developer directory.”:</strong>
+<ul>
+<li>Solution:
+<ol type="1">
+<li>run <code>xcode-select --install</code> to verify you have xcode installed</li>
+<li>run <code>sudo xcode-select --switch \Library\Developer\CommandLineTools</code></li>
+</ol></li>
+</ul></li>
+</ul>
+<h2 id="issues-with-pythonvscode">Issues with Python/VSCode</h2>
+<h3 id="general">General</h3>
+<ul>
+<li><strong>Issue: None of your Python commands are working:</strong> Solution: trash all existing terminals and create a new one. Check it’s inside your workspace folder.</li>
+<li><strong>Issue: Python only shows anaconda version “(base)”:</strong> Solution: run //conda deactivate</li>
+<li><strong>Issue: Timeout exception error when running <code>python -m pip install pip -r requirements.txt</code>:</strong> Solution: in terminal, run <code>python -m pip install pip --default-timeout=100 -r requirements.txt</code></li>
+</ul>
+<h3 id="mac">Mac</h3>
+<ul>
+<li><strong>Issue: Password not working while running a command with <code>sudo</code>:</strong> Solution: try running the command without <code>sudo</code></li>
+<li><strong>Issue: git commands result in xcrun error:</strong> Solution: in terminal, run <code>xcode-select --install</code></li>
+<li><strong>Issue: Default shell is ‘bash’ instead of ‘zsh’:</strong> Solution: Enter Command Palette (<code>Cmd+Shft+P</code>), select “Terminal: Select Default Shell”, select <code>zsh</code></li>
+<li><strong>Issue: VSCode still says it’s running Python 2.7:</strong> This is for when VSCode still says it’s Python 2.7 even when running <code>python --version</code> or <code>python3 --version</code> in a terminal says 3.9.1 Solution: run <code>sudo ln -s "$(which python3)" "$(dirname $(which python3))/python"</code> Trash the terminal and open a new one.</li>
+<li><strong>Issue: Need for split screen:</strong> Hold down the green button in the top left of your screen and “Tile Window” to the left or right!</li>
+<li><strong>Issue: “No module ‘tools’/‘exercises’” on file export:</strong> Solution: make sure your default shell is <code>zsh</code> (see issue above)</li>
+<li><strong>Issue: Command Palette lacking git commands:</strong> Solution: Move VSCode from Downloads folder on your Mac into Applications folder (can drag and drop!)</li>
+</ul>
+<h3 id="windows">Windows</h3>
+<ul>
+<li><strong>Issue: VSCode can’t find Python:</strong> Solution: reboot VSCode. If still a problem, uninstall and re-install Python being <em>very careful</em> to check the box on the first screen that asks if you want to add Python to PATH.</li>
+<li><strong>Issue: VSCode is not available as default text editor:</strong> Solution: install VSCode before Git.</li>
+<li><strong>Issue: checking <code>Python --version</code> opens app store or displays an old version of Python:</strong> Solution: Uninstall and reinstall python via Start &gt; Add/Remove Programs and BE SURE “Add Python to PATH” is selected. Continue install. Try again from a new terminal session and, worst case, reboot if still an issue.</li>
+<li><strong>Issue: “git bash permission denied”:</strong> Solution: try using <code>py</code> instead of <code>python</code> So: <code>py –version</code> instead of <code>python –version</code></li>
+</ul>
+<p>Have a problem not covered? Join us in <a href="https://course.care" target="_blank">Office Hours</a>! Else, you can be a ~detective~ and research solutions yourself (StackOverflow has helped me troubleshoot many times). Just be sure to not make fatal changes. Happy solving!</p>
+</div>
+
+    </div> 
+
+            <div class="authors-box">
+                <span> Contributor(s): Claire Helms</span>
+            </div>
+            
+            <div class='link-page wrapper'>
+            <footer>
+                    <p class="footer-content">&copy; 2021 <a href="https://krisjordan.com">Kris Jordan</a>
+                        - <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScQMteEvnQpBfGsAYP5TpuqokQenhZUIf8CNvfAUUZEjMCWZQ/viewform?usp=sf_link">Feedback
+                            Form</a> - <a href="https://forms.gle/AjcyFHirwegBKXbq9">Grievances Form</a> - Made with 💛in <a href="https://cs.unc.edu/">Chapel Hill</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"
+        integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>

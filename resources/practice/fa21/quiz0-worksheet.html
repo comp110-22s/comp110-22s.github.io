@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Quiz 00 Practice - COMP110 - 21f</title>
+    <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css?v=1641698961.3461688">
+    <script src="/static/scripts/scroll-handler.js"></script>
+    <script src="/static/scripts/sunset_sunrise.js"></script>
+
+</head>
+
+<body class="scrolling-page" >
+    <script>
+        const lat = 35.912005; // latitude and longitude for Chapel Hill
+        const long = -79.051210; // Replace with some way to gain User location if/when desired
+    </script>
+    <script>
+        // resets user pref in the event of styling overhaul
+        if ((localStorage.getItem('mode') == "halloween-mode") || (localStorage.getItem('userPref') == "halloween-mode")) {
+            localStorage.setItem('userPref', null);
+            localStorage.setItem('mode', null);
+        }
+    
+        var datetime = new Date(); // NOTE: This is my additional scripting to check whereabouts the sun is
+        var time = datetime.getHours() + (datetime.getMinutes() / 60);
+        var timer = 240000000; // a very big number
+        if(localStorage.getItem('userPref') === null) {
+            if(time < getSunrise(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = getSunrise(lat, long) - time;
+            } else if(time > getSunset(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = (getSunrise(lat, long) + 24) - time;
+            } else {
+                localStorage.setItem('mode', 'light-mode');
+                timer = getSunset(lat, long) - time;
+            }
+        }
+    </script>
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('userPref')); // userPref holds which mode the user prefers
+        document.body.classList.add(localStorage.getItem('mode')); // mode holds the current state of the site
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <a name="top"></a>
+    <div id="page-container">
+    <div id="content-wrapper">
+    <div class="wrapper">
+        <nav id="navbarStick" class="navbar navbar-scroll navbar-expand">
+            <div class="container-fluid">
+                <div class = 'show-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-small" onClick="window.scroll({top: 0, left: 0, behavior: 'smooth'});"> back to top </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+                </div>
+                <div class = 'hide-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand web" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav web">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/resources">resources</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/topics">topics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/support">support </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/explore">explore</a>
+                            </li>
+                        </ul>
+                        <a href="javascript:void(0);" class="icon" id="hamburger">
+                            <i class="fa fa-bars fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+                    <div class="switches">
+                        <input type="checkbox" id="1" onclick="
+                            if (localStorage.getItem('mode') === 'dark-mode') {
+                                localStorage.setItem('userPref', 'light-mode');
+                                localStorage.setItem('mode', 'light-mode');
+                            } else {
+                                localStorage.setItem('userPref', 'dark-mode');
+                                localStorage.setItem('mode', 'dark-mode');
+                            }
+                            location.reload();">
+                        <label for="1">
+                            <span id="mode-label">spooky_mode</span>
+                            <span></span>
+                        </label>
+                        <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                        <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+                    </div>
+                </div>
+            </div>
+            <a class="navbar-brand mobile" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/halloweenbrand.png"
+                alt="COMP110 - Spring - 2021">
+            </a>
+        </nav>
+        <ul class="navbar-nav mobile" id="mobile">
+            <li class="nav-item" id="link1">
+                <a class="nav-link" href="/resources">resources</a>
+            </li>
+            <li class="nav-item" id="link2">
+                <a class="nav-link" href="/topics">topics</a>
+            </li>
+            <li class="nav-item" id="link3">
+                <a class="nav-link" href="/support">support</a>
+            </li>
+             <li class="nav-item" id="link4">
+                <a class="nav-link" href="/explore">explore</a>
+            </li>
+        </ul>
+
+        <script>
+            document.getElementById("hamburger").addEventListener("click", function() {
+            var x = [];
+            x[0] = document.getElementById("link1");
+            x[1] = document.getElementById("link2");
+            x[2] = document.getElementById("link3");
+            x[3] = document.getElementById("link4");
+            for (let i = 0; i < 4; i++) {
+                if (x[i].style.display === "block") {
+                    x[i].style.display = "none";
+                    document.getElementById("mobile").style.paddingTop="0";
+                    document.getElementById("mobile").style.paddingBottom="0";
+                } else {
+                    x[i].style.display = "block";
+                    document.getElementById("mobile").style.paddingTop="20px";
+                    document.getElementById("mobile").style.paddingBottom="20px";
+                }
+            }
+            });
+        </script>
+
+        <div id="lessons-page" class="container">
+            <div class="row pt-4">
+
+
+                <div class="col-12">
+                    <h1 class="display-5">Quiz 00 Practice</h1>
+                    <hr class="title"/>
+                </div>
+            </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+    
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            
+            <div id="button-box class="link-pag box">
+            </div>
+
+            <div id="menu-overview" class="link-page box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul><li><a href="#concepts-on-quiz-0">Concepts on Quiz 0</a></li>
+<li><a href="#questions">Questions</a><ul>
+<li><a href="#memory-diagrams">Memory Diagrams</a></li>
+<li><a href="#data-types">Data Types</a></li>
+<li><a href="#expressions">Expressions</a></li>
+</ul></li>
+<li><a href="#solutions">Solutions</a><ul>
+<li><a href="#memory-diagrams-1">Memory Diagrams</a></li>
+<li><a href="#data-types-1">Data Types</a></li>
+<li><a href="#expressions-1">Expressions</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><h1 id="concepts-on-quiz-0">Concepts on Quiz 0</h1>
+<p>Before working through these practice questions, you should first carefully read this page on <a href="/resources/quiz-expectations.html">Quiz Expectations</a></p>
+<p>Quiz 0 will cover the following concepts:</p>
+<ul>
+<li>Syllabus and course policies</li>
+<li>Lessons 0 through 7 (including the memory diagrams of LS07)</li>
+</ul>
+<h1 id="questions">Questions</h1>
+<p>The quiz itself will be similar in difficulty but longer in length than these practice questions. Expect about 3x memory diagrams and around 30x other questions which follow.</p>
+<p>Solutions for each problem can be found at the bottom of this page.</p>
+<h2 id="memory-diagrams">Memory Diagrams</h2>
+<ol type="1">
+<li>Produce a memory diagram for the following code snippet, being sure to include its stack and output.</li>
+</ol>
+<p><img src="/static/practice_worksheets/fa21/qz0-question13.png" /></p>
+<ol start="2" type="1">
+<li>Produce a memory diagram for the following code snippet, being sure to include its stack and output.</li>
+</ol>
+<p><img src="/static/practice_worksheets/fa21/qz00-question14.png" /></p>
+<h2 id="data-types">Data Types</h2>
+<ol start="3" type="1">
+<li><code>str</code> literals in Python can be surrounded in either single-quote characters or double-quote characters, though in COMP110 we prefer the latter. (T/F)</li>
+<li><code>TRUE</code> and <code>FALSE</code> are valid bool values in Python. (T/F)</li>
+<li>An <code>int</code> literal can begin with a zero, but cannot end with a zero. (T/F)</li>
+<li>What function can we use to identify the type classification of any object in Python?</li>
+<li>What is the resulting data type of the following expression? <code>int("20")</code></li>
+</ol>
+<h2 id="expressions">Expressions</h2>
+<ol start="8" type="1">
+<li>What is the evaluation of the following expression? <code>type(9 / len( str(110))</code></li>
+<li>What is the result of the following expression? <code>"440" + "20"</code></li>
+<li>What value of x would cause the following expression to evaluate to <code>True</code>? <code>(3 + x) == (55 % 2 ** 4)</code></li>
+<li>What value does the following expression result in, and what is its type? <code>2 + 2 / 2 ** (2 * 0)</code></li>
+<li>Using subscription syntax and concatenation, write an expression that evaluates to <code>"tar"</code> using the following string: <code>“the brown, lazy dog!"</code>.</li>
+<li>What data type do expressions with relational operators evaluate to?</li>
+<li>What does the following expression evaluate to? <code>int("10" + "40") &gt; 100 * 2</code></li>
+</ol>
+<h1 id="solutions">Solutions</h1>
+<h2 id="memory-diagrams-1">Memory Diagrams</h2>
+<ol type="1">
+<li><img src="/static/practice_worksheets/fa21/qz0-solution13.png" /></li>
+<li><img src="/static/practice_worksheets/fa21/qz0-solution14.png" /></li>
+</ol>
+<h2 id="data-types-1">Data Types</h2>
+<ol start="3" type="1">
+<li>T</li>
+<li>F</li>
+<li>F</li>
+<li><code>type()</code></li>
+<li>int</li>
+</ol>
+<h2 id="expressions-1">Expressions</h2>
+<ol start="8" type="1">
+<li><code>&lt;class 'float'&gt;</code></li>
+<li>“44020”</li>
+<li>4</li>
+<li>4.0</li>
+<li>“the brown, lazy dog!”[0] + “the brown, lazy dog!”[12] + “the brown, lazy dog!”[5]</li>
+<li>bool</li>
+<li>True</li>
+</ol>
+</div>
+
+    </div> 
+
+            <div class="authors-box">
+                <span> Contributor(s):                        Megan Zhang, David Karash</span>
+            </div>
+            
+            <div class='link-page wrapper'>
+            <footer>
+                    <p class="footer-content">&copy; 2021 <a href="https://krisjordan.com">Kris Jordan</a>
+                        - <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScQMteEvnQpBfGsAYP5TpuqokQenhZUIf8CNvfAUUZEjMCWZQ/viewform?usp=sf_link">Feedback
+                            Form</a> - <a href="https://forms.gle/AjcyFHirwegBKXbq9">Grievances Form</a> - Made with 💛in <a href="https://cs.unc.edu/">Chapel Hill</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"
+        integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>

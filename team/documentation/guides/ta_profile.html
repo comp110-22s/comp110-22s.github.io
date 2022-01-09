@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-scroll="0" data-nav1="true">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Set Up Your TA Profile - COMP110 - 21f</title>
+    <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css?v=1641699005.2196066">
+</head>
+
+<body id="body" class="absolute-page">
+     <script>
+        const lat = 35.912005; // latitude and longitude for Chapel Hill
+        const long = -79.051210; // Replace with some way to gain User location if/when desired
+    </script>
+    <script>
+        // resets user pref in the event of styling overhaul
+        if ((localStorage.getItem('mode') == "halloween-mode") || (localStorage.getItem('userPref') == "halloween-mode")) {
+            localStorage.setItem('userPref', null);
+            localStorage.setItem('mode', null);
+        }
+    
+        var datetime = new Date(); // NOTE: This is my additional scripting to check whereabouts the sun is
+        var time = datetime.getHours() + (datetime.getMinutes() / 60);
+        var timer = 240000000; // a very big number
+        if(localStorage.getItem('userPref') === null) {
+            if(time < getSunrise(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = getSunrise(lat, long) - time;
+            } else if(time > getSunset(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = (getSunrise(lat, long) + 24) - time;
+            } else {
+                localStorage.setItem('mode', 'light-mode');
+                timer = getSunset(lat, long) - time;
+            }
+        }
+    </script>
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('userPref')); // userPref holds which mode the user prefers
+        document.body.classList.add(localStorage.getItem('mode')); // mode holds the current state of the site
+    </script>
+    <div onKeyPress="return myFunction(event)">
+        <form id="log-in" class="center-text" id="form01" action="demo_form.asp" onsubmit="return false;" >
+            <h3 style="margin-bottom: 20px">Team Login</h3>
+            <input id="username" type="text" placeholder="username" style="margin-bottom: 10px">
+            <input id="password" type="text" placeholder="password">
+            <input class="hidden" type="button" value="Submit" onclick="myFunction(0)">
+        </form>
+    </div>
+    <a name="top"></a>
+    <div id="page-container">
+    <div id="content-wrapper">
+    <script src="/static/scripts/log-in-element.js"></script>
+    <div class="wrapper">
+        <nav id="navbarStick" class="navbar navbar-expand">
+            <div class="container-fluid d-flex">
+                <div class = 'hide-during-scroll'>
+                    <div class="container nav-const">
+                        <a class="navbar-brand" href="/team"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/team/allocations">allocations</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/team/documentation">documentation</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/team/career">career</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/team/yearbook">yearbook</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="ms-auto form-check form-switch mode">
+                    <div class="switches">
+                        <input type="checkbox" id="1" onclick="
+                            if (localStorage.getItem('mode') === 'dark-mode') {
+                                localStorage.setItem('userPref', 'light-mode');
+                                localStorage.setItem('mode', 'light-mode');
+                            } else {
+                                localStorage.setItem('userPref', 'dark-mode');
+                                localStorage.setItem('mode', 'dark-mode);
+                            }
+                            location.reload();">
+                        <label for="1">
+                            <span id="mode-label">Dark Mode</span>
+                            <span></span>
+                        </label>
+                        <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="logistics-page" class="container">
+            <div class="row pt-4">
+                <div class="col-12">
+                    <h1 class="display-5">Set Up Your TA Profile</h1>
+                    <hr class="title"/>
+                </div>
+    <div class="container">
+                <div class="content"><p>These instructions will walk you through setting up a profile visible on the 110 site!</p>
+<h2 id="setup">Setup</h2>
+<p>Only complete the following steps if you haven’t yet cloned the Team110 Repo.</p>
+<ul>
+<li><p>Go to <a href="https://github.com/comp110/team110" class="uri">https://github.com/comp110/team110</a> and clone the repo by pressing the green code button. <img src="/static/team/repo-instructions/step_1.png" /></p>
+<blockquote>
+<p>If you can’t open this link, you have not been added to the team org on Github. Send your github username to Kaki!</p>
+</blockquote></li>
+<li>Open the <code>Team 110.code-workspace</code> file in VSCODE as a Workspace (don’t just open the top-level directory) <img src="/static/team/repo-instructions/step_2.png" /></li>
+<li>Make sure you’re in the <code>team110</code> folder in your terminal and the master branch. <img src="/static/team/repo-instructions/step_3.png" /></li>
+</ul>
+<ol type="1">
+<li>Update pip by running: <code>python -m pip install -U pip</code>.</li>
+<li>Install required PyPI packages in <code>requirements.txt</code> with the following command: <code>python -m pip install -r requirements.txt</code>. Before you run this command, make sure your terminal is in the right directory. If you type <code>pwd</code> in the terminal it should print <code>/Some/Path/.../team110/code</code>. If you do not see this, trash the terminal and create a new one. When you create a new one it should prompt you for the desired working directory – select the <code>code</code> option.</li>
+</ol>
+<h2 id="creating-a-profile">Creating a Profile</h2>
+<ul>
+<li>Make sure you’re on the master branch (<code>git checkout master</code>) and run the command <code>git pull origin master</code> to get the latest updates.</li>
+<li>Checkout a new <code>git</code> branch. In your terminal run the following command: <code>git checkout -b ONYEN-profile</code></li>
+<li>In the <code>site/static/profile-photos/</code> directory insert the photo of yourself you want on your profile. Resize this image to be no bigger than 300x300 and name it <code>ONYEN</code>.png/jpg</li>
+<li>In the <code>site/resources/profiles</code> directory create a new markdown file named <code>ONYEN.md</code>. There should be some template profiles in this directory that you should base yours off of. Feel free to just paste the contents of someone else’s profile into yours and fill in the relevant information. You’ll want to make sure the relative path to your profile picture is correct. Note: Make sure the file extension of your photo in the <code>static</code> directory and the extension in this path match – it is case sensitive! Doesn’t matter if you have PNG or png, just be consistent.</li>
+</ul>
+<h2 id="creating-a-pull-request">Creating a Pull Request</h2>
+<ol type="1">
+<li>If you haven’t been committing progress on your profile to the branch you setup for it… commit it! To do this, first add the files you’ve changed to the staging area: <code>git add &lt;../site/static/profile-photos/ONYEN.png&gt; &lt;../site/students/profiles/ONYEN.md&gt; &lt;../site/students/resources/team.md&gt;</code> or you could simply run <code>git add .</code> to add every single change file at once. Then commit your changes: <code>git commit -m "your_name Profile Page."</code></li>
+<li>Push your work to your training branch on the staff repo (<code>git push origin [your-branch-name]</code>). Check your branch with <code>git branch</code>.</li>
+<li>Open GitHub Pull Requests on the <code>team110</code> repo: https://github.com/comp110/team110/pulls</li>
+<li>You might/should see a yellow notification box: “Your recently pushed branches…”. If so select “Compare &amp; Pull Request”. If not, select “New Pull Request”, and in the Compare branch drop-down select your branch.</li>
+<li>Scroll through the differences and confirm your latest changes were successfully pushed. If you don’t see them, check that you committed everything you expected and pushed to your branch. Select “Create Pull Request”.</li>
+<li>In the description box, briefly describe your branch – “<Name> Profile Page” is just fine.</li>
+<li>On the right-hand sidebar, select Kaki or Kris as a reviewer.</li>
+<li>Create pull request!</li>
+</ol>
+<p>From here, a brief pass (and potentially some some revisions) will be taken by the reviewer and then merged in.</p>
+<blockquote>
+<p>Contributors: Kaki Ryan</p>
+</blockquote>
+</div>
+            </div>
+            
+            <div class='link-page wrapper'>
+            <footer>
+                    <p class="footer-content">&copy; 2021 <a href="https://krisjordan.com">Kris Jordan</a>
+                        - <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScQMteEvnQpBfGsAYP5TpuqokQenhZUIf8CNvfAUUZEjMCWZQ/viewform?usp=sf_link">Feedback
+                            Form</a> - <a href="https://forms.gle/AjcyFHirwegBKXbq9">Grievances Form</a> - Made with 💛in <a href="https://cs.unc.edu/">Chapel Hill</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"
+        integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- Load our React components. -->
+
+    <script type="text/babel" src="/static/components//Itinerary/EventSection.tsx?cache=1641699005.2196066"></script>
+    <script type="text/babel" src="/static/components//Itinerary/DateSection.tsx?cache=1641699005.2196066"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dates.tsx?cache=1641699005.2196066"></script>
+        <script type="text/babel" src="/static/components//Itinerary/DropdownButton.tsx?cache=1641699005.2196066"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dropdown.tsx?cache=1641699005.2196066"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Search.tsx?cache=1641699005.2196066"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButtons.tsx?cache=1641699005.2196066"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButton.tsx?cache=1641699005.2196066"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Itinerary.jsx?cache=1641699005.2196066"></script>
+    <script src="/static/scripts/log-in-handler.js"></script>
+
+    
+</body>
+
+</html>

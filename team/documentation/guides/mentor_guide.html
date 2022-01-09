@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" data-scroll="0" data-nav1="true">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mentor Guide - COMP110 - 21f</title>
+    <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css?v=1641699005.0652945">
+</head>
+
+<body id="body" class="absolute-page">
+     <script>
+        const lat = 35.912005; // latitude and longitude for Chapel Hill
+        const long = -79.051210; // Replace with some way to gain User location if/when desired
+    </script>
+    <script>
+        // resets user pref in the event of styling overhaul
+        if ((localStorage.getItem('mode') == "halloween-mode") || (localStorage.getItem('userPref') == "halloween-mode")) {
+            localStorage.setItem('userPref', null);
+            localStorage.setItem('mode', null);
+        }
+    
+        var datetime = new Date(); // NOTE: This is my additional scripting to check whereabouts the sun is
+        var time = datetime.getHours() + (datetime.getMinutes() / 60);
+        var timer = 240000000; // a very big number
+        if(localStorage.getItem('userPref') === null) {
+            if(time < getSunrise(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = getSunrise(lat, long) - time;
+            } else if(time > getSunset(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = (getSunrise(lat, long) + 24) - time;
+            } else {
+                localStorage.setItem('mode', 'light-mode');
+                timer = getSunset(lat, long) - time;
+            }
+        }
+    </script>
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('userPref')); // userPref holds which mode the user prefers
+        document.body.classList.add(localStorage.getItem('mode')); // mode holds the current state of the site
+    </script>
+    <div onKeyPress="return myFunction(event)">
+        <form id="log-in" class="center-text" id="form01" action="demo_form.asp" onsubmit="return false;" >
+            <h3 style="margin-bottom: 20px">Team Login</h3>
+            <input id="username" type="text" placeholder="username" style="margin-bottom: 10px">
+            <input id="password" type="text" placeholder="password">
+            <input class="hidden" type="button" value="Submit" onclick="myFunction(0)">
+        </form>
+    </div>
+    <a name="top"></a>
+    <div id="page-container">
+    <div id="content-wrapper">
+    <script src="/static/scripts/log-in-element.js"></script>
+    <div class="wrapper">
+        <nav id="navbarStick" class="navbar navbar-expand">
+            <div class="container-fluid d-flex">
+                <div class = 'hide-during-scroll'>
+                    <div class="container nav-const">
+                        <a class="navbar-brand" href="/team"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/team/allocations">allocations</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/team/documentation">documentation</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/team/career">career</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/team/yearbook">yearbook</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="ms-auto form-check form-switch mode">
+                    <div class="switches">
+                        <input type="checkbox" id="1" onclick="
+                            if (localStorage.getItem('mode') === 'dark-mode') {
+                                localStorage.setItem('userPref', 'light-mode');
+                                localStorage.setItem('mode', 'light-mode');
+                            } else {
+                                localStorage.setItem('userPref', 'dark-mode');
+                                localStorage.setItem('mode', 'dark-mode);
+                            }
+                            location.reload();">
+                        <label for="1">
+                            <span id="mode-label">Dark Mode</span>
+                            <span></span>
+                        </label>
+                        <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="logistics-page" class="container">
+            <div class="row pt-4">
+                <div class="col-12">
+                    <h1 class="display-5">Mentor Guide</h1>
+                    <hr class="title"/>
+                </div>
+    <div class="container">
+                <div class="content"><h2 id="tips-for-mentors">Tips for Mentors:</h2>
+<h3 id="highlights-things-that-worked">Highlights / Things that Worked:</h3>
+<ul>
+<li>Being someone mentee feels comfortable using as their point of contact</li>
+<li>Explaining how the team works / rehiring / how to be a TA</li>
+<li>Suggesting different types of activities (in person / virtual)</li>
+<li>Asking if your mentee is going to team events</li>
+<li>Giving more insight on the major / answering questions (reaching out to see if they had any questions)</li>
+</ul>
+<hr />
+<h3 id="mandatory-tasks-for-mentors">Mandatory Tasks for Mentors:</h3>
+<ul>
+<li>Initiate contact and set up follow up meetings (without applying pressure)</li>
+<li>First mentor meetup should involve setting up new member’s profile on github / course site</li>
+<li>Make sure mentee knows they can reach out to anyone, including Kris via slack DMs &amp; if they get no response, they should reach out to you</li>
+<li>Discuss the difference between 5 &amp; 10 hours + life after first semester (show them <a href="/team/documentation/guides/special_teams">this</a>)</li>
+<li>Be proactive in asking mentees if they need help with grading for the first time, etc</li>
+<li>Casually checking in is better than not checking in at all (don’t stress yourself out to do too much but even a short “How’s everything going?” can go a long way)</li>
+</ul>
+<hr />
+<h3 id="suggested-tasks-for-mentors">Suggested Tasks for Mentors:</h3>
+<ul>
+<li>Going to team events with your mentee!!!</li>
+<li>Make sure the relationship doesn’t feel super professional (aka plan some fun activities for you two)</li>
+<li>Try to plan at least one activity per semester with your mentee</li>
+<li>If your mentee is posting in slack, hype them up!!! (emoji reactions, boost their message, tag people etc)</li>
+<li>Feel free to mention / describe your friends on the team (and how you became close) so your mentee can get familiar with them as well!</li>
+<li>Overly friend is always good (while respecting boundaries &amp; being authentic)</li>
+</ul>
+<hr />
+<h3 id="suggestions-for-mentorship-lead">Suggestions for Mentorship Lead:</h3>
+<ul>
+<li>Give guidance on how to be a mentor</li>
+<li>Meetings with just mentors run by the Mentorship Lead</li>
+<li>Mentors should be checked in with individually throughout semester</li>
+<li>Giving mentors a list of activities / ideas as inspiration</li>
+</ul>
+<hr />
+<h3 id="improvements-what-we-want-to-iterate-on">Improvements (what we want to iterate on):</h3>
+<ul>
+<li>Mentors should try to go to team events!!! And encourage their mentee to come!!</li>
+<li>Meet / message your mentor at least 3 times!</li>
+<li>More group activities for mentors &amp; mentees</li>
+<li>A team site guide to all the tips mentors have for mentees (favorite classes, career searching, interview help, favorite profs)</li>
+<li>Have a written textual description of job duties for new members</li>
+</ul>
+<hr />
+<h3 id="other">Other:</h3>
+<ul>
+<li>Get Kris to give a link to the duties of being a TA and add it to the team site</li>
+</ul>
+<blockquote>
+<p>Contributors: Andrew Zheng, Chiazo Agina</p>
+</blockquote>
+</div>
+            </div>
+            
+            <div class='link-page wrapper'>
+            <footer>
+                    <p class="footer-content">&copy; 2021 <a href="https://krisjordan.com">Kris Jordan</a>
+                        - <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScQMteEvnQpBfGsAYP5TpuqokQenhZUIf8CNvfAUUZEjMCWZQ/viewform?usp=sf_link">Feedback
+                            Form</a> - <a href="https://forms.gle/AjcyFHirwegBKXbq9">Grievances Form</a> - Made with 💛in <a href="https://cs.unc.edu/">Chapel Hill</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"
+        integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- Load our React components. -->
+
+    <script type="text/babel" src="/static/components//Itinerary/EventSection.tsx?cache=1641699005.0652945"></script>
+    <script type="text/babel" src="/static/components//Itinerary/DateSection.tsx?cache=1641699005.0652945"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dates.tsx?cache=1641699005.0652945"></script>
+        <script type="text/babel" src="/static/components//Itinerary/DropdownButton.tsx?cache=1641699005.0652945"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dropdown.tsx?cache=1641699005.0652945"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Search.tsx?cache=1641699005.0652945"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButtons.tsx?cache=1641699005.0652945"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButton.tsx?cache=1641699005.0652945"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Itinerary.jsx?cache=1641699005.0652945"></script>
+    <script src="/static/scripts/log-in-handler.js"></script>
+
+    
+</body>
+
+</html>

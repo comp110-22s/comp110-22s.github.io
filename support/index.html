@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Support - COMP110 - 21f</title>
+    <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css?v=1641699006.6534824">
+    <script src="/static/scripts/scroll-handler.js"></script>
+    <script src="/static/scripts/sunset_sunrise.js"></script>
+
+</head>
+
+<body class="scrolling-page" >
+    <script>
+        const lat = 35.912005; // latitude and longitude for Chapel Hill
+        const long = -79.051210; // Replace with some way to gain User location if/when desired
+    </script>
+    <script>
+        // resets user pref in the event of styling overhaul
+        if ((localStorage.getItem('mode') == "halloween-mode") || (localStorage.getItem('userPref') == "halloween-mode")) {
+            localStorage.setItem('userPref', null);
+            localStorage.setItem('mode', null);
+        }
+    
+        var datetime = new Date(); // NOTE: This is my additional scripting to check whereabouts the sun is
+        var time = datetime.getHours() + (datetime.getMinutes() / 60);
+        var timer = 240000000; // a very big number
+        if(localStorage.getItem('userPref') === null) {
+            if(time < getSunrise(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = getSunrise(lat, long) - time;
+            } else if(time > getSunset(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = (getSunrise(lat, long) + 24) - time;
+            } else {
+                localStorage.setItem('mode', 'light-mode');
+                timer = getSunset(lat, long) - time;
+            }
+        }
+    </script>
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('userPref')); // userPref holds which mode the user prefers
+        document.body.classList.add(localStorage.getItem('mode')); // mode holds the current state of the site
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <a name="top"></a>
+    <div id="page-container">
+    <div id="content-wrapper">
+    <div class="wrapper">
+        <nav id="navbarStick" class="navbar navbar-scroll navbar-expand">
+            <div class="container-fluid">
+                <div class = 'show-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-small" onClick="window.scroll({top: 0, left: 0, behavior: 'smooth'});"> back to top </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+                </div>
+                <div class = 'hide-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand web" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav web">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/resources">resources</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/topics">topics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/support">support </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/explore">explore</a>
+                            </li>
+                        </ul>
+                        <a href="javascript:void(0);" class="icon" id="hamburger">
+                            <i class="fa fa-bars fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+                    <div class="switches">
+                        <input type="checkbox" id="1" onclick="
+                            if (localStorage.getItem('mode') === 'dark-mode') {
+                                localStorage.setItem('userPref', 'light-mode');
+                                localStorage.setItem('mode', 'light-mode');
+                            } else {
+                                localStorage.setItem('userPref', 'dark-mode');
+                                localStorage.setItem('mode', 'dark-mode');
+                            }
+                            location.reload();">
+                        <label for="1">
+                            <span id="mode-label">spooky_mode</span>
+                            <span></span>
+                        </label>
+                        <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                        <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+                    </div>
+                </div>
+            </div>
+            <a class="navbar-brand mobile" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/halloweenbrand.png"
+                alt="COMP110 - Spring - 2021">
+            </a>
+        </nav>
+        <ul class="navbar-nav mobile" id="mobile">
+            <li class="nav-item" id="link1">
+                <a class="nav-link" href="/resources">resources</a>
+            </li>
+            <li class="nav-item" id="link2">
+                <a class="nav-link" href="/topics">topics</a>
+            </li>
+            <li class="nav-item" id="link3">
+                <a class="nav-link" href="/support">support</a>
+            </li>
+             <li class="nav-item" id="link4">
+                <a class="nav-link" href="/explore">explore</a>
+            </li>
+        </ul>
+
+        <script>
+            document.getElementById("hamburger").addEventListener("click", function() {
+            var x = [];
+            x[0] = document.getElementById("link1");
+            x[1] = document.getElementById("link2");
+            x[2] = document.getElementById("link3");
+            x[3] = document.getElementById("link4");
+            for (let i = 0; i < 4; i++) {
+                if (x[i].style.display === "block") {
+                    x[i].style.display = "none";
+                    document.getElementById("mobile").style.paddingTop="0";
+                    document.getElementById("mobile").style.paddingBottom="0";
+                } else {
+                    x[i].style.display = "block";
+                    document.getElementById("mobile").style.paddingTop="20px";
+                    document.getElementById("mobile").style.paddingBottom="20px";
+                }
+            }
+            });
+        </script>
+
+        <div id="resources-page" class="container">
+            <div class="row pt-4">
+
+
+                <div class="col-12">
+                    <h1 class="display-5">Support</h1>
+                    <hr class="title"/>
+                </div>
+            </div>
+
+    <div class="container">
+        <div class="row"><div class="col">
+                <div class="content"><h3 id="office-hours">Office Hours</h3>
+<p>Come drop-in for one-on-one support in office hours with a member of the <a href="/resources/team.html">COMP110 team</a>. We are open for 40 hours per week. Except for on due dates, the average wait time is less than five minutes.</p>
+<p>Office hours is the ideal place to come for one-on-one help with:</p>
+<ul>
+<li>Exercises</li>
+<li>Projects</li>
+<li>Conceptual Questions</li>
+<li>Lecture Review</li>
+</ul>
+<p>Typical office hours are listed to the right, but check Course.Care for the most up-to-date availability this week.</p>
+<p>Note: We must stop taking tickets at the closing hour and cannot stay beyond. If the queue is long enough that we do not believe we will be able to see all tickets we will turn off the ability to submit new tickets before closing time.</p>
+<p>Office hours appointments for project work are limited to 15 minutes and <strong>one specific question</strong> per appointment in order to be as fair as possible to all students enrolled. For longer, conceptual help outside of specific projects we encourage coming to office hours for conceptual help on non-deadline days.</p>
+<p>In order to serve every student in the course as best we can, we can only work with students in one-on-one office hours once per day. If you anticipate needing significant amounts of help on an assignment, please start many days in advance so you will have multiple opportunities to ask questions as they arise. Realizing you need help more than once in a given day is an indication you would benefit from a stronger conceptual understanding of the material in question and it would be great for you to come work with us during tutoring hours!</p>
+<p>To work with us in office hours, <a href="https://course.care/register-details?enrollCode=2CCF6F" target="_blank">register for Course.Care via this link</a> or register with enroll code 2CCF6F.</p>
+<p>We will be offering both in-person and remote office hours from the same Course.Care Queue and at the same times.</p>
+<p>To participate in in-person office hours:</p>
+<ol type="1">
+<li>Come to the lower-level lobby in Sitterson Hall</li>
+<li>Please do not make a ticket until you are in the lobby area of Sitterson Hall hours and ready to work with a TA.</li>
+<li><a href="https://course.care/course/58" target="_blank">Open Course.Care click “Check-in” for currently open office hours</a>. Select what kind of help you are seeking. Be detailed and descriptive in your request for help. If you fail to make an honest effort to describe the purpose of the meeting, TAs are instructed to cancel your request.</li>
+<li>Wait in the lobby area until course.care says a TA is ready to work with you and then head into SN008.</li>
+<li>Our teaching team will get to you as soon as we can! When your ticket is called, please come in to Sitterson 008.</li>
+<li>After the 15-minute walk-in appointment concludes, return back to the lobby to continue working.</li>
+</ol>
+<p>To participate in remote office hours:</p>
+<ol type="1">
+<li>Begin a Zoom meeting. <strong>Please have your camera on and <em>do not share your screen</em> until asked to do so!</strong></li>
+<li>Hover over your meeting’s window and click the green shield icon in the top-left corner</li>
+<li>Click “Copy Link” to copy the URL to your Zoom meeting</li>
+<li><a href="https://course.care/course/58" target="_blank">Open Course.Care click “Check-in” for currently open office hours</a>. Select what kind of help you are seeking and paste in your Zoom URL. Be detailed and descriptive in your request for help. If you fail to make an honest effort to describe the purpose of the meeting, TAs are instructed to cancel your request.</li>
+<li>Our teaching team will get to you as soon as we can!</li>
+</ol>
+<p>Some of the most common words in tickets from previous semesters are below:</p>
+<p><img src="/static/assets/support/officehours.png" /></p>
+<h3 id="tutoring">Tutoring</h3>
+<p><a href="https://course.care/course/58" target="_blank">Come to tutoring hours for conceptual help</a> with members of the COMP110 UTA team and small groups of your peers. You can find these locations and links on <a href="https://course.care/course/58" target="_blank">Course.Care</a>, just like office hours. If you are feeling a little behind or like you could use some extra practice tutoring is for you! Tutoring does not have time constraints outside of the hours it is open for.</p>
+<p>Tutoring is a great opportunity to find help with:</p>
+<ul>
+<li>Conceptual Questions</li>
+<li>Lecture Review</li>
+<li>Practice</li>
+</ul>
+<p>Tutoring will begin in the 2nd or 3rd week of the semester and will show up, with information on how to take advantage of tutoring, in Course.Care.</p>
+<h3 id="e-mail-head-ta-and-kris-with-emergencies">E-mail Head TA and Kris with Emergencies</h3>
+<p>If you have an emergency, such as a hospitalization or severe illness, please reach out to Kris and Kaki via: <a href="mailto:comp110-heads@googlegroups.com" class="email">comp110-heads@googlegroups.com</a>.</p>
+<p>Within the first few weeks of the semester you will be assigned a pair of TAs who will serve as your primary point of contact for non-emergency questions.</p>
+<p>In general, we cannot help with programming or assignment questions via e-mail and you should come see us in office hours for questions on assignments. Over the years we have learned is too difficult, time consuming, and frustrating for you and for us to try and resolve technical issues via screenshots e-mailed back and forth. Thus, we will redirect any such emails to office hours (described above) and cannot help with technical issues over e-mail.</p>
+<h3 id="feedback-grievances-and-extension-request">Feedback, Grievances and Extension Request</h3>
+<p>If you have suggestions on how to improve the course or just want to leave some positive, encouraging feedback for the TAs or Kris, <a href="https://docs.google.com/forms/d/e/1FAIpQLScQMteEvnQpBfGsAYP5TpuqokQenhZUIf8CNvfAUUZEjMCWZQ/viewform?usp=sf_link">please give us feedback</a>. If you make a suggestion we’re able to act on, while we still have time to, we’re more than happy to!</p>
+<p>If you have a grievance of any kind you would like to file, anonymously or not, please <a href="https://forms.gle/AjcyFHirwegBKXbq9">air your grievance on this form</a>. This is the best way to have your negative experience or concern heard directly by Kris. For the sake of everyone’s mental health, please keep interactions with your TAs and your peers in the course positive and upbeat, and direct your frustrations toward Kris through this form.</p>
+<p></div>
+            </div><div class="col">
+                <div class="content"></p>
+<div class="box link-page" style="padding:20px 40px">
+<h3 id="links">Links</h3>
+<p><a href="https://course.care/course/58" target="_blank">Office Hours - Course Care</a></p>
+<!--<a href="https://forms.gle/aQFsepBwUj37RBMo7" target="_blank">Extension Request Form</a>-->
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLScQMteEvnQpBfGsAYP5TpuqokQenhZUIf8CNvfAUUZEjMCWZQ/viewform?usp=sf_link" target="_blank">Suggestions and Feedback Form</a></p>
+<p><a href="https://forms.gle/AjcyFHirwegBKXbq9" target="_blank">Grievances Form</a></p>
+</div>
+<p><br/></p>
+<h3 id="office-hours-schedule">Office Hours Schedule</h3>
+<ul>
+<li><em>Monday: 10:00 AM - 5:00 PM</em></li>
+<li><em>Tuesday: 10:00 AM - 12:00 PM, 1:00 P:M - 7:00 PM</em></li>
+<li><em>Wednesday: 10:00 AM - 7:00 PM</em></li>
+<li><em>Thursday: 10:00 AM - 12:00 PM, 1:00 P:M - 7:00 PM</em></li>
+<li><em>Friday: 10:00 AM - 5:00 PM</em></li>
+<li><em>Sunday: 12:00 PM - 5:00 PM</em></li>
+</ul>
+<h3 id="tutoring-schedule">Tutoring Schedule</h3>
+<ul>
+<li><em>Tuesday: 5:00 PM - 7:00 PM</em></li>
+<li><em>Wednesday: 5:00 PM - 7:00 PM</em></li>
+<li><em>Thursday: 5:00 PM - 7:00 PM</em></li>
+</ul>
+<p><a href="/static/assets/support/flowchart.pdf" target="_blank"><img src="/static/assets/support/flowchartgraphic.png" style="max-width:400px"/></a></p>
+</div>
+            </div></div>
+    </div>
+
+            <div class="authors-box">
+                <span> Contributor(s):                        Kris Jordan, Ezri White</span>
+            </div>
+            
+            <div class='link-page wrapper'>
+            <footer>
+                    <p class="footer-content">&copy; 2021 <a href="https://krisjordan.com">Kris Jordan</a>
+                        - <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScQMteEvnQpBfGsAYP5TpuqokQenhZUIf8CNvfAUUZEjMCWZQ/viewform?usp=sf_link">Feedback
+                            Form</a> - <a href="https://forms.gle/AjcyFHirwegBKXbq9">Grievances Form</a> - Made with 💛in <a href="https://cs.unc.edu/">Chapel Hill</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"
+        integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>

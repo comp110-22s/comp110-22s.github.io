@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Final Exam Preparation - COMP110 - 21f</title>
+    <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css?v=1641698974.3783123">
+    <script src="/static/scripts/scroll-handler.js"></script>
+    <script src="/static/scripts/sunset_sunrise.js"></script>
+
+</head>
+
+<body class="scrolling-page" >
+    <script>
+        const lat = 35.912005; // latitude and longitude for Chapel Hill
+        const long = -79.051210; // Replace with some way to gain User location if/when desired
+    </script>
+    <script>
+        // resets user pref in the event of styling overhaul
+        if ((localStorage.getItem('mode') == "halloween-mode") || (localStorage.getItem('userPref') == "halloween-mode")) {
+            localStorage.setItem('userPref', null);
+            localStorage.setItem('mode', null);
+        }
+    
+        var datetime = new Date(); // NOTE: This is my additional scripting to check whereabouts the sun is
+        var time = datetime.getHours() + (datetime.getMinutes() / 60);
+        var timer = 240000000; // a very big number
+        if(localStorage.getItem('userPref') === null) {
+            if(time < getSunrise(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = getSunrise(lat, long) - time;
+            } else if(time > getSunset(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = (getSunrise(lat, long) + 24) - time;
+            } else {
+                localStorage.setItem('mode', 'light-mode');
+                timer = getSunset(lat, long) - time;
+            }
+        }
+    </script>
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('userPref')); // userPref holds which mode the user prefers
+        document.body.classList.add(localStorage.getItem('mode')); // mode holds the current state of the site
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <a name="top"></a>
+    <div id="page-container">
+    <div id="content-wrapper">
+    <div class="wrapper">
+        <nav id="navbarStick" class="navbar navbar-scroll navbar-expand">
+            <div class="container-fluid">
+                <div class = 'show-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-small" onClick="window.scroll({top: 0, left: 0, behavior: 'smooth'});"> back to top </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+                </div>
+                <div class = 'hide-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand web" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav web">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/resources">resources</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/topics">topics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/support">support </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/explore">explore</a>
+                            </li>
+                        </ul>
+                        <a href="javascript:void(0);" class="icon" id="hamburger">
+                            <i class="fa fa-bars fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+                    <div class="switches">
+                        <input type="checkbox" id="1" onclick="
+                            if (localStorage.getItem('mode') === 'dark-mode') {
+                                localStorage.setItem('userPref', 'light-mode');
+                                localStorage.setItem('mode', 'light-mode');
+                            } else {
+                                localStorage.setItem('userPref', 'dark-mode');
+                                localStorage.setItem('mode', 'dark-mode');
+                            }
+                            location.reload();">
+                        <label for="1">
+                            <span id="mode-label">spooky_mode</span>
+                            <span></span>
+                        </label>
+                        <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                        <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+                    </div>
+                </div>
+            </div>
+            <a class="navbar-brand mobile" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/halloweenbrand.png"
+                alt="COMP110 - Spring - 2021">
+            </a>
+        </nav>
+        <ul class="navbar-nav mobile" id="mobile">
+            <li class="nav-item" id="link1">
+                <a class="nav-link" href="/resources">resources</a>
+            </li>
+            <li class="nav-item" id="link2">
+                <a class="nav-link" href="/topics">topics</a>
+            </li>
+            <li class="nav-item" id="link3">
+                <a class="nav-link" href="/support">support</a>
+            </li>
+             <li class="nav-item" id="link4">
+                <a class="nav-link" href="/explore">explore</a>
+            </li>
+        </ul>
+
+        <script>
+            document.getElementById("hamburger").addEventListener("click", function() {
+            var x = [];
+            x[0] = document.getElementById("link1");
+            x[1] = document.getElementById("link2");
+            x[2] = document.getElementById("link3");
+            x[3] = document.getElementById("link4");
+            for (let i = 0; i < 4; i++) {
+                if (x[i].style.display === "block") {
+                    x[i].style.display = "none";
+                    document.getElementById("mobile").style.paddingTop="0";
+                    document.getElementById("mobile").style.paddingBottom="0";
+                } else {
+                    x[i].style.display = "block";
+                    document.getElementById("mobile").style.paddingTop="20px";
+                    document.getElementById("mobile").style.paddingBottom="20px";
+                }
+            }
+            });
+        </script>
+
+        <div id="lessons-page" class="container">
+            <div class="row pt-4">
+
+
+                <div class="col-12">
+                    <h1 class="display-5">Final Exam Preparation</h1>
+                    <hr class="title"/>
+                </div>
+            </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+    
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            
+            <div id="button-box class="link-pag box">
+            </div>
+
+            <div id="menu-overview" class="link-page box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul><li><a href="#what-is-the-format-of-the-final-exam">What is the format of the final exam?</a></li>
+<li><a href="#ars-accommodations">ARS Accommodations</a></li>
+<li><a href="#final-exam-conflicts-3-in-24-hours">Final Exam Conflicts / 3-in-24 Hours</a></li>
+<li><a href="#carolina-away-students-attending-internationally">Carolina Away Students Attending Internationally</a></li>
+<li><a href="#frequently-asked-questions">Frequently Asked Questions</a><ul>
+<li><a href="#how-will-i-know-my-assigned-seat">How will I know my assigned seat?</a></li>
+<li><a href="#is-the-final-exam-cumulative">Is the final exam cumulative?</a></li>
+<li><a href="#what-is-the-format-of-the-final-exam-1">What is the format of the final exam?</a></li>
+<li><a href="#can-i-use-notes-or-my-laptop-during-the-final-exam">Can I use notes or my laptop during the final exam?</a></li>
+<li><a href="#how-can-i-practice-hand-writing-code">How can I practice hand writing code?</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><h3 id="what-is-the-format-of-the-final-exam">What is the format of the final exam?</h3>
+<p>First, take a deep breath, and remember the final exam is only worth between 10% to 16% of your final course grade. You have put in a lot of hard work this semester and well over 80% of your final grade in the course is already hard earned!</p>
+<p>The final exam will be administered <strong>in-person, with assigned seats, for all students in both sections</strong>. <em>(International students attending through the Carolina Away program, see below.)</em></p>
+<ul>
+<li>Section 001 will take the exam in Chapman 211 on December 3rd at 8am EST</li>
+<li>Section 002 will take the final in Hamilton 100 (same as usual meeting place) on December 3rd at 8am EST</li>
+</ul>
+<p>The final exam will be administered at <strong>8am Eastern Time on Friday, December 3rd for <em>both sections 1 and 2</em></strong>. <em>(If you have a regularly scheduled exam at the same time, or 3 exams in 24 hours, please see the notes about the alternate time below.)</em></p>
+<p>The exam will be <strong>on paper</strong>. You should bring 2x sharpened or functioning mechanical pencils with extra lead and functioning erasers. We highly discourage the use of pens. We will have scratch paper available for everyone, you will not need any scratch paper. All scratch paper will be handed in with the final exam.</p>
+<p>Per UNC standards, you will have 3 hours to complete the final exam. (For ARS time accommodations, see below.) The final exam itself is designed to be completed in 1 to 2 hours and is closer in length to a quiz and a half, or so, to avoid time being a primary constraint.</p>
+<h3 id="ars-accommodations">ARS Accommodations</h3>
+<p>If you are making use of ARS accommodations, you should have already scheduled to take your final exam at ARS/SASB during their 9am time slot on Friday, December 3rd. We cannot accommodate ARS needs in the classrooms the final exams are held in.</p>
+<h3 id="final-exam-conflicts-3-in-24-hours">Final Exam Conflicts / 3-in-24 Hours</h3>
+<p>If you have 3 exams in 24 hours, or another final exam that conflicts with ours, you should complete the official UNC advising form here <a href="https://eef.oasis.unc.edu/" class="uri">https://eef.oasis.unc.edu/</a>. This will verify and send an e-mail to Prof. Jordan, letting him know you will be taking the final exam on Sunday, December 5th, at 12pm in Sitterson 014.</p>
+<h3 id="carolina-away-students-attending-internationally">Carolina Away Students Attending Internationally</h3>
+<p>If you are a member of Carolina Away and taking courses from an international location, such that all of your courses are remote and you have no in-person or hybrid courses this semester, please complete the following form and we will e-mail you alternative final exam arrangements by December 1st: <a href="https://forms.gle/TWNEtS7dGC1JhW1k7" class="uri">https://forms.gle/TWNEtS7dGC1JhW1k7</a>.</p>
+<h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
+<h3 id="how-will-i-know-my-assigned-seat">How will I know my assigned seat?</h3>
+<p>Seat assignments will be posted to Sakai’s Post-em Tool by December 2nd. You will login to Sakai, go to the Postem Tool on the sidebar, and view your assigned seat.</p>
+<h3 id="is-the-final-exam-cumulative">Is the final exam cumulative?</h3>
+<p>Yes, the final exam will cover the major ideas from across the course. Whereas quizzes can zoom in and focus on details of a particular unit, the final exam will be more zoomed out and focused on big ideas that you should be very comfortable with by the end of the course.</p>
+<h3 id="what-is-the-format-of-the-final-exam-1">What is the format of the final exam?</h3>
+<p>The format is very similar to quizzes with constrained choice questions (such as multiple choice and true false), code tracing and diagramming, and so on. One kind of question that on quiz practice guides 2, 3, and 4, but not featured on quizzes thus far, is code writing. You are encouraged to review the quiz practice problems found under resources and try out the function and class writing problems on pencil and paper.</p>
+<h3 id="can-i-use-notes-or-my-laptop-during-the-final-exam">Can I use notes or my laptop during the final exam?</h3>
+<p>No, the final exam is closed notes and closed book/internet. As such, we are able to ask questions that assess big picture takeaways for the course that are much simpler questions than we could ask if you had access to notes and the internet. An open note final exam would be much more challenging than a closed note final exam due to how much higher-order thinking would need to be assessed in <em>all</em> questions.</p>
+<h3 id="how-can-i-practice-hand-writing-code">How can I practice hand writing code?</h3>
+<p>The quiz 02, 03, and 04 practice guides have function and class writing exercises. Additionally, many of the programming exercises earlier in the semester where you wrote functions that had clear inputs and expected return values can be used. Try taking these prompts and writing out your code. With code writing on paper, we are able to overlook minor syntactical issues and are looking for things like correctly setting up function definitions and thinking logically through what you are trying to accomplish using the concepts taught this semester with reasonable comfort in the syntax of the programming language.</p>
+</div>
+
+    </div> 
+
+            <div class="authors-box">
+                <span> Contributor(s): Kris Jordan</span>
+            </div>
+            
+            <div class='link-page wrapper'>
+            <footer>
+                    <p class="footer-content">&copy; 2021 <a href="https://krisjordan.com">Kris Jordan</a>
+                        - <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScQMteEvnQpBfGsAYP5TpuqokQenhZUIf8CNvfAUUZEjMCWZQ/viewform?usp=sf_link">Feedback
+                            Form</a> - <a href="https://forms.gle/AjcyFHirwegBKXbq9">Grievances Form</a> - Made with 💛in <a href="https://cs.unc.edu/">Chapel Hill</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"
+        integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>

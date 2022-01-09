@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Recursion Overview - COMP110 - 21f</title>
+    <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css?v=1641698987.417184">
+    <script src="/static/scripts/scroll-handler.js"></script>
+    <script src="/static/scripts/sunset_sunrise.js"></script>
+
+</head>
+
+<body class="scrolling-page" >
+    <script>
+        const lat = 35.912005; // latitude and longitude for Chapel Hill
+        const long = -79.051210; // Replace with some way to gain User location if/when desired
+    </script>
+    <script>
+        // resets user pref in the event of styling overhaul
+        if ((localStorage.getItem('mode') == "halloween-mode") || (localStorage.getItem('userPref') == "halloween-mode")) {
+            localStorage.setItem('userPref', null);
+            localStorage.setItem('mode', null);
+        }
+    
+        var datetime = new Date(); // NOTE: This is my additional scripting to check whereabouts the sun is
+        var time = datetime.getHours() + (datetime.getMinutes() / 60);
+        var timer = 240000000; // a very big number
+        if(localStorage.getItem('userPref') === null) {
+            if(time < getSunrise(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = getSunrise(lat, long) - time;
+            } else if(time > getSunset(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = (getSunrise(lat, long) + 24) - time;
+            } else {
+                localStorage.setItem('mode', 'light-mode');
+                timer = getSunset(lat, long) - time;
+            }
+        }
+    </script>
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('userPref')); // userPref holds which mode the user prefers
+        document.body.classList.add(localStorage.getItem('mode')); // mode holds the current state of the site
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <a name="top"></a>
+    <div id="page-container">
+    <div id="content-wrapper">
+    <div class="wrapper">
+        <nav id="navbarStick" class="navbar navbar-scroll navbar-expand">
+            <div class="container-fluid">
+                <div class = 'show-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-small" onClick="window.scroll({top: 0, left: 0, behavior: 'smooth'});"> back to top </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+                </div>
+                <div class = 'hide-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand web" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav web">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/resources">resources</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/topics">topics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/support">support </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/explore">explore</a>
+                            </li>
+                        </ul>
+                        <a href="javascript:void(0);" class="icon" id="hamburger">
+                            <i class="fa fa-bars fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+                    <div class="switches">
+                        <input type="checkbox" id="1" onclick="
+                            if (localStorage.getItem('mode') === 'dark-mode') {
+                                localStorage.setItem('userPref', 'light-mode');
+                                localStorage.setItem('mode', 'light-mode');
+                            } else {
+                                localStorage.setItem('userPref', 'dark-mode');
+                                localStorage.setItem('mode', 'dark-mode');
+                            }
+                            location.reload();">
+                        <label for="1">
+                            <span id="mode-label">spooky_mode</span>
+                            <span></span>
+                        </label>
+                        <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                        <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+                    </div>
+                </div>
+            </div>
+            <a class="navbar-brand mobile" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/halloweenbrand.png"
+                alt="COMP110 - Spring - 2021">
+            </a>
+        </nav>
+        <ul class="navbar-nav mobile" id="mobile">
+            <li class="nav-item" id="link1">
+                <a class="nav-link" href="/resources">resources</a>
+            </li>
+            <li class="nav-item" id="link2">
+                <a class="nav-link" href="/topics">topics</a>
+            </li>
+            <li class="nav-item" id="link3">
+                <a class="nav-link" href="/support">support</a>
+            </li>
+             <li class="nav-item" id="link4">
+                <a class="nav-link" href="/explore">explore</a>
+            </li>
+        </ul>
+
+        <script>
+            document.getElementById("hamburger").addEventListener("click", function() {
+            var x = [];
+            x[0] = document.getElementById("link1");
+            x[1] = document.getElementById("link2");
+            x[2] = document.getElementById("link3");
+            x[3] = document.getElementById("link4");
+            for (let i = 0; i < 4; i++) {
+                if (x[i].style.display === "block") {
+                    x[i].style.display = "none";
+                    document.getElementById("mobile").style.paddingTop="0";
+                    document.getElementById("mobile").style.paddingBottom="0";
+                } else {
+                    x[i].style.display = "block";
+                    document.getElementById("mobile").style.paddingTop="20px";
+                    document.getElementById("mobile").style.paddingBottom="20px";
+                }
+            }
+            });
+        </script>
+
+        <div id="resource-page" class="container">
+            <div class="row pt-4">
+
+
+                <div class="col-12">
+                    <h1 class="display-5">Recursion Overview</h1>
+                    <hr class="title"/>
+                </div>
+            </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+    
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            
+            <div id="button-box class="link-pag box">
+            </div>
+
+            <div id="menu-overview" class="link-page box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul><li><a href="#thinking-about-recursion">Thinking About Recursion</a></li>
+<li><a href="#rules-for-recursive-functions">Rules for Recursive Functions</a></li>
+<li><a href="#examples">Examples</a><ul>
+<li><a href="#factorial-function">Factorial Function</a></li>
+<li><a href="#addition-function">Addition Function</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><h3 id="thinking-about-recursion">Thinking About Recursion</h3>
+<p>A recursive function is a function that calls itself. Recursion is extrememly useful in CS when working with recursively defined data structures, such as lists, and is commonly used in higher level CS courses and in industry. It can be a pretty tricky topic to wrap your head around but once you understand the basics and put it into practice it can make your life as a coder much easier!</p>
+<p>When we want to write a recursive function, we need a base case and a recursive case:</p>
+<ul>
+<li>Our recursive case is where we call our function.</li>
+<li>In the base case, we do NOT call our function.</li>
+</ul>
+<p>When we enter the recursive case of a function, we know we’re going to be calling the function again. In order to prevent this from happening without end, we need a way to make it so that eventually we’ll enter the base case of our function. To do this, we must change the arguments we provide when we call the function in our recursive case.</p>
+<h3 id="rules-for-recursive-functions">Rules for Recursive Functions</h3>
+<ol type="1">
+<li>Test for a base case!
+<ul>
+<li>The base case is the ending condition for a recursive function (it tells us when to stop).</li>
+<li>Not including the base case could give us infinite recursion, which would send a stack overflow error our way!</li>
+</ul></li>
+<li>Recursive case
+<ul>
+<li>Have the function call itself! This is what makes it a recursive function.</li>
+</ul></li>
+<li>Change at least one argument when recurring
+<ul>
+<li>We need to change the arguments so they get closer and closer to the base case with each step of recursion.</li>
+<li>If we never change the arguments we call the function with, we’ll end up in an endless cycle of calling the function.</li>
+</ul></li>
+</ol>
+<h2 id="examples">Examples</h2>
+<h3 id="factorial-function">Factorial Function</h3>
+<p>Let’s test your knowledge. Can you identify the base case and recursive case for the factorial function below?</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">    <span class="kw">def</span> factorial(n):</a>
+<a class="sourceLine" id="cb1-2" title="2">        <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</a>
+<a class="sourceLine" id="cb1-3" title="3">            <span class="cf">return</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb1-4" title="4">        <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb1-5" title="5">            <span class="cf">return</span> n <span class="op">*</span> factorial(n<span class="dv">-1</span>)</a></code></pre></div>
+<p>The recursive case is where the function calls itself. In this case, we recur in the else block when we <strong>return n * factorial(n-1)</strong>.</p>
+<p>The base case is what terminates the recursion. In our factorial function, the base case occurs when <strong>n == 0</strong>. By returning 1 instead of a call to factorial, the recursion halts and the result, n!, is returned.</p>
+<p>Still a little confused on what’s going on? Try drawing an environment diagram for the function call <strong>factorial(4)</strong> to see what this function looks like in action!</p>
+<h3 id="addition-function">Addition Function</h3>
+<p>Let’s try writting a recursive function that sums 2 numbers! Our function will take in a number, n, and how much we want to add to it, m. Calling this function might look like add(2, 3).</p>
+<p>So, how do go about thinking recursively? One good starting point is asking yourself, “what is one step I can repeat over and over again to achieve the result I desire?” In the case of addition, adding 1 to n, m times, would result in the sum of m and n. That’s the recursive case right there!</p>
+<p>Remember that we must change an argument each time we recur in order to get to our base case. When should we reach our base case? When we have successfully added 1 to n, m times. One way we can keep track of this progress is to decrease the value of m every time we hit our recursive case. Thus, when m = 0, we know that we are done recurring!</p>
+<p>We have figured out that we should hit our base case when m = 0. But, what do we do when that happens? Well, when we reach our base case we assume that we are done recurring. Thus, we are trusting that m and n have been summed and we no longer want to add to our return value. So, in this case we just return 0!</p>
+<ul>
+<li><p>(Note: Remember every returned value is being added up, essentially we are adding 0 to our total sum when we reach base case)</p></li>
+<li><p>Following this logic, what might be a base case when working with multiplication? Would multiplying our value by 0 be a good idea?</p></li>
+</ul>
+<p>And there we have it! We have figured out how to write a recursive funtion that adds two numbers. This process is a tricky to wrap your head around at first, but stick to the 3 rules of recursive functions and you’re golden!</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1">    <span class="kw">def</span> add(n, m):</a>
+<a class="sourceLine" id="cb2-2" title="2">        <span class="cf">if</span> m <span class="op">&lt;=</span> <span class="dv">0</span>:</a>
+<a class="sourceLine" id="cb2-3" title="3">            <span class="cf">return</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb2-4" title="4">        <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb2-5" title="5">            <span class="cf">return</span> <span class="dv">1</span> <span class="op">+</span> add(n, m<span class="dv">-1</span>)</a></code></pre></div>
+<p>Note: In the function our base case actually ends up occuring when <strong>m &lt;= 0</strong>. Can you think of why this might be? Why might using <strong>m == 0</strong> cause problems? What would happen if we called then function with a negative value for m?</p>
+<p>Again, if you are feeling lost, try creating an environment diagram for the call add(3, 2) and trace what is happening.</p>
+</div>
+
+    </div> 
+
+            <div class="authors-box">
+                <span> Contributor(s): Tori Hoffmann</span>
+            </div>
+            
+            <div class='link-page wrapper'>
+            <footer>
+                    <p class="footer-content">&copy; 2021 <a href="https://krisjordan.com">Kris Jordan</a>
+                        - <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScQMteEvnQpBfGsAYP5TpuqokQenhZUIf8CNvfAUUZEjMCWZQ/viewform?usp=sf_link">Feedback
+                            Form</a> - <a href="https://forms.gle/AjcyFHirwegBKXbq9">Grievances Form</a> - Made with 💛in <a href="https://cs.unc.edu/">Chapel Hill</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"
+        integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>

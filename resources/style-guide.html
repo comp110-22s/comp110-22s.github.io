@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Style, Linting and Autograder Guide - COMP110 - 21f</title>
+    <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css?v=1641698964.1904955">
+    <script src="/static/scripts/scroll-handler.js"></script>
+    <script src="/static/scripts/sunset_sunrise.js"></script>
+
+</head>
+
+<body class="scrolling-page" >
+    <script>
+        const lat = 35.912005; // latitude and longitude for Chapel Hill
+        const long = -79.051210; // Replace with some way to gain User location if/when desired
+    </script>
+    <script>
+        // resets user pref in the event of styling overhaul
+        if ((localStorage.getItem('mode') == "halloween-mode") || (localStorage.getItem('userPref') == "halloween-mode")) {
+            localStorage.setItem('userPref', null);
+            localStorage.setItem('mode', null);
+        }
+    
+        var datetime = new Date(); // NOTE: This is my additional scripting to check whereabouts the sun is
+        var time = datetime.getHours() + (datetime.getMinutes() / 60);
+        var timer = 240000000; // a very big number
+        if(localStorage.getItem('userPref') === null) {
+            if(time < getSunrise(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = getSunrise(lat, long) - time;
+            } else if(time > getSunset(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = (getSunrise(lat, long) + 24) - time;
+            } else {
+                localStorage.setItem('mode', 'light-mode');
+                timer = getSunset(lat, long) - time;
+            }
+        }
+    </script>
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('userPref')); // userPref holds which mode the user prefers
+        document.body.classList.add(localStorage.getItem('mode')); // mode holds the current state of the site
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <a name="top"></a>
+    <div id="page-container">
+    <div id="content-wrapper">
+    <div class="wrapper">
+        <nav id="navbarStick" class="navbar navbar-scroll navbar-expand">
+            <div class="container-fluid">
+                <div class = 'show-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-small" onClick="window.scroll({top: 0, left: 0, behavior: 'smooth'});"> back to top </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+                </div>
+                <div class = 'hide-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand web" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav web">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/resources">resources</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/topics">topics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/support">support </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/explore">explore</a>
+                            </li>
+                        </ul>
+                        <a href="javascript:void(0);" class="icon" id="hamburger">
+                            <i class="fa fa-bars fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+                    <div class="switches">
+                        <input type="checkbox" id="1" onclick="
+                            if (localStorage.getItem('mode') === 'dark-mode') {
+                                localStorage.setItem('userPref', 'light-mode');
+                                localStorage.setItem('mode', 'light-mode');
+                            } else {
+                                localStorage.setItem('userPref', 'dark-mode');
+                                localStorage.setItem('mode', 'dark-mode');
+                            }
+                            location.reload();">
+                        <label for="1">
+                            <span id="mode-label">spooky_mode</span>
+                            <span></span>
+                        </label>
+                        <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                        <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+                    </div>
+                </div>
+            </div>
+            <a class="navbar-brand mobile" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/halloweenbrand.png"
+                alt="COMP110 - Spring - 2021">
+            </a>
+        </nav>
+        <ul class="navbar-nav mobile" id="mobile">
+            <li class="nav-item" id="link1">
+                <a class="nav-link" href="/resources">resources</a>
+            </li>
+            <li class="nav-item" id="link2">
+                <a class="nav-link" href="/topics">topics</a>
+            </li>
+            <li class="nav-item" id="link3">
+                <a class="nav-link" href="/support">support</a>
+            </li>
+             <li class="nav-item" id="link4">
+                <a class="nav-link" href="/explore">explore</a>
+            </li>
+        </ul>
+
+        <script>
+            document.getElementById("hamburger").addEventListener("click", function() {
+            var x = [];
+            x[0] = document.getElementById("link1");
+            x[1] = document.getElementById("link2");
+            x[2] = document.getElementById("link3");
+            x[3] = document.getElementById("link4");
+            for (let i = 0; i < 4; i++) {
+                if (x[i].style.display === "block") {
+                    x[i].style.display = "none";
+                    document.getElementById("mobile").style.paddingTop="0";
+                    document.getElementById("mobile").style.paddingBottom="0";
+                } else {
+                    x[i].style.display = "block";
+                    document.getElementById("mobile").style.paddingTop="20px";
+                    document.getElementById("mobile").style.paddingBottom="20px";
+                }
+            }
+            });
+        </script>
+
+        <div id="resource-page" class="container">
+            <div class="row pt-4">
+
+
+                <div class="col-12">
+                    <h1 class="display-5">Style, Linting and Autograder Guide</h1>
+                    <hr class="title"/>
+                </div>
+            </div>
+
+    <div class="container">
+                <div class="content"><h2 id="general-layout-guidelines">General Layout Guidelines</h2>
+<ol type="1">
+<li>Make sure to include a file <strong>Docstring</strong> and <strong>author variable</strong>.
+<ul>
+<li>A <strong>Docstring</strong> should be surrounded by triple quotes, have no spaces on at the beginning and end, and end in punctuation.</li>
+<li>An <strong>author variable</strong> should have two underscores (a dunderscore) on either side of author and be equal to your PID in <strong>String</strong> format.</li>
+</ul></li>
+<li><strong>Named constants</strong> follow the Docstring and author variable. They should be all capitalized and already initialized.</li>
+<li>Every function and class should have it’s own <strong>Docstring</strong> as the first line. There should also be two newlines of space in between each function or class.
+<ul>
+<li>Every function must be declared with a unique name, it’s parameters and a return type.</li>
+<li>Note that <code>add_one</code> returns an <code>int</code> and therefore must have a return statment. However <code>print_word</code> returns <code>None</code> and therefore a return statement is not required.</li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co">&quot;&quot;&quot;This is a Docstring.&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3">__author__ <span class="op">=</span> <span class="st">&quot;123456789&quot;</span></a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5">NAMED_CONSTANT: <span class="bu">int</span> <span class="op">=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7"></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="kw">def</span> add_one(num: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</a>
+<a class="sourceLine" id="cb1-9" title="9">    <span class="co">&quot;&quot;&quot;Adds one to a given number.&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-10" title="10">    <span class="cf">return</span> num <span class="op">+</span> NAMED_CONSTANT</a>
+<a class="sourceLine" id="cb1-11" title="11"></a>
+<a class="sourceLine" id="cb1-12" title="12"></a>
+<a class="sourceLine" id="cb1-13" title="13"><span class="kw">def</span> print_word(word: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</a>
+<a class="sourceLine" id="cb1-14" title="14">    <span class="co">&quot;&quot;&quot;Prints out a given word.&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-15" title="15">    <span class="bu">print</span>(word)</a></code></pre></div>
+<h2 id="how-to-read-the-autograder">How to Read the Autograder</h2>
+<p>If you don’t recieve full credit when submitting to the autograder, there will likely be error messages outputted. Understanding how to read these messages can be key to figuring out what is wrong with your code.</p>
+<h4 id="basic-failed-test">Basic Failed Test</h4>
+<p>Below is an example of a possible autograder error message if your code did not pass a functionality test.</p>
+<p><img src="../../static/assets/autograder-fail.png" /></p>
+<ul>
+<li><code>graders/exercises/ex02/cipher_test.py:38</code> tells you which line of the grader found the missing functionality in your code. Since you cannot see the grader, you can ignore this part.</li>
+<li><code>AssertionError: assert 'n' == 'njml'</code> tells you that your code outputted <code>'n'</code> but the autograder was expecting <code>'njml'</code>.</li>
+<li><code>- njml,  + n</code> tells you the same thing, <code>njml</code> was missing from your output but <code>n</code> was present.</li>
+</ul>
+<h4 id="code-style-and-linting-errors">Code Style and Linting Errors</h4>
+<p>Below is an example of a possible autograder error message for a style issue.</p>
+<p><img src="../../static/assets/autograder-lintfail.png" /></p>
+<ul>
+<li><code>exercises/ex02/cipher.py</code> tells you that it was the <code>cipher.py</code> file that threw the error and that the file is located in <code>exercises/ex02</code>.</li>
+<li><code>10</code> tells you that this error originated from line 10 of the given file.</li>
+<li><code>43</code> tells you how far (how many characters) into the line the error occured.</li>
+<li><code>E225</code> is a <strong>flake8 linter</strong> error. Linting helps identify formatting issues in your code. You can view these error codes <a href="https://www.flake8rules.com/" target="_blank" rel="noopener noreferrer">here</a>.</li>
+<li><code>missing whitespace around operator</code> gives you a brief summary of your formatting issue.</li>
+</ul>
+<p>Most autograder errors will follow this general pattern. You should familiarize yourself with reading autograder errors to help you get full points on exercises, projects and quizzes.</p>
+<h2 id="specific-autograder-errors">Specific Autograder Errors</h2>
+<p>This section contains errors unrelated to linting and styling and some possible fixes to try.</p>
+<ul>
+<li>The file won’t upload, or when it uploads the autograder doesn’t seem to recognize the files.
+<ul>
+<li>Delete all your old submission zips, then create a new submission zip making sure to check for punctuation or spelling errors in the command.</li>
+</ul></li>
+<li>No tests or only <code>Lint - Code style, documentation, formatting</code> is showing up.
+<ul>
+<li>Check that your file is in the correct location.</li>
+<li>Make sure your folder and files are named correctly.</li>
+<li>Confirm all functions are properly named and declared.</li>
+<li>Check for any unclosed parenthesis, quotation marks or other small syntax errors.</li>
+</ul></li>
+<li><code>module &lt;_file_path_&gt; has no attribute '__author__'</code>
+<ul>
+<li>Make sure your <code>__author__</code> variable has <strong>TWO</strong> underscores on either side.</li>
+<li>Make sure your <code>__author__</code> variable is a string.</li>
+</ul></li>
+</ul>
+</div>
+            </div>
+
+            <div class="authors-box">
+                <span> Contributor(s): Ezri White</span>
+            </div>
+            
+            <div class='link-page wrapper'>
+            <footer>
+                    <p class="footer-content">&copy; 2021 <a href="https://krisjordan.com">Kris Jordan</a>
+                        - <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScQMteEvnQpBfGsAYP5TpuqokQenhZUIf8CNvfAUUZEjMCWZQ/viewform?usp=sf_link">Feedback
+                            Form</a> - <a href="https://forms.gle/AjcyFHirwegBKXbq9">Grievances Form</a> - Made with 💛in <a href="https://cs.unc.edu/">Chapel Hill</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"
+        integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>

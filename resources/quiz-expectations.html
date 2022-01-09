@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Quiz Expectations - COMP110 - 21f</title>
+    <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css?v=1641698964.0151627">
+    <script src="/static/scripts/scroll-handler.js"></script>
+    <script src="/static/scripts/sunset_sunrise.js"></script>
+
+</head>
+
+<body class="scrolling-page" >
+    <script>
+        const lat = 35.912005; // latitude and longitude for Chapel Hill
+        const long = -79.051210; // Replace with some way to gain User location if/when desired
+    </script>
+    <script>
+        // resets user pref in the event of styling overhaul
+        if ((localStorage.getItem('mode') == "halloween-mode") || (localStorage.getItem('userPref') == "halloween-mode")) {
+            localStorage.setItem('userPref', null);
+            localStorage.setItem('mode', null);
+        }
+    
+        var datetime = new Date(); // NOTE: This is my additional scripting to check whereabouts the sun is
+        var time = datetime.getHours() + (datetime.getMinutes() / 60);
+        var timer = 240000000; // a very big number
+        if(localStorage.getItem('userPref') === null) {
+            if(time < getSunrise(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = getSunrise(lat, long) - time;
+            } else if(time > getSunset(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = (getSunrise(lat, long) + 24) - time;
+            } else {
+                localStorage.setItem('mode', 'light-mode');
+                timer = getSunset(lat, long) - time;
+            }
+        }
+    </script>
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('userPref')); // userPref holds which mode the user prefers
+        document.body.classList.add(localStorage.getItem('mode')); // mode holds the current state of the site
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <a name="top"></a>
+    <div id="page-container">
+    <div id="content-wrapper">
+    <div class="wrapper">
+        <nav id="navbarStick" class="navbar navbar-scroll navbar-expand">
+            <div class="container-fluid">
+                <div class = 'show-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-small" onClick="window.scroll({top: 0, left: 0, behavior: 'smooth'});"> back to top </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+                </div>
+                <div class = 'hide-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand web" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav web">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/resources">resources</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/topics">topics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/support">support </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/explore">explore</a>
+                            </li>
+                        </ul>
+                        <a href="javascript:void(0);" class="icon" id="hamburger">
+                            <i class="fa fa-bars fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+                    <div class="switches">
+                        <input type="checkbox" id="1" onclick="
+                            if (localStorage.getItem('mode') === 'dark-mode') {
+                                localStorage.setItem('userPref', 'light-mode');
+                                localStorage.setItem('mode', 'light-mode');
+                            } else {
+                                localStorage.setItem('userPref', 'dark-mode');
+                                localStorage.setItem('mode', 'dark-mode');
+                            }
+                            location.reload();">
+                        <label for="1">
+                            <span id="mode-label">spooky_mode</span>
+                            <span></span>
+                        </label>
+                        <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                        <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+                    </div>
+                </div>
+            </div>
+            <a class="navbar-brand mobile" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/halloweenbrand.png"
+                alt="COMP110 - Spring - 2021">
+            </a>
+        </nav>
+        <ul class="navbar-nav mobile" id="mobile">
+            <li class="nav-item" id="link1">
+                <a class="nav-link" href="/resources">resources</a>
+            </li>
+            <li class="nav-item" id="link2">
+                <a class="nav-link" href="/topics">topics</a>
+            </li>
+            <li class="nav-item" id="link3">
+                <a class="nav-link" href="/support">support</a>
+            </li>
+             <li class="nav-item" id="link4">
+                <a class="nav-link" href="/explore">explore</a>
+            </li>
+        </ul>
+
+        <script>
+            document.getElementById("hamburger").addEventListener("click", function() {
+            var x = [];
+            x[0] = document.getElementById("link1");
+            x[1] = document.getElementById("link2");
+            x[2] = document.getElementById("link3");
+            x[3] = document.getElementById("link4");
+            for (let i = 0; i < 4; i++) {
+                if (x[i].style.display === "block") {
+                    x[i].style.display = "none";
+                    document.getElementById("mobile").style.paddingTop="0";
+                    document.getElementById("mobile").style.paddingBottom="0";
+                } else {
+                    x[i].style.display = "block";
+                    document.getElementById("mobile").style.paddingTop="20px";
+                    document.getElementById("mobile").style.paddingBottom="20px";
+                }
+            }
+            });
+        </script>
+
+        <div id="lessons-page" class="container">
+            <div class="row pt-4">
+
+
+                <div class="col-12">
+                    <h1 class="display-5">Quiz Expectations</h1>
+                    <hr class="title"/>
+                </div>
+            </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+    
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            
+            <div id="button-box class="link-pag box">
+            </div>
+
+            <div id="menu-overview" class="link-page box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul><li><a href="#no-collaboration-and-honor-code">NO COLLABORATION and Honor Code</a></li>
+<li><a href="#all-quizzes-are-completed-remotely-on-gradescope">All Quizzes are completed REMOTELY on Gradescope</a></li>
+<li><a href="#quizzes-open-at-your-sections-start-time-and-are-75-minutes-long">Quizzes open at your section’s start time and are 75 minutes long</a></li>
+<li><a href="#what-are-considered-permitted-aides-while-taking-the-quiz">What are considered Permitted Aides while taking the Quiz?</a></li>
+<li><a href="#what-is-the-format-of-quizzes">What is the format of quizzes?</a></li>
+<li><a href="#submitting-pdf-scans-of-your-pencil-and-paper-memory-diagrams">Submitting PDF scans of your pencil and paper memory diagrams</a></li>
+<li><a href="#upload-diagrams-first-we-cannot-accept-late-diagram-submissions-or-incorrect-uploads">Upload diagrams first! We cannot accept late diagram submissions or incorrect uploads</a></li>
+<li><a href="#after-uploading-diagrams-double-check-you-uploaded-the-correct-diagram">After uploading diagrams, double check you uploaded the correct diagram!</a></li>
+<li><a href="#what-if-you-have-questions-during-the-quiz-andor-technical-difficulties">What if you have questions during the quiz and/or technical difficulties</a></li>
+<li><a href="#are-there-recommended-quiz-taking-strategies">Are there recommended quiz taking strategies?</a></li>
+<li><a href="#are-there-recommended-quiz-preparation-strategies">Are there recommended quiz preparation strategies?</a></li>
+<li><a href="#when-can-you-talk-about-the-exam-with-classmates">When can you talk about the exam with classmates?</a></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><h3 id="no-collaboration-and-honor-code">NO COLLABORATION and Honor Code</h3>
+<p><strong>Quizzes must be individually with absolutely no communication of any kind permitted between you and anyone else through the duration of the quiz, with the exception of COMP110 Course Staff via course.care office hours if you have a question.</strong> Do not Zoom among yourselves, participate in group chats or direct messages, communicate while physically colocated, nor convey or receive information from anyone else.</p>
+<p>For your quiz to be graded, you will digitally affirm your understanding of and commitment to the <a href="https://catalog.unc.edu/policies-procedures/honor-code/">UNC Honor Code</a>. Collaboration on quizzes is easy to detect in Gradescope. Suspected violations will be reported to the Honor Court. Given the generous open notes policy, and trusting nature of permitting you to complete quizzes remotely, <strong>if you are found guilty of collaborating during a quiz our recommended sanction will be failing the course in its entirety, not just the quiz, with a final grade of <code>F*</code> with a transcript note of failing due to dishonesty</strong>.</p>
+<h3 id="all-quizzes-are-completed-remotely-on-gradescope">All Quizzes are completed REMOTELY on Gradescope</h3>
+<p>Find a private, comfortable, and quiet desk with enough deskspace to diagram with pencil/paper, have your notes out, and have your laptop open. You should put your phone and laptop in do not disturb modes to minimize potential interuptions. You should choose a space that is private, not public. If you do not have a private desk in your living quarters, finding a carrel in a library is recommended.</p>
+<h3 id="quizzes-open-at-your-sections-start-time-and-are-75-minutes-long">Quizzes open at your section’s start time and are 75 minutes long</h3>
+<p>Section 001’s quizzes will open at 9:30am and close at 10:45am.</p>
+<p>Section 002’s quizzes will begin at 11:00am and close at 12:15am.</p>
+<p>To have the full 75 minutes alotted to completing your quiz, you must begin at the start of your section.</p>
+<h3 id="what-are-considered-permitted-aides-while-taking-the-quiz">What are considered Permitted Aides while taking the Quiz?</h3>
+<p>In the completion of this quiz, you are permitted to use:</p>
+<ul>
+<li>Pencil &amp; Paper (you will need to upload a digital scan of your environment diagrams, just like the most recent lesson)</li>
+<li>Your notes and prior work for the course</li>
+<li>Any and all materials contained on the official course website (this site!)</li>
+</ul>
+<p>In the completion of the diagrams on this quiz you are NOT permitted to use:</p>
+<ul>
+<li>Collaboration or communication with anyone inside or outside of the class</li>
+<li>Google or ANY other websites or resources outside of our course site</li>
+<li>VSCode or any other automated programming tools</li>
+</ul>
+<h3 id="what-is-the-format-of-quizzes">What is the format of quizzes?</h3>
+<p>Quizzes will begin with code listings you will need to trace and produce memory diagrams from. You will need to scan and upload these first following the directions below.</p>
+<p>There will also be constrained response questions (multiple choice, select all, true/false) and unconstrained response questions (short answer).</p>
+<h3 id="submitting-pdf-scans-of-your-pencil-and-paper-memory-diagrams">Submitting PDF scans of your pencil and paper memory diagrams</h3>
+<p>You should install a recommended scanning app on your phone (Evernote Scannable for iOS and Genius Scan for Android) and follow the instructions provided for LS07: <a href="https://help.gradescope.com/article/0chl25eed3-student-scan-mobile-device" class="uri">https://help.gradescope.com/article/0chl25eed3-student-scan-mobile-device</a></p>
+<p>We will apply a 25% penalty to diagrams produced digitally (such as with an iPad/Pencil, digital tablet, or diagramming software). We will apply a 15% penalty to diagrams scanned by simply taking a photo and uploading a JPG file or PNG file. For full credit, be sure to upload a PDF scan of your quiz using the instructions above.</p>
+<h3 id="upload-diagrams-first-we-cannot-accept-late-diagram-submissions-or-incorrect-uploads">Upload diagrams first! We cannot accept late diagram submissions or incorrect uploads</h3>
+<p>The quiz will begin with three memory diagrams. Complete them, scan them, upload them before continuing on to the rest of the quiz. To be fair to everyone enrolled, we cannot accept submissions after the closing time of the quiz.</p>
+<h3 id="after-uploading-diagrams-double-check-you-uploaded-the-correct-diagram">After uploading diagrams, double check you uploaded the correct diagram!</h3>
+<p>After you upload a file in Gradescope, if you do not see your upload shown you can click the filename of the box to expand it and see the file uploaded. Double check that you submitted the correct diagram as intended and in the correct orientation.</p>
+<h3 id="what-if-you-have-questions-during-the-quiz-andor-technical-difficulties">What if you have questions during the quiz and/or technical difficulties</h3>
+<p>If you have a technical difficulty we will have course.care open for 1-on-1 office Zoom hours tickets.</p>
+<p>We cannot answer conceptual questions about the quiz while it is on-going in order to ensure fairness to all students. Since there is no way to fairly announce any corrections to the exam to everyone in real-time, please respond to each question exactly as it is written. If there is a substantive problem with a question on the quiz, we will drop the question from the quiz after the fact.</p>
+<h3 id="are-there-recommended-quiz-taking-strategies">Are there recommended quiz taking strategies?</h3>
+<p>Yes! Complete and upload your diagrams first!</p>
+<p>Then, work through all problems without looking up uncertainties in notes or course materials. Just keep a list of the questions you want to return to. Once you have taken a first pass through the entire quiz, return back to questions which you were uncertain about.</p>
+<p>Additionally, you are encouraged to return back to all “Select All” questions and carefully consider selections as these questions do not convey partial credit.</p>
+<h3 id="are-there-recommended-quiz-preparation-strategies">Are there recommended quiz preparation strategies?</h3>
+<p>Yes! Review the lessons and exercises submitted leading up to the quiz. Complete the review questions (they will post a few days before the quiz, to the course itinerary, listed underneat the quiz entry). Stop by office hours for conceptual questions. After Quiz 0, we will also have tutoring on many weeknights and encourage you to come to tutoring. Additionally, after quizzes are released, you should review and understand all questions missed as preparation for the following quiz. The content in COMP110 is cumulative, so you do not want to continue making the same mistakes through the semester!</p>
+<h3 id="when-can-you-talk-about-the-exam-with-classmates">When can you talk about the exam with classmates?</h3>
+<p>Do not talk about the quiz, including reactions on group chats or among friends, until 24 hours after the close of the quiz. There may be students with specific accommodations via ARS (Accessibility Resources and Service) who have not yet taken the quiz by the time you have completed it.</p>
+</div>
+
+    </div> 
+
+            <div class="authors-box">
+                <span> Contributor(s): Kris Jordan</span>
+            </div>
+            
+            <div class='link-page wrapper'>
+            <footer>
+                    <p class="footer-content">&copy; 2021 <a href="https://krisjordan.com">Kris Jordan</a>
+                        - <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScQMteEvnQpBfGsAYP5TpuqokQenhZUIf8CNvfAUUZEjMCWZQ/viewform?usp=sf_link">Feedback
+                            Form</a> - <a href="https://forms.gle/AjcyFHirwegBKXbq9">Grievances Form</a> - Made with 💛in <a href="https://cs.unc.edu/">Chapel Hill</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"
+        integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>

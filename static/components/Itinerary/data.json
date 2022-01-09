@@ -1,0 +1,802 @@
+{
+    "2021-08-19": [
+        {
+            "kind": "LS",
+            "n": 0,
+            "title": "Welcome to COMP110",
+            "date": "2021-08-19",
+            "deadline": "None",
+            "links": {
+                "Section 001 @ 9:30am": "https://youtu.be/MaDj23J21xo",
+                "Section 002 @ 11:00am": "https://youtu.be/6AiCoKqqioI",
+                "Slides": "/static/slides/ls00-welcome.pdf"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 1,
+            "title": "Syllabus and Support - Due Fri 8/20 @ 11:59pm",
+            "date": "2021-08-19",
+            "deadline": "2021-08-20",
+            "links": {
+                "1. Read the Syllabus": "/resources/syllabus.html",
+                "2. Read Support Resources": "/support",
+                "3. Complete Lesson 00 Responses on Gradescope": "https://www.gradescope.com/"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 0,
+            "title": "Hello World - Due Tues 8/24 @ 11:59pm",
+            "date": "2021-08-19",
+            "deadline": "2021-08-24",
+            "links": {
+                "Software Setup (1/3)": "/resources/setup/os-update.html",
+                "Software Setup (2/3)": "/resources/setup/software.html",
+                "Software Setup (3/3)": "/resources/setup/workspace.html",
+                "EX00 - Hello, World": "/exercises/ex00_hello_world.html"
+            }
+        }
+    ],
+    "2021-08-20": [],
+    "2021-08-21": [],
+    "2021-08-22": [],
+    "2021-08-23": [],
+    "2021-08-24": [
+        {
+            "kind": "CL",
+            "n": 1,
+            "title": "Aync Class Day - Due Weds 8/25 @ 11:59pm",
+            "date": "2021-08-24",
+            "deadline": "None",
+            "links": {
+                "LS02 - Computing Systems - Processes, Shells, Kernels, and Hardware": "https://youtu.be/LB9wVRYF9tA",
+                "LS03 - Programs, Languages, and Interpreters": "https://youtu.be/aMjlaAWp-sw",
+                "LS04 - VSCode Walkthrough": "https://youtu.be/CA5-9qXNSqw"
+            }
+        },
+        {
+            "kind": "HW",
+            "n": 1,
+            "title": "Homework Lessons - Due Weds 8/25 @ 11:59pm",
+            "date": "2021-08-24",
+            "deadline": "2021-08-25",
+            "links": {
+                "LS05 - Objects and Data Types": "/lessons/objects-data-types.html",
+                "LS06 - Expressions": "/lessons/expressions.html"
+            }
+        },
+        {
+            "kind": "RV",
+            "n": 0,
+            "title": "Review 4pm -- FB007",
+            "date": "2021-08-24",
+            "deadline": "None",
+            "links": {
+                "Zoom Recording": "https://uncch.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=833b8e10-4656-4140-ab3a-ad8e015d68a3"
+            }
+        }
+    ],
+    "2021-08-25": [
+        {
+            "kind": "EX",
+            "n": 1,
+            "title": "Variables and Expressions - Due Tues 8/31 @ 11:59pm",
+            "date": "2021-08-25",
+            "deadline": "2021-08-31",
+            "links": {
+                "EX01 Input and Variables": "/exercises/ex01.html"
+            }
+        }
+    ],
+    "2021-08-26": [
+        {
+            "kind": "CL",
+            "n": 2,
+            "title": "User Input, Variables, and Environment Diagrams",
+            "date": "2021-08-26",
+            "deadline": "None",
+            "links": {
+                "LS07 Async - 001 @ 9:30am": "/lessons/cl02-variables.html",
+                "LS07 In-person - 002 @ 11am": "https://youtu.be/ppVBxpOAVUo",
+                "In-person - Slides": "/static/slides/cl02-variables-input.pdf"
+            }
+        }
+    ],
+    "2021-08-27": [],
+    "2021-08-28": [],
+    "2021-08-29": [],
+    "2021-08-30": [
+        {
+            "kind": "RV",
+            "n": 1,
+            "title": "Review 3pm -- Preparing for Quiz 00 -- SN014",
+            "date": "2021-08-30",
+            "deadline": "None",
+            "links": {
+                "Zoom Recording": "https://uncch.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a93e84c0-ac42-4c63-af4d-ad9401504977"
+            }
+        }
+    ],
+    "2021-08-31": [
+        {
+            "kind": "QZ",
+            "n": 0,
+            "title": "Quiz 0",
+            "date": "2021-08-31",
+            "deadline": "None",
+            "links": {
+                "What to expect and how to prepare?": "/resources/quiz-expectations.html",
+                "Practice Questions": "/resources/practice/fa21/quiz0-worksheet.html"
+            }
+        }
+    ],
+    "2021-09-01": [],
+    "2021-09-02": [
+        {
+            "kind": "CL",
+            "n": 4,
+            "title": "Async Class Day - Gradescope Qs due Fri 9/3 at 11:59pm - No In-person meeting for Section 002",
+            "date": "2021-09-02",
+            "deadline": "None",
+            "links": {
+                "LS08 - Conditional if-else Statements": "https://youtu.be/JP5oFPHw5zc",
+                "LS09 - while Loop Statements": "https://youtu.be/pvpgvYlyfUU"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 2,
+            "title": "Conditionals and Loops - Due Wed 9/8 at 11:59pm",
+            "date": "2021-09-02",
+            "deadline": "2021-09-08",
+            "links": {
+                "EX02 - Conditionals and Loops": "/exercises/ex02.html"
+            }
+        }
+    ],
+    "2021-09-03": [],
+    "2021-09-04": [],
+    "2021-09-05": [],
+    "2021-09-06": [],
+    "2021-09-07": [
+        {
+            "kind": "CL",
+            "n": 5,
+            "title": "Practice with if-else and while loops, Nested Control Flow, and Boolean Operators",
+            "date": "2021-09-07",
+            "deadline": "None",
+            "links": {
+                "LS10 Async - 001 @ 9:30am": "/lessons/cl05-control-flow.html",
+                "LS10 In-person - 002 @ 11am": "https://youtu.be/QT-d2pfoerM",
+                "Slides": "/static/slides/cl05-control-flow-practice.pdf"
+            }
+        },
+        {
+            "kind": "RV",
+            "n": 2,
+            "title": "Review -- Going Over Quiz 00 -- SN014",
+            "date": "2021-09-07",
+            "deadline": "None",
+            "links": {
+                "Zoom Recording": "https://uncch.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8e737255-6ace-48c9-90e6-ad9c015eefb5"
+            }
+        }
+    ],
+    "2021-09-08": [],
+    "2021-09-09": [
+        {
+            "kind": "CL",
+            "n": 6,
+            "title": "Functions",
+            "date": "2021-09-09",
+            "deadline": "None",
+            "links": {
+                "LS11 - Part 1 - Introducing Functions": "https://youtu.be/UheQNnstJE8",
+                "LS11 - Part 2 - Function Definition Syntax": "https://youtu.be/ihpN4LOqx8s",
+                "LS11 - Part 3 - Function Call Semantics - Memory Diagrams": "https://youtu.be/_swT3gKjDVg"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 3,
+            "title": "More Control Flow - Due Wed 9/15 at 11:59pm",
+            "date": "2021-09-09",
+            "deadline": "2021-09-15",
+            "links": {
+                "EX03 - More Control Flow": "/exercises/ex03.html"
+            }
+        }
+    ],
+    "2021-09-10": [],
+    "2021-09-11": [],
+    "2021-09-12": [],
+    "2021-09-13": [],
+    "2021-09-14": [
+        {
+            "kind": "CL",
+            "n": 7,
+            "title": "Practice with functions, control flow, intro to f-strings and main",
+            "date": "2021-09-14",
+            "deadline": "None",
+            "links": {
+                "LS12 Async - 001 @ 9:30am": "/lessons/cl07-functions.html",
+                "LS12 In-person - 002 @ 11am": "https://youtu.be/G2maDYRZDL4",
+                "Slides": "/static/slides/cl07-function-practice.pdf",
+                "Gradescope Questions": "https://gradescope.com"
+            }
+        },
+        {
+            "kind": "RV",
+            "n": 3,
+            "title": "Review 4pm -- Preparing for Quiz 01 -- SN014",
+            "date": "2021-09-14",
+            "deadline": "None",
+            "links": {
+                "Zoom Recording": "https://uncch.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2f15811a-3336-4711-b1b8-ada3016176af"
+            }
+        }
+    ],
+    "2021-09-15": [
+        {
+            "kind": "PJ",
+            "n": 0,
+            "title": "Choose Your Own Adventure - Due Wed 9/22 @ 11:59pm ",
+            "date": "2021-09-15",
+            "deadline": "2021-09-22",
+            "links": {
+                "PJ00 - Choose Your Own Adventure": "/projects/choose-your-own-adventure.html",
+                "Background Lessons (1/2) ": "lessons/scopes-constants-globals.html",
+                "Background Lessons (2/2)": "lessons/strings.html"
+            }
+        }
+    ],
+    "2021-09-16": [
+        {
+            "kind": "QZ",
+            "n": 1,
+            "title": "Quiz 1",
+            "date": "2021-09-16",
+            "deadline": "None",
+            "links": {
+                "Practice Questions": "/resources/practice/fa21/quiz1-worksheet.html"
+            }
+        }
+    ],
+    "2021-09-17": [],
+    "2021-09-18": [],
+    "2021-09-19": [],
+    "2021-09-20": [],
+    "2021-09-21": [
+        {
+            "kind": "CL",
+            "n": 9,
+            "title": "Async Class Day - Introduction to lists",
+            "date": "2021-09-21",
+            "deadline": "None",
+            "links": {
+                "Complete Required Course Survey": "https://forms.gle/4GQ4neR9ziYKJNiMA",
+                "LS13 - Lists in Python": "https://youtu.be/uGsgE_EKI4U",
+                "Slides": "/static/slides/cl10-list-practice.pdf",
+                "Gradescope Questions": "https://gradescope.com"
+            }
+        },
+        {
+            "kind": "RV",
+            "n": 4,
+            "title": "Review 4pm -- Going Over Quiz 01",
+            "date": "2021-09-21",
+            "deadline": "None",
+            "links": {
+                "Zoom Recording": "https://uncch.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=04fd1ae8-82a8-46f5-85c4-adaa016093ef"
+            }
+        }
+    ],
+    "2021-09-22": [],
+    "2021-09-23": [
+        {
+            "kind": "CL",
+            "n": 10,
+            "title": "Practice with Diagrams Involving Lists",
+            "date": "2021-09-23",
+            "deadline": "None",
+            "links": {
+                "LS14 Async - 001 @ 9:30am": "/lessons/cl10-list-diagrams.html",
+                "LS14 In-person - 002 @ 11am": "https://youtu.be/__fbBZDR6EM",
+                "Gradescope Questions": "https://gradescope.com"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 4,
+            "title": "`list` Utility Functions - Due Wed 9/29 at 11:59pm",
+            "date": "2021-09-23",
+            "deadline": "2021-09-29",
+            "links": {
+                "EX04 - List Utility Functions": "/exercises/ex04.html"
+            }
+        },
+        {
+            "kind": "RD",
+            "n": 0,
+            "title": "Ethical Algorithms - Due Sat 10/9 at 11:59pm",
+            "date": "2021-09-23",
+            "deadline": "2021-10-09",
+            "links": {
+                "Reading found on Gradescope": "https://gradescope.com"
+            }
+        }
+    ],
+    "2021-09-24": [],
+    "2021-09-25": [],
+    "2021-09-26": [],
+    "2021-09-27": [],
+    "2021-09-28": [
+        {
+            "kind": "CL",
+            "n": 11,
+            "title": "Async Class Day - Gradescope Qs due Weds 9/29 at 11:59pm - No In-person meeting for Section 002 - Unit Testing and for..in Loops",
+            "date": "2021-09-28",
+            "deadline": "None",
+            "links": {
+                "LS15 - Unit Testing Introduction": "https://youtu.be/VAdJybtia-4",
+                "LS16 - for..in Loops": "https://youtu.be/YPfFCD_RGK8",
+                "Gradescope Questions": "https://gradescope.com"
+            }
+        },
+        {
+            "kind": "RV",
+            "n": 5,
+            "title": "Review 2pm -- Reviewing Lists, References, Globals",
+            "date": "2021-09-28",
+            "deadline": "None",
+            "links": {
+                "Zoom Recording": "https://uncch.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=20d632f4-f295-4672-8f87-adb101412cdc"
+            }
+        }
+    ],
+    "2021-09-29": [],
+    "2021-09-30": [
+        {
+            "kind": "CL",
+            "n": 12,
+            "title": "Practice with Scope, global, References, and Lists",
+            "date": "2021-09-30",
+            "deadline": "None",
+            "links": {
+                "LS17 Async - 001 @ 9:30am": "/lessons/cl12-scope-reference-practice.html",
+                "LS17 In-person - 002 @ 11am": "https://youtu.be/WI7xK_h08rw",
+                "Slides": "/static/slides/cl12-scope-reference-practice.pdf",
+                "Gradescope Questions": "https://gradescope.com"
+            }
+        },
+        {
+            "kind": "EV",
+            "n": 0,
+            "title": "UTA Panel: What I Wish I Knew in COMP110 - 7pm - Sitterson 014",
+            "date": "2021-09-30",
+            "deadline": "None",
+            "links": {
+                "Recording of Event": "https://drive.google.com/file/d/1Rmv102dNByesCQluOZPUditOyo6q6D4S/view?usp=sharing"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 5,
+            "title": "More `list`s and Unit Tests - Due Wed 10/06 at 11:59pm",
+            "date": "2021-09-30",
+            "deadline": "2021-10-06",
+            "links": {
+                "EX05 - More Lists and Unit Tests": "/exercises/ex05.html"
+            }
+        }
+    ],
+    "2021-10-01": [],
+    "2021-10-02": [],
+    "2021-10-03": [],
+    "2021-10-04": [
+        {
+            "kind": "RV",
+            "n": 6,
+            "title": "Review 3pm -- Preparing for Quiz 02",
+            "date": "2021-10-04",
+            "deadline": "None",
+            "links": {
+                "Zoom Recording": "https://uncch.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=bc0e1e21-8ae1-472b-9922-adb7015318f4"
+            }
+        }
+    ],
+    "2021-10-05": [
+        {
+            "kind": "QZ",
+            "n": 2,
+            "title": "Quiz 2",
+            "date": "2021-10-05",
+            "deadline": "None",
+            "links": {
+                "Practice Questions": "/resources/practice/fa21/quiz2-worksheet.html"
+            }
+        }
+    ],
+    "2021-10-06": [],
+    "2021-10-07": [
+        {
+            "kind": "CL",
+            "n": 14,
+            "title": "Dictionaries",
+            "date": "2021-10-07",
+            "deadline": "None",
+            "links": {
+                "LS18 - Dictionaries": "https://www.youtube.com/watch?v=2B8Nh3pJEFE"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 6,
+            "title": "Dictionaries - Due Wed 10/20 at 11:59pm",
+            "date": "2021-10-07",
+            "deadline": "2021-10-20",
+            "links": {
+                "EX06 - Dictionaries": "/exercises/ex06.html"
+            }
+        }
+    ],
+    "2021-10-08": [],
+    "2021-10-09": [],
+    "2021-10-10": [],
+    "2021-10-11": [],
+    "2021-10-12": [
+        {
+            "kind": "CL",
+            "n": 15,
+            "title": "Wellness Day - No Class",
+            "date": "2021-10-12",
+            "deadline": "None",
+            "links": {
+                "Office Hours and Tutoring Closed on Tuesday 10/12": "",
+                "Section 002 will meet in-person on Thursday 10/14": "",
+                "EX06 Deadline Extended to Wednesday 10/20": ""
+            }
+        },
+        {
+            "kind": "RV",
+            "n": 7,
+            "title": "Review -- Going over Quiz 02",
+            "date": "2021-10-12",
+            "deadline": "None",
+            "links": {
+                "Zoom Recording": "https://uncch.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=eb337cc6-8029-49f5-84dd-adc1012517ad"
+            }
+        }
+    ],
+    "2021-10-13": [],
+    "2021-10-14": [
+        {
+            "kind": "CL",
+            "n": 16,
+            "title": "Dictionary Practice and Introduction to Importing Modules",
+            "date": "2021-10-14",
+            "deadline": "None",
+            "links": {
+                "LS19 Async (9:30-10:45)": "/lessons/cl16-dictionary-practice-and-imports.html",
+                "LS19 In-person (11-12:15)": "https://youtu.be/oo1atFjx7X0",
+                "Slides": "/static/slides/cl16-dictionary-practice-imports.pdf"
+            }
+        }
+    ],
+    "2021-10-15": [],
+    "2021-10-16": [],
+    "2021-10-17": [],
+    "2021-10-18": [],
+    "2021-10-19": [
+        {
+            "kind": "CL",
+            "n": 17,
+            "title": "Jupyter Notebooks and CSV Files - Async Class Day - No In-person meeting for Section 002",
+            "date": "2021-10-19",
+            "deadline": "None",
+            "links": {
+                "LS20 - Jupyter Notebooks": "https://youtu.be/HJgX1WWC26A",
+                "LS21 - Reading CSV Files": "https://youtu.be/z4ax7ilh-RY",
+                "Gradescope Questions": "https://gradescope.com"
+            }
+        }
+    ],
+    "2021-10-20": [],
+    "2021-10-21": [],
+    "2021-10-22": [],
+    "2021-10-23": [],
+    "2021-10-24": [],
+    "2021-10-25": [],
+    "2021-10-26": [
+        {
+            "kind": "CL",
+            "n": 18,
+            "title": "Practice for Quiz 03",
+            "date": "2021-10-26",
+            "deadline": "None",
+            "links": {
+                "LS22 Async (9:30-10:45)": "https://youtu.be/s5UkpdxbSiM",
+                "LS22 In-person (11-12:15)": "https://youtu.be/YwI0UFr2EVE",
+                "Gradescope Questions": "https://gradescope.com",
+                "Slides": "/static/slides/cl18-dictionary-practice.pdf",
+                "(Optional, CS Majors Encouraged!) Hack 110 RSVP for Friday, November 12 at 7pm": "https://bit.ly/hack110-21f"
+            }
+        },
+        {
+            "kind": "RD",
+            "n": 1,
+            "title": "Weapons of Math Destruction - Due Mon 11/8 at 11:59pm",
+            "date": "2021-10-26",
+            "deadline": "2021-11-01",
+            "links": {
+                "Reading found on Gradescope": "https://gradescope.com"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 7,
+            "title": "Data Wrangling - Due Monday 11/01 at 11:59pm",
+            "date": "2021-10-26",
+            "deadline": "2021-11-01",
+            "links": {
+                "EX07 - Data Wrangling": "/exercises/ex07.html"
+            }
+        },
+        {
+            "kind": "RV",
+            "n": 8,
+            "title": "Review 4pm -- Preparing for Quiz 03",
+            "date": "2021-10-26",
+            "deadline": "None",
+            "links": {
+                "Zoom Recording": "https://uncch.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=361e5fcb-eeb7-4783-a2a5-adcd01650f04"
+            }
+        }
+    ],
+    "2021-10-27": [],
+    "2021-10-28": [
+        {
+            "kind": "QZ",
+            "n": 3,
+            "title": "Quiz 3",
+            "date": "2021-10-28",
+            "deadline": "None",
+            "links": {
+                "Practice Questions": "/resources/practice/fa21/quiz3-worksheet.html"
+            }
+        }
+    ],
+    "2021-10-29": [],
+    "2021-10-30": [],
+    "2021-10-31": [],
+    "2021-11-01": [],
+    "2021-11-02": [
+        {
+            "kind": "CL",
+            "n": 20,
+            "title": "Object-oriented Programming Introduction",
+            "date": "2021-11-02",
+            "deadline": "None",
+            "links": {
+                "Object-oriented Programming (Classes, Objects, Methods, Constructors)": "https://youtu.be/wBhS8OXtM5Q"
+            }
+        },
+        {
+            "kind": "PJ",
+            "n": 1,
+            "title": "Choose Your Own Analysis - Due Tue 11/09 @ 11:59pm ",
+            "date": "2021-11-02",
+            "deadline": "2021-11-09",
+            "links": {
+                "PJ01 - Choose Your Own Analysis": "/projects/choose-your-own-analysis.html"
+            }
+        }
+    ],
+    "2021-11-03": [],
+    "2021-11-04": [
+        {
+            "kind": "CL",
+            "n": 21,
+            "title": "Object-oriented Programming Practice",
+            "date": "2021-11-04",
+            "deadline": "None",
+            "links": {
+                "LS24 Async (9:30-10:45)": "/lessons/cl21-oop-practice.html",
+                "LS24 In-person (11-12:15)": "https://youtu.be/nu-cIsozlEs",
+                "Slides": "/static/slides/cl21-oop-practice.pdf"
+            }
+        }
+    ],
+    "2021-11-05": [],
+    "2021-11-06": [],
+    "2021-11-07": [],
+    "2021-11-08": [],
+    "2021-11-09": [
+        {
+            "kind": "CL",
+            "n": 22,
+            "title": "(Async) Magic Methods, Operator Overloading, and Column-based Filtering",
+            "date": "2021-11-09",
+            "deadline": "None",
+            "links": {
+                "Magic Methods": "https://youtu.be/yxDIEqm_K6c",
+                "Operator Overloading": "https://youtu.be/JJLnGL-cShU",
+                "Note: The column-based filtering lesson references pulling and seeing ls19, but this semester it's ls25!": "",
+                "Column-based Filtering": "https://www.youtube.com/watch?v=_htZ8sB2qe8"
+            }
+        },
+        {
+            "kind": "RV",
+            "n": 9,
+            "title": "Review 4pm -- Going over Quiz 03",
+            "date": "2021-11-09",
+            "deadline": "None",
+            "links": {
+                "Zoom Recording": "https://uncch.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=63463059-30d0-46e1-97ae-addb016cc3c1"
+            }
+        }
+    ],
+    "2021-11-10": [
+        {
+            "kind": "EX",
+            "n": 8,
+            "title": "Simpy - Due Tues 11/16 at 11:59pm",
+            "date": "2021-11-10",
+            "deadline": "2021-11-16",
+            "links": {
+                "EX08 - Simpy": "/exercises/ex08.html"
+            }
+        }
+    ],
+    "2021-11-11": [
+        {
+            "kind": "CL",
+            "n": 23,
+            "title": "Special Parameters and Getting Started with EX08",
+            "date": "2021-11-11",
+            "deadline": "None",
+            "links": {
+                "(Async) Special Parameters": "https://youtu.be/7cOEibFopjQ",
+                "(Async) Getting Started with Simpy": "https://youtu.be/fmnMaN728RE",
+                "(In-person) Live Stream": "https://youtu.be/7xY46GhgtkU"
+            }
+        }
+    ],
+    "2021-11-12": [],
+    "2021-11-13": [],
+    "2021-11-14": [],
+    "2021-11-15": [
+        {
+            "kind": "RD",
+            "n": 2,
+            "title": "Gender Shades - Due LDOC at 11:59pm",
+            "date": "2021-11-15",
+            "deadline": "2021-12-01",
+            "links": {
+                "Reading found on Gradescope": "https://gradescope.com"
+            }
+        }
+    ],
+    "2021-11-16": [
+        {
+            "kind": "CL",
+            "n": 24,
+            "title": "OOP Practice",
+            "date": "2021-11-16",
+            "deadline": "None",
+            "links": {
+                "(Async) OOP Practice": "/lessons/cl24-more-oop-practice.html",
+                "(In-person) Live Stream": "https://youtu.be/vGk7ECVT1f0",
+                "Slides": "/static/slides/cl24-more-oop-practice.pdf",
+                "Gradescope Lesson 27": "https://gradescope.com"
+            }
+        },
+        {
+            "kind": "RV",
+            "n": 10,
+            "title": "Review 4pm -- SN014 Preapring for the Last Quiz",
+            "date": "2021-11-16",
+            "deadline": "None",
+            "links": {
+                "Zoom Recording": "https://uncch.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4323b15c-afe4-44a5-b6b5-ade30002bff6"
+            }
+        }
+    ],
+    "2021-11-17": [
+        {
+            "kind": "EX",
+            "n": 9,
+            "title": "NumPy and Pandas - Due LDOC 11:59pm",
+            "date": "2021-11-17",
+            "deadline": "2021-12-01",
+            "links": {
+                "EX09 - NumPy and Pandas": "https://gradescope.com"
+            }
+        }
+    ],
+    "2021-11-18": [
+        {
+            "kind": "QZ",
+            "n": 4,
+            "title": "Quiz 4",
+            "date": "2021-11-18",
+            "deadline": "None",
+            "links": {
+                "Practice Questions": "/resources/practice/fa21/quiz4-worksheet.html"
+            }
+        }
+    ],
+    "2021-11-19": [],
+    "2021-11-20": [],
+    "2021-11-21": [],
+    "2021-11-22": [],
+    "2021-11-23": [
+        {
+            "kind": "CL",
+            "n": 26,
+            "title": "Recursion Introduction (Async for Both Sections)",
+            "date": "2021-11-23",
+            "deadline": "None",
+            "links": {
+                "(Aysnc) Recursion": "/lessons/cl26-recursion.html",
+                "Gradescope Lessons 28 and 29": "https://gradescope.com"
+            }
+        }
+    ],
+    "2021-11-24": [],
+    "2021-11-25": [],
+    "2021-11-26": [],
+    "2021-11-27": [],
+    "2021-11-28": [],
+    "2021-11-29": [],
+    "2021-11-30": [
+        {
+            "kind": "CL",
+            "n": 27,
+            "title": "LDOC - No Gradescope Submission",
+            "date": "2021-11-30",
+            "deadline": "None",
+            "links": {
+                "Section 001 - Async": "/lessons/cl27-ldoc.html",
+                "Section 002 - In-person": "https://youtu.be/zcmx1LQ5pks",
+                "Slides": "/static/slides/cl27-ldoc.pdf"
+            }
+        },
+        {
+            "kind": "RV",
+            "n": 11,
+            "title": "Review 4pm -- Going Over the Last Quiz",
+            "date": "2021-11-30",
+            "deadline": "None",
+            "links": {
+                "Zoom Recording": "https://uncch.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=76101f22-b0dd-47dd-b6ec-adf00173db0c"
+            }
+        }
+    ],
+    "2021-12-01": [],
+    "2021-12-03": [
+        {
+            "kind": "FN",
+            "n": 0,
+            "title": "Final @ 08:00:00",
+            "date": "2021-12-03",
+            "deadline": "None",
+            "links": {
+                "Finals Information / F.A.Q.": "/resources/final.html"
+            }
+        }
+    ],
+    "2021-12-02": [
+        {
+            "kind": "RV",
+            "n": 12,
+            "title": "Review 3pm -- SN014 Final Review",
+            "date": "2021-12-02",
+            "deadline": "None",
+            "links": {
+                "Zoom Recording": "https://uncch.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=fef6e054-109b-4268-921f-adf2016a2cf6"
+            }
+        }
+    ]
+}

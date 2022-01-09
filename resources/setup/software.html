@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Software Setup - COMP110 - 21f</title>
+    <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css?v=1641698962.8052287">
+    <script src="/static/scripts/scroll-handler.js"></script>
+    <script src="/static/scripts/sunset_sunrise.js"></script>
+
+</head>
+
+<body class="scrolling-page" >
+    <script>
+        const lat = 35.912005; // latitude and longitude for Chapel Hill
+        const long = -79.051210; // Replace with some way to gain User location if/when desired
+    </script>
+    <script>
+        // resets user pref in the event of styling overhaul
+        if ((localStorage.getItem('mode') == "halloween-mode") || (localStorage.getItem('userPref') == "halloween-mode")) {
+            localStorage.setItem('userPref', null);
+            localStorage.setItem('mode', null);
+        }
+    
+        var datetime = new Date(); // NOTE: This is my additional scripting to check whereabouts the sun is
+        var time = datetime.getHours() + (datetime.getMinutes() / 60);
+        var timer = 240000000; // a very big number
+        if(localStorage.getItem('userPref') === null) {
+            if(time < getSunrise(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = getSunrise(lat, long) - time;
+            } else if(time > getSunset(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = (getSunrise(lat, long) + 24) - time;
+            } else {
+                localStorage.setItem('mode', 'light-mode');
+                timer = getSunset(lat, long) - time;
+            }
+        }
+    </script>
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('userPref')); // userPref holds which mode the user prefers
+        document.body.classList.add(localStorage.getItem('mode')); // mode holds the current state of the site
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <a name="top"></a>
+    <div id="page-container">
+    <div id="content-wrapper">
+    <div class="wrapper">
+        <nav id="navbarStick" class="navbar navbar-scroll navbar-expand">
+            <div class="container-fluid">
+                <div class = 'show-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-small" onClick="window.scroll({top: 0, left: 0, behavior: 'smooth'});"> back to top </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+                </div>
+                <div class = 'hide-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand web" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav web">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/resources">resources</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/topics">topics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/support">support </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/explore">explore</a>
+                            </li>
+                        </ul>
+                        <a href="javascript:void(0);" class="icon" id="hamburger">
+                            <i class="fa fa-bars fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+                    <div class="switches">
+                        <input type="checkbox" id="1" onclick="
+                            if (localStorage.getItem('mode') === 'dark-mode') {
+                                localStorage.setItem('userPref', 'light-mode');
+                                localStorage.setItem('mode', 'light-mode');
+                            } else {
+                                localStorage.setItem('userPref', 'dark-mode');
+                                localStorage.setItem('mode', 'dark-mode');
+                            }
+                            location.reload();">
+                        <label for="1">
+                            <span id="mode-label">spooky_mode</span>
+                            <span></span>
+                        </label>
+                        <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                        <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+                    </div>
+                </div>
+            </div>
+            <a class="navbar-brand mobile" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/halloweenbrand.png"
+                alt="COMP110 - Spring - 2021">
+            </a>
+        </nav>
+        <ul class="navbar-nav mobile" id="mobile">
+            <li class="nav-item" id="link1">
+                <a class="nav-link" href="/resources">resources</a>
+            </li>
+            <li class="nav-item" id="link2">
+                <a class="nav-link" href="/topics">topics</a>
+            </li>
+            <li class="nav-item" id="link3">
+                <a class="nav-link" href="/support">support</a>
+            </li>
+             <li class="nav-item" id="link4">
+                <a class="nav-link" href="/explore">explore</a>
+            </li>
+        </ul>
+
+        <script>
+            document.getElementById("hamburger").addEventListener("click", function() {
+            var x = [];
+            x[0] = document.getElementById("link1");
+            x[1] = document.getElementById("link2");
+            x[2] = document.getElementById("link3");
+            x[3] = document.getElementById("link4");
+            for (let i = 0; i < 4; i++) {
+                if (x[i].style.display === "block") {
+                    x[i].style.display = "none";
+                    document.getElementById("mobile").style.paddingTop="0";
+                    document.getElementById("mobile").style.paddingBottom="0";
+                } else {
+                    x[i].style.display = "block";
+                    document.getElementById("mobile").style.paddingTop="20px";
+                    document.getElementById("mobile").style.paddingBottom="20px";
+                }
+            }
+            });
+        </script>
+
+        <div id="resource-page" class="container">
+            <div class="row pt-4">
+
+
+                <div class="col-12">
+                    <h1 class="display-5">Software Setup</h1>
+                    <hr class="title"/>
+                </div>
+            </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+    
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            
+            <div id="button-box class="link-pag box">
+            </div>
+
+            <div id="menu-overview" class="link-page box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul><li><a href="#windows-10-instructions">Windows 10 Instructions</a><ul>
+<li><a href="#install-the-latest-python-programming-language-toolkit-3.9.6-or-greater">0. Install the Latest Python Programming Language Toolkit (3.9.6 or greater)</a></li>
+<li><a href="#install-the-visual-studio-code-vscode-text-editor">1. Install the Visual Studio Code (VSCode) Text Editor</a></li>
+<li><a href="#install-the-git-source-code-management-software-scm">2. Install the <code>git</code> Source Code Management Software (SCM)</a></li>
+<li><a href="#install-the-zoom-web-conferencing-software">3. Install the Zoom Web Conferencing Software</a></li>
+<li><a href="#reboot-your-machine">4. Reboot your machine!</a></li>
+</ul></li>
+<li><a href="#macos-instructions">macOS Instructions</a><ul>
+<li><a href="#update-your-default-shell-in-the-terminal">0. Update Your Default Shell in the Terminal</a></li>
+<li><a href="#install-or-update-the-python-programming-language-toolkit-3.9.6-or-greater">1. Install (or Update) the Python Programming Language Toolkit (3.9.6 or greater)</a></li>
+<li><a href="#configure-your-shell-to-use-the-latest-python">2. Configure your Shell to use the Latest Python</a></li>
+<li><a href="#install-the-visual-studio-code-vscode-text-editor-1">3. Install the Visual Studio Code (VSCode) Text Editor</a></li>
+<li><a href="#install-the-git-source-code-management-software-scm-1">4. Install the <code>git</code> Source Code Management Software (SCM)</a></li>
+<li><a href="#install-the-zoom-web-conferencing-software-1">5. Install the Zoom Web Conferencing Software</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><p>This guide will walk you through installing the software you’ll need for the course. Before diving in it’s worth understanding what you’re about to do at a high level.</p>
+<p>First, you should be sure your operating system is up-to-date. If you did not already move through the <a href="/resources/setup/os-update.html">Operating System Update</a> steps, then go ahead and do that.</p>
+<p>Next, you’ll install the software needed to <em>write your own programs</em> in the course. In general, to write your own programs you need two kinds of software installed: a <strong>programming language toolkit</strong> and a <strong>text editor designed for programming</strong>. For this course we’ll explore programming with the Python programming language using the Visual Studio Code text editor. These are two of the most widely used tools of their kind in 2021 and are highly applicable beyond the scope of this course.</p>
+<p>Finally, you’ll install the Zoom Web Conferencing software. Installing this app on your computer, rather than using the web version, will improve your experience and make it easier for you to share your screen with our course staff as needed. If you already have the app installed, be sure to check for updates as Zoom improved over the break.</p>
+<p>Follow the instructions for your operating system, either <a href="/resources/setup/os-update.html#windows-10-instructions">Windows 10</a> or <a href="/resources/setup/os-update.html#macos-instructions">macOS</a>.</p>
+<hr />
+<h1 id="windows-10-instructions">Windows 10 Instructions</h1>
+<p>Before beginning, be sure you are using the latest version of <a href="/resources/setup/os-update.html#windows-10">Windows 10</a>.</p>
+<h2 id="install-the-latest-python-programming-language-toolkit-3.9.6-or-greater">0. Install the Latest Python Programming Language Toolkit (3.9.6 or greater)</h2>
+<p>For these steps, be sure your web browser Window is maximized and be sure to follow step 4.0 closely that <strong>checks</strong> the option “Add Python 3.9 to Path” during install.</p>
+<ol start="0" type="1">
+<li>Open the <strong>Python Website</strong> in another tab: <a href="https://www.python.org" target="_blank">https://www.python.org</a></li>
+<li>Press the <strong>Downloads</strong> button in navigation.</li>
+<li>In the headline, you should see <strong>“Download the latest version for Windows”</strong>.
+<ul>
+<li>If, instead, you see “Download the latest version of Python” be sure your browser Window is maximized and refresh the web page.</li>
+</ul></li>
+<li>Press the <strong>Download Python 3.9.6</strong> button. The download should begin.
+<ul>
+<li>If you are taken to another page without a download beginning, scroll down to the <strong>Files</strong> heading and select the file named <code>Windows x86 executable installer</code>.**</li>
+</ul></li>
+<li>Open the download once it completes and <strong>carefully</strong> follow the instructions below, <em>especially the first one</em>:
+<ol start="0" type="1">
+<li><strong>IMPORTANT: Check the box on the first screen labelled “Add Python 3.9 to PATH”</strong>
+<ul>
+<li>If you do not see this option, you likely have an older version of Python already installed. Go ahead and uninstall the old version and then retry installing the new version.</li>
+<li>Knowing exactly what this does is beyond your concern, but the gist is it makes it easier for other programs on your system to make use of Python.</li>
+</ul></li>
+<li>After checking the box of Step 0, click Install Now.</li>
+<li>Allow the installer to make changes if further prompted.</li>
+<li>Accept other defaults on following screens.</li>
+<li>Click the Close button to complete the Install.</li>
+</ol></li>
+</ol>
+<h2 id="install-the-visual-studio-code-vscode-text-editor">1. Install the Visual Studio Code (VSCode) Text Editor</h2>
+<ol start="0" type="1">
+<li>Open the <strong>VSCode website</strong> in another tab: <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a></li>
+<li>Select the large <strong>Download for Windows</strong> button</li>
+<li>Open the downloaded installer after its download completes
+<ol start="0" type="1">
+<li>Accept the licensing agreement</li>
+<li>You’re asked <em>where</em> to install VS Code. The suggested location is OK. Press Next.</li>
+<li>You’re asked if you want to add VS Code to your start menu. That’s OK, too. Press Next.</li>
+<li><strong>Important</strong> Under additional tasks, <strong>check all</strong> of the options available.
+<ul>
+<li>These options make it easier for you to open files in VS Code.</li>
+</ul></li>
+<li>At Ready to Install, select Install.</li>
+</ol></li>
+</ol>
+<h2 id="install-the-git-source-code-management-software-scm">2. Install the <code>git</code> Source Code Management Software (SCM)</h2>
+<ol start="0" type="1">
+<li>Open the <code>git</code> website in another tab: <a href="https://git-scm.com" target="_blank">https://git-scm.com</a></li>
+<li>Look for the button to “Download for Windows” (it is embedded in a monitor graphic to the right)</li>
+<li>After the download begins open the installer</li>
+<li>Allow the app to make changes and install</li>
+<li>Press Next on the Information page</li>
+<li>Press Next on the Destination Location page (default is fine)</li>
+<li>Press Next on the Components page (defaults are fine)</li>
+<li>Press Next on the Start Menu Folder page</li>
+<li>Choose Visual Studio Code as Git’s default editor and press Next</li>
+<li>Press Next/Install on the remaining pages and accept the defaults</li>
+</ol>
+<h2 id="install-the-zoom-web-conferencing-software">3. Install the Zoom Web Conferencing Software</h2>
+<p>Logging into Zoom with SSO ensures you will be able to join our protected, UNC-only Zoom meetings.</p>
+<ol start="0" type="1">
+<li>Open the <strong>Zoom website</strong> in another tab, download the Zoom Client for Meetings, and install it: <a href="https://zoom.us/download" target="_blank">https://zoom.us/download</a></li>
+<li><strong>IMPORTANT:</strong> After installing, be sure you select the <strong>Sign-in with SSO</strong> (Single Sign-on) Option on the right-hand side of the app’s login screen
+<ul>
+<li>Enter <code>unc</code> (.zoom.us) as the “Company Domain”</li>
+<li>Login with your ONYEN</li>
+</ul></li>
+</ol>
+<h2 id="reboot-your-machine">4. Reboot your machine!</h2>
+<p>Reboot your computer now. Some settings of the applications you just installed will not take effect until you reboot. Attempting to continue on from this point without rebooting will lead to strange errors later.</p>
+<p>Once you’ve completed this, you’ve got the necessary software installed! Great work!</p>
+<hr />
+<h1 id="macos-instructions">macOS Instructions</h1>
+<p>Before beginning, be sure you are using the latest version of <a href="/resources/setup/os-update.html#macos">macOS</a>.</p>
+<h2 id="update-your-default-shell-in-the-terminal">0. Update Your Default Shell in the Terminal</h2>
+<p>There are two pieces of <em>jargon</em> in the title of this section. A “shell” is a program that serves as a concierge to your computer: you give it commands, such as asking it to run a program you’re working on, and the shell does the work of carrying out your command. A “terminal” is the program you will use to interact with your shell. Apple recently updated its recommended shell software to Z-shell, or <code>zsh</code>, so let’s be sure yours is configured to use it.</p>
+<ol start="0" type="1">
+<li>Using Mac’s Spotlight Search, accessed by pressing <code>Command + Spacebar</code> or clicking the search icon near your clock, type <code>Terminal</code> and press enter. This starts the Terminal app, which may look like what hackers use in the movies, <em>because it is</em>.</li>
+<li>Let’s learn what shell program your terminal is using by default by typing the following (cryptic, based on what we know now) command and pressing enter: <code>echo $SHELL</code> (yes, that’s the word <code>echo</code>, followed by a space, and then a dollar sign followed immediately by the word SHELL in all capital letters, <code>$SHELL</code>)</li>
+<li>If you see <code>/bin/bash</code> in the text “printed” below your command, continue to next step to update your default. If, instead, you see <code>/bin/zsh</code>, you are all set and can jump to step 6.</li>
+<li>Since you saw <code>bash</code> instead of <code>zsh</code>, let’s <code>ch</code>ange your default <code>sh</code>ell using the <code>chsh</code> program to be the location, or path, of the <code>zsh</code> shell program on your computer which is <code>/bin/zsh</code>. Type the following command, check that yours matches exactly, in both spaces and capitalization, and press enter: <code>chsh -s /bin/zsh</code></li>
+<li>You will likely be asked for your computer’s password. When you type in your password you will not see any text appear on your screen, not even dots, but the keys you type are being received. Press enter once you’ve entered your password. If you see “Credentials could not be verified, username or password is invalid.” try running the command again and entering your laptop’s password again.</li>
+<li>This change will be applied to your next shell session, so type <code>exit</code>, close your <code>Terminal</code> again. Go back up to step 0, and continue from there, to confirm it was successful.</li>
+<li>Great! You can quit your shell session by typing <code>exit</code>, pressing enter, and then closing your <code>Terminal</code> window.</li>
+</ol>
+<h2 id="install-or-update-the-python-programming-language-toolkit-3.9.6-or-greater">1. Install (or Update) the Python Programming Language Toolkit (3.9.6 or greater)</h2>
+<p>For these steps, be sure your Web Browser window is maximized.</p>
+<ol start="0" type="1">
+<li>Open the <strong>Python Website</strong> in a new tab: <a href="https://www.python.org" target="_blank">https://www.python.org</a></li>
+<li>Select the <strong>Downloads</strong> button in the navigation</li>
+<li>Look for the <strong>“Download latest version for Mac OS X”</strong>
+<ul>
+<li>If you instead see, “Download the latest version of Python”, make sure your browser is full screen and refresh the page.</li>
+<li>Note: <strong>If you have an M1 Macbook</strong>, you need to select the 64-bit universal installer. Otherwise, select the 64 bit Intel installer.</li>
+</ul></li>
+<li>Click the <strong>Download Python 3.9.6</strong> button. Your download should begin.
+<ul>
+<li>If you are brought to another page, scroll down to the Files section and select the <code>macOS 64-bit Intel installer</code>.</li>
+<li>Note: <strong>If you have a new M1 Macbook</strong>, download the <code>macOS 64-bit universal2 installer</code>. If you are not sure, or bought your computer prior to 2021, stick to downloading the Intel installer.</li>
+</ul></li>
+<li>Open the downloaded package to begin the installer
+<ol start="0" type="1">
+<li>At Introduction screen: Continue</li>
+<li>At the Read Me screen: Continue</li>
+<li>At the License: Continue (Agree)</li>
+<li>At Installation Type: Install</li>
+<li>After Install completes, select Close and close any windows it popped up.</li>
+<li>If asked, move the installer to Trash</li>
+</ol></li>
+</ol>
+<h2 id="configure-your-shell-to-use-the-latest-python">2. Configure your Shell to use the Latest Python</h2>
+<ol start="0" type="1">
+<li>Open a new Terminal window. If you still have one open from section 0, close it out and start a new one, because changes made during the installation of Python will not take effect until a new shell session begins.</li>
+<li>Give the command <code>python3 --version</code>, notice the <code>3</code> after the word <code>python</code> and two dashes at the front of <code>--version</code>, and press enter. You should see <code>Python 3.9.6</code> (or greater) which indicates your install was successful. If not, try the steps above one more time and restart your computer before trying these. Otherwise, come work with us in office hours!</li>
+<li>Now try giving the command <code>python --version</code>, without the <code>3</code> from above. If you see <code>Python 2.X.YY</code>, where <code>X</code> and <code>YY</code> are irrelevant numbers, continue to the next step because Mac also includes a much older version of Python. This is confusing when you’re trying to learn modern Python! If you see <code>Python 3.X.YY</code>, but not <code>Python 3.9.6</code> this means you previously installed an older version of Python3, and you should also continue to step 3. If you see the result <code>Python 3.9.6</code> then you are all set and can continue to the next section on installing <code>git</code>.</li>
+<li>Let’s simplify life by making <code>python</code> refer to the latest version you just installed, not the old one. What the following command is doing is making a link between the name <code>python</code> and the version you just installed. The command is more advanced than where we are at, so do not worry yourself on its details. You should copy and paste the following command into your Terminal, and press enter, because the punctuation symbols need to match precisely.</li>
+</ol>
+<p><code>sudo ln -s "$(which python3)" "$(dirname $(which python3))/python"</code></p>
+<p>If you are prompted for a password, enter your computer’s password. You will not see any indication of your keystrokes show up as you type in your password, but they are being recorded. Press enter after typing your password invisibly. 4. 4. This change will only take place in a new shell session. Type the <code>exit</code> command, press enter, close your terminal. <strong>Go back to Step 0</strong> and continue on until confirming <code>python --version</code> is successfully linked to <code>Python 3.9.6</code> or greater.</p>
+<h2 id="install-the-visual-studio-code-vscode-text-editor-1">3. Install the Visual Studio Code (VSCode) Text Editor</h2>
+<ol start="0" type="1">
+<li>Open the VSCode website in a new browser tab: <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a></li>
+<li>Select the large Download for Mac button</li>
+<li>When you open this Zip download, it creates an application file named Visual Studio Code in your <strong>Downloads</strong> folder and opens that folder in a new <strong>Finder</strong> window.</li>
+<li>Confirm your <strong>Finder</strong> window sidebar is visible, it should be to the left of your files and you should see <em>Applications</em> listed under <em>Favorites</em>. If you do not see the sidebar, go to the <em>View</em> menu and select <em>Show Sidebar</em>. If you do not see <em>Applications</em> listed under <em>Favorites</em>, open the <em>Finder</em> menu, select <em>Preferences…</em>, and check <em>Applications</em>.</li>
+<li>To install Visual Studio Code as an Application, drag the <em>Visual Studio Code</em> icon into your <em>Applications</em> directory which you should see in the left-hand sidebar of the Finder window under Favorites.</li>
+<li>Open Spotlight Search again (<code>Command + Space</code> or the search icon by your clock) and search for “Code”. You should see Visual Studio Code in the results. Open it and it will likely ask to confirm it’s OK to open a file downloaded off the internet. Accept.</li>
+<li>You should see Visual Studio Code open to a Welcome tab. If you do, you’re all set and can close it for now and continue on.</li>
+</ol>
+<h2 id="install-the-git-source-code-management-software-scm-1">4. Install the <code>git</code> Source Code Management Software (SCM)</h2>
+<ol start="0" type="1">
+<li>If you do not have a running shell session in Terminal, start one as you did above.</li>
+<li>Type <code>git --version</code> and press Enter.</li>
+<li>If you see text displayed such as “git version 2.21.0)” then you already have <code>git</code> installed and can close the terminal and continue on</li>
+<li>If <code>git</code> was not already installed, you should see a pop-up window asking you to install <strong>Git / Developer Tools</strong>. Accept this install request and follow its instructions through completion. After it completes, <code>exit</code> and continue to Step 0 to confirm the install succeeded.
+<ul>
+<li>Note: You may instead see a notice about accepting a license agreement and/or running a given command in your terminal. In that case, just follow the instructions and enter your password if needed.</li>
+</ul></li>
+</ol>
+<h2 id="install-the-zoom-web-conferencing-software-1">5. Install the Zoom Web Conferencing Software</h2>
+<p>Logging into Zoom with SSO ensures you will be able to join our protected, UNC-only Zoom meetings.</p>
+<ol start="0" type="1">
+<li>Open the <strong>Zoom website</strong> in another tab, download Zoom Client for Meetings, and install it: <a href="https://zoom.us/download" target="_blank">https://zoom.us/download</a></li>
+<li><strong>IMPORTANT:</strong> After installing, be sure you select the <strong>Sign-in with SSO</strong> (Single Sign-on) Option on the right-hand side of the app’s login screen
+<ul>
+<li>Enter <code>unc</code> (.zoom.us) as the “Company Domain”</li>
+<li>Login with your ONYEN</li>
+</ul></li>
+</ol>
+<p>Once you’ve completed this, you’ve got the necessary software installed! Great work!</p>
+</div>
+
+    </div> 
+
+            <div class="authors-box">
+                <span> Contributor(s): Kris Jordan</span>
+            </div>
+            
+            <div class='link-page wrapper'>
+            <footer>
+                    <p class="footer-content">&copy; 2021 <a href="https://krisjordan.com">Kris Jordan</a>
+                        - <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScQMteEvnQpBfGsAYP5TpuqokQenhZUIf8CNvfAUUZEjMCWZQ/viewform?usp=sf_link">Feedback
+                            Form</a> - <a href="https://forms.gle/AjcyFHirwegBKXbq9">Grievances Form</a> - Made with 💛in <a href="https://cs.unc.edu/">Chapel Hill</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"
+        integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>

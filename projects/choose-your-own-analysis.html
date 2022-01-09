@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PJ01 - Choose Your Own Analysis - COMP110 - 21f</title>
+    <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css?v=1641698979.8221273">
+    <script src="/static/scripts/scroll-handler.js"></script>
+    <script src="/static/scripts/sunset_sunrise.js"></script>
+
+</head>
+
+<body class="scrolling-page" >
+    <script>
+        const lat = 35.912005; // latitude and longitude for Chapel Hill
+        const long = -79.051210; // Replace with some way to gain User location if/when desired
+    </script>
+    <script>
+        // resets user pref in the event of styling overhaul
+        if ((localStorage.getItem('mode') == "halloween-mode") || (localStorage.getItem('userPref') == "halloween-mode")) {
+            localStorage.setItem('userPref', null);
+            localStorage.setItem('mode', null);
+        }
+    
+        var datetime = new Date(); // NOTE: This is my additional scripting to check whereabouts the sun is
+        var time = datetime.getHours() + (datetime.getMinutes() / 60);
+        var timer = 240000000; // a very big number
+        if(localStorage.getItem('userPref') === null) {
+            if(time < getSunrise(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = getSunrise(lat, long) - time;
+            } else if(time > getSunset(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = (getSunrise(lat, long) + 24) - time;
+            } else {
+                localStorage.setItem('mode', 'light-mode');
+                timer = getSunset(lat, long) - time;
+            }
+        }
+    </script>
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('userPref')); // userPref holds which mode the user prefers
+        document.body.classList.add(localStorage.getItem('mode')); // mode holds the current state of the site
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <a name="top"></a>
+    <div id="page-container">
+    <div id="content-wrapper">
+    <div class="wrapper">
+        <nav id="navbarStick" class="navbar navbar-scroll navbar-expand">
+            <div class="container-fluid">
+                <div class = 'show-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-small" onClick="window.scroll({top: 0, left: 0, behavior: 'smooth'});"> back to top </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+                </div>
+                <div class = 'hide-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand web" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav web">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/resources">resources</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/topics">topics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/support">support </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/explore">explore</a>
+                            </li>
+                        </ul>
+                        <a href="javascript:void(0);" class="icon" id="hamburger">
+                            <i class="fa fa-bars fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+                    <div class="switches">
+                        <input type="checkbox" id="1" onclick="
+                            if (localStorage.getItem('mode') === 'dark-mode') {
+                                localStorage.setItem('userPref', 'light-mode');
+                                localStorage.setItem('mode', 'light-mode');
+                            } else {
+                                localStorage.setItem('userPref', 'dark-mode');
+                                localStorage.setItem('mode', 'dark-mode');
+                            }
+                            location.reload();">
+                        <label for="1">
+                            <span id="mode-label">spooky_mode</span>
+                            <span></span>
+                        </label>
+                        <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                        <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+                    </div>
+                </div>
+            </div>
+            <a class="navbar-brand mobile" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/halloweenbrand.png"
+                alt="COMP110 - Spring - 2021">
+            </a>
+        </nav>
+        <ul class="navbar-nav mobile" id="mobile">
+            <li class="nav-item" id="link1">
+                <a class="nav-link" href="/resources">resources</a>
+            </li>
+            <li class="nav-item" id="link2">
+                <a class="nav-link" href="/topics">topics</a>
+            </li>
+            <li class="nav-item" id="link3">
+                <a class="nav-link" href="/support">support</a>
+            </li>
+             <li class="nav-item" id="link4">
+                <a class="nav-link" href="/explore">explore</a>
+            </li>
+        </ul>
+
+        <script>
+            document.getElementById("hamburger").addEventListener("click", function() {
+            var x = [];
+            x[0] = document.getElementById("link1");
+            x[1] = document.getElementById("link2");
+            x[2] = document.getElementById("link3");
+            x[3] = document.getElementById("link4");
+            for (let i = 0; i < 4; i++) {
+                if (x[i].style.display === "block") {
+                    x[i].style.display = "none";
+                    document.getElementById("mobile").style.paddingTop="0";
+                    document.getElementById("mobile").style.paddingBottom="0";
+                } else {
+                    x[i].style.display = "block";
+                    document.getElementById("mobile").style.paddingTop="20px";
+                    document.getElementById("mobile").style.paddingBottom="20px";
+                }
+            }
+            });
+        </script>
+
+        <div id="projects-page" class="container">
+            <div class="row pt-4">
+
+
+                <div class="col-12">
+                    <h1 class="display-5">PJ01 - Choose Your Own Analysis</h1>
+                    <hr class="title"/>
+                </div>
+            </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+    
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            
+            <div id="button-box class="link-pag box">
+            </div>
+
+            <div id="menu-overview" class="link-page box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul><li><a href="#overview">Overview</a></li>
+<li><a href="#basic-steps">Basic Steps</a></li>
+<li><a href="#an-example">An Example</a></li>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#some-notes-before-you-begin">Some notes before you begin</a></li>
+<li><a href="#some-notes-if-you-are-on-a-m1-mac">Some notes if you are on a M1 Mac!</a></li>
+<li><a href="#rubric">Rubric</a></li>
+<li><a href="#submission-instructions">Submission Instructions</a></li>
+<li><a href="#tour-of-the-data">Tour of the Data</a></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><h3 id="overview">Overview</h3>
+<p>In this second open-ended programming project, you will perform some analyses on the survey data that we collected from you all at the beginning of the semester.</p>
+<p>Your project will need to satisfy many specifications, so before you begin programming be sure to read this project’s write-up in full.</p>
+<p>Your task: using the <code>data_utils</code> functions to perform a formal, end-to-end data analysis in a Jupyter Notebook.</p>
+<h3 id="basic-steps">Basic Steps</h3>
+<p>Step 1: Come up with a question you would like to explore.</p>
+<p>Step 2: Outline the steps needed to test this hypothesis or investigate this question.</p>
+<p>Step 3. Perform the data analysis</p>
+<p>Step 4: Evaluate your findings. Was your prediction correct? What can you learn from your results? Do your findings present any new questiosn for a future exploration?</p>
+<h3 id="an-example">An Example</h3>
+<p>You are free to use your imagination to design and implement any experiment you would like, as long as it meets the requirements. For some inspiration, here is a basic analysis we’ve prepared as example of the format of we are looking for.</p>
+<p><img src="../../../static/assets/pj01-s21/ex_1.png" alt="ex_1" /> <img src="../../../static/assets/pj01-s21/ex_2.png" alt="ex_2" /> <img src="../../../static/assets/pj01-s21/ex_3.png" alt="ex_3" /></p>
+<p>Some other questions that may be interesting to explore if you are running low on ideas:</p>
+<ol type="1">
+<li>Are students who come to office hours more likely to recommend the course?</li>
+<li>Does it seem like the students in the synchronous section prefer live lectures?</li>
+<li>Are seniors more likely to complete lessons during the registered course time than first years?</li>
+</ol>
+<p>Again, feel encouraged to come up with an idea that is uniquely your own! Your questions can be more elaborate. It would be especially interesting if there is something you’d like to see improved about the class and could pull together the data analysis to support it! This is the promise of data science: finding evidence-based improvements in the world around you.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>You will get the data needed by “pulling” from the course workspace repository. Steps to do this:</p>
+<ol start="0" type="1">
+<li>Be sure you are in your course workspace. Open the file explorer and you should see your work for the course. If you do not, open your course workspace through File &gt; Open Recent.</li>
+<li>Open the <em>Source Control View</em> by clicking the 3-node (circles) graph (connected by lines) icon in your sidebar or opening the command palatte and searching for <em>Source Control</em>.</li>
+<li>Click the Ellipses in the Source Control pane and select “Pull, Push” from the drop-down menu, then select “Pull from…” A box will appear and you should select either “origin” or “upstream”, but not “backup”. This will begin the pulling process from the course repository. It should silently succeed. (If you are on macOS and do not see anything in source control anymore, it may be because of a macOS update. You can typically resolve this by opening a new Terminal, typing the command <code>xcode-select --install</code>, pressing enter and following its instructions. You will also need to restart VSCode after doing this.)</li>
+<li>Return to the File Explorer pane and open the <code>data</code> directory. You should see it now contains the csv file with the survey results called <code>survey.csv</code>.</li>
+<li>In your workspace’s <code>projects</code> directory, create a folder named <code>pj01</code>. Inside that folder, create a file named <code>analysis.ipynb</code> for this assignment. Additionally, create another file <code>data_utils.py</code> and copy in your functions from <code>ex07</code>.</li>
+</ol>
+<h2 id="some-notes-before-you-begin">Some notes before you begin</h2>
+<p>You will be working with a data set with many columns! We encourage you to play around with it and see what you find, but there is a guide at the bottom of this page for your reference.</p>
+<p>Some notes:</p>
+<ul>
+<li>Some of the survey questions were optional, so there will not be a data value for every column in every row. This is expected. Instead the value will just be the empty <code>str</code> or <code>""</code>.</li>
+<li>When you read in the CSV as a <code>list[dict[str, str]]</code> with your <code>read_csv_rows</code> function, every value is interpreted as a <code>str</code>, including numerical ones! Analysis on columns that include likert data (ratings 1-7), for example, will need to be converted to a numeric type for numeric analysis.</li>
+<li>You will want your first code cell in your notebook to include the following lines:</li>
+</ul>
+<pre><code>    %reload_ext autoreload
+    %autoreload 2</code></pre>
+<h2 id="some-notes-if-you-are-on-a-m1-mac">Some notes if you are on a M1 Mac!</h2>
+<p>If you have the new M1 Macbook, the Seaborn plotting package is not yet supported. An alternative is using Matplotlib, and an example is provided below. Feel free to use Google and any online resources to customize your plot to your liking!</p>
+<pre><code>import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.pyplot as plt
+
+labels = [&#39;Python&#39;, &#39;C++&#39;, &#39;Java&#39;, &#39;Perl&#39;, &#39;Scala&#39;, &#39;Lisp&#39;]
+y_pos = [0, 1, 2, 3, 4, 5]  # the order the labels will be arranged in bar chart
+performance = [10,8,6,4,2,1]
+
+plt.bar(y_pos, performance, align=&#39;center&#39;, alpha=0.5)
+plt.xticks(y_pos, labels)
+plt.ylabel(&#39;Usage&#39;)
+plt.title(&#39;Programming language usage&#39;)
+
+plt.show()</code></pre>
+<h2 id="rubric">Rubric</h2>
+<p>Reporting – 40 points</p>
+<ul>
+<li>10 points - First markdown cell in your notebook states your hypothesis or question of interest</li>
+<li>10 points - Each cell of code that you write must be preceeded by a markdown cell explaining what you are attempting to do. Walk us through your thought process.</li>
+<li>10 points - Final markdown cell is a conclusion paragraph summarizing your findings. Were you able to answer your question or prove your hypothesis? It is totally OK (and part of the process) to not get what you initially expected. You can still get full credit even if you end up contradicting your hypothesis :)</li>
+<li>10 points - <strong>Above and beyond!</strong> Produce 2 visuals. Could be a data table or a plot. The libraries mentioned in <a href="https://youtu.be/8aY_uRPK0iE">this</a> video are a good place to start! Feel free to explore what is out there. If you are producing plots and graphs, please be sure to label your axes and include a title. (Note: above and beyond points are included in the total score. If you choose not to do this, you can still earn 90% credit, which is an A)</li>
+</ul>
+<p>Markdown tip! If you want to make something a big header, you can start the line with <code>#</code> for a big header, <code>##</code> for a medium header, <code>###</code> for a small one.</p>
+<p>Analysis – 60 points</p>
+<ul>
+<li>50 points - Import and make use of the <code>read_csv_rows</code>, <code>head</code>, <code>columnar</code>, <code>select</code>, <code>count</code> functions from previous exercises and class examples (10 points each).</li>
+<li>10 points - Define and use at least one helper function. One idea is a function that <strong>filters</strong> some data based on some criteria. For example, all ratings &gt; 5. (You have already seen a basic filtering algorithm in your <code>only_evens</code> function from exercise 05) Whatever is useful for your particular analysis is fair game!</li>
+</ul>
+<p>These are just the baseline functionality requirements. In order to completely answer the question you pose, some more intermediate steps may be necessary!</p>
+<h2 id="submission-instructions">Submission Instructions</h2>
+<p>Run <code>python -m tools.submission projects/pj01</code> to build your submission zip for upload to Gradescope. Don’t forget to backup your work by creating a commit and pushing it to GitHub. For a reminder of this process, see the previous exercises.</p>
+<p>All of the points for this project will be handgraded, so your autograder score should be 0/0. This blank screen is expected!</p>
+<h2 id="tour-of-the-data">Tour of the Data</h2>
+<p><code>row_number</code> – Row number! Unique for each row of the CSV.</p>
+<p><code>year</code> – Expected graduation year. Possible values: 21, 22, 23, 24, 25. (Note: This is clearly a non-exhaustive list. Just simplified for the sake of the project)</p>
+<p><code>unc_status</code> – UNC status. Possible values: Returning UNC Student, Incoming Transfer Student, Incoming First-year Student</p>
+<p><code>comp_major</code> – Intention to major in CS. Possible values: Yes - BS, Yes - BA, Yes - Minor, No.</p>
+<p><code>primary_major</code> – Primary Major. Possible values: Advertising And Public Relations, Anthropology, Biology, Biostatistics, Business, Chemistry, Communications, Computer Science, Economics, English, Environmental Science, Exercise And Sport Science, Geology, Health Policy And Management, History, Information Science, Journalism, Math, Neuroscience, Nursing, Nutrition, Philosophy, Physics, Political Science, Psychology, Public Health, Sociology, Spanish, Statistics, Undecided</p>
+<p><code>prereqs</code> – Prerequisites satisfied. Possible values are <strong>any combination</strong> of the following: MATH 129P, MATH 130, MATH 152, MATH 210, MATH 231, MATH 232, MATH 233, MATH 347, MATH 381, PHIL 155, PSYC 210, PSYC 215, STOR 112, STOR 113, STOR 120, STOR 151, STOR 155</p>
+<p><code>prior_exp</code> – Prior experience. Possible values: None to less than one month!, 2-6 months, 7-12 months, 1-2 years, Over 2 years</p>
+<p><code>AP_Principles</code> – Completed AP Computer Science Principles. Possible values: Yes, No</p>
+<p><code>AP_A</code> – Completed AP Computer Science A. Possible values: Yes, No</p>
+<p><code>other_comp</code> – Completed a different, formal programming class. Possible values: UNC, Another college or community college, High school course (IB or other), On-line course, Other, None</p>
+<p><code>prior_time</code> – Amount of time spent self-directed programming learning. Possible values: None to less than one month!, 1 month or so, 2-6 months, 7-12 months, 1-2 years, &gt; 2 years</p>
+<p><code>languages</code> – Programming languages student can identify by reading w/o reference material. Possible values are <strong>any combination</strong> of the following: Python, Java / C#, C / C++, JavaScript / TypeScript, Go, LISP / Scheme / Racket, Haskell, R / Matlab / SAS, BASIC, HTML / CSS, SQL, Bash, Other</p>
+<p><code>on_campus</code> – Living on or close to campus this year in Chapel Hill or Carboro. Possible values: Yes, No</p>
+<p><code>section</code> – Enrollment section of COMP 110. Possible values: Remote or In-Person.</p>
+<p><code>in_person_classes</code> – The student is enrolled in at least one in person class. Possible values: Yes, No.</p>
+<p><code>hours_online_social</code> – Number of hours a day spent interacting with digital technology for personal uses (e.g. social media, entertainment, personal communication)? Possible values: None, 0 to 2 hours, 3 to 5 hours, 5 to 10 hours, 10+ hours.</p>
+<p><code>hours_online_work</code> – Number of hours a day spent interacting with digital technology for work/school uses. Possible values: Possible values: None, 0 to 2 hours, 3 to 5 hours, 5 to 10 hours, 10+ hours.</p>
+<p><code>lesson_time</code> – Student completes each lecture’s lessons during the hours of the day registered for the course. In other words, if in Section 1, lessons are completed between 9:30pm-10:45am on Tu/Th, and if in Section 2, lessons are completed during class time. Possible values <em>(1 being Never and 7 being Always)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>sync_perf</code> – Student’s performance in this course would improve if every lecture were synchronous with required attendance during the regularly scheduled meeting time. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>all_sync</code> – Student would prefer this course to require every lecture be synchronous with required attendance during the regularly scheduled meeting time. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>own_notes</code> – Student keeps own notes for topics covered in lecture. Possible values <em>(1 being Never and 7 being Always)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>own_examples</code> – When uncertain of how a concept works, student tries to come up with own examples in code. Possible values <em>(1 being Never and 7 being Always)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>oh_visits</code> – On average, for a single programming exercise or project in this course, student typically needs to seek help in office hours about this many times. Possible values <em>(0 being Zero and 5 being Five or More)</em>: 0, 1, 2, 3, 4, 5</p>
+<p><code>ls_effective</code> – Lesson videos are effective in helping student learn the topics of the course. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>lsqs_effective</code> – Post-lesson questions on Gradescope are effective in helping student learn the topics of the course. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>programming_effective</code> – Programming assignments are effective in helping student learn the topics of the course. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>qz_effective</code> – Preparing for quizzes is effective in helping student learn the topics of the course. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>oh_effective</code> – Office hours 1:1 appointments are effective in helping student learn the topics of the course. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree, Empty string if student has not attended OH)</em>: 1, 2, 3, 4, 5, 6, 7, ""</p>
+<p><code>tutoring_effective</code> – Tutoring is effective in helping student learn the topics of the course. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree, Empty string if student has not attended tutoring)</em>: 1, 2, 3, 4, 5, 6, 7, ""</p>
+<p><code>kaki_effective</code> – Kaki’s review sessions are effective in helping student learn the topics of the course. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree, Empty string if student has not attended Kaki’s review sessions)</em>: 1, 2, 3, 4, 5, 6, 7, ""</p>
+<p><code>pace</code> – Student finds the pace of COMP110 to be moving… Possible values <em>(1 being Very Slowly and 7 being Very Quickly)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>difficulty</code> – Student is finding COMP110 to be… Possible values <em>(1 being Very Easy and 7 being Very Difficult)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>understanding</code> – So far, student is feeling like they typically… Possible values <em>(1 being Are Lost and 7 being Understand Everything)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>interesting</code> – Student believes the topics they are learning in this course are intellectually interesting. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>valuable</code> – Student believes the skills they are learning in this course will be valuable to them in the future. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>would_recommend</code> – Student would recommend this course to other students in the Fall. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+</div>
+
+    </div> 
+
+            <div class="authors-box">
+                <span> Contributor(s):                        Kaki Ryan, Izzy Ford</span>
+            </div>
+            
+            <div class='link-page wrapper'>
+            <footer>
+                    <p class="footer-content">&copy; 2021 <a href="https://krisjordan.com">Kris Jordan</a>
+                        - <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScQMteEvnQpBfGsAYP5TpuqokQenhZUIf8CNvfAUUZEjMCWZQ/viewform?usp=sf_link">Feedback
+                            Form</a> - <a href="https://forms.gle/AjcyFHirwegBKXbq9">Grievances Form</a> - Made with 💛in <a href="https://cs.unc.edu/">Chapel Hill</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"
+        integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
