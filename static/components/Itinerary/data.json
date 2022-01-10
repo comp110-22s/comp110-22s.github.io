@@ -154,16 +154,6 @@
             "links": {
                 "Watch Lesson": "https://youtu.be/JP5oFPHw5zc"
             }
-        },
-        {
-            "kind": "EX",
-            "n": 1,
-            "title": "Variables and Expressions - Due Mon 1/24 @ 11:59pm",
-            "date": "2022-01-18",
-            "deadline": "2022-01-24",
-            "links": {
-                "EX01 Input and Variables": "/exercises/ex01.html"
-            }
         }
     ],
     "2022-01-19": [],
@@ -173,12 +163,11 @@
             "n": 0,
             "title": "Quiz 0",
             "date": "2022-01-20",
-            "deadline": "None",
+            "deadline": "2022-01-20",
             "links": {
-                "What to expect and how to prepare?": "/resources/quiz-expectations.html",
-                "Practice Questions": "/resources/practice/fa21/quiz0-worksheet.html",
-                "Expressions - Review Question": "",
-                "Evaluationg Relational Expressions": ""
+                "Review Question #1 - Numerical Expression": "https://youtu.be/ISP-9wkrlyM",
+                "Review Question #2 - Rational Expressions": "https://youtu.be/g8_OERDtJ8c",
+                "More Practice Questions": "/resources/practice/fa21/quiz0-worksheet.html"
             }
         }
     ],
@@ -186,311 +175,69 @@
     "2022-01-22": [],
     "2022-01-23": [],
     "2022-01-24": [],
-    "2022-01-25": [
-        {
-            "kind": "CL",
-            "n": 4,
-            "title": "Async Class Day - Gradescope Qs due Fri 9/3 at 11:59pm - No In-person meeting for Section 002",
-            "date": "2022-01-25",
-            "deadline": "None",
-            "links": {
-                "LS09 - while Loop Statements": "https://youtu.be/pvpgvYlyfUU"
-            }
-        },
-        {
-            "kind": "EX",
-            "n": 2,
-            "title": "Conditionals and Loops - Due Wed 9/8 at 11:59pm",
-            "date": "2022-01-25",
-            "deadline": "2022-01-28",
-            "links": {
-                "EX02 - Conditionals and Loops": "/exercises/ex02.html"
-            }
-        }
-    ],
+    "2022-01-25": [],
     "2022-01-26": [],
-    "2022-01-27": [
-        {
-            "kind": "CL",
-            "n": 5,
-            "title": "Practice with if-else and while loops, Nested Control Flow, and Boolean Operators",
-            "date": "2022-01-27",
-            "deadline": "None",
-            "links": {
-                "LS10 Async - 001 @ 9:30am": "/lessons/cl05-control-flow.html",
-                "LS10 In-person - 002 @ 11am": "https://youtu.be/QT-d2pfoerM",
-                "Slides": "/static/slides/cl05-control-flow-practice.pdf"
-            }
-        }
-    ],
+    "2022-01-27": [],
     "2022-01-28": [],
     "2022-01-29": [],
     "2022-01-30": [],
     "2022-01-31": [],
-    "2022-02-01": [
-        {
-            "kind": "CL",
-            "n": 6,
-            "title": "Functions",
-            "date": "2022-02-01",
-            "deadline": "None",
-            "links": {
-                "LS11 - Part 1 - Introducing Functions": "https://youtu.be/UheQNnstJE8",
-                "LS11 - Part 2 - Function Definition Syntax": "https://youtu.be/ihpN4LOqx8s",
-                "LS11 - Part 3 - Function Call Semantics - Memory Diagrams": "https://youtu.be/_swT3gKjDVg"
-            }
-        },
-        {
-            "kind": "EX",
-            "n": 3,
-            "title": "More Control Flow - Due Wed 9/15 at 11:59pm",
-            "date": "2022-02-01",
-            "deadline": "2022-02-04",
-            "links": {
-                "EX03 - More Control Flow": "/exercises/ex03.html"
-            }
-        }
-    ],
+    "2022-02-01": [],
     "2022-02-02": [],
-    "2022-02-03": [
-        {
-            "kind": "CL",
-            "n": 7,
-            "title": "Practice with functions, control flow, intro to f-strings and main",
-            "date": "2022-02-03",
-            "deadline": "None",
-            "links": {
-                "LS12 Async - 001 @ 9:30am": "/lessons/cl07-functions.html",
-                "LS12 In-person - 002 @ 11am": "https://youtu.be/G2maDYRZDL4",
-                "Slides": "/static/slides/cl07-function-practice.pdf",
-                "Gradescope Questions": "https://gradescope.com"
-            }
-        }
-    ],
-    "2022-02-04": [
-        {
-            "kind": "PJ",
-            "n": 0,
-            "title": "Choose Your Own Adventure - Due Wed 9/22 @ 11:59pm ",
-            "date": "2022-02-04",
-            "deadline": "2022-02-11",
-            "links": {
-                "PJ00 - Choose Your Own Adventure": "/projects/choose-your-own-adventure.html",
-                "Background Lessons (1/2) ": "lessons/scopes-constants-globals.html",
-                "Background Lessons (2/2)": "lessons/strings.html"
-            }
-        }
-    ],
+    "2022-02-03": [],
+    "2022-02-04": [],
     "2022-02-05": [],
     "2022-02-06": [],
     "2022-02-07": [],
-    "2022-02-08": [
+    "2022-02-08": [],
+    "2022-02-09": [],
+    "2022-02-10": [
         {
             "kind": "QZ",
             "n": 1,
             "title": "Quiz 1",
-            "date": "2022-02-08",
-            "deadline": "None",
-            "links": {
-                "Practice Questions": "/resources/practice/fa21/quiz1-worksheet.html"
-            }
-        }
-    ],
-    "2022-02-09": [],
-    "2022-02-10": [
-        {
-            "kind": "CL",
-            "n": 9,
-            "title": "Async Class Day - Introduction to lists",
             "date": "2022-02-10",
-            "deadline": "None",
-            "links": {
-                "Complete Required Course Survey": "https://forms.gle/4GQ4neR9ziYKJNiMA",
-                "LS13 - Lists in Python": "https://youtu.be/uGsgE_EKI4U",
-                "Slides": "/static/slides/cl10-list-practice.pdf",
-                "Gradescope Questions": "https://gradescope.com"
-            }
+            "deadline": "2022-02-10",
+            "links": {}
         }
     ],
     "2022-02-11": [],
     "2022-02-12": [],
     "2022-02-13": [],
     "2022-02-14": [],
-    "2022-02-15": [
-        {
-            "kind": "CL",
-            "n": 10,
-            "title": "Practice with Diagrams Involving Lists",
-            "date": "2022-02-15",
-            "deadline": "None",
-            "links": {
-                "LS14 Async - 001 @ 9:30am": "/lessons/cl10-list-diagrams.html",
-                "LS14 In-person - 002 @ 11am": "https://youtu.be/__fbBZDR6EM",
-                "Gradescope Questions": "https://gradescope.com"
-            }
-        },
-        {
-            "kind": "EX",
-            "n": 4,
-            "title": "`list` Utility Functions - Due Wed 9/29 at 11:59pm",
-            "date": "2022-02-15",
-            "deadline": "2022-02-18",
-            "links": {
-                "EX04 - List Utility Functions": "/exercises/ex04.html"
-            }
-        },
-        {
-            "kind": "RD",
-            "n": 0,
-            "title": "Ethical Algorithms - Due Sat 10/9 at 11:59pm",
-            "date": "2022-02-15",
-            "deadline": "2022-03-03",
-            "links": {
-                "Reading found on Gradescope": "https://gradescope.com"
-            }
-        }
-    ],
+    "2022-02-15": [],
     "2022-02-16": [],
-    "2022-02-17": [
-        {
-            "kind": "CL",
-            "n": 11,
-            "title": "Async Class Day - Gradescope Qs due Weds 9/29 at 11:59pm - No In-person meeting for Section 002 - Unit Testing and for..in Loops",
-            "date": "2022-02-17",
-            "deadline": "None",
-            "links": {
-                "LS15 - Unit Testing Introduction": "https://youtu.be/VAdJybtia-4",
-                "LS16 - for..in Loops": "https://youtu.be/YPfFCD_RGK8",
-                "Gradescope Questions": "https://gradescope.com"
-            }
-        }
-    ],
+    "2022-02-17": [],
     "2022-02-18": [],
     "2022-02-19": [],
     "2022-02-20": [],
     "2022-02-21": [],
-    "2022-02-22": [
-        {
-            "kind": "CL",
-            "n": 12,
-            "title": "Practice with Scope, global, References, and Lists",
-            "date": "2022-02-22",
-            "deadline": "None",
-            "links": {
-                "LS17 Async - 001 @ 9:30am": "/lessons/cl12-scope-reference-practice.html",
-                "LS17 In-person - 002 @ 11am": "https://youtu.be/WI7xK_h08rw",
-                "Slides": "/static/slides/cl12-scope-reference-practice.pdf",
-                "Gradescope Questions": "https://gradescope.com"
-            }
-        },
-        {
-            "kind": "EV",
-            "n": 0,
-            "title": "UTA Panel: What I Wish I Knew in COMP110 - 7pm - Sitterson 014",
-            "date": "2022-02-22",
-            "deadline": "None",
-            "links": {
-                "Recording of Event": "https://drive.google.com/file/d/1Rmv102dNByesCQluOZPUditOyo6q6D4S/view?usp=sharing"
-            }
-        },
-        {
-            "kind": "EX",
-            "n": 5,
-            "title": "More `list`s and Unit Tests - Due Wed 10/06 at 11:59pm",
-            "date": "2022-02-22",
-            "deadline": "2022-02-25",
-            "links": {
-                "EX05 - More Lists and Unit Tests": "/exercises/ex05.html"
-            }
-        }
-    ],
+    "2022-02-22": [],
     "2022-02-23": [],
-    "2022-02-24": [
-        {
-            "kind": "QZ",
-            "n": 2,
-            "title": "Quiz 2",
-            "date": "2022-02-24",
-            "deadline": "None",
-            "links": {
-                "Practice Questions": "/resources/practice/fa21/quiz2-worksheet.html"
-            }
-        }
-    ],
+    "2022-02-24": [],
     "2022-02-25": [],
     "2022-02-26": [],
     "2022-02-27": [],
     "2022-02-28": [],
-    "2022-03-01": [
-        {
-            "kind": "CL",
-            "n": 14,
-            "title": "Dictionaries",
-            "date": "2022-03-01",
-            "deadline": "None",
-            "links": {
-                "LS18 - Dictionaries": "https://www.youtube.com/watch?v=2B8Nh3pJEFE"
-            }
-        },
-        {
-            "kind": "EX",
-            "n": 6,
-            "title": "Dictionaries - Due Wed 10/20 at 11:59pm",
-            "date": "2022-03-01",
-            "deadline": "2022-03-11",
-            "links": {
-                "EX06 - Dictionaries": "/exercises/ex06.html"
-            }
-        }
-    ],
+    "2022-03-01": [],
     "2022-03-02": [],
     "2022-03-03": [
         {
-            "kind": "CL",
-            "n": 15,
-            "title": "Wellness Day - No Class",
+            "kind": "QZ",
+            "n": 2,
+            "title": "Quiz 2",
             "date": "2022-03-03",
-            "deadline": "None",
-            "links": {
-                "Office Hours and Tutoring Closed on Tuesday 10/12": "",
-                "Section 002 will meet in-person on Thursday 10/14": "",
-                "EX06 Deadline Extended to Wednesday 10/20": ""
-            }
+            "deadline": "2022-03-03",
+            "links": {}
         }
     ],
     "2022-03-04": [],
     "2022-03-05": [],
     "2022-03-06": [],
     "2022-03-07": [],
-    "2022-03-08": [
-        {
-            "kind": "CL",
-            "n": 16,
-            "title": "Dictionary Practice and Introduction to Importing Modules",
-            "date": "2022-03-08",
-            "deadline": "None",
-            "links": {
-                "LS19 Async (9:30-10:45)": "/lessons/cl16-dictionary-practice-and-imports.html",
-                "LS19 In-person (11-12:15)": "https://youtu.be/oo1atFjx7X0",
-                "Slides": "/static/slides/cl16-dictionary-practice-imports.pdf"
-            }
-        }
-    ],
+    "2022-03-08": [],
     "2022-03-09": [],
-    "2022-03-10": [
-        {
-            "kind": "CL",
-            "n": 17,
-            "title": "Jupyter Notebooks and CSV Files - Async Class Day - No In-person meeting for Section 002",
-            "date": "2022-03-10",
-            "deadline": "None",
-            "links": {
-                "LS20 - Jupyter Notebooks": "https://youtu.be/HJgX1WWC26A",
-                "LS21 - Reading CSV Files": "https://youtu.be/z4ax7ilh-RY",
-                "Gradescope Questions": "https://gradescope.com"
-            }
-        }
-    ],
+    "2022-03-10": [],
     "2022-03-11": [],
     "2022-03-12": [],
     "2022-03-13": [],
@@ -502,232 +249,51 @@
     "2022-03-19": [],
     "2022-03-20": [],
     "2022-03-21": [],
-    "2022-03-22": [
-        {
-            "kind": "CL",
-            "n": 18,
-            "title": "Practice for Quiz 03",
-            "date": "2022-03-22",
-            "deadline": "None",
-            "links": {
-                "LS22 Async (9:30-10:45)": "https://youtu.be/s5UkpdxbSiM",
-                "LS22 In-person (11-12:15)": "https://youtu.be/YwI0UFr2EVE",
-                "Gradescope Questions": "https://gradescope.com",
-                "Slides": "/static/slides/cl18-dictionary-practice.pdf",
-                "(Optional, CS Majors Encouraged!) Hack 110 RSVP for Friday, November 12 at 7pm": "https://bit.ly/hack110-21f"
-            }
-        },
-        {
-            "kind": "RD",
-            "n": 1,
-            "title": "Weapons of Math Destruction - Due Mon 11/8 at 11:59pm",
-            "date": "2022-03-22",
-            "deadline": "2022-03-28",
-            "links": {
-                "Reading found on Gradescope": "https://gradescope.com"
-            }
-        },
-        {
-            "kind": "EX",
-            "n": 7,
-            "title": "Data Wrangling - Due Monday 11/01 at 11:59pm",
-            "date": "2022-03-22",
-            "deadline": "2022-03-28",
-            "links": {
-                "EX07 - Data Wrangling": "/exercises/ex07.html"
-            }
-        }
-    ],
+    "2022-03-22": [],
     "2022-03-23": [],
-    "2022-03-24": [
-        {
-            "kind": "QZ",
-            "n": 3,
-            "title": "Quiz 3",
-            "date": "2022-03-24",
-            "deadline": "None",
-            "links": {
-                "Practice Questions": "/resources/practice/fa21/quiz3-worksheet.html"
-            }
-        }
-    ],
+    "2022-03-24": [],
     "2022-03-25": [],
     "2022-03-26": [],
     "2022-03-27": [],
     "2022-03-28": [],
-    "2022-03-29": [
-        {
-            "kind": "CL",
-            "n": 20,
-            "title": "Object-oriented Programming Introduction",
-            "date": "2022-03-29",
-            "deadline": "None",
-            "links": {
-                "Object-oriented Programming (Classes, Objects, Methods, Constructors)": "https://youtu.be/wBhS8OXtM5Q"
-            }
-        },
-        {
-            "kind": "PJ",
-            "n": 1,
-            "title": "Choose Your Own Analysis - Due Tue 11/09 @ 11:59pm ",
-            "date": "2022-03-29",
-            "deadline": "2022-04-05",
-            "links": {
-                "PJ01 - Choose Your Own Analysis": "/projects/choose-your-own-analysis.html"
-            }
-        }
-    ],
+    "2022-03-29": [],
     "2022-03-30": [],
     "2022-03-31": [
         {
-            "kind": "CL",
-            "n": 21,
-            "title": "Object-oriented Programming Practice",
+            "kind": "QZ",
+            "n": 3,
+            "title": "Quiz 3",
             "date": "2022-03-31",
-            "deadline": "None",
-            "links": {
-                "LS24 Async (9:30-10:45)": "/lessons/cl21-oop-practice.html",
-                "LS24 In-person (11-12:15)": "https://youtu.be/nu-cIsozlEs",
-                "Slides": "/static/slides/cl21-oop-practice.pdf"
-            }
+            "deadline": "2022-03-31",
+            "links": {}
         }
     ],
     "2022-04-01": [],
     "2022-04-02": [],
     "2022-04-03": [],
     "2022-04-04": [],
-    "2022-04-05": [
-        {
-            "kind": "CL",
-            "n": 22,
-            "title": "(Async) Magic Methods, Operator Overloading, and Column-based Filtering",
-            "date": "2022-04-05",
-            "deadline": "None",
-            "links": {
-                "Magic Methods": "https://youtu.be/yxDIEqm_K6c",
-                "Operator Overloading": "https://youtu.be/JJLnGL-cShU",
-                "Note: The column-based filtering lesson references pulling and seeing ls19, but this semester it's ls25!": "",
-                "Column-based Filtering": "https://www.youtube.com/watch?v=_htZ8sB2qe8"
-            }
-        }
-    ],
-    "2022-04-06": [
-        {
-            "kind": "EX",
-            "n": 8,
-            "title": "Simpy - Due Tues 11/16 at 11:59pm",
-            "date": "2022-04-06",
-            "deadline": "2022-04-12",
-            "links": {
-                "EX08 - Simpy": "/exercises/ex08.html"
-            }
-        }
-    ],
-    "2022-04-07": [
-        {
-            "kind": "CL",
-            "n": 23,
-            "title": "Special Parameters and Getting Started with EX08",
-            "date": "2022-04-07",
-            "deadline": "None",
-            "links": {
-                "(Async) Special Parameters": "https://youtu.be/7cOEibFopjQ",
-                "(Async) Getting Started with Simpy": "https://youtu.be/fmnMaN728RE",
-                "(In-person) Live Stream": "https://youtu.be/7xY46GhgtkU"
-            }
-        }
-    ],
+    "2022-04-05": [],
+    "2022-04-06": [],
+    "2022-04-07": [],
     "2022-04-08": [],
     "2022-04-09": [],
     "2022-04-10": [],
-    "2022-04-11": [
-        {
-            "kind": "RD",
-            "n": 2,
-            "title": "Gender Shades - Due LDOC at 11:59pm",
-            "date": "2022-04-11",
-            "deadline": "2022-04-26",
-            "links": {
-                "Reading found on Gradescope": "https://gradescope.com"
-            }
-        }
-    ],
-    "2022-04-12": [
-        {
-            "kind": "CL",
-            "n": 24,
-            "title": "OOP Practice",
-            "date": "2022-04-12",
-            "deadline": "None",
-            "links": {
-                "(Async) OOP Practice": "/lessons/cl24-more-oop-practice.html",
-                "(In-person) Live Stream": "https://youtu.be/vGk7ECVT1f0",
-                "Slides": "/static/slides/cl24-more-oop-practice.pdf",
-                "Gradescope Lesson 27": "https://gradescope.com"
-            }
-        }
-    ],
-    "2022-04-13": [
-        {
-            "kind": "EX",
-            "n": 9,
-            "title": "NumPy and Pandas - Due LDOC 11:59pm",
-            "date": "2022-04-13",
-            "deadline": "2022-04-26",
-            "links": {
-                "EX09 - NumPy and Pandas": "https://gradescope.com"
-            }
-        }
-    ],
+    "2022-04-11": [],
+    "2022-04-12": [],
+    "2022-04-13": [],
     "2022-04-14": [],
     "2022-04-15": [],
     "2022-04-16": [],
     "2022-04-17": [],
     "2022-04-18": [],
-    "2022-04-19": [
-        {
-            "kind": "QZ",
-            "n": 4,
-            "title": "Quiz 4",
-            "date": "2022-04-19",
-            "deadline": "None",
-            "links": {
-                "Practice Questions": "/resources/practice/fa21/quiz4-worksheet.html"
-            }
-        }
-    ],
+    "2022-04-19": [],
     "2022-04-20": [],
-    "2022-04-21": [
-        {
-            "kind": "CL",
-            "n": 26,
-            "title": "Recursion Introduction (Async for Both Sections)",
-            "date": "2022-04-21",
-            "deadline": "None",
-            "links": {
-                "(Aysnc) Recursion": "/lessons/cl26-recursion.html",
-                "Gradescope Lessons 28 and 29": "https://gradescope.com"
-            }
-        }
-    ],
+    "2022-04-21": [],
     "2022-04-22": [],
     "2022-04-23": [],
     "2022-04-24": [],
     "2022-04-25": [],
-    "2022-04-26": [
-        {
-            "kind": "CL",
-            "n": 27,
-            "title": "LDOC - No Gradescope Submission",
-            "date": "2022-04-26",
-            "deadline": "None",
-            "links": {
-                "Section 001 - Async": "/lessons/cl27-ldoc.html",
-                "Section 002 - In-person": "https://youtu.be/zcmx1LQ5pks",
-                "Slides": "/static/slides/cl27-ldoc.pdf"
-            }
-        }
-    ],
+    "2022-04-26": [],
     "2022-04-30": [
         {
             "kind": "FN",
@@ -735,9 +301,7 @@
             "title": "Final @ 08:00:00",
             "date": "2022-04-30",
             "deadline": "None",
-            "links": {
-                "Finals Information / F.A.Q.": "/resources/final.html"
-            }
+            "links": {}
         }
     ]
 }
