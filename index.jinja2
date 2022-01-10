@@ -101,10 +101,9 @@ navbar: fixed
 </div>
 <div style="padding-left:2.5em">
 
-{%- for date in horizoninfo -%}
-    {%- if horizoninfo[date]|length > 0 -%}
+    {%- if horizoninfo|length > 0 -%}
         <div class="plans">
-            {%- for plan in horizoninfo[date] -%}
+            {%- for plan in horizoninfo -%}
                 <div class="center-text horizoninfo rightside">
                     {%- if plan.links != {} -%}
                         {%- for link in plan.links -%}
@@ -118,7 +117,7 @@ navbar: fixed
             {%- endfor -%}
         </div>
     {%- endif -%}
-{%- endfor -%}
+
 </div>
 </div>
 
@@ -128,7 +127,7 @@ navbar: fixed
 
 <div class="box hide-mobile">
 <div class="center-text rightside">
-<h2 class="display-5"><span class="darkmode-element-only">>💅 basics 💅</span><span class="lightmode-element-only">💅 basics 💅</span></h2>
+<h2 class="display-5"><span class="darkmode-element-only">💅 basics 💅</span><span class="lightmode-element-only">💅 basics 💅</span></h2>
 
 #### <a href="https://course.care/course/56" target="_blank">Office Hours</a>
 #### <a href="https://course.care/course/49" target="_blank">Tutoring</a>
