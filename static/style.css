@@ -125,7 +125,7 @@ html:not([data-nav1="true"]) .hide-during-scroll {
 
 .nav-link { 
   font-family: 'Quicksand'; 
-  font-size: 2.0vw; 
+  font-size: 1.75em; 
   font-weight: bold; 
   color: #727272;
   text-shadow: 0px 0px 0px #e6e6e6; 
@@ -151,7 +151,7 @@ html:not([data-nav1="true"]) .hide-during-scroll {
   -webkit-text-fill-color: #aaaaaa;
 }
 
-img.logo { max-height: 7vw; }
+img.logo { max-height: 6em; }
 
 html:not([data-nav1="true"]) img.logo {
   max-height: 3vw;
@@ -178,6 +178,9 @@ html:not([data-nav1="true"]) body {
   font-family: 'Clicker Script';
 }
 
+.navbar-nav {
+  min-width: max-content;
+}
 
 
 
