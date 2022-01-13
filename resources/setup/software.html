@@ -7,7 +7,7 @@
     <title> Software Setup - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1642112542.7187207">
+    <link rel="stylesheet" href="/static/style.css?v=1642113441.5180945">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -318,7 +318,7 @@
 <ol start="0" type="1">
 <li>Open a new Terminal window. If you still have one open from section 0, close it out and start a new one, because changes made during the installation of Python will not take effect until a new shell session begins.</li>
 <li>Give the command <code>python3 --version</code>, notice the <code>3</code> after the word <code>python</code> and two dashes at the front of <code>--version</code>, and press enter. You should see <code>Python 3.10.1</code> (or greater) which indicates your install was successful. If not, try the steps above one more time and restart your computer before trying these. Otherwise, come work with us in office hours!</li>
-<li>Now try giving the command <code>python --version</code>, without the <code>3</code> from above. If you see <code>Python 2.X.YY</code>, where <code>X</code> and <code>YY</code> are irrelevant numbers, continue to the next step because Mac also includes a much older version of Python. This is confusing when you’re trying to learn modern Python! If you see <code>Python 3.X.YY</code>, but not <code>Python 3.10.1</code> this means you previously installed an older version of Python3, and you should also continue to step 3. If you see the result <code>Python 3.10.1</code> then you are all set and can continue to the next section on installing <code>git</code>.</li>
+<li>Now try giving the command <code>python --version</code>, without the <code>3</code> from above. If you see <code>Python 2.X.YY</code>, where <code>X</code> and <code>YY</code> are irrelevant numbers, continue to the next step because Mac also includes a much older version of Python. This is confusing when you’re trying to learn modern Python! If you see <code>Python 3.X.YY</code>, but not <code>Python 3.10.1</code> this means you previously installed an older version of Python3, and you should also continue to step 3. If you see the result <code>Python 3.10.1</code> then you are all set and can continue to the next section on installing VSCode.</li>
 <li>Let’s simplify life by making <code>python</code> refer to the latest version you just installed, not the old one. What the following command is doing is making a link between the name <code>python</code> and the version you just installed. The command is more advanced than where we are at, so do not worry yourself on its details. You should copy and paste the following command into your Terminal, and press enter, because the punctuation symbols need to match precisely.</li>
 </ol>
 <p><code>sudo ln -s "$(which python3)" "$(dirname $(which python3))/python"</code></p>
