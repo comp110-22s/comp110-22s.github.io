@@ -42,6 +42,16 @@
             "links": {
                 "Watch Lesson": "https://youtu.be/JP5oFPHw5zc"
             }
+        },
+        {
+            "kind": "EX",
+            "n": 1,
+            "title": "Chardle - Input, Variables, and Conditionals - Due Mon 1/24 @ 11:59pm",
+            "date": "2022-01-18",
+            "deadline": "2022-01-24",
+            "links": {
+                "EX01 - Chardle": "/exercises/ex01.html"
+            }
         }
     ],
     "2022-01-19": [],
