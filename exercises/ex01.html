@@ -7,7 +7,7 @@
     <title> EX01 - Chardle - Input, Variables, and Conditionals - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1642538601.0420291">
+    <link rel="stylesheet" href="/static/style.css?v=1642538964.740962">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -198,45 +198,45 @@
 <p>Have you tried solving today’s <a href="https://www.powerlanguage.co.uk/wordle/">Worldle</a>? If not, do so first!</p>
 <p>In this exercise, you will prompt the user for a five-character word and a single letter. You will then test to see which indices of the word match the single letter.</p>
 <p>You should follow the steps below for implementing the program one step at a time. To get a sense of where you are going, though, consider what we expect the output to be given some example inputs:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1">    $ <span class="ex">python</span> -m exercises.ex01_chardle</a>
-<a class="sourceLine" id="cb1-2" title="2">    <span class="ex">Enter</span> a 5-character word: hello</a>
-<a class="sourceLine" id="cb1-3" title="3">    <span class="ex">Enter</span> a single character: h</a>
-<a class="sourceLine" id="cb1-4" title="4">    <span class="ex">Searching</span> for e in hello</a>
-<a class="sourceLine" id="cb1-5" title="5">    <span class="ex">h</span> found at index 0</a>
-<a class="sourceLine" id="cb1-6" title="6">    <span class="ex">1</span> instance of h found in hello</a>
-<a class="sourceLine" id="cb1-7" title="7"></a>
-<a class="sourceLine" id="cb1-8" title="8">    $ <span class="ex">python</span> -m exercises.ex01_chardle</a>
-<a class="sourceLine" id="cb1-9" title="9">    <span class="ex">Enter</span> a 5-character word: hello</a>
-<a class="sourceLine" id="cb1-10" title="10">    <span class="ex">Enter</span> a single character: l</a>
-<a class="sourceLine" id="cb1-11" title="11">    <span class="ex">Searching</span> for l in hello</a>
-<a class="sourceLine" id="cb1-12" title="12">    <span class="ex">l</span> found at index 2</a>
-<a class="sourceLine" id="cb1-13" title="13">    <span class="ex">l</span> found at index 3</a>
-<a class="sourceLine" id="cb1-14" title="14">    <span class="ex">2</span> instances of l found in hello</a>
-<a class="sourceLine" id="cb1-15" title="15"></a>
-<a class="sourceLine" id="cb1-16" title="16">    $ <span class="ex">python</span> -m exercises.ex01_chardle</a>
-<a class="sourceLine" id="cb1-17" title="17">    <span class="ex">Enter</span> a 5-character word: weeee</a>
-<a class="sourceLine" id="cb1-18" title="18">    <span class="ex">Enter</span> a single character: e</a>
-<a class="sourceLine" id="cb1-19" title="19">    <span class="ex">Searching</span> for e in weeee</a>
-<a class="sourceLine" id="cb1-20" title="20">    <span class="ex">e</span> found at index 1</a>
-<a class="sourceLine" id="cb1-21" title="21">    <span class="ex">e</span> found at index 2</a>
-<a class="sourceLine" id="cb1-22" title="22">    <span class="ex">e</span> found at index 3</a>
-<a class="sourceLine" id="cb1-23" title="23">    <span class="ex">e</span> found at index 4</a>
-<a class="sourceLine" id="cb1-24" title="24">    <span class="ex">4</span> instances of e found in weeee</a>
-<a class="sourceLine" id="cb1-25" title="25"></a>
-<a class="sourceLine" id="cb1-26" title="26">    $ <span class="ex">python</span> -m exercises.ex01_chardle</a>
-<a class="sourceLine" id="cb1-27" title="27">    <span class="ex">Enter</span> a 5-character word: hello</a>
-<a class="sourceLine" id="cb1-28" title="28">    <span class="ex">Enter</span> a single character: z</a>
-<a class="sourceLine" id="cb1-29" title="29">    <span class="ex">Searching</span> for z in hello</a>
-<a class="sourceLine" id="cb1-30" title="30">    <span class="ex">No</span> instances of z found in hello</a>
-<a class="sourceLine" id="cb1-31" title="31"></a>
-<a class="sourceLine" id="cb1-32" title="32">    $ <span class="ex">python</span> -m exercises.ex01_chardle</a>
-<a class="sourceLine" id="cb1-33" title="33">    <span class="ex">Enter</span> a 5-character word: tarheels</a>
-<a class="sourceLine" id="cb1-34" title="34">    <span class="ex">Error</span>: Word must contain 5 characters</a>
-<a class="sourceLine" id="cb1-35" title="35"></a>
-<a class="sourceLine" id="cb1-36" title="36">    $ <span class="ex">python</span> -m exercises.ex01_chardle</a>
-<a class="sourceLine" id="cb1-37" title="37">    <span class="ex">Enter</span> a 5-character word: hello</a>
-<a class="sourceLine" id="cb1-38" title="38">    <span class="ex">Enter</span> a single character: hello</a>
-<a class="sourceLine" id="cb1-39" title="39">    <span class="ex">Error</span>: Character must be a single character.</a></code></pre></div>
+<pre class="plaintext"><code>    $ python -m exercises.ex01_chardle
+    Enter a 5-character word: hello
+    Enter a single character: h
+    Searching for e in hello
+    h found at index 0
+    1 instance of h found in hello
+
+    $ python -m exercises.ex01_chardle
+    Enter a 5-character word: hello
+    Enter a single character: l
+    Searching for l in hello
+    l found at index 2
+    l found at index 3
+    2 instances of l found in hello
+
+    $ python -m exercises.ex01_chardle
+    Enter a 5-character word: weeee
+    Enter a single character: e
+    Searching for e in weeee
+    e found at index 1
+    e found at index 2
+    e found at index 3
+    e found at index 4
+    4 instances of e found in weeee
+
+    $ python -m exercises.ex01_chardle
+    Enter a 5-character word: hello
+    Enter a single character: z
+    Searching for z in hello
+    No instances of z found in hello
+
+    $ python -m exercises.ex01_chardle
+    Enter a 5-character word: tarheels
+    Error: Word must contain 5 characters
+
+    $ python -m exercises.ex01_chardle
+    Enter a 5-character word: hello
+    Enter a single character: hello
+    Error: Character must be a single character.</code></pre>
 <h2 id="part-0.-setting-up-the-python-program">Part 0. Setting up the Python Program</h2>
 <p>In Visual Studio Code, be sure your workspace is open. (Reminder: File &gt; Open Recent &gt; comp110-YYS-workspace is a quick way to reopen it! Where YY is the current year and S is the semeseter: S for Spring, F for Fall.)</p>
 <p>Open the Explorer pane (click the icon with two sheets of paper or to to <em>View</em> &gt; <em>Explorer</em>) and expand the <em>Workspace</em> directory.</p>
@@ -251,7 +251,7 @@
 <a class="sourceLine" id="cb2-4" title="4"></a></code></pre></div>
 <h2 id="part-1.-prompting-for-inputs-20-points">Part 1. Prompting for Inputs – 20 Points</h2>
 <p>The first task of this program is to gather inputs from the user. Using the concepts you learned in <a href="https://youtu.be/wXoUw0scEsI">LS06 - Variables and User Input</a>, you will want to ask the user to enter a 5-character word and a single character, storing both in <code>str</code> variables. You will then print out a diagnostic message, built-up using string concatenation, that confirms you have correctly stored each input in a variable. <strong>Please choose meaningful, descriptive names for your variables.</strong> Write your prompts and diagnostic message such that you can reproduce the following in the shell after saving and running your program:</p>
-<pre><code>    $ python -m exercises.ex01_chardle 
+<pre class="plaintext"><code>    $ python -m exercises.ex01_chardle 
     Enter a 5-character word: hello
     Enter a single character: e
     Searching for e in hello</code></pre>
@@ -267,75 +267,75 @@
 <li><a href="https://youtu.be/JP5oFPHw5zc">LS08 - Conditional if-else Statements</a></li>
 </ul>
 <p>Soon you will learn a more efficient way of performing these checks using a concept called a <em>loop</em>. For now, you will need to check each of the five indices of the word string to see if it is equal to the character string. <em>If</em> so, <em>then</em> you should print out a message indicating the letter being searched for was found at a given index. Your goal in this part is to be able to do the following:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1">    $ <span class="ex">python</span> -m exercises.ex01_chardle             </a>
-<a class="sourceLine" id="cb4-2" title="2">    <span class="ex">Enter</span> a 5-character word: hello</a>
-<a class="sourceLine" id="cb4-3" title="3">    <span class="ex">Enter</span> a single character: e</a>
-<a class="sourceLine" id="cb4-4" title="4">    <span class="ex">Searching</span> for e in hello</a>
-<a class="sourceLine" id="cb4-5" title="5">    <span class="ex">e</span> found at index 1</a>
-<a class="sourceLine" id="cb4-6" title="6"></a>
-<a class="sourceLine" id="cb4-7" title="7">    $ <span class="ex">python</span> -m exercises.ex01_chardle</a>
-<a class="sourceLine" id="cb4-8" title="8">    <span class="ex">Enter</span> a 5-character word: heels</a>
-<a class="sourceLine" id="cb4-9" title="9">    <span class="ex">Enter</span> a single character: e</a>
-<a class="sourceLine" id="cb4-10" title="10">    <span class="ex">Searching</span> for e in heels</a>
-<a class="sourceLine" id="cb4-11" title="11">    <span class="ex">e</span> found at index 1</a>
-<a class="sourceLine" id="cb4-12" title="12">    <span class="ex">e</span> found at index 2</a>
-<a class="sourceLine" id="cb4-13" title="13"></a>
-<a class="sourceLine" id="cb4-14" title="14">    $ <span class="ex">python</span> -m exercises.ex01_chardle</a>
-<a class="sourceLine" id="cb4-15" title="15">    <span class="ex">Enter</span> a 5-character word: heels</a>
-<a class="sourceLine" id="cb4-16" title="16">    <span class="ex">Enter</span> a single character: s</a>
-<a class="sourceLine" id="cb4-17" title="17">    <span class="ex">Searching</span> for s in heels</a>
-<a class="sourceLine" id="cb4-18" title="18">    <span class="ex">s</span> found at index 4</a></code></pre></div>
+<pre class="plaintext"><code>    $ python -m exercises.ex01_chardle             
+    Enter a 5-character word: hello
+    Enter a single character: e
+    Searching for e in hello
+    e found at index 1
+
+    $ python -m exercises.ex01_chardle
+    Enter a 5-character word: heels
+    Enter a single character: e
+    Searching for e in heels
+    e found at index 1
+    e found at index 2
+
+    $ python -m exercises.ex01_chardle
+    Enter a 5-character word: heels
+    Enter a single character: s
+    Searching for s in heels
+    s found at index 4</code></pre>
 <h2 id="part-3.-counting-matching-indices-20-points">Part 3. Counting Matching Indices – 20 Points</h2>
 <p>Be sure you have completed Part 2 before beginning Part 3!</p>
 <p>Now that you are finding the indices of the word that match the character being searched for, establish a variable to <em>count the number of matching characters</em>. Before you find any matching characters, what should you initialize this variable to? Each time you find a match, increase your counting variable’s value by 1. Finally, print out a message that indicates how many instances of the character you found in the input word.</p>
 <p>You will need to exactly match the output formatting of the examples below. Specifically, notice, there are different messages for when no matches are found, a singular match is found, or multiple matches are found (i.e.: No instances vs. 1 instance vs. 2 instances). You will need to use a nested <code>if-else</code> statement in order to output these messages correctly.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1">$ <span class="ex">python3</span> -m exercises.ex01_chardle</a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="ex">Enter</span> a 5-character word: hello</a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="ex">Enter</span> a single character: e</a>
-<a class="sourceLine" id="cb5-4" title="4"><span class="ex">Searching</span> for e in hello</a>
-<a class="sourceLine" id="cb5-5" title="5"><span class="ex">e</span> found at index 1</a>
-<a class="sourceLine" id="cb5-6" title="6"><span class="ex">1</span> instance of e found in hello</a>
-<a class="sourceLine" id="cb5-7" title="7"></a>
-<a class="sourceLine" id="cb5-8" title="8">$ <span class="ex">python3</span> -m exercises.ex01_chardle</a>
-<a class="sourceLine" id="cb5-9" title="9"><span class="ex">Enter</span> a 5-character word: heels</a>
-<a class="sourceLine" id="cb5-10" title="10"><span class="ex">Enter</span> a single character: e</a>
-<a class="sourceLine" id="cb5-11" title="11"><span class="ex">Searching</span> for e in heels</a>
-<a class="sourceLine" id="cb5-12" title="12"><span class="ex">e</span> found at index 1</a>
-<a class="sourceLine" id="cb5-13" title="13"><span class="ex">e</span> found at index 2</a>
-<a class="sourceLine" id="cb5-14" title="14"><span class="ex">2</span> instances of e found in heels</a>
-<a class="sourceLine" id="cb5-15" title="15"></a>
-<a class="sourceLine" id="cb5-16" title="16">$ <span class="ex">python3</span> -m exercises.ex01_chardle</a>
-<a class="sourceLine" id="cb5-17" title="17"><span class="ex">Enter</span> a 5-character word: heels</a>
-<a class="sourceLine" id="cb5-18" title="18"><span class="ex">Enter</span> a single character: d</a>
-<a class="sourceLine" id="cb5-19" title="19"><span class="ex">Searching</span> for d in heels</a>
-<a class="sourceLine" id="cb5-20" title="20"><span class="ex">No</span> instances of d found in heels</a></code></pre></div>
+<pre class="plaintext"><code>$ python3 -m exercises.ex01_chardle
+Enter a 5-character word: hello
+Enter a single character: e
+Searching for e in hello
+e found at index 1
+1 instance of e found in hello
+
+$ python3 -m exercises.ex01_chardle
+Enter a 5-character word: heels
+Enter a single character: e
+Searching for e in heels
+e found at index 1
+e found at index 2
+2 instances of e found in heels
+
+$ python3 -m exercises.ex01_chardle
+Enter a 5-character word: heels
+Enter a single character: d
+Searching for d in heels
+No instances of d found in heels</code></pre>
 <h2 id="part-4.-exiting-early-for-invalid-inputs---10-points">Part 4. Exiting Early for Invalid Inputs - 10 points</h2>
 <p>What happens if you input a word with fewer than 5 characters? Or you input a “char” that is more than one character, or none at all? It’s good practice to handle bad input from an end-user gracefully in your programs. Our strategy, for now, will be to simply print an error message and then exit the program early. There is a special built-in function called <code>exit()</code> that will send a signal to your system and tell the program to quit at that point, not continuing on further in the program. Before attempting to implement the following behavior in your program, think about where it logically <em>makes sense</em> to try adding these checks for correct input. You will need to use the <code>len</code> function, as described in <a href="/lessons/objects-data-types.html">Lesson 4 - Objects and Data Types</a>, in order to find the length of your input strings.</p>
 <p>Here is how your program should work after completing this part:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1">    $ <span class="ex">python</span> -m exercises.ex01_chardle             </a>
-<a class="sourceLine" id="cb6-2" title="2">    <span class="ex">Enter</span> a 5-character word: help</a>
-<a class="sourceLine" id="cb6-3" title="3">    <span class="ex">Error</span>: Word must contain 5 characters</a>
-<a class="sourceLine" id="cb6-4" title="4"></a>
-<a class="sourceLine" id="cb6-5" title="5">    $ <span class="ex">python</span> -m exercises.ex01_chardle</a>
-<a class="sourceLine" id="cb6-6" title="6">    <span class="ex">Enter</span> a 5-character word: tarheels</a>
-<a class="sourceLine" id="cb6-7" title="7">    <span class="ex">Error</span>: Word must contain 5 characters</a>
-<a class="sourceLine" id="cb6-8" title="8"></a>
-<a class="sourceLine" id="cb6-9" title="9">    $ <span class="ex">python</span> -m exercises.ex01_chardle</a>
-<a class="sourceLine" id="cb6-10" title="10">    <span class="ex">Enter</span> a 5-character word: heels</a>
-<a class="sourceLine" id="cb6-11" title="11">    <span class="ex">Enter</span> a single character: tar</a>
-<a class="sourceLine" id="cb6-12" title="12">    <span class="ex">Error</span>: Character must be a single character.</a>
-<a class="sourceLine" id="cb6-13" title="13"></a>
-<a class="sourceLine" id="cb6-14" title="14">    $ <span class="ex">python</span> -m exercises.ex01_chardle</a>
-<a class="sourceLine" id="cb6-15" title="15">    <span class="ex">Enter</span> a 5-character word: heels</a>
-<a class="sourceLine" id="cb6-16" title="16">    <span class="ex">Enter</span> a single character: </a>
-<a class="sourceLine" id="cb6-17" title="17">    <span class="ex">Error</span>: Character must be a single character.</a>
-<a class="sourceLine" id="cb6-18" title="18"></a>
-<a class="sourceLine" id="cb6-19" title="19">    $ <span class="ex">python</span> -m exercises.ex01_chardle</a>
-<a class="sourceLine" id="cb6-20" title="20">    <span class="ex">Enter</span> a 5-character word: heels</a>
-<a class="sourceLine" id="cb6-21" title="21">    <span class="ex">Enter</span> a single character: h</a>
-<a class="sourceLine" id="cb6-22" title="22">    <span class="ex">Searching</span> for h in heels</a>
-<a class="sourceLine" id="cb6-23" title="23">    <span class="ex">h</span> found at index 0</a>
-<a class="sourceLine" id="cb6-24" title="24">    <span class="ex">1</span> instance of h found in heels</a></code></pre></div>
+<pre class="plaintext"><code>    $ python -m exercises.ex01_chardle             
+    Enter a 5-character word: help
+    Error: Word must contain 5 characters
+
+    $ python -m exercises.ex01_chardle
+    Enter a 5-character word: tarheels
+    Error: Word must contain 5 characters
+
+    $ python -m exercises.ex01_chardle
+    Enter a 5-character word: heels
+    Enter a single character: tar
+    Error: Character must be a single character.
+
+    $ python -m exercises.ex01_chardle
+    Enter a 5-character word: heels
+    Enter a single character: 
+    Error: Character must be a single character.
+
+    $ python -m exercises.ex01_chardle
+    Enter a 5-character word: heels
+    Enter a single character: h
+    Searching for h in heels
+    h found at index 0
+    1 instance of h found in heels</code></pre>
 <h2 id="part-5.-style-and-documentation-requirements-10-points">Part 5. Style and Documentation Requirements – 10 Points</h2>
 <p>We will manually grade your code and are looking for good choices of meaningful variable names. Your variable names should be descriptive of their purposes. You should also use the Python <code>snake_case</code> convention where variable names are all lowercase and new words are separated by underscores.</p>
 <h2 id="make-a-backup-checkpoint-commit">Make a Backup Checkpoint “Commit”</h2>
