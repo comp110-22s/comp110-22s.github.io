@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Chiazo Agina - COMP110 - 22S</title>
+    <title> Quiz 00 Practice - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1642602571.778783">
+    <link rel="stylesheet" href="/static/style.css?v=1642602582.439051">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -155,37 +155,139 @@
             });
         </script>
 
-        <div id="profile-page" class="container">
+        <div id="lessons-page" class="container">
             <div class="row pt-4">
 
 
                 <div class="col-12">
-                    <h1 class="display-5">Chiazo Agina</h1>
+                    <h1 class="display-5">Quiz 00 Practice</h1>
                     <hr class="title"/>
                 </div>
             </div>
 
-    <div class="container">
-                <div class="content"><figure>
-<img src="../../../static/profile-photos/chiazo.jpg" alt="profile-photo" /><figcaption>profile-photo</figcaption>
-</figure>
-<h2 id="pronouns">Pronouns</h2>
-<p>she/her/hers</p>
-<h2 id="hometown">Hometown</h2>
-<p>Fresno, California</p>
-<h2 id="unc-status">UNC Status</h2>
-<p>Class of 2022</p>
-<h2 id="major">Major</h2>
-<p>Computer Science B.S.!</p>
-<h2 id="interests">Interests</h2>
-<p>film youtube, spicy twitter, ukuleles, spanish, and web dev :)</p>
-<h2 id="non-academic-fun-fact">Non-academic fun fact</h2>
-<p>I gave up English for over 20 days while I was studying abroad in Colombia!!!</p>
-</div>
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+    
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            
+            <div id="button-box class="link-pag box">
             </div>
 
+            <div id="menu-overview" class="link-page box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul><li><a href="#concepts-on-quiz-0">Concepts on Quiz 0</a></li>
+<li><a href="#questions">Questions</a><ul>
+<li><a href="#memory-diagrams">Memory Diagrams</a></li>
+<li><a href="#data-types">Data Types</a></li>
+<li><a href="#expressions">Expressions</a></li>
+<li><a href="#conditionals">Conditionals</a></li>
+</ul></li>
+<li><a href="#solutions">Solutions</a><ul>
+<li><a href="#memory-diagrams-1">Memory Diagrams</a></li>
+<li><a href="#data-types-1">Data Types</a></li>
+<li><a href="#expressions-1">Expressions</a></li>
+<li><a href="#conditionals-1">Conditionals</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><h1 id="concepts-on-quiz-0">Concepts on Quiz 0</h1>
+<p>Quiz 0 will cover the following concepts:</p>
+<ul>
+<li>Syllabus and course policies - be familiar with them!</li>
+<li>Lessons 0 through 8 - with a <strong>heavy emphasis on Lessons 4 - 8</strong></li>
+</ul>
+<h1 id="questions">Questions</h1>
+<p>The quiz itself will be similar in difficulty but longer in length than these practice questions. In addition to these questions, you should review all of your lesson responses on Gradescope. The kinds of questions you responded to on Gradescope will also be</p>
+<p>Solutions for each problem can be found at the bottom of this page.</p>
+<h2 id="memory-diagrams">Memory Diagrams</h2>
+<ol type="1">
+<li>Produce a memory diagram for the following code snippet, being sure to include its stack and output.</li>
+</ol>
+<p><img src="/static/practice_worksheets/fa21/qz0-question13.png" /></p>
+<ol start="2" type="1">
+<li>Produce a memory diagram for the following code snippet, being sure to include its stack and output.</li>
+</ol>
+<p><img src="/static/practice_worksheets/fa21/qz00-question14.png" /></p>
+<h2 id="data-types">Data Types</h2>
+<ol start="3" type="1">
+<li><code>str</code> literals in Python can be surrounded in either single-quote characters or double-quote characters, though in COMP110 we prefer the latter. (T/F)</li>
+<li><code>TRUE</code> and <code>FALSE</code> are valid bool values in Python. (T/F)</li>
+<li>An <code>int</code> literal can begin with a zero, but cannot end with a zero. (T/F)</li>
+<li>What function can we use to identify the type classification of any object in Python?</li>
+<li>What is the resulting data type of the following expression? <code>int("20")</code></li>
+</ol>
+<h2 id="expressions">Expressions</h2>
+<ol start="8" type="1">
+<li>What is the evaluation of the following expression? <code>type(9 / len( str(110))</code></li>
+<li>What is the result of the following expression? <code>"440" + "20"</code></li>
+<li>What value of x would cause the following expression to evaluate to <code>True</code>? <code>(3 + x) == (55 % 2 ** 4)</code></li>
+<li>What value does the following expression result in, and what is its type? <code>2 + 2 / 2 ** (2 * 0)</code></li>
+<li>Using subscription syntax and concatenation, write an expression that evaluates to <code>"tar"</code> using the following string: <code>“the brown, lazy dog!"</code>.</li>
+<li>What data type do expressions with relational operators evaluate to?</li>
+<li>What does the following expression evaluate to? <code>int("10" + "40") &gt; 100 * 2</code></li>
+</ol>
+<h2 id="conditionals">Conditionals</h2>
+<ol start="15" type="1">
+<li>Every <code>if</code> statement must have a paired <code>else</code> branch. (T/F)</li>
+<li>Lines contained in an <code>else</code> branch in Python do not have to be indented. (T/F)</li>
+<li>You can name a variable <code>else</code> in your program without Python confusing your variable’s name and the <code>else</code> keyword. (T/F)</li>
+<li>Given the following code snippet, what is the printed output with the specified values for <code>x</code> and <code>y</code>?<br />
+<img src="/static/practice_worksheets/sp22/qz00-question18.png" /><br />
+18.1. When x = 3, y = 5?<br />
+18.2. When x = 5, y = 3?<br />
+18.3. When x = -5, y = 1?<br />
+18.4. When x = 13, y = 8?<br />
+18.5. When x = 4, y = 3?</li>
+</ol>
+<h1 id="solutions">Solutions</h1>
+<h2 id="memory-diagrams-1">Memory Diagrams</h2>
+<ol type="1">
+<li><img src="/static/practice_worksheets/fa21/qz0-solution13.png" /></li>
+<li><img src="/static/practice_worksheets/fa21/qz0-solution14.png" /></li>
+</ol>
+<h2 id="data-types-1">Data Types</h2>
+<ol start="3" type="1">
+<li>T</li>
+<li>F</li>
+<li>F</li>
+<li><code>type()</code></li>
+<li>int</li>
+</ol>
+<h2 id="expressions-1">Expressions</h2>
+<ol start="8" type="1">
+<li><code>&lt;class 'float'&gt;</code></li>
+<li>“44020”</li>
+<li>4</li>
+<li>4.0</li>
+<li>“the brown, lazy dog!”[0] + “the brown, lazy dog!”[12] + “the brown, lazy dog!”[5]</li>
+<li>bool</li>
+<li>True</li>
+</ol>
+<h2 id="conditionals-1">Conditionals</h2>
+<ol start="15" type="1">
+<li>False</li>
+<li>False</li>
+<li>False</li>
+<li>18.1. 17.0<br />
+18.2. 2.0<br />
+18.3. -2.0<br />
+18.4. 3.0<br />
+18.5. 1.0</li>
+</ol>
+</div>
+
+    </div> 
+
             <div class="authors-box">
-                <span> Contributor(s): Chiazo Agina</span>
+                <span> Contributor(s):                        Megan Zhang, David Karash</span>
             </div>
             
             <div class='link-page wrapper'>
