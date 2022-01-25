@@ -7,7 +7,7 @@
     <title> Set Up Your TA Profile - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1643118838.8369222">
+    <link rel="stylesheet" href="/static/style.css?v=1643120896.4470506">
 </head>
 
 <body id="body" class="absolute-page">
@@ -112,26 +112,32 @@
     <div class="container">
                 <div class="content"><p>These instructions will walk you through setting up a profile visible on the 110 site!</p>
 <h2 id="setup">Setup</h2>
-<p>Only complete the following steps if you haven’t yet cloned the Team110 Repo.</p>
-<ul>
-<li><p>Go to <a href="https://github.com/comp110/team110" class="uri">https://github.com/comp110/team110</a> and clone the repo by pressing the green code button. <img src="/static/team/repo-instructions/step_1.png" /></p>
-<blockquote>
-<p>If you can’t open this link, you have not been added to the team org on Github. Send your github username to Kaki!</p>
-</blockquote></li>
-<li>Open the <code>Team 110.code-workspace</code> file in VSCODE as a Workspace (don’t just open the top-level directory) <img src="/static/team/repo-instructions/step_2.png" /></li>
-<li>Make sure you’re in the <code>team110</code> folder in your terminal and the master branch. <img src="/static/team/repo-instructions/step_3.png" /></li>
-</ul>
-<ol type="1">
-<li>Update pip by running: <code>python -m pip install -U pip</code>.</li>
-<li>Install required PyPI packages in <code>requirements.txt</code> with the following command: <code>python -m pip install -r requirements.txt</code>. Before you run this command, make sure your terminal is in the right directory. If you type <code>pwd</code> in the terminal it should print <code>/Some/Path/.../team110/code</code>. If you do not see this, trash the terminal and create a new one. When you create a new one it should prompt you for the desired working directory – select the <code>code</code> option.</li>
-</ol>
+<p>If you have not set up the team110 repository yet navigate to <a href="/team/documentation/guides/course_site_setup.html">this doc</a> and follow the instructions for cloning and installing various packages.</p>
+<p>If you have the team repo and can successfuly run either <code>python -m dev</code> or <code>python -m hotdev</code> you are good to go!</p>
 <h2 id="creating-a-profile">Creating a Profile</h2>
-<ul>
+<ol type="1">
 <li>Make sure you’re on the master branch (<code>git checkout master</code>) and run the command <code>git pull origin master</code> to get the latest updates.</li>
 <li>Checkout a new <code>git</code> branch. In your terminal run the following command: <code>git checkout -b ONYEN-profile</code></li>
-<li>In the <code>site/static/profile-photos/</code> directory insert the photo of yourself you want on your profile. Resize this image to be no bigger than 300x300 and name it <code>ONYEN</code>.png/jpg</li>
-<li>In the <code>site/resources/profiles</code> directory create a new markdown file named <code>ONYEN.md</code>. There should be some template profiles in this directory that you should base yours off of. Feel free to just paste the contents of someone else’s profile into yours and fill in the relevant information. You’ll want to make sure the relative path to your profile picture is correct. Note: Make sure the file extension of your photo in the <code>static</code> directory and the extension in this path match – it is case sensitive! Doesn’t matter if you have PNG or png, just be consistent.</li>
-</ul>
+<li>In the <code>site/static/profile-photos/</code> directory insert the photo of yourself you want on your profile. Resize this image to be exactly than 300x300 and name it <code>ONYEN</code>.png/jpg</li>
+<li>In the <code>site/resources/profiles</code> directory create a new markdown file named <code>ONYEN.md</code>. Feel free to just paste the contents of someone else’s profile into yours and fill in the relevant information. You’ll want to make sure the relative path to your profile picture is correct. Note: Make sure the file extension of your photo in the <code>static</code> directory and the extension in this path match – it is case sensitive! Doesn’t matter if you have PNG or png, just be consistent.</li>
+</ol>
+<h2 id="styling-your-profile">Styling your Profile</h2>
+<ol type="1">
+<li>Navigate to your profile on the dev server by adding /resources/profiles/<code>your-ONYEN</code>.html</li>
+<li>Here you can make sure everything looks ok and add any extra styling or visual elements like emojis! For instance some TAs have their star signs with emojis or so on.</li>
+<li>Please take a minute to check out the <a href="/team/documentation/guides/course_site_markdown.html">Site Markdown</a> and <a href="/team/documentation/guides/course_site_features.html">Site Features</a> docs to see if there is anything you can learn from these that you may want to add to your profile! For instance, TAs have made use of the <code>columns</code> template for their profiles in the past.</li>
+</ol>
+<h2 id="linking-to-your-profile">Linking to your Profile</h2>
+<ol type="1">
+<li>Open the file <code>resources/team.md</code>. This file uses the grid layout which is described in the Site Features document!</li>
+<li>Find where your name would list alphabetically and add in your profile link by copying and pasting the following code and filling in your info:</li>
+</ol>
+<pre><code>//split//
+&lt;figure class=&quot;profile&quot;&gt;&lt;a href=&quot;/resources/profiles/ezri.html&quot;&gt;&lt;img src=&quot;/static/profile-photos/ezri.png&quot; class=&quot;profile-image&quot;&gt;&lt;/a&gt; &lt;figcaption&gt;Ezri White&lt;/figcaption&gt;&lt;/figure&gt;</code></pre>
+<ol start="3" type="1">
+<li>Make sure to switch the link to your profile, the link to your image (watch out for .png or .jpg here), and the caption to your name!</li>
+<li>Navigate to the meet the team page on the dev server by adding <code>/resources/team.html</code> to the URL and make sure the page looks ok, your picture is there and when you click on it you are navigated to your profile!</li>
+</ol>
 <h2 id="creating-a-pull-request">Creating a Pull Request</h2>
 <ol type="1">
 <li>If you haven’t been committing progress on your profile to the branch you setup for it… commit it! To do this, first add the files you’ve changed to the staging area: <code>git add &lt;../site/static/profile-photos/ONYEN.png&gt; &lt;../site/students/profiles/ONYEN.md&gt; &lt;../site/students/resources/team.md&gt;</code> or you could simply run <code>git add .</code> to add every single change file at once. Then commit your changes: <code>git commit -m "your_name Profile Page."</code></li>
@@ -140,12 +146,12 @@
 <li>You might/should see a yellow notification box: “Your recently pushed branches…”. If so select “Compare &amp; Pull Request”. If not, select “New Pull Request”, and in the Compare branch drop-down select your branch.</li>
 <li>Scroll through the differences and confirm your latest changes were successfully pushed. If you don’t see them, check that you committed everything you expected and pushed to your branch. Select “Create Pull Request”.</li>
 <li>In the description box, briefly describe your branch – “<Name> Profile Page” is just fine.</li>
-<li>On the right-hand sidebar, select Kaki or Kris as a reviewer.</li>
+<li>On the right-hand sidebar, select Kris or a Web Lead as a reviewer.</li>
 <li>Create pull request!</li>
 </ol>
 <p>From here, a brief pass (and potentially some some revisions) will be taken by the reviewer and then merged in.</p>
 <blockquote>
-<p>Contributors: Kaki Ryan</p>
+<p>Contributors: Kaki Ryan, Ezri White</p>
 </blockquote>
 </div>
             </div>
@@ -181,15 +187,15 @@
 
     <!-- Load our React components. -->
 
-    <script type="text/babel" src="/static/components//Itinerary/EventSection.tsx?cache=1643118838.8369222"></script>
-    <script type="text/babel" src="/static/components//Itinerary/DateSection.tsx?cache=1643118838.8369222"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Dates.tsx?cache=1643118838.8369222"></script>
-        <script type="text/babel" src="/static/components//Itinerary/DropdownButton.tsx?cache=1643118838.8369222"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Dropdown.tsx?cache=1643118838.8369222"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Search.tsx?cache=1643118838.8369222"></script>
-    <script type="text/babel" src="/static/components//Itinerary/PillButtons.tsx?cache=1643118838.8369222"></script>
-    <script type="text/babel" src="/static/components//Itinerary/PillButton.tsx?cache=1643118838.8369222"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Itinerary.jsx?cache=1643118838.8369222"></script>
+    <script type="text/babel" src="/static/components//Itinerary/EventSection.tsx?cache=1643120896.4470506"></script>
+    <script type="text/babel" src="/static/components//Itinerary/DateSection.tsx?cache=1643120896.4470506"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dates.tsx?cache=1643120896.4470506"></script>
+        <script type="text/babel" src="/static/components//Itinerary/DropdownButton.tsx?cache=1643120896.4470506"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dropdown.tsx?cache=1643120896.4470506"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Search.tsx?cache=1643120896.4470506"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButtons.tsx?cache=1643120896.4470506"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButton.tsx?cache=1643120896.4470506"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Itinerary.jsx?cache=1643120896.4470506"></script>
     <script src="/static/scripts/log-in-handler.js"></script>
 
     
