@@ -7,7 +7,7 @@
     <title> Writing Markdown for the Course site - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1643057696.0261729">
+    <link rel="stylesheet" href="/static/style.css?v=1643118836.5346026">
 </head>
 
 <body id="body" class="absolute-page">
@@ -112,9 +112,12 @@
     <div class="container">
                 <div class="content"><p>Most content on the course site is just written in markdown(md). This guide walks through the associated styles for different markdown. If you are not starting a new file from scratch and are instead contributing to a file, I would still reccomend viewing the example markdown in <a href="/course-site-markdown#setting-up-your-file">this step</a> if it is your first time contributing.</p>
 <h2 id="preparing-to-work">Preparing to work</h2>
-<p>Make sure you have the dev script running so that you are able to view your work! Remember to run:</p>
+<p>Make sure you have the dev script running so that you are able to view your work! Run in the <code>site</code> directory:</p>
 <p><code>python -m dev</code></p>
-<p>in the site directory in your terminal.</p>
+<p>or</p>
+<p><code>python -m hotdev</code></p>
+<p>The normal <code>dev</code> script will run a dev server where you will need to reload to see any changes. For small changes, mostly written work or editing scripts/ code this is the better dev script to use.</p>
+<p>The <code>hotdev</code> script will run a dev server that will hot-reload a page when you edit the markdown or css files it is built from. This script is particulary useful for styling a page and making css changes.</p>
 <h2 id="creating-a-new-file">Creating a new file</h2>
 <p>Generally we want to keep the site organized so try to put your files in an appropriate place. For instance if your file will live under the resources tab, make sure to put it under resources.</p>
 <ul>
@@ -122,7 +125,7 @@
 </ul>
 <h2 id="setting-up-your-file">Setting up your file</h2>
 <ul>
-<li>Find the file <code>example.md</code> directly in the site directory and open it.</li>
+<li>Find the file <code>markdown-example.md</code> directly in the site directory and open it.</li>
 <li>In your local version of the course site (the one opened by the development script) add <code>/markdown-example.html</code> to the end of the URL. (There is nothing on the course site that links to this page, so you will have to manually navigate to it.)</li>
 </ul>
 <p>This markdown sheet should give you a good reference point for how all different kinds of markdown will show up as you write it.</p>
@@ -177,15 +180,15 @@
 
     <!-- Load our React components. -->
 
-    <script type="text/babel" src="/static/components//Itinerary/EventSection.tsx?cache=1643057696.0261729"></script>
-    <script type="text/babel" src="/static/components//Itinerary/DateSection.tsx?cache=1643057696.0261729"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Dates.tsx?cache=1643057696.0261729"></script>
-        <script type="text/babel" src="/static/components//Itinerary/DropdownButton.tsx?cache=1643057696.0261729"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Dropdown.tsx?cache=1643057696.0261729"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Search.tsx?cache=1643057696.0261729"></script>
-    <script type="text/babel" src="/static/components//Itinerary/PillButtons.tsx?cache=1643057696.0261729"></script>
-    <script type="text/babel" src="/static/components//Itinerary/PillButton.tsx?cache=1643057696.0261729"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Itinerary.jsx?cache=1643057696.0261729"></script>
+    <script type="text/babel" src="/static/components//Itinerary/EventSection.tsx?cache=1643118836.5346026"></script>
+    <script type="text/babel" src="/static/components//Itinerary/DateSection.tsx?cache=1643118836.5346026"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dates.tsx?cache=1643118836.5346026"></script>
+        <script type="text/babel" src="/static/components//Itinerary/DropdownButton.tsx?cache=1643118836.5346026"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dropdown.tsx?cache=1643118836.5346026"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Search.tsx?cache=1643118836.5346026"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButtons.tsx?cache=1643118836.5346026"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButton.tsx?cache=1643118836.5346026"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Itinerary.jsx?cache=1643118836.5346026"></script>
     <script src="/static/scripts/log-in-handler.js"></script>
 
     

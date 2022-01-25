@@ -7,7 +7,7 @@
     <title> Course Site Setup - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1643057698.509954">
+    <link rel="stylesheet" href="/static/style.css?v=1643118839.021233">
 </head>
 
 <body id="body" class="absolute-page">
@@ -126,6 +126,7 @@
 <li><a href="#install-packages">Install Packages</a></li>
 <li><a href="#install-pandoc">Install Pandoc</a></li>
 <li><a href="#run-the-development-script">Run the Development Script</a></li>
+<li><a href="#hotdev-script">Hotdev script</a></li>
 </ul>
 </</ul>
                     </div>
@@ -152,6 +153,15 @@
 <li>Make sure your terminal is in the <code>site</code> directory. If you type <code>pwd</code> in the terminal it should print <code>/Some/Path/.../team110/site</code>. If you do not see this, trash the terminal and create a new one. When you create a new one it should prompt you for the desired working directory – select the <code>site</code> option.</li>
 <li>In your terminal run: <code>python -m dev</code>. If the script runs without any problems you should see “* Running on &lt;<em>a-server</em>&gt;”. Command or Control click on the server to open the site in your browser.</li>
 <li>To view any changes you are making, navigate to the file you have changed and reload the page if you do not see your updates.</li>
+</ul>
+<blockquote>
+<p>Note: When making CSS changes a “hard refresh” will often be needed to view any differences. To do this hold shift while reloading your browser.</p>
+</blockquote>
+<h2 id="hotdev-script">Hotdev script</h2>
+<ul>
+<li>An alternative to the normal dev script is <code>python -m hotdev</code>. You run this in the exact same directory as the normal script and it mostly works the same.</li>
+<li>The benefit of the <code>hotdev</code> script is it enables what is referred to as hot-reload or autoreload. When ever you make markdown or css changes, your browser will refresh on save of file instead of having to be manually reloaded.</li>
+<li>It is reccomended to use this script primarily when trying to finish up organizing and styling a page, or making many CSS changes.</li>
 </ul>
 <blockquote>
 <p>Contributors: Kaki Ryan, Ezri White, Chiazo Agina</p>
@@ -191,15 +201,15 @@
 
     <!-- Load our React components. -->
 
-    <script type="text/babel" src="/static/components//Itinerary/EventSection.tsx?cache=1643057698.509954"></script>
-    <script type="text/babel" src="/static/components//Itinerary/DateSection.tsx?cache=1643057698.509954"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Dates.tsx?cache=1643057698.509954"></script>
-        <script type="text/babel" src="/static/components//Itinerary/DropdownButton.tsx?cache=1643057698.509954"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Dropdown.tsx?cache=1643057698.509954"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Search.tsx?cache=1643057698.509954"></script>
-    <script type="text/babel" src="/static/components//Itinerary/PillButtons.tsx?cache=1643057698.509954"></script>
-    <script type="text/babel" src="/static/components//Itinerary/PillButton.tsx?cache=1643057698.509954"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Itinerary.jsx?cache=1643057698.509954"></script>
+    <script type="text/babel" src="/static/components//Itinerary/EventSection.tsx?cache=1643118839.021233"></script>
+    <script type="text/babel" src="/static/components//Itinerary/DateSection.tsx?cache=1643118839.021233"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dates.tsx?cache=1643118839.021233"></script>
+        <script type="text/babel" src="/static/components//Itinerary/DropdownButton.tsx?cache=1643118839.021233"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dropdown.tsx?cache=1643118839.021233"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Search.tsx?cache=1643118839.021233"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButtons.tsx?cache=1643118839.021233"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButton.tsx?cache=1643118839.021233"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Itinerary.jsx?cache=1643118839.021233"></script>
     <script src="/static/scripts/log-in-handler.js"></script>
 
     
