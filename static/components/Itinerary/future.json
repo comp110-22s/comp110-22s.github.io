@@ -1,6 +1,4 @@
 {
-    "2022-01-21": [],
-    "2022-01-22": [],
     "2022-01-23": [],
     "2022-01-24": [],
     "2022-01-25": [
@@ -35,13 +33,23 @@
             }
         },
         {
-            "kind": "EX",
-            "n": 2,
-            "title": "Unstructured Wordle",
+            "kind": "LS",
+            "n": 11,
+            "title": "EX02 Background Lesson: Advanced String Concepts (Due 1/31 at 11:59pm)",
             "date": "2022-01-25",
             "deadline": "2022-01-31",
             "links": {
-                "Write-up Released on 1/25": ""
+                "Read Background Lesson": "/lessons/strings.html"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 2,
+            "title": "One-shot Wordle",
+            "date": "2022-01-25",
+            "deadline": "2022-01-31",
+            "links": {
+                "EX02 - One Shot Wordle": "/exercises/ex02.html"
             }
         }
     ],
@@ -75,7 +83,7 @@
         },
         {
             "kind": "LS",
-            "n": 11,
+            "n": 12,
             "title": "Introducing Functions",
             "date": "2022-02-01",
             "deadline": "2022-02-02",
@@ -85,7 +93,7 @@
         },
         {
             "kind": "LS",
-            "n": 12,
+            "n": 13,
             "title": "Function Syntax",
             "date": "2022-02-01",
             "deadline": "2022-02-02",
@@ -95,12 +103,12 @@
         },
         {
             "kind": "LS",
-            "n": 13,
+            "n": 14,
             "title": "Function Semantics",
             "date": "2022-02-01",
             "deadline": "2022-02-02",
             "links": {
-                "Watch Lesson": "https://youtu.be/ihpN4LOqx8s"
+                "Watch Lesson": "https://www.youtube.com/watch?v=uGsgE_EKI4U"
             }
         },
         {
@@ -144,13 +152,11 @@
         },
         {
             "kind": "LS",
-            "n": 14,
+            "n": 15,
             "title": "Lists",
             "date": "2022-02-08",
             "deadline": "2022-02-09",
-            "links": {
-                "Watch Lesson": "https://www.youtube.com/watch?v=uGsgE_EKI4U"
-            }
+            "links": {}
         },
         {
             "kind": "EX",
