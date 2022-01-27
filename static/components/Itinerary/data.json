@@ -249,7 +249,8 @@
             "date": "2022-01-27",
             "deadline": "None",
             "links": {
-                "Quarantine YouTube Stream": "https://youtu.be/2Uw5yVUXx0Y"
+                "Quarantine YouTube Stream": "https://youtu.be/2Uw5yVUXx0Y",
+                "Slides": "/static/slides/cl05-control-flow-practice.pdf"
             }
         }
     ],
