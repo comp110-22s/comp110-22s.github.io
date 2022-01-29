@@ -54,7 +54,7 @@
             "date": "2022-02-01",
             "deadline": "2022-02-02",
             "links": {
-                "Watch Lesson": "https://www.youtube.com/watch?v=uGsgE_EKI4U"
+                "Watch Lesson": "https://youtu.be/_swT3gKjDVg"
             }
         },
         {
@@ -102,7 +102,9 @@
             "title": "Lists",
             "date": "2022-02-08",
             "deadline": "2022-02-09",
-            "links": {}
+            "links": {
+                "Watch Lesson": "https://www.youtube.com/watch?v=uGsgE_EKI4U"
+            }
         },
         {
             "kind": "EX",
