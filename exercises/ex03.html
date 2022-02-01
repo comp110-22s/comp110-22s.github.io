@@ -7,7 +7,7 @@
     <title> EX03 - Structured Wordle - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1643744264.0818791">
+    <link rel="stylesheet" href="/static/style.css?v=1643744593.1049316">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -197,7 +197,7 @@
         </div>
 
         <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><p>In this exercise you will use the concepts learned in the Lessons 12 through 14, as well as those of the previous units. Please complete all lessons before attempting to begin this exercise.</p>
-<p>The next step on our journey to implementing <a href="https://www.powerlanguage.co.uk/wordle/">Wordle</a> is to produce a program that gives the player <a href="https://www.youtube.com/watch?v=_Yhyp-_hX2s">one shot</a> six guesses at your program’s secret word, just like the real game. Additionally, you will implement this program in a <em>structured</em> fashion using function definitions.</p>
+<p>The next step on our journey to implementing <a href="https://www.powerlanguage.co.uk/wordle/">Wordle</a> is to produce a program that gives the player six guesses at your program’s secret word, just like the real game. Additionally, you will implement this program in a <em>structured</em> fashion using function definitions.</p>
 <p>In this exercise, you will prompt the user for a word that matches the length of your secret word. We’ll use <code>"codes"</code> for the purposes of our examples and autograding. Just like in the previous exercise, your program will be able to work with a secret word of any length, though! After submitting to autograding for full credit, you should change your word and let your friends play your new and improved game.</p>
 <p>You should follow the steps below for implementing the program function at a time. To get a sense of where you are going, here are two examples of the final game:</p>
 <pre class="plaintext"><code>    $ python -m exercises.ex03_wordle
@@ -237,7 +237,7 @@
     🟩🟩🟩🟩🟩
     You won in 3/6 turns!</code></pre>
 <h2 id="permitted-constructs">Permitted Constructs</h2>
-<p>We expect you to implement this exercise using only the concepts covered in COMP110. If you have prior programming experience, restrict your implementation to only the concepts covered. While there are many ways to implement this program with additional concepts beyond those we have covered, you should not attempt to do so until after submitting this exercise for full credit once the autograder is posted. Gaining additional practice with the fundamentals may feel clunky, but will help ensure you have full command over the concepts we expect you to know. Additionally, it is good practice for working in other programming environments which are more constrained and require creativity to overcome restrictions. For this exercise, you will be penalized for using any kind of loop construct other than a <code>while</code> loop. Additionally, the <code>in</code> operator and string methods (such as <code>.count</code> and <code>.format</code>) are not permitted.</p>
+<p>We expect you to implement this exercise using only the concepts covered in COMP110. If you have prior programming experience, restrict your implementation to only the concepts covered. While there are many ways to implement this program with additional concepts beyond those we have covered, you should not attempt to do so until after submitting this exercise for full credit once the autograder is posted. Gaining additional practice with the fundamentals may feel clunky, but will help ensure you have full command over the concepts we expect you to know. Additionally, it is good practice for working in other programming environments which are more constrained and require creativity to overcome restrictions. For this exercise, you will be penalized for using any kind of loop construct other than a <code>while</code> loop. Additionally, the <code>in</code> operator, the <code>break</code> operator, and string methods (such as <code>.count</code> and <code>.format</code>) are not permitted.</p>
 <h2 id="overview">Overview</h2>
 <p>In this program you will implement a <code>main</code> function that contains_char Wordle’s “game loop”. The game loop is what controls the overall game logic:</p>
 <p>The <code>main</code> flow of the game works as follows:</p>
