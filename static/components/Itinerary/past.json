@@ -240,5 +240,20 @@
             }
         }
     ],
-    "2022-01-26": []
+    "2022-01-26": [],
+    "2022-01-27": [
+        {
+            "kind": "CL",
+            "n": 5,
+            "title": "In-Person: Practice with Control Flow",
+            "date": "2022-01-27",
+            "deadline": "None",
+            "links": {
+                "Quarantine YouTube Stream": "https://youtu.be/2Uw5yVUXx0Y",
+                "Slides": "/static/slides/cl05-control-flow-practice.pdf"
+            }
+        }
+    ],
+    "2022-01-28": [],
+    "2022-01-29": []
 }
