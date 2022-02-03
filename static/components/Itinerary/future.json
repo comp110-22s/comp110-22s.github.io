@@ -1,6 +1,4 @@
 {
-    "2022-01-30": [],
-    "2022-01-31": [],
     "2022-02-01": [
         {
             "kind": "CL",
@@ -62,7 +60,8 @@
             "date": "2022-02-03",
             "deadline": "None",
             "links": {
-                "Quarantine YouTube Stream": "https://youtu.be/EiFkk_KCkyA"
+                "Quarantine YouTube Stream": "https://youtu.be/EiFkk_KCkyA",
+                "Slides": "/static/slides/cl07-function-practice.pdf"
             }
         }
     ],
@@ -89,6 +88,16 @@
             "deadline": "2022-02-09",
             "links": {
                 "Watch Lesson": "https://www.youtube.com/watch?v=uGsgE_EKI4U"
+            }
+        },
+        {
+            "kind": "RV",
+            "n": 0,
+            "title": "Review Session for Quiz 1",
+            "date": "2022-02-08",
+            "deadline": "None",
+            "links": {
+                "6:30pm in Sitterson 014": ""
             }
         },
         {

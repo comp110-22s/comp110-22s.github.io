@@ -8,7 +8,8 @@
             "deadline": "None",
             "links": {
                 "In-person Hamilton 100": "",
-                "Quarantine Stream": "https://youtu.be/TnFg2hUteSM"
+                "Quarantine Stream": "https://youtu.be/TnFg2hUteSM",
+                "Slides": "/static/slides/cl00-welcome.pdf"
             }
         },
         {
@@ -255,5 +256,7 @@
         }
     ],
     "2022-01-28": [],
-    "2022-01-29": []
+    "2022-01-29": [],
+    "2022-01-30": [],
+    "2022-01-31": []
 }
