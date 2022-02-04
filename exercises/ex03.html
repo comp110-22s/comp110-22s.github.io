@@ -7,7 +7,7 @@
     <title> EX03 - Structured Wordle - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1643918129.9782188">
+    <link rel="stylesheet" href="/static/style.css?v=1643936428.0763052">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -239,7 +239,7 @@
 <h2 id="permitted-constructs">Permitted Constructs</h2>
 <p>We expect you to implement this exercise using only the concepts covered in COMP110. If you have prior programming experience, restrict your implementation to only the concepts covered. While there are many ways to implement this program with additional concepts beyond those we have covered, you should not attempt to do so until after submitting this exercise for full credit once the autograder is posted. Gaining additional practice with the fundamentals may feel clunky, but will help ensure you have full command over the concepts we expect you to know. Additionally, it is good practice for working in other programming environments which are more constrained and require creativity to overcome restrictions. For this exercise, you will be penalized for using any kind of loop construct other than a <code>while</code> loop. Additionally, the <code>in</code> operator, the <code>break</code> operator, and string methods (such as <code>.count</code> and <code>.format</code>) are not permitted.</p>
 <h2 id="overview">Overview</h2>
-<p>In this program you will implement a <code>main</code> function that contains_char Wordle’s “game loop”. The game loop is what controls the overall game logic:</p>
+<p>In this program you will implement a <code>main</code> function that contains Wordle’s “game loop”. The game loop is what controls the overall game logic:</p>
 <p>The <code>main</code> flow of the game works as follows:</p>
 <ol type="1">
 <li>You have up to six turns</li>
@@ -303,7 +303,7 @@
     &gt;&gt;&gt; quit()</code></pre>
 <p>Notice, in the REPL, the line <code>from exercises.ex03_wordle import contains_char</code> will <code>import</code> your function definition <code>from</code> your <code>exercises.ex03_wordle</code> so that you can make use of your function in the REPL. You can then type out example <em>function calls</em> to test your implementation and be sure your function definition is returning the correct and expected values, as shown above. Your results must match exactly (except for the ellipses File details near the AssertionError).</p>
 <h2 id="part-2.-emojified---20-points">Part 2. <code>emojified</code> - 20 points</h2>
-<p>Declare a function named <code>emojified</code>. Its purpose is given two strings of equal length, the first a guess and the second a secret, it will return a string of emoji whose color <em>codifies</em> the same as you previously implemented in EX02. The body of this function must make use of your <code>contains_char</code> function definition by calling it to test for yellow or white box codification. Using this description, write your function header and docstring.</p>
+<p>Declare a function named <code>emojified</code>. Its purpose is given two strings of equal length, the first a guess and the second a secret, it will return a string of emoji whose color <em>codifies</em> the same as you previously implemented in EX02. You should reuse the named constants you setup in EX03 for the colored emoji boxes. The body of this function must make use of your <code>contains_char</code> function definition by calling it to test for yellow or white box codification. Using this description, write your function header and docstring.</p>
 <p>Since you can reasonably expect anyone using this function to provide strings of equal length, you can add the following assertion as the first line of your function implementation following your docstring, replacing the capitalized words with your function’s parameter’s names:</p>
 <p><code>assert len(REPLACE_THIS_WITH_YOUR_GUESS_PARAMETERS_NAME) == len(REPLACE_THIS_WITH_YOUR_SECRET_PARAMETERS_NAME)</code></p>
 <p>Once you have implemented this function, you can import it for use in the REPL to test it out, just like above. Be sure to save your work each time before restarting the <code>python</code> REPL, then try the following:</p>
@@ -352,7 +352,7 @@
     goheels
     &gt;&gt;&gt; quit()</code></pre>
 <h2 id="part-4.-main-30-points">Part 4. <code>main</code> – 30 Points</h2>
-<p>Now it’s time to pull together your functions, which are building blocks, into a <code>main</code> function that implements the high-level logic of the Wordle game loop. The purpose of the <code>main</code> function is to establish what the secret word is as a variable (choose <code>codes</code> for autograding purposes), keep track of how many turns the user has spent, whether the user has won the game, and control the flow of the game.</p>
+<p>Now it’s time to pull together your functions, which are building blocks, into a <code>main</code> function that implements the high-level logic of the Wordle game loop. The purpose of the <code>main</code> function is to establish what the secret word is as a variable (choose <code>"codes"</code> for autograding purposes), keep track of how many turns the user has spent, whether the user has won the game, and control the flow of the game.</p>
 <p>The declaration of your <code>main</code> function is unlike the functions above because it will not have any parameters and it will return <code>None</code>. You can decare your main function as follows:</p>
 <pre class="plaintext"><code>def main() -&gt; None:
     &quot;&quot;&quot;The entrypoint of the program and main game loop.&quot;&quot;&quot;
@@ -423,7 +423,7 @@
 <ul>
 <li>If you do not want to backup <em>all</em> changed files, you can select them individually. For this course you’re encouraged to back everything up.</li>
 </ul></li>
-<li>In the Message box, give a brief description of what you’ve changed and are backing up. This will help you find a specific backup (called a “commit”) if needed. In this case a message such as, “Progress on Exercise 1” will suffice.</li>
+<li>In the Message box, give a brief description of what you’ve changed and are backing up. This will help you find a specific backup (called a “commit”) if needed. In this case a message such as, “Progress on Exercise N” will suffice, where N is the current exercise.</li>
 <li>Press the Check icon to make a <em>Commit</em> (a version) of your work.</li>
 <li>Finally, press the Ellipses icon (…), look for “Pull/Push” submenu, and select “Push to…”, and in the dropdown select your backup repository.</li>
 </ol>
