@@ -119,6 +119,14 @@ html:not([data-nav1="true"]) .navbar-scroll {
   width: 100%;
 }
 
+html:not([data-scroll="0"]) .menu-dropdown {
+  display: none;
+}
+
+html:not([data-nav1="true"]) .hide-during-scroll {
+  display: none;
+}
+
 html:not([data-nav1="true"]) .hide-during-scroll {
   display: none;
 }
@@ -132,11 +140,12 @@ html:not([data-nav1="true"]) .hide-during-scroll {
   margin-left: 2em;
   vertical-align: bottom;
   display: inline-block;
+  color: #f3f3f3;
 }
 
 .nav-link {
   font-family: "Quicksand";
-  font-size: 1.75em;
+  font-size: 1.5em;
   font-weight: bold;
   color: #727272;
   text-shadow: 0px 0px 0px #e6e6e6;
@@ -334,6 +343,26 @@ code {
   box-shadow: 1px 1px 3px 0.1px #8584849d;
 }
 
+.lessons-fixed-box {
+  margin-bottom: 1em;
+  height: 28.5em;
+}
+
+.lessons-col-box {
+  margin-bottom: 1.25em;
+}
+
+.lessons-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.lessons-wrap .plan {
+  flex: 0 0 33.3333%;
+  padding: 0.5em 0.5em 0 0;
+}
+
 .authors-box {
   padding: 1em;
   background: rgba(255, 255, 255, 0.368);
@@ -411,7 +440,7 @@ a:hover {
 }
 
 /* All mobile devices */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
   /* Navbar spacing */
   .navbar-expand,
   .fa-bars {
@@ -424,9 +453,10 @@ a:hover {
   .navbar-collapse {
     width: 60%;
     overflow: auto;
+    padding-left: 0;
   }
 
-  /* .navbar-nav {
+  /* .navbar-nav .mobile {
     margin-right: auto;
     margin-left: auto;
     background-color: rgb(255, 255, 255);
@@ -434,9 +464,49 @@ a:hover {
     z-index: 2;
     padding-right: 30px;
   } */
-  .move-fixed {
-    transform: translateY(-36.5px);
+
+  /* Displays menu when hamburger clicked */
+  .menu-dropdown {
+    display: block;
+    position: fixed;
+    background-color: #f3f3f3;
+    width: 100%;
+    z-index: 5;
+    margin-top: 0.8em;
   }
+
+  .base-nav-dropdown {
+    transform: translateY(-13.5px);
+  }
+
+  .fixed-nav-dropdown {
+    transform: translateY(-30.5px);
+  }
+
+  /* Adds border between each nav links in dropdown */
+  .menu-dropdown .nav-item {
+    border-style: outset none none none;
+    border-width: 0.1em;
+    text-align: center;
+    margin-left: -3em;
+    transition: color 0.3s ease;
+  }
+
+  .menu-dropdown .nav-item:hover {
+    text-align: center;
+    background: linear-gradient(
+      to right,
+      #fe9f9f3d,
+      #fec79f3d,
+      #fadf943d,
+      #befe9f3d,
+      #9ffec53d,
+      #9fedfe3d,
+      #cfa3df3d,
+      #fe9fe93d
+    );
+  }
+
   a:hover {
     background: none;
     -webkit-text-fill-color: #979797;
@@ -444,8 +514,16 @@ a:hover {
   #link1,
   #link2,
   #link3,
-  #link4 {
+  #link4,
+  #link5,
+  #link6 {
     display: none;
+  }
+
+  /* Add bottom border */
+  #link6 {
+    border-bottom: inset;
+    border-width: 0.1em;
   }
 
   .web {
@@ -454,6 +532,19 @@ a:hover {
   .mobile {
     display: block;
   }
+
+  .nav-menu .nav-item {
+    list-style: none;
+    font-size: 1rem;
+  }
+
+  .nav-menu a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+  }
+
   #hamburger {
     display: block;
   }
@@ -993,11 +1084,37 @@ code span.in {
   .button-row {
     display: none;
   }
+
+  .lessons-fixed-box {
+    height: 30.5em;
+  }
+
+  .lessons-wrap .plan {
+    flex: 0 0 50%;
+  }
 }
 
 @media screen and (min-width: 992px) {
   .dropdown-row {
     display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .lessons-fixed-box {
+    height: 37em;
+  }
+}
+
+@media screen and (max-width: 536px) {
+  .lessons-fixed-box {
+    height: 38em;
+  }
+}
+
+@media screen and (max-width: 515px) {
+  .lessons-fixed-box {
+    height: 43em;
   }
 }
 
@@ -1507,6 +1624,38 @@ svg {
   border: 1px solid #a397c5;
   background: rgba(255, 255, 255, 0.11);
   box-shadow: 1px 1px 3px 0.1px #00012791;
+}
+
+/* Adds gradient to menu-dropdown when hamburger is clicked on */
+.dark-mode .menu-dropdown {
+  background: linear-gradient(
+    to right,
+    #fe9f9f3d,
+    #fec79f3d,
+    #fadf943d,
+    #befe9f3d,
+    #9ffec53d,
+    #9fedfe3d,
+    #cfa3df3d,
+    #fe9fe93d
+  );
+}
+
+/* Adjustments of dropdown position*/
+.dark-mode .base-nav-dropdown {
+  transform: translateY(-13.5px);
+  background-color: #0d0c0e;
+}
+
+.dark-mode .fixed-nav-dropdown {
+  transform: translateY(-30.5px);
+  background-color: #0d0c0e;
+}
+
+.dark-mode .menu-dropdown .nav-item {
+  border-style: outset none none none;
+  text-align: center;
+  margin-left: -3em;
 }
 
 /** ---------------------- HALLOWEEN MODE ---------------------- **/
