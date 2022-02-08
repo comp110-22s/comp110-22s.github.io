@@ -1,71 +1,4 @@
 {
-    "2022-02-01": [
-        {
-            "kind": "CL",
-            "n": 6,
-            "title": "Async Day - Submit Gradescope Responses by 2/2",
-            "date": "2022-02-01",
-            "deadline": "None",
-            "links": {
-                "Watch Lessons 11 - 13 Below": ""
-            }
-        },
-        {
-            "kind": "LS",
-            "n": 12,
-            "title": "Introducing Functions",
-            "date": "2022-02-01",
-            "deadline": "2022-02-02",
-            "links": {
-                "Watch Lesson": "https://youtu.be/UheQNnstJE8"
-            }
-        },
-        {
-            "kind": "LS",
-            "n": 13,
-            "title": "Function Syntax",
-            "date": "2022-02-01",
-            "deadline": "2022-02-02",
-            "links": {
-                "Watch Lesson": "https://youtu.be/ihpN4LOqx8s"
-            }
-        },
-        {
-            "kind": "LS",
-            "n": 14,
-            "title": "Function Semantics",
-            "date": "2022-02-01",
-            "deadline": "2022-02-02",
-            "links": {
-                "Watch Lesson": "https://youtu.be/_swT3gKjDVg"
-            }
-        },
-        {
-            "kind": "EX",
-            "n": 3,
-            "title": "Structured Wordle",
-            "date": "2022-02-01",
-            "deadline": "2022-02-07",
-            "links": {
-                "EX03 - Structured Wordle": "/exercises/ex03.html"
-            }
-        }
-    ],
-    "2022-02-02": [],
-    "2022-02-03": [
-        {
-            "kind": "CL",
-            "n": 7,
-            "title": "In-Person: Practice with Functions",
-            "date": "2022-02-03",
-            "deadline": "None",
-            "links": {
-                "Quarantine YouTube Stream": "https://youtu.be/EiFkk_KCkyA",
-                "Slides": "/static/slides/cl07-function-practice.pdf"
-            }
-        }
-    ],
-    "2022-02-04": [],
     "2022-02-05": [],
     "2022-02-06": [],
     "2022-02-07": [],
@@ -97,7 +30,7 @@
             "date": "2022-02-08",
             "deadline": "None",
             "links": {
-                "6:30pm in Sitterson 014": ""
+                "6:30pm-7:30pm in Sitterson 014": "https://unc.zoom.us/j/97748258543"
             }
         },
         {
