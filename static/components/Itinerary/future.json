@@ -1,5 +1,4 @@
 {
-    "2022-02-05": [],
     "2022-02-06": [],
     "2022-02-07": [],
     "2022-02-08": [
@@ -52,7 +51,11 @@
             "title": "Quiz 1",
             "date": "2022-02-10",
             "deadline": "2022-02-10",
-            "links": {}
+            "links": {
+                "Practice Questions": "/resources/practice/sp22/quiz1-worksheet.html",
+                "Practice Diagram #1": "https://www.youtube.com/watch?v=Mz7uP3Gyj8U",
+                "Practice Diagram #2": "https://www.youtube.com/watch?v=7pp8uJjpGKQ"
+            }
         }
     ],
     "2022-02-11": [],
