@@ -1,5 +1,4 @@
 {
-    "2022-02-06": [],
     "2022-02-07": [],
     "2022-02-08": [
         {
@@ -35,11 +34,11 @@
         {
             "kind": "EX",
             "n": 4,
-            "title": "One-player Wordle",
+            "title": "Turtle Art",
             "date": "2022-02-08",
             "deadline": "2022-02-14",
             "links": {
-                "Write-up Released on 2/8": ""
+                "Write-up Released on 2/9": ""
             }
         }
     ],
