@@ -7,7 +7,7 @@
     <title> Turtle Tutorial - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1644509880.7338846">
+    <link rel="stylesheet" href="/static/style.css?v=1644510534.4111571">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -164,7 +164,7 @@
             });
         </script>
 
-        <div id="resources-page" class="container">
+        <div id="excerises-page" class="container">
             <div class="row pt-4">
 
 
@@ -174,8 +174,38 @@
                 </div>
             </div>
 
-    <div class="container">
-                <div class="content"><p>Python’s turtle graphics library will allow us to use different coding concepts and algorithms we learn throughout the semester to create fun patterns and designs. The turtle is essentially an invisible pen that we can code to move around our screen and draw.</p>
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+    
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            
+            <div id="button-box class="link-pag box">
+            </div>
+
+            <div id="menu-overview" class="link-page box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul><li><a href="#importing-and-setting-up-the-turtle">Importing and Setting Up the Turtle</a></li>
+<li><a href="#lines-and-turning">Lines and Turning</a></li>
+<li><a href="#simplifying-with-loops">Simplifying with Loops</a></li>
+<li><a href="#goto-penup-and-pendown">GoTo, Penup and Pendown</a><ul>
+<li><a href="#pen-color">Pen Color</a></li>
+<li><a href="#fill-color">Fill Color</a></li>
+<li><a href="#other-useful-color-commands">Other Useful Color Commands</a></li>
+</ul></li>
+<li><a href="#speed-visibility-and-the-fun-part">Speed, Visibility and the Fun Part</a><ul>
+<li><a href="#mini-project">Mini-Project</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><p>Python’s turtle graphics library will allow us to use different coding concepts and algorithms we learn throughout the semester to create fun patterns and designs. The turtle is essentially an invisible pen that we can code to move around our screen and draw.</p>
 <p>This tutorial will run through some common commands used with the turtle and you will have a fun mini-project at the end!</p>
 <p>Begin by creating a Python program file in your <code>lessons</code> directory named <code>turtle_tutorial.py</code></p>
 <p>You can run this file either by clicking the green play button or from the command line using:</p>
@@ -337,7 +367,8 @@
 </ol>
 <p>Note that these are examples of <em>magic numbers</em> and should be given a meaningfully named constant definition to describe their purpose in a well styled, final product!</p>
 </div>
-            </div>
+
+    </div> 
 
             <div class="authors-box">
                 <span> Contributor(s): Ezri White</span>
