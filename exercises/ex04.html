@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> EX04 - `list` Utility Functions - COMP110 - 22S</title>
+    <title> Turtle Scene Exercise - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1642521179.0604525">
+    <link rel="stylesheet" href="/static/style.css?v=1644506191.773515">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -69,30 +69,33 @@
                 </div>  
                 </div>
                 <div class = 'hide-during-scroll'>
-                <div class="container nav-const">
-                    <a class="navbar-brand web" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
-                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
-                                alt="COMP110 - Spring - 2021"></a>
-                    <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="container nav-const">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                        <a class="navbar-brand web" href="/"><img class="lightmode-element-only img-fluid logo img-responsive" src="/static/lightbrand.png"
+                        alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo img-responsive" src="/static/darkbrand.png"
+                        alt="COMP110 - Spring - 2021"></a>
                         <ul class="navbar-nav web">
                             <li class="nav-item">
                                 <a class="nav-link" href="/resources">resources</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="/lessons-page">lessons</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="/topics">topics</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/support">support </a>
+                                <a class="nav-link" href="/support">support</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/explore">explore</a>
                             </li>
                         </ul>
-                        <a href="javascript:void(0);" class="icon" id="hamburger">
-                            <i class="fa fa-bars fa-lg"></i>
-                        </a>
+                            <a href="javascript:void(0);" class="icon" id="hamburger">
+                                <i class="fa fa-bars fa-lg"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
                 </div>
                 <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
                     <div class="switches">
@@ -114,22 +117,28 @@
                     </div>
                 </div>
             </div>
-            <a class="navbar-brand mobile" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
-                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/halloweenbrand.png"
+            <a class="navbar-brand mobile brand-left" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
                 alt="COMP110 - Spring - 2021">
             </a>
         </nav>
-        <ul class="navbar-nav mobile" id="mobile">
+        <ul class="navbar-nav mobile menu-dropdown base-nav-dropdown" id="mobile">
             <li class="nav-item" id="link1">
-                <a class="nav-link" href="/resources">resources</a>
+                <a class="nav-link" href="/">home</a>
             </li>
             <li class="nav-item" id="link2">
-                <a class="nav-link" href="/topics">topics</a>
+                <a class="nav-link" href="/resources">resources</a>
             </li>
             <li class="nav-item" id="link3">
+                <a class="nav-link" href="/lessons-page">lessons</a>
+            </li>
+            <li class="nav-item" id="link4">
+                <a class="nav-link" href="/topics">topics</a>
+            </li>
+            <li class="nav-item" id="link5">
                 <a class="nav-link" href="/support">support</a>
             </li>
-             <li class="nav-item" id="link4">
+             <li class="nav-item" id="link6">
                 <a class="nav-link" href="/explore">explore</a>
             </li>
         </ul>
@@ -141,15 +150,15 @@
             x[1] = document.getElementById("link2");
             x[2] = document.getElementById("link3");
             x[3] = document.getElementById("link4");
-            for (let i = 0; i < 4; i++) {
+            x[4] = document.getElementById("link5");
+            x[5] = document.getElementById("link6");
+            for (let i = 0; i < 6; i++) {
                 if (x[i].style.display === "block") {
                     x[i].style.display = "none";
                     document.getElementById("mobile").style.paddingTop="0";
                     document.getElementById("mobile").style.paddingBottom="0";
                 } else {
                     x[i].style.display = "block";
-                    document.getElementById("mobile").style.paddingTop="20px";
-                    document.getElementById("mobile").style.paddingBottom="20px";
                 }
             }
             });
@@ -160,117 +169,171 @@
 
 
                 <div class="col-12">
-                    <h1 class="display-5">EX04 - `list` Utility Functions</h1>
+                    <h1 class="display-5">Turtle Scene Exercise</h1>
                     <hr class="title"/>
                 </div>
             </div>
 
-    <div class="container">
-                <div class="content"><p>Art students intentionally reproduce great works of art to develop their own skills and techniques. The purpose isn’t to become an imitator, but to deepen an understanding of important work and styles that came before you.</p>
-<p>Reverse engineering algorithms and abstractions in computer science is of the same spirit! In this exercise you will implement algorithms to practice computational thinking. You will gain familiarity with the names and behaviors of commonly useful functions.</p>
-<p>Since the work you do is reproducing tried and true abstractions of the past, in the future you can and should use your language’s preferred functions and idioms instead. In this exercise we will show you how to achieve the same functionality using idiomatic Python in the future. Your function implementations may only make use of the built-in <code>len</code> function, and a <code>list</code> object’s methods <code>append</code> and <code>pop</code>.</p>
-<p>Specifically off-limits in this exercise are the following. Making use of any of the following will result in no credit for the function you use them in:</p>
-<ul>
-<li>Cannot use other built-in function besides <code>len</code> - specifically not <code>max</code>, <code>min</code>, <code>slice</code></li>
-<li>Cannot use slice notation in conjunction with the subscription operator</li>
-<li>Cannot use the <code>in</code> operator of Python</li>
-<li>Cannot use the <code>list</code> class’s <code>+</code> or <code>==</code> operators nor built-in methods beyond <code>append</code> and <code>pop</code>
-<ul>
-<li>Note: You can use + and == for individual elements, just not entire <code>list</code>s.</li>
-</ul></li>
-</ul>
-<p>Assignment Outline</p>
-<ul>
-<li><code>all</code> (Level: Novice) – 30 Points Autograded</li>
-<li><code>is_equal</code> (Level: Advanced) – 35 Points Autograded</li>
-<li><code>max</code> (On Your Own) – 15 Points Autograded</li>
-<li>Style, Linting, Typing – 20 Points Autograded</li>
-</ul>
-<p>General Notes:</p>
-<ul>
-<li>You are not required to implement a <code>main</code> function for this exercise. However, it may be helpful to have one to make test function calls with lists you construct.</li>
-<li>The grader will evaluate your code by <strong>importing your functions</strong> and calling them with our own chosen list inputs. You do not need to worry about generating lists for each of your functions to work with. These will be passed in as parameters.</li>
-<li>Writing unit tests (as discussed in Tuesday’s lecture) is another great way to test that your functions are working as expected!</li>
-</ul>
-<h2 id="pull-the-skeleton-code">0. Pull the skeleton code</h2>
-<p>You will find the starter files needed by “pulling” from the course workspace repository. Before beginning, be sure to:</p>
-<ol start="0" type="1">
-<li>Be sure you are in your course workspace. Open the file explorer and you should see your work for the course. If you do not, open your course workspace through File &gt; Open Recent.</li>
-<li>Open the <em>Source Control View</em> by clicking the 3-node (circles) graph (connected by lines) icon in your sidebar or opening the command palatte and searching for <em>Source Control</em>.</li>
-<li>Click the Ellipses in the Source Control pane and select “Pull” from the drop-down menu. This will begin the pulling process from the course repository. It should silently succeed.</li>
-<li>Return to the File Explorer pane and open the <code>exercises</code> directory. You should see it now contains another directory named <code>ex04</code>. If you expand that directory, you should see the starter file for the three functions you’ll be writing.</li>
-<li>If you do not see the <code>ex04</code> directory, try once more but selecting <code>"Pull From"</code> and select <code>upstream</code> in step 2.</li>
-</ol>
-<h2 id="all-30-points">1. <code>all</code> – 30 Points</h2>
-<p>This is the first function you will write in <code>utils.py</code>. The other two functions will also be defined in this file.</p>
-<p>Given a <code>list</code> of <code>ints</code> and an <code>int</code>, <code>all</code> should return a bool indicating whether or not all the ints in the list are the same as the given <code>int</code>. Example usage:</p>
-<pre class="plaintext"><code>&gt;&gt;&gt; all([1, 2, 3], 1)
-False
-&gt;&gt;&gt; all([1, 1, 1], 2)
-False
-&gt;&gt;&gt; all([1, 1, 1], 1)
-True</code></pre>
-<p>Continue by defining a skeleton function with the following signature:</p>
-<ol type="1">
-<li>Name: <code>all</code></li>
-<li>Arguments: A list of integers and an int.</li>
-<li>Returns: A <code>bool</code>, <code>True</code> if all numbers match the indicated number, <code>False</code> otherwise or if the list is empty. This algorithm should work for a list of any length. Hint: remember you can return from inside of a loop to short-circuit its behavior and return immediately.</li>
-</ol>
-<h2 id="is_equal-35-points">2. <code>is_equal</code> – 35 Points</h2>
-<p>Given two <code>list</code>s of <code>int</code> values, return <code>True</code> if <em>every</em> element at <em>every</em> index is equal in both <code>list</code>s.</p>
-<pre class="plaintext"><code>&gt;&gt;&gt; is_equal([1, 0, 1], [1, 0, 1])
-True
-&gt;&gt;&gt; is_equal([1, 1, 0], [1, 0, 1]))
-False</code></pre>
-<p>Your implementation should not assume the lengths of each List are equal.</p>
-<p>This concept is called <em>deep equality</em>. Two separate <code>list</code> objects on the <em>heap</em> may be distinct objects, such that if you changed one the other would remain the same. However, two distinct objects can be <em>deeply equal</em> to one another if what they are made of is equal to each other in essence.</p>
-<p>Define a function with the following signature: 1. Name: <code>is_equal</code> 2. Parameters: Two lists of integers. 3. Returns: <code>True</code> if lists are equal, <code>False</code> otherwise.</p>
-<p>Implement the <code>is_equal</code> function as described above.</p>
-<h2 id="max-on-your-own-15-points">3. <code>max</code> <strong>ON YOUR OWN</strong> – 15 Points</h2>
-<p>Next, you will write a function named <code>max</code>.</p>
-<p>The <code>max</code> function is given a <code>list</code> of <code>ints</code>, <code>max</code> should return the largest in the List.</p>
-<p>If the <code>list</code> is empty, <code>max</code> should result in a <code>ValueError</code>. We’ll show you how! Examples:</p>
-<pre class="plaintext"><code>&gt;&gt;&gt; max([1, 3, 2])
-3
-&gt;&gt;&gt; max([100, 99, 98])
-100
-&gt;&gt;&gt; max([])
-ValueError: max() arg is an empty List</code></pre>
-<p>Define a skeleton function with the following signature:</p>
-<ol type="1">
-<li>Name: <code>max</code></li>
-<li>Argument: A list of integers.</li>
-<li>Returns: An <code>int</code>, the largest number in the list. If the list is empty, raises a ValueError.</li>
-</ol>
-<p>The body of your skeleton function can begin as such, which demonstrates how to <code>raise</code> an error:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">def</span> <span class="bu">max</span>(<span class="bu">input</span>: <span class="bu">list</span>[<span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">int</span>:</a>
-<a class="sourceLine" id="cb4-2" title="2">    <span class="cf">if</span> <span class="bu">len</span>(<span class="bu">input</span>) <span class="op">==</span> <span class="dv">0</span>:</a>
-<a class="sourceLine" id="cb4-3" title="3">        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">&quot;max() arg is an empty List&quot;</span>)</a></code></pre></div>
-<h2 id="make-a-backup-checkpoint-commit">4. Make a Backup Checkpoint “Commit”</h2>
-<p>As you make progress on this exercise, making backups is encouraged.</p>
-<ol type="1">
-<li>Open the Source Control panel (Command Palette: “Show SCM” or click the icon with three circles and lines on the activity panel).</li>
-<li>Notice the files listed under Changes. These are files you’ve made modifications to since your last backup.</li>
-<li>Move your mouse’s cursor over the word <em>Changes</em> and notice the + symbol that appears. Click that plus symbol to add all changes to the next backup. You will now see the files listed under “Staged Changes”.
-<ul>
-<li>If you do not want to backup <em>all</em> changed files, you can select them individually. For this course you’re encouraged to back everything up.</li>
-</ul></li>
-<li>In the Message box, give a brief description of what you’ve changed and are backing up. This will help you find a specific backup (called a “commit”) if needed. In this case a message such as, “Progress on Exercise 3” will suffice.</li>
-<li>Press the Check icon to make a <em>Commit</em> (a version) of your work.</li>
-<li>Finally, press the Ellipses icon (…), look for “Pull/Push” submenu, and select “Push to…”, and in the dropdown select your backup repository.</li>
-</ol>
-<h2 id="submit-to-gradescope-for-grading">5. Submit to Gradescope for Grading</h2>
-<p>Login to Gradescope and select the assignment named “EX04 - Lists.”. You’ll see an area to upload a zip file. To produce a zip file for autograding, return back to Visual Studio Code.</p>
-<p>If you <em>do not</em> see a Terminal at the bottom of your screen, open the Command Palette and search for “View: Toggle Integrated Terminal”.</p>
-<p>Type the following command (all on a single line):</p>
-<p><code>python -m tools.submission exercises/ex04</code></p>
-<p>In the file explorer pane, look to find the zip file named “21.mm.dd-hh.mm-exercises-ex04.zip”. The “mm”, “dd”, and so on, are timestamps with the current month, day, hour, minute. If you right click on this file and select “Reveal in File Explorer” on Windows or “Reveal in Finder” on Mac, the zip file’s location on your computer will open. Upload this file to Gradescope to submit your work for this exercise.</p>
-<p>Autograding will take a few moments to complete. If there are issues reported, you are encouraged to try and resolve them and resubmit. If for any reason you aren’t receiving full credit and aren’t sure what to try next, come give us a visit in office hours!</p>
-</div>
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+    
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            
+            <div id="button-box class="link-pag box">
             </div>
 
+            <div id="menu-overview" class="link-page box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul><li><a href="#overview">Overview</a></li>
+<li><a href="#learning-objectives">Learning Objectives</a></li>
+<li><a href="#requirements">Requirements</a><ul>
+<li><a href="#drawing-functions-40-points-total">0. Drawing functions (40 points total)</a></li>
+<li><a href="#main-10-points-total">1. Main (10 points total):</a></li>
+<li><a href="#draw-something-twice-10-points-total">2. Draw something twice (10 points total):</a></li>
+<li><a href="#loop-usage-10-points-total">3. loop usage (10 points total):</a></li>
+<li><a href="#fill-color-5-points-total">4. Fill color (5 points total):</a></li>
+<li><a href="#marker-color-5-points-total">5. Marker color (5 points total):</a></li>
+<li><a href="#types-linting-documentation-10-points-total">6. Types, Linting, Documentation (10 points total):</a></li>
+<li><a href="#break-up-complex-functions-5-points-total">7. Break up complex functions (5 points total):</a></li>
+<li><a href="#try-something-fun-5-points-total">8. Try something fun! (5 points total):</a></li>
+</ul></li>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#have-fun-get-creative">Have fun, get creative!</a></li>
+<li><a href="#submission-instructions">Submission Instructions</a></li>
+<li><a href="#frequently-asked-questions">Frequently Asked Questions</a><ul>
+<li><a href="#how-can-i-get-my-scene-to-render-faster">How can I get my scene to render faster?</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><h2 id="overview">Overview</h2>
+<p>In this exercise you will design a structured program <em>and a beautifully artistic scene painted painstakingly on your screen, and ours, by our little <code>Turtle</code> friends</em>.</p>
+<p>Before beginning this exercise, you should complete the <a href="/exercises/ex04_tutorial.html">Turtle Graphics Introduction Tutorial</a>.</p>
+<p>The scene you choose to create should have some element in it that repeats / is reused at least three times. Perhaps it’s a forest of trees, or a house with many windows, or a flock of birds scattered in the distance, maybe it’s stars in the night sky, or snowflakes floating fancily about Polk Place quad. Pick a scene that sparks joy and transports you to a place of hygge and happiness.</p>
+<p>If you need inspiration, <a href="https://www.youtube.com/watch?v=0n4f-VDjOBE">look no further</a>. Remember, when learning how to program there are no mistakes, just happy, little accidents.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ol type="1">
+<li>You will gain experience breaking a complex task you want to achieve into smaller, parameterized functions. This technique is called problem decomposition.</li>
+<li>You will gain experience passing objects to functions and becoming more comfortable with the idea of functions.</li>
+<li>You will gain experience reading official documentation in order to achieve your vision without knowing exactly what tools you have available at the onset.</li>
+</ol>
+<h2 id="requirements">Requirements</h2>
+<p>This is an open-ended exercise and we encourage both exploration and pushing yourself. The rubric applied to your exercise is as follows:</p>
+<h3 id="drawing-functions-40-points-total">0. Drawing functions (40 points total)</h3>
+<p>Define at least four separate <em>functions</em> whose purpose is to draw visual components of your scene and are meaningfully named to describe what component they’ll draw. These functions must make use of at least three parameters: one <code>Turtle</code> object parameter and two <code>float</code> parameters for the <code>x</code> and <code>y</code> coordinates of <em>where</em> to start drawing the component on your canvas. You are encouraged to implement other “helper” functions that abstract simpler ideas for use in your required functions (for example, a function that draws a <code>line</code> between any two coordinates or a <code>rectangle</code> function). For this exercise you are required to use the <code>turtle</code> package’s object-oriented interface as shown in the tutorial and the examples of this document.</p>
+<h3 id="main-10-points-total">1. Main (10 points total):</h3>
+<p>Have a <code>main</code> <em>function</em> whose purpose is to construct any <code>Turtle</code> objects and make use of the component procedures described in the previous requirement to place the components of your scene. It does not need to take any parameters. After your functions are all defined, including <code>main</code>, you should use the <code>if __name__ == "__main__":</code> idiom at the bottom of your file.</p>
+<h3 id="draw-something-twice-10-points-total">2. Draw something twice (10 points total):</h3>
+<p>Call at least one of your four required component procedures twice to place that component twice in your scene in different locations.</p>
+<h3 id="loop-usage-10-points-total">3. loop usage (10 points total):</h3>
+<p>Use a loop to avoid repetitive code in some part of your scene.</p>
+<h3 id="fill-color-5-points-total">4. Fill color (5 points total):</h3>
+<p>Fill at least one shape in your scene with a color other than white.</p>
+<h3 id="marker-color-5-points-total">5. Marker color (5 points total):</h3>
+<p>Change the marker’s tracing color for at least one shape in your scene to something other than black. This is demonstrated in the <a href="/projects/turtle/turtle_tutorial.html">Turtle Tutorial</a>.</p>
+<h3 id="types-linting-documentation-10-points-total">6. Types, Linting, Documentation (10 points total):</h3>
+<p>Static Types - Be sure to specify each function’s <em>parameter’s types</em> and <em>return type</em>.</p>
+<p>Linting: Good, Pythonic style - refer to the <a href="/resources/style-guide.html">Style Guide</a> for help.</p>
+<p>Effortful and meaningfully descriptive <code>docstring</code> documentation for the module (top of file) and each function definition.</p>
+<p>Hitting the low bar on the minimum requirements with the minimal effort possible will result in a maximum score of 85%. To earn beyond 90%, we will look for the following criteria and ask that you use the file’s <code>docstring</code> to document which of these points you are attempting and tell us where to look in your program to find them (specific line numbers).</p>
+<h3 id="break-up-complex-functions-5-points-total">7. Break up complex functions (5 points total):</h3>
+<p>Avoid any single function from becoming <em>too</em> complex. When programming in general, if you find yourself writing a very complex function, it’s likely you should break it down further into simpler functions. To earn credit for this, break your most complex component procedure besides <code>main</code> down further into simpler, but still meaningfully named procedures. To earn credit for this, your component procedure should <em>call</em> these simpler procedures.</p>
+<h3 id="try-something-fun-5-points-total">8. Try something fun! (5 points total):</h3>
+<ol start="11" type="1">
+<li>Impress us by trying out something you find interesting! Describe what you are attempting here in the file’s <code>docstring</code> so we know what to look for. Remember, a <code>docstring</code> can span more than one line, it just ends with the <code>"""</code>. Some ideas you could try for here:</li>
+</ol>
+<ul>
+<li>Read through the <code>Turtle</code> documentation page to find a function to use that we did not make use of in the turtle tutorial and make use of it in your exercise: <a href="https://docs.python.org/3.10/library/turtle.html#turtle-methods" class="uri">https://docs.python.org/3.10/library/turtle.html#turtle-methods</a></li>
+<li>Use loops and procedures in clever ways to draw an interesting pattern or complex component</li>
+<li>Make clever use of randomness in your scene by using a function imported from the <code>random</code> module: https://docs.python.org/3.10/library/random.html</li>
+<li>Go above and beyond with a scene more complex than could be achieved with only four components added to it.</li>
+</ul>
+<p>It is worth noting it is very <em>ok</em>, and perhaps expected, for your scene to look like a drawing you might have been proud of in kindergarten. Such is the nature of doing art on a medium you’re new to. The end visual result is less interesting than the process by which you got there. Your grade will not be impacted by the ultimate beauty of your creation. With that said, drawing 5 lines on the screen with as little effort as possible and calling it “art” may very well be <em>art</em>, but will likely not result in full credit. You should be able to look at your program and appreciate that you put significant effort into it.</p>
+<h2 id="getting-started">Getting started</h2>
+<p>In your course workspace, expand the <code>exercises</code> directory. Right click on <code>exercises</code> and add a file named <code>ex04_turtle.py</code>.</p>
+<p>You can use the following template to begin your program. Unlike the tutorial, you will need to write functions which control your scene.</p>
+<p>We’ll begin by adding a <code>main</code> function that takes no parameters and, since it is a <em>procedure</em> has a return type of <code>None</code>.</p>
+<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co">&quot;&quot;&quot;TODO: Describe your scene program.&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3">__author__ <span class="op">=</span> <span class="st">&quot;Your PID&quot;</span></a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="im">from</span> turtle <span class="im">import</span> Turtle, colormode, done </a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7"></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</a>
+<a class="sourceLine" id="cb1-9" title="9">    <span class="co">&quot;&quot;&quot;The entrypoint of my scene.&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-10" title="10">    <span class="co"># </span><span class="al">TODO</span><span class="co">: Declare your Turtle variable(s) here.</span></a>
+<a class="sourceLine" id="cb1-11" title="11">    <span class="co"># </span><span class="al">TODO</span><span class="co">: Call the procedures you define and pass your Turtle(s) as an argument.</span></a>
+<a class="sourceLine" id="cb1-12" title="12">    done()</a>
+<a class="sourceLine" id="cb1-13" title="13"></a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="co"># </span><span class="al">TODO</span><span class="co">: Define the procedures for other components in your scene here.</span></a>
+<a class="sourceLine" id="cb1-15" title="15"></a>
+<a class="sourceLine" id="cb1-16" title="16"><span class="co"># </span><span class="al">TODO</span><span class="co">: Use the __name__ is &quot;__main__&quot; idiom shown in </span></a></code></pre></div>
+<p>To give you an example of what is expected in your four “component” procedures, consider this one that draws a <em>square</em> and adds an additional <em>parameter</em> for you to control the width of the square:</p>
+<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">def</span> draw_square(a_turtle: Turtle, x: <span class="bu">float</span>, y: <span class="bu">float</span>, width: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</a>
+<a class="sourceLine" id="cb2-2" title="2">    <span class="co">&quot;&quot;&quot;Draw a square of the given width whose top-left corner is located at x, y.&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb2-3" title="3">    a_turtle.penup()</a>
+<a class="sourceLine" id="cb2-4" title="4">    a_turtle.goto(x, y) </a>
+<a class="sourceLine" id="cb2-5" title="5">    a_turtle.setheading(<span class="fl">0.0</span>)</a>
+<a class="sourceLine" id="cb2-6" title="6">    a_turtle.pendown()</a>
+<a class="sourceLine" id="cb2-7" title="7">    i: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb2-8" title="8">    <span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">4</span>:</a>
+<a class="sourceLine" id="cb2-9" title="9">        a_turtle.forward(width)</a>
+<a class="sourceLine" id="cb2-10" title="10">        a_turtle.right(<span class="dv">90</span>)</a>
+<a class="sourceLine" id="cb2-11" title="11">        i <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span></a></code></pre></div>
+<p>Your component procedures, and any other “helper” functions you define, can add whatever additional parameters you’d like. Notice that parameters tend to give your procedures extra flexibility. If the <code>draw_square</code> function did not have a <code>width</code> parameter, then it could only draw squares of the exact same, “hard-coded” width.</p>
+<p>The <code>Turtle</code> object’s <code>setheading</code> method takes a <code>float</code> value that is the <em>degrees</em> to face the turtle in. So, in the example above, each time the <code>draw_square</code> procedure is called the turtle’s heading is reset to head toward <code>0.0</code> degrees (along the x-axis headed in a positive direction). Since your component procedures do not know the starting position of the turtle or the direction it is heading in, you will likely benefit from using <code>goto</code> and <code>setheading</code> to move it and face it in the direction you’d like.</p>
+<p>After defining this procedure we could call it from the <em>body</em> of the <code>main</code> function to draw a few squares. For example, by replacing <code>...</code> with the following <code>Turtle</code> variable construction and <code>draw_square()</code> calls:</p>
+<div class="sourceCode" id="cb3" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</a>
+<a class="sourceLine" id="cb3-2" title="2">    <span class="co">&quot;&quot;&quot;The entrypoint of my scene.&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb3-3" title="3">    ertle: Turtle <span class="op">=</span> Turtle()</a>
+<a class="sourceLine" id="cb3-4" title="4">    draw_square(ertle, <span class="dv">-5</span>, <span class="dv">5</span>, <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb3-5" title="5">    draw_square(ertle, <span class="dv">-10</span>, <span class="dv">10</span>, <span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb3-6" title="6">    draw_square(ertle, <span class="dv">-15</span>, <span class="dv">15</span>, <span class="dv">30</span>)</a>
+<a class="sourceLine" id="cb3-7" title="7">    draw_square(ertle, <span class="dv">-20</span>, <span class="dv">20</span>, <span class="dv">40</span>)</a>
+<a class="sourceLine" id="cb3-8" title="8">    done()</a>
+<a class="sourceLine" id="cb3-9" title="9">    <span class="co"># Challenge: Try rewriting those four repeated calls in a loop</span></a>
+<a class="sourceLine" id="cb3-10" title="10">    <span class="co"># and using arithmetic expressions to calculate each of the arguments</span></a>
+<a class="sourceLine" id="cb3-11" title="11">    <span class="co"># based on your counter variable&#39;s value rather than hard coded int</span></a>
+<a class="sourceLine" id="cb3-12" title="12">    <span class="co"># literals. For example, the first argument could be: (i + 1) * -5</span></a></code></pre></div>
+<h2 id="have-fun-get-creative">Have fun, get creative!</h2>
+<hr />
+<h2 id="submission-instructions">Submission Instructions</h2>
+<p>To prepare your scene for submission, be sure to add a docstring to your module (at the top of the file) and a global <code>__author__</code> variable set to a string which contains your 9-digit PID. If you are attempting the final 15% of the exercise, also be sure to describe what to look for in your program per the instructions above. Add that description to your docstring.</p>
+<p>The programmer’s job is not completed merely by achieving some desired functionality. Programming is a craft and a programmer’s work should be documented and adhere to common stylistic rules. Autograding for this assignment performs checks for the 25 points dedicated to such concerns: <em>linting</em> and <em>static type checking</em>. These checks are focused on nit-picky improvements. Developing good habits around fixing these concerns as you move through your programming career will pay dividends, just like brushing your teeth.</p>
+<p>Here are a few suggestions for cleaning up your code in anticipation of <em>static type checking</em>:</p>
+<ol type="1">
+<li>Be sure you declare every parameter’s type</li>
+<li>Be sure you declare every return type (since most of this exercise is <em>procedural</em>, it’s likely they’re <code>None</code>)</li>
+</ol>
+<p>Read the <a href="/students/resources/style-guide.html">Style, Linting and Autograder</a> guide in anticipation of <em>linting</em> (style checking).</p>
+<p>On your first submission, you are likely to see a number of lint and type checking issues arise. Don’t be dismayed! Remember, each is telling you the line number to find the issue on and describes what the issue is. Many of these rules the linter will teach you through some trial and error and by the end of the course you will be in the practice of writing code in a good, Pythonic style. If you do not understand the suggestions, refer to the <a href="/students/resources/style-guide.html#how-to-read-the-autograder">Style, Linting, and Autograder guide</a>.</p>
+<p>To build your submission, run <code>python -m tools.submission exercises/ex04_turtle.py</code> to build your submission zip for upload to Gradescope. Don’t forget to backup your work by creating a commit and pushing it to GitHub. For a reminder of this process, see the previous exercises.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="how-can-i-get-my-scene-to-render-faster">How can I get my scene to render faster?</h3>
+<p>Start by increasing your <code>Turtle</code> object’s speed to the maximum speed. For example, if you have a <code>Turtle</code> variable named <code>bob</code>, you could increase its speed with <code>bob.speed(MAX_SPEED)</code> where <code>MAX_SPEED</code> is a constant set to <code>0</code> per the <a href="https://docs.python.org/3.10/library/turtle.html#turtle.speed">official documentation</a>.</p>
+<p>Once you have the hang of writing procedures and a feel for how interacting with Turtle objects work, you can further supercharge your Turtle with some “hacks”. By default the <code>Turtle</code> renderer will update the scene as your method calls occur. However, for complex scenes it’s often desireable to have the scene drawn instantaneously. To do so we will disable the tracer from updating until your scene is completed. You will need to import the functions <code>tracer</code> and <code>update</code> from the <code>turtle</code> package, alongside <code>done</code> and <code>colormode</code>. Then, you can update your <code>main</code> function to turn off tracing and update after your scene instructions complete:</p>
+<div class="sourceCode" id="cb4" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</a>
+<a class="sourceLine" id="cb4-2" title="2">    <span class="co">&quot;&quot;&quot;The entrypoint of my scene.&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb4-3" title="3">    tracer(<span class="dv">0</span>, <span class="dv">0</span>)  <span class="co"># Disable delay in tracing</span></a>
+<a class="sourceLine" id="cb4-4" title="4">    ...  <span class="co"># </span><span class="al">TODO</span><span class="co">: your code</span></a>
+<a class="sourceLine" id="cb4-5" title="5">    update()  <span class="co"># Now update the rendering</span></a>
+<a class="sourceLine" id="cb4-6" title="6">    done()</a>
+<a class="sourceLine" id="cb4-7" title="7">    </a></code></pre></div>
+<p>Note that updating the speed of your rendering in this way is entirely optional and not expected.</p>
+</div>
+
+    </div> 
+
             <div class="authors-box">
-                <span> Contributor(s):                        Marlee Walls, Kris Jordan</span>
+                <span> Contributor(s):                        Kris Jordan, Ezri White</span>
             </div>
             
             <div class='link-page wrapper'>

@@ -357,18 +357,8 @@
             "date": "2022-02-08",
             "deadline": "None",
             "links": {
-                "Recording (Passcode: 8@e.caM#": "https://unc.zoom.us/rec/share/tiJrKXEoIlLRQWVoOvSap_Zho4gbQKVZBuOZV-UKmOvyP7vSLAfbb8Wm4k9DamnL.WMRkCWG1u__bPZZJ?startTime=1644363199000",
+                "Recording Passcode: 8@e.caM#": "https://unc.zoom.us/rec/share/tiJrKXEoIlLRQWVoOvSap_Zho4gbQKVZBuOZV-UKmOvyP7vSLAfbb8Wm4k9DamnL.WMRkCWG1u__bPZZJ?startTime=1644363199000",
                 "Slides": "https://docs.google.com/presentation/d/1qb3dbSPHiWQMkJA_z-Yw40wTxGdDoSEvjcparFZ6OI8/edit?usp=sharing"
-            }
-        },
-        {
-            "kind": "EX",
-            "n": 4,
-            "title": "Turtle Art",
-            "date": "2022-02-08",
-            "deadline": "2022-02-14",
-            "links": {
-                "Write-up Released on 2/9": ""
             }
         }
     ],
@@ -384,6 +374,17 @@
                 "Practice Questions": "/resources/practice/sp22/quiz1-worksheet.html",
                 "Practice Diagram #1": "https://www.youtube.com/watch?v=Mz7uP3Gyj8U",
                 "Practice Diagram #2": "https://www.youtube.com/watch?v=7pp8uJjpGKQ"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 4,
+            "title": "Turtle Art",
+            "date": "2022-02-10",
+            "deadline": "2022-02-16",
+            "links": {
+                "Tutorial Before you Begin": "/exercises/ex04_tutorial.html",
+                "Write-up": "/exercises/ex04.html"
             }
         }
     ],
