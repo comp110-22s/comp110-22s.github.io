@@ -379,7 +379,7 @@
         {
             "kind": "EX",
             "n": 4,
-            "title": "Turtle Art",
+            "title": "Turtle Art - Due Weds Feb 16",
             "date": "2022-02-10",
             "deadline": "2022-02-16",
             "links": {
@@ -392,7 +392,48 @@
     "2022-02-12": [],
     "2022-02-13": [],
     "2022-02-14": [],
-    "2022-02-15": [],
+    "2022-02-15": [
+        {
+            "kind": "CL",
+            "n": 10,
+            "title": "Async Day - Submit Gradescope Responses by 2/15",
+            "date": "2022-02-15",
+            "deadline": "None",
+            "links": {
+                "Read Lesson 16 and Watch Lessons 17, 18": ""
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 16,
+            "title": "Scopes, Globals, and Constants",
+            "date": "2022-02-15",
+            "deadline": "2022-02-16",
+            "links": {
+                "Read Lesson": "/lessons/scopes-constants-globals.html"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 17,
+            "title": "Unit Testing",
+            "date": "2022-02-15",
+            "deadline": "2022-02-16",
+            "links": {
+                "Watch Lesson": "https://www.youtube.com/watch?v=VAdJybtia-4"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 18,
+            "title": "for..in Loops",
+            "date": "2022-02-15",
+            "deadline": "2022-02-16",
+            "links": {
+                "Watch Lesson": "https://www.youtube.com/watch?v=YPfFCD_RGK8"
+            }
+        }
+    ],
     "2022-02-16": [],
     "2022-02-17": [],
     "2022-02-18": [],

@@ -328,5 +328,39 @@
     "2022-02-04": [],
     "2022-02-05": [],
     "2022-02-06": [],
-    "2022-02-07": []
+    "2022-02-07": [],
+    "2022-02-08": [
+        {
+            "kind": "CL",
+            "n": 8,
+            "title": "Async Day - Submit Gradescope Responses by 2/9",
+            "date": "2022-02-08",
+            "deadline": "None",
+            "links": {
+                "Watch Lessons 14": ""
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 15,
+            "title": "Lists",
+            "date": "2022-02-08",
+            "deadline": "2022-02-09",
+            "links": {
+                "Watch Lesson": "https://www.youtube.com/watch?v=uGsgE_EKI4U"
+            }
+        },
+        {
+            "kind": "RV",
+            "n": 0,
+            "title": "Review Session for Quiz 1",
+            "date": "2022-02-08",
+            "deadline": "None",
+            "links": {
+                "Recording Passcode: 8@e.caM#": "https://unc.zoom.us/rec/share/tiJrKXEoIlLRQWVoOvSap_Zho4gbQKVZBuOZV-UKmOvyP7vSLAfbb8Wm4k9DamnL.WMRkCWG1u__bPZZJ?startTime=1644363199000",
+                "Slides": "https://docs.google.com/presentation/d/1qb3dbSPHiWQMkJA_z-Yw40wTxGdDoSEvjcparFZ6OI8/edit?usp=sharing"
+            }
+        }
+    ],
+    "2022-02-09": []
 }
