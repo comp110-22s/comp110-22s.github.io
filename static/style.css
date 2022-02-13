@@ -516,12 +516,12 @@ a:hover {
   #link3,
   #link4,
   #link5,
-  #link6 {
+  #last-link {
     display: none;
   }
 
   /* Add bottom border */
-  #link6 {
+  #last-link {
     border-bottom: inset;
     border-width: 0.1em;
   }
