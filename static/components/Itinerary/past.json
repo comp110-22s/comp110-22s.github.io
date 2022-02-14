@@ -362,5 +362,30 @@
             }
         }
     ],
-    "2022-02-09": []
+    "2022-02-09": [],
+    "2022-02-10": [
+        {
+            "kind": "QZ",
+            "n": 1,
+            "title": "Quiz 1",
+            "date": "2022-02-10",
+            "deadline": "2022-02-10",
+            "links": {
+                "Practice Questions": "/resources/practice/sp22/quiz1-worksheet.html",
+                "Practice Diagram #1": "https://www.youtube.com/watch?v=Mz7uP3Gyj8U",
+                "Practice Diagram #2": "https://www.youtube.com/watch?v=7pp8uJjpGKQ"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 4,
+            "title": "Turtle Art - Due Weds Feb 16",
+            "date": "2022-02-10",
+            "deadline": "2022-02-16",
+            "links": {
+                "Tutorial Before you Begin": "/exercises/ex04_tutorial.html",
+                "Write-up": "/exercises/ex04.html"
+            }
+        }
+    ]
 }

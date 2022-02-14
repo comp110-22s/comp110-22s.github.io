@@ -435,7 +435,18 @@
         }
     ],
     "2022-02-16": [],
-    "2022-02-17": [],
+    "2022-02-17": [
+        {
+            "kind": "CL",
+            "n": 11,
+            "title": "In-Person: Practice with Lists and Scope",
+            "date": "2022-02-17",
+            "deadline": "None",
+            "links": {
+                "Quarantine Stream": "https://youtu.be/pO8R5USJb_Q"
+            }
+        }
+    ],
     "2022-02-18": [],
     "2022-02-19": [],
     "2022-02-20": [],
