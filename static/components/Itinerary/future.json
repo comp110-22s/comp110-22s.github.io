@@ -1,8 +1,4 @@
 {
-    "2022-02-11": [],
-    "2022-02-12": [],
-    "2022-02-13": [],
-    "2022-02-14": [],
     "2022-02-15": [
         {
             "kind": "CL",
@@ -54,7 +50,29 @@
             "date": "2022-02-17",
             "deadline": "None",
             "links": {
-                "Quarantine Stream": "https://youtu.be/pO8R5USJb_Q"
+                "Complete Required Course Survey by Fri, Feb 18": "https://forms.gle/T4ryvAd6TizBNmf2A",
+                "Quarantine Stream": "https://youtu.be/pO8R5USJb_Q",
+                "Slides": "/static/slides/cl11-list-practice.pdf"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 5,
+            "title": "List Algorithms and Unit Tests - Due Weds Feb 23",
+            "date": "2022-02-17",
+            "deadline": "2022-02-23",
+            "links": {
+                "Write-up Released Thu Feb 17": ""
+            }
+        },
+        {
+            "kind": "RD",
+            "n": 0,
+            "title": "Reading: Ethical Algorithms Chapter - Due Mar 11",
+            "date": "2022-02-17",
+            "deadline": "2022-03-11",
+            "links": {
+                "See Gradescope": "https://www.gradescope.com"
             }
         }
     ],
