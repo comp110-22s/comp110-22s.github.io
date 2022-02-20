@@ -349,7 +349,7 @@ code {
 }
 
 .lessons-col-box {
-  margin-bottom: 1.25em;
+  margin-bottom: 1.5em;
 }
 
 .lessons-wrap {
@@ -360,7 +360,12 @@ code {
 
 .lessons-wrap .plan {
   flex: 0 0 33.3333%;
-  padding: 0.5em 0.5em 0 0;
+  /* This padding just pushes the 2 and 3 item on each row to the right so that it is centered */
+  padding: 0.5em 0.5em 0.75em 8em;
+}
+
+.lessons-wrap .plan:nth-child(3n + 1) {
+  padding: 0.5em 0.5em 0.75em 0;
 }
 
 .authors-box {
@@ -1089,8 +1094,14 @@ code span.in {
     height: 30.5em;
   }
 
+  .lessons-wrap {
+    justify-content: center;
+    align-items: baseline;
+  }
+
   .lessons-wrap .plan {
     flex: 0 0 50%;
+    padding: 0.5em 0 0.75em 0;
   }
 }
 
