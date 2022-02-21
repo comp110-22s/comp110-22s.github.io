@@ -7,7 +7,7 @@
     <title> EX05 - `list` Utility Functions - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1645378541.0667756">
+    <link rel="stylesheet" href="/static/style.css?v=1645464165.402604">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -180,23 +180,23 @@
 <ul>
 <li>Cannot use other built-in function besides <code>len</code> - specifically not <code>max</code>, <code>min</code>, <code>slice</code></li>
 <li>Cannot use slice notation in conjunction with the subscription operator</li>
-<li>Cannot use the <code>in</code> operator of Python</li>
-<li>Cannot use the <code>list</code> class’s <code>+</code> or <code>==</code> operators nor built-in methods beyond <code>append</code> and <code>pop</code>
+<li>Cannot use the <code>in</code> operator of Python with lists (but you can use <code>for..in</code> loops!)</li>
+<li>Cannot use the <code>list</code> class’s <code>+</code> or <code>==</code> operators (you can still use <code>+</code> with <code>int</code> and <code>str</code> types, though!) nor built-in methods beyond <code>append</code> and <code>pop</code>
 <ul>
 <li>Note: You can use + and == for individual elements, just not entire <code>list</code>s.</li>
 </ul></li>
 </ul>
 <p>Assignment Outline</p>
 <ul>
-<li><code>only_evens</code> (Level: Novice) – 30 Points Autograded
+<li><code>only_evens</code> – 30 Points Autograded
 <ul>
 <li>Unit Tests – 5 Points Autograded</li>
 </ul></li>
-<li><code>sub</code> (Level: Advanced) – 35 Points Autograded
+<li><code>sub</code> – 35 Points Autograded
 <ul>
 <li>Unit Tests – 5 Points Autograded</li>
 </ul></li>
-<li><code>concat</code> (On Your Own) – 15 Points Autograded
+<li><code>concat</code> – 15 Points Autograded
 <ul>
 <li>Unit Tests – 5 Points Autograded</li>
 </ul></li>
@@ -217,11 +217,11 @@
 <p>Include descriptive function names and docstrings, so that it captures what is being tested.</p>
 <p>The command to run your tests is <code>python -m pytest exercises/ex05</code> or you can run them using the beaker tab in VSCode if it is working (do note the VSCode testing feature tends to be a bit flaky).</p>
 <p>Once you’re ready to import and begin testing your skeletons, you can add the following import lines, corresponding to the functions you have completed, to do so:</p>
-<pre class="plaintext"><code>from exercises.ex05.utils import only_evens
-from exercises.ex05.utils import sub
-from exercises.ex05.utils import concat</code></pre>
+<pre class="plaintext"><code>from utils import only_evens
+from utils import sub
+from utils import concat</code></pre>
 <p>Once you have completed all functions, you can reduce the three import lines down into a single one for less redundancy in your testing code:</p>
-<pre class="plaintext"><code>from exercises.ex05.utils import only_evens, sub, concat</code></pre>
+<pre class="plaintext"><code>from utils import only_evens, sub, concat</code></pre>
 <p>If your screen is large enough, you are encouraged to open these files side-by-side in VSCode by dragging the tab of one to the right side of VSCode so that it changes to a split pane view. Closing your file explorer can help give you additional horizontal space.</p>
 <h2 id="only_evens-30-points">1. <code>only_evens</code> – 30 Points</h2>
 <p>This is the first function you will write in <code>utils.py</code>. The other two functions will also be defined in this file.</p>
