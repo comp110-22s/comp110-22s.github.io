@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Pandas Exercise - COMP110 - 22S</title>
+    <title> Vivian Deng - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1645628320.0523193">
+    <link rel="stylesheet" href="/static/style.css?v=1645628312.8989325">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -164,77 +164,45 @@
             });
         </script>
 
-        <div id="explore-page" class="container">
+        <div id="profile-page" class="container">
             <div class="row pt-4">
 
 
                 <div class="col-12">
-                    <h1 class="display-5">Pandas Exercise</h1>
+                    <h1 class="display-5">Vivian Deng</h1>
                     <hr class="title"/>
                 </div>
             </div>
 
-    <script src="/static/scripts/toggle-handler.js"></script>
-    
-    <div class="row px-4">
-    
-        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
-            
-            <div id="button-box class="link-pag box">
-            </div>
-
-            <div id="menu-overview" class="link-page box">
-                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
-                <div id="overview-links">
-                    <div id="TOC" role="doc-toc">
-                        <ul><li><a href="#exds_00-getting-started-exercise">exds_00: Getting Started (Exercise)</a><ul>
-<li><a href="#introduction">Introduction:</a></li>
-<li><a href="#task-1">Task 1:</a></li>
-<li><a href="#task-2">Task 2:</a></li>
-<li><a href="#task-3">Task 3:</a></li>
-<li><a href="#task-4">Task 4:</a></li>
-<li><a href="#task-5">Task 5:</a></li>
-<li><a href="#task-6-statistics-challenge">Task 6: Statistics Challenge</a></li>
-</ul></li>
-</ul>
-</</ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><h2 id="exds_00-getting-started-exercise">exds_00: Getting Started (Exercise)</h2>
-<h3 id="introduction">Introduction:</h3>
-<p>Now that you are familiar with some of the basics of <code>pandas</code> and have learned a little bit about how to manipulate data in the form of <code>DataFrame</code>’s, it is time to put your skills to the test. At this point you should be familiar with the following:</p>
-<ul>
-<li>importing <code>pandas</code></li>
-<li>creating a <code>DataFrame</code>, underlying structure</li>
-<li>reading from and writing to .csv files</li>
-<li>observing the structure of a specific <code>DataFrame</code></li>
-<li>selecting data by column and by row</li>
-<li>some basic analysis using <code>numpy</code></li>
-</ul>
-<p>Additionally, if you have completed one of the recent projects, you will also be familiar with the <code>survey.csv</code> data, which details course evaluation responses from a previous semester. Below you will see some tasks, each with increasing difficulty, that test your newfound data science skills. You may complete this exercise in a new Jupyter Notebook file or in a normal Python file.</p>
-<h3 id="task-1">Task 1:</h3>
-<p>As before, we have to get the data into a usable form for <code>pandas</code>. Load the <code>survey.csv</code> data into a <code>DataFrame</code> called <code>survey</code>.</p>
-<h3 id="task-2">Task 2:</h3>
-<p>It is a best practice to gain an understanding of the sturcture of data before trying to conduct any sort of analysis. Use the <code>.info()</code> method to get a look at the “big picture” of your <code>DataFrame</code>.</p>
-<h3 id="task-3">Task 3:</h3>
-<p>Often, you will deal with data that has ambiguous variable naming conventions. While <code>survey.csv</code> is not one of those datasets, thankfully, it is still essential to understand what each column is trying to tell you about students! Look at the columns labeled <code>kaki_effective</code>, <code>interested</code>, and <code>oh_visits</code> by themselves and describe what they represent below.</p>
-<h3 id="task-4">Task 4:</h3>
-<p>At first glance, this seems to be quite a large dataset with many variables, so it may be helpful to only look at columns of interest. Create a new <code>DataFrame</code> called <code>survey_new</code> which contains only the columns <code>row_number</code>,<code>pace</code>,<code>difficulty</code>,<code>understanding</code>,<code>interested</code>,<code>valuable</code>,<code>grade</code>,and <code>would_recommend</code>. Note that there are many ways to do this, some MUCH more efficient than others. A potential use for this new data would be if we want a more streamlined look at whether perception of difficulty aligns with a student’s grade.</p>
-<h3 id="task-5">Task 5:</h3>
-<p>Perhaps something we are interested in is the difference in <code>difficulty</code> between first-year students and returning students. Subset the data such that only first-year students are included, and store this in a new <code>DataFrame</code> called <code>first_year</code>. Similarly, store returning students in a <code>DataFrame</code> called <code>returning</code>. Then, calculate the average grade and standard deviation using <code>numpy</code> for these two groups. Write a brief statement about these two quantities.</p>
-<h3 id="task-6-statistics-challenge">Task 6: Statistics Challenge</h3>
-<p>An essential skill for any data scientist (or any professional that uses programming) is the ability to research new techniques and read documentation.</p>
-<p>In this <em>challenging</em> task, we want to analyse the difference we saw above, but more rigorously! :)</p>
-<p>Research hypothesis tests specifically for the difference of two means. Write a brief paragraph about your findings, especially detailing the t-distribution. Then look into the <code>scipy</code> <code>.ttest_ind()</code> method and <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html">read the documentation</a>. Write a brief statement about your findings. Finally, conduct the hypothesis test for the null hypothesis that the mean <code>difficulty</code> for first-years is equal to that for returning students. Report your findings!</p>
+    <div class="container">
+        <div class="row"><div class="col">
+                <div class="content"><figure>
+<img src="../../../static/profile-photos/vydeng.png" alt="profile-photo" /><figcaption>profile-photo</figcaption>
+</figure>
+<h2 id="pronouns">Pronouns</h2>
+<p>she/her/hers</p>
+<p></div>
+            </div><div class="col">
+                <div class="content"></p>
+<h2 id="hometown">Hometown</h2>
+<p>Chapel Hill, North Carolina</p>
+<h2 id="unc-status">UNC Status</h2>
+<p>Class of 2024</p>
+<h2 id="major">Major</h2>
+<p>Computer Science BS, Business Administration Minor</p>
+<p></div>
+            </div><div class="col">
+                <div class="content"></p>
+<h2 id="interests">Interests</h2>
+<p>Flying Silk Dance Team, eating out and getting boba, hiking, kayaking</p>
+<h2 id="non-academic-fun-fact">Non-academic fun fact</h2>
+<p>I am scuba diving certified!</p>
 </div>
-
-    </div> 
+            </div></div>
+    </div>
 
             <div class="authors-box">
-                <span> Contributor(s): Kyle Sorensen</span>
+                <span> Contributor(s): Vivian Deng</span>
             </div>
             
             <div class='link-page wrapper'>
