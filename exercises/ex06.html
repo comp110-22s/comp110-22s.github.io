@@ -7,7 +7,7 @@
     <title> EX06 - Dictionary Functions - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1645807280.588468">
+    <link rel="stylesheet" href="/static/style.css?v=1645811801.165665">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -209,7 +209,7 @@
 <p>Just like in <code>ex05</code>, you will need to import your functions in your tests file.</p>
 <p>If your screen is large enough, you are encouraged to open these files side-by-side in VSCode by dragging the tab of one to the right side of VSCode so that it changes to a split pane view. Closing your file explorer can help give you additional horizontal space.</p>
 <h2 id="invert">1. <code>invert</code></h2>
-<p>This is the first function you will write in <code>dictionaries.py</code>. The other two functions will also be defined in this file.</p>
+<p>This is the first function you will write in <code>dictionary.py</code>. The other two functions will also be defined in this file.</p>
 <p>Given a <code>dictionary</code> of <code>[str, str]</code>, <code>invert</code> should return a <code>dict[str, str]</code> that inverts the keys and the values. The keys of the input list becomes the values of the output list and vice versa.</p>
 <p>Remember that <strong>keys in a dictionary are unique.</strong> If you encounter more than one of the same key when trying to invert your dictionary, i.e., raise a KeyError. Example usage:</p>
 <pre class="plaintext"><code>&gt;&gt;&gt; invert({&#39;a&#39;: &#39;z&#39;, &#39;b&#39; : &#39;y&#39;, &#39;c&#39;: &#39;x&#39;})
@@ -229,7 +229,7 @@ KeyError</code></pre>
 <a class="sourceLine" id="cb2-2" title="2">        my_dictionary <span class="op">=</span> {<span class="st">&#39;kris&#39;</span>: <span class="st">&#39;jordan&#39;</span>, <span class="st">&#39;michael&#39;</span>: <span class="st">&#39;jordan&#39;</span>}</a>
 <a class="sourceLine" id="cb2-3" title="3">        invert(my_dictionary)</a></code></pre></div>
 <h2 id="favorite-colors">2. <code>favorite colors</code></h2>
-<p>Create a function in your <code>dictionaries.py</code> file called <code>favorite_color</code>. It has the following specifications:</p>
+<p>Create a function in your <code>dictionary.py</code> file called <code>favorite_color</code>. It has the following specifications:</p>
 <ol type="1">
 <li>It has one parameter, of type <code>dict[str, str]</code> of names and favorite colors.</li>
 <li>It returns a <code>str</code> which is the color that appears most frequently.
