@@ -7,7 +7,7 @@
     <title> EX06 - Dictionary Functions - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1642521178.2773895">
+    <link rel="stylesheet" href="/static/style.css?v=1645762849.825167">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -69,30 +69,33 @@
                 </div>  
                 </div>
                 <div class = 'hide-during-scroll'>
-                <div class="container nav-const">
-                    <a class="navbar-brand web" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
-                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
-                                alt="COMP110 - Spring - 2021"></a>
-                    <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="container nav-const">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                        <a class="navbar-brand web" href="/"><img class="lightmode-element-only img-fluid logo img-responsive" src="/static/lightbrand.png"
+                        alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo img-responsive" src="/static/darkbrand.png"
+                        alt="COMP110 - Spring - 2021"></a>
                         <ul class="navbar-nav web">
                             <li class="nav-item">
                                 <a class="nav-link" href="/resources">resources</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="/lessons-page">lessons</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="/topics">topics</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/support">support </a>
+                                <a class="nav-link" href="/support">support</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/explore">explore</a>
                             </li>
                         </ul>
-                        <a href="javascript:void(0);" class="icon" id="hamburger">
-                            <i class="fa fa-bars fa-lg"></i>
-                        </a>
+                            <a href="javascript:void(0);" class="icon" id="hamburger">
+                                <i class="fa fa-bars fa-lg"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
                 </div>
                 <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
                     <div class="switches">
@@ -114,22 +117,28 @@
                     </div>
                 </div>
             </div>
-            <a class="navbar-brand mobile" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
-                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/halloweenbrand.png"
+            <a class="navbar-brand mobile brand-left" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
                 alt="COMP110 - Spring - 2021">
             </a>
         </nav>
-        <ul class="navbar-nav mobile" id="mobile">
+        <ul class="navbar-nav mobile menu-dropdown base-nav-dropdown" id="mobile">
             <li class="nav-item" id="link1">
-                <a class="nav-link" href="/resources">resources</a>
+                <a class="nav-link" href="/">home</a>
             </li>
             <li class="nav-item" id="link2">
-                <a class="nav-link" href="/topics">topics</a>
+                <a class="nav-link" href="/resources">resources</a>
             </li>
             <li class="nav-item" id="link3">
+                <a class="nav-link" href="/lessons-page">lessons</a>
+            </li>
+            <li class="nav-item" id="link4">
+                <a class="nav-link" href="/topics">topics</a>
+            </li>
+            <li class="nav-item" id="link5">
                 <a class="nav-link" href="/support">support</a>
             </li>
-             <li class="nav-item" id="link4">
+             <li class="nav-item" id="last-link">
                 <a class="nav-link" href="/explore">explore</a>
             </li>
         </ul>
@@ -141,15 +150,15 @@
             x[1] = document.getElementById("link2");
             x[2] = document.getElementById("link3");
             x[3] = document.getElementById("link4");
-            for (let i = 0; i < 4; i++) {
+            x[4] = document.getElementById("link5");
+            x[5] = document.getElementById("last-link");
+            for (let i = 0; i < 6; i++) {
                 if (x[i].style.display === "block") {
                     x[i].style.display = "none";
                     document.getElementById("mobile").style.paddingTop="0";
                     document.getElementById("mobile").style.paddingBottom="0";
                 } else {
                     x[i].style.display = "block";
-                    document.getElementById("mobile").style.paddingTop="20px";
-                    document.getElementById("mobile").style.paddingBottom="20px";
                 }
             }
             });
@@ -169,31 +178,37 @@
                 <div class="content"><p>In this exercise you will get some practice with some dictionary functions.</p>
 <p>Assignment Outline</p>
 <ul>
-<li><code>invert</code> (Level: Novice) – 30 Points Autograded
+<li><code>invert</code> – 20 Points Autograded
 <ul>
 <li>Unit Tests – 5 Points Autograded</li>
 </ul></li>
-<li><code>favorite_colors</code> (Level: Advanced) – 35 Points Autograded
+<li><code>count</code> – 30 Points Autograded
 <ul>
 <li>Unit Tests – 5 Points Autograded</li>
 </ul></li>
-<li><code>count</code> (On Your Own) – 15 Points Autograded
+<li><code>favorite_colors</code> – 30 Points Autograded
 <ul>
 <li>Unit Tests – 5 Points Autograded</li>
 </ul></li>
 <li>Style, Linting, Typing – 20 Points Autograded</li>
 </ul>
 <p>Note: Even if your functions are not 100% correct or finished, you can get full credit for the unit tests if you set up a function skeleton and write your tests assuming correct functionality.</p>
-<h2 id="pull-the-skeleton-code">0. Pull the skeleton code</h2>
-<p>You will find the starter files needed by “pulling” from the course workspace repository. Before beginning, be sure to:</p>
-<ol start="0" type="1">
-<li>Be sure you are in your course workspace. Open the file explorer and you should see your work for the course. If you do not, open your course workspace through File &gt; Open Recent.</li>
-<li>Open the <em>Source Control View</em> by clicking the 3-node (circles) graph (connected by lines) icon in your sidebar or opening the command palatte and searching for <em>Source Control</em>.</li>
-<li>Click the Ellipses in the Source Control pane and select “Pull” from the drop-down menu. This will begin the pulling process from the course repository. It should silently succeed.</li>
-<li>Return to the File Explorer pane and open the <code>exercises</code> directory. You should see it now contains another directory named <code>ex06</code>. If you expand that directory, you should see the starter file for the three functions you’ll be writing.</li>
-<li>If you do not see the <code>ex06</code> directory, try once more but selecting <code>"Pull From"</code> and select <code>upstream</code> in step 2.</li>
-</ol>
-<h2 id="invert-30-points">1. <code>invert</code> – 30 Points</h2>
+<h2 id="setup">0. Setup</h2>
+<p>Create a new <strong>directory</strong> in <code>exercises</code> named <code>ex06</code>.</p>
+<p>Inside the <code>exercises/ex06</code> directory, create a file named <code>dictionary.py</code>. Add a docstring and establish an <code>__author__</code> variable to be assigned a string with the digits of your PID. This is where you will implement your function skeletons and implementations below.</p>
+<p>Unit Tests</p>
+<p>Also inside the <code>exercises/ex06</code> directory, create a file named <code>dictionary_test.py</code>. Add a docstring and establish an <code>__author__</code> in this file as well.</p>
+<p>For each function from below (<code>invert</code>, <code>favorite_color</code>, <code>count</code>), you are to define at least <strong>3x unit test</strong> functions. Remember that a unit test function starts with <code>test_</code>.</p>
+<p>The 3 unit tests should consist of:</p>
+<ul>
+<li>One edge case</li>
+<li>Two use cases</li>
+</ul>
+<p>Include descriptive function names and docstrings, so that it captures what is being tested.</p>
+<p>The command to run your tests is <code>python -m pytest exercises/ex06</code> or you can run them using the beaker tab in VSCode if it is working (do note the VSCode testing feature tends to be a bit flaky).</p>
+<p>Just like in <code>ex05</code>, you will need to import your functions in your tests file.</p>
+<p>If your screen is large enough, you are encouraged to open these files side-by-side in VSCode by dragging the tab of one to the right side of VSCode so that it changes to a split pane view. Closing your file explorer can help give you additional horizontal space.</p>
+<h2 id="invert">1. <code>invert</code></h2>
 <p>This is the first function you will write in <code>dictionaries.py</code>. The other two functions will also be defined in this file.</p>
 <p>Given a <code>dictionary</code> of <code>[str, str]</code>, <code>invert</code> should return a <code>dict[str, str]</code> that inverts the keys and the values. The keys of the input list becomes the values of the output list and vice versa.</p>
 <p>Remember that <strong>keys in a dictionary are unique.</strong> If you encounter more than one of the same key when trying to invert your dictionary, i.e., raise a KeyError. Example usage:</p>
@@ -204,7 +219,16 @@
 &gt;&gt;&gt; invert({&#39;kris&#39;: &#39;jordan&#39;, &#39;michael&#39;: &#39;jordan&#39;})
 KeyError</code></pre>
 <p>Similar to how you raised a <code>ValueError</code> in the <code>max</code> function for <code>list</code> utils, the syntax for raising a <code>KeyError</code> is: `raise KeyError(“error message of your choice here!”)</p>
-<h2 id="favorite-colors-35-points">2. <code>favorite colors</code> – 35 Points</h2>
+<h4 id="testing-for-keyerror"><em>Testing for KeyError:</em></h4>
+<p>You may optionally add a test for the invert function to check if the KeyError is being raised. Testing errors requires different syntax than testing normal outputs. If an error is raised then the function never actually returned anything, so we are unable to <code>assert</code> a return value. Instead try the following:</p>
+<ol type="1">
+<li>Make sure to <code>import pytest</code></li>
+<li>Use the following code as an example:</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1">    <span class="cf">with</span> pytest.raises(<span class="pp">KeyError</span>):</a>
+<a class="sourceLine" id="cb2-2" title="2">        my_dictionary <span class="op">=</span> {<span class="st">&#39;kris&#39;</span>: <span class="st">&#39;jordan&#39;</span>, <span class="st">&#39;michael&#39;</span>: <span class="st">&#39;jordan&#39;</span>}</a>
+<a class="sourceLine" id="cb2-3" title="3">        invert(my_dictionary)</a></code></pre></div>
+<h2 id="favorite-colors">2. <code>favorite colors</code></h2>
 <p>Create a function in your <code>dictionaries.py</code> file called <code>favorite_color</code>. It has the following specifications:</p>
 <ol type="1">
 <li>It has one parameter, of type <code>dict[str, str]</code> of names and favorite colors.</li>
@@ -215,11 +239,11 @@ KeyError</code></pre>
 </ol>
 <p>You can also check the correctness of your <code>favorite_color</code> function by calling it in <code>main</code>, printing the result, then running the program with the same command from above.</p>
 <p>An example:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1">    <span class="bu">print</span>(favorite_color({<span class="st">&quot;Marc&quot;</span>: <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;Ezri&quot;</span>: <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;Kris&quot;</span>: <span class="st">&quot;blue&quot;</span>}))</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1">    <span class="bu">print</span>(favorite_color({<span class="st">&quot;Marc&quot;</span>: <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;Ezri&quot;</span>: <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;Kris&quot;</span>: <span class="st">&quot;blue&quot;</span>}))</a></code></pre></div>
 <p>The results of which would look like:</p>
 <pre class="plaintext"><code>$ python -m exercises.ex06.favorite_color
 blue</code></pre>
-<h2 id="count-on-your-own-15-points">3. <code>count</code> <strong>ON YOUR OWN</strong> – 15 Points</h2>
+<h2 id="count">3. <code>count</code></h2>
 <p>Given a <code>list[str]</code>, this function will produce a <code>dict[str, int]</code> where each key is a unique value in the given list and each value associated is the <em>count</em> of the number of times that value appeared in the input list.</p>
 <ul>
 <li>Function name: <code>count</code></li>
@@ -237,25 +261,6 @@ blue</code></pre>
 </ol></li>
 <li>Return the resulting dictionary.</li>
 </ol>
-<h2 id="unit-tests">4. Unit Tests</h2>
-<p>For each function from above (<code>invert</code>, <code>favorite_color</code>, <code>count</code>), you are to define at least <strong>3x unit test</strong> functions. Remember that a unit test function starts with <code>test_</code>. In order for our grader to execute correctly, import these functions using the complete path. This should look like <code>exercises.ex06.dictionaries import invert, favorite_color, count</code>.</p>
-<p>The 3 unit tests should consist of:</p>
-<ul>
-<li>One edge case</li>
-<li>Two use cases</li>
-</ul>
-<p>Include descriptive function names and docstrings like we saw in class on Tuesday so that it captures what is being tested.</p>
-<p>The command to run your tests is <code>python -m pytest exercises/ex06</code> or you can run them using the beaker tab in VSCode if it is working (it tends to be a bit flaky).</p>
-<p>If your screen is large enough, you are encouraged to open these files side-by-side in VSCode by dragging the tab of one to the right side of VSCode so that it changes to a split pane view. Closing your file explorer can help give you additional horizontal space.</p>
-<h4 id="optional-testing-for-keyerror"><em>Optional Testing for KeyError:</em></h4>
-<p>You may optionally add a test for the invert function to check if the KeyError is being raised. Testing errors requires different syntax than testing normal outputs. If an error is raised then the function never actually returned anything, so we are unable to <code>assert</code> a return value. Instead try the following:</p>
-<ol type="1">
-<li>Make sure to <code>import pytest</code></li>
-<li>Use the following code as an example:</li>
-</ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1">    <span class="cf">with</span> pytest.raises(<span class="pp">KeyError</span>):</a>
-<a class="sourceLine" id="cb4-2" title="2">        my_dictionary <span class="op">=</span> {<span class="st">&#39;kris&#39;</span>: <span class="st">&#39;jordan&#39;</span>, <span class="st">&#39;michael&#39;</span>: <span class="st">&#39;jordan&#39;</span>}</a>
-<a class="sourceLine" id="cb4-3" title="3">        invert(my_dictionary)</a></code></pre></div>
 <h2 id="make-a-backup-checkpoint-commit">5. Make a Backup Checkpoint “Commit”</h2>
 <p>As you make progress on this exercise, making backups is encouraged.</p>
 <ol type="1">
