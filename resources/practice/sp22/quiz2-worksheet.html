@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> San Bae - COMP110 - 22S</title>
+    <title> Quiz 02 Practice - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1645998383.7457628">
+    <link rel="stylesheet" href="/static/style.css?v=1645998378.726057">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -164,37 +164,160 @@
             });
         </script>
 
-        <div id="profile-page" class="container">
+        <div id="lessons-page" class="container">
             <div class="row pt-4">
 
 
                 <div class="col-12">
-                    <h1 class="display-5">San Bae</h1>
+                    <h1 class="display-5">Quiz 02 Practice</h1>
                     <hr class="title"/>
                 </div>
             </div>
 
-    <div class="container">
-                <div class="content"><figure>
-<img src="../../../static/profile-photos/sanbae.jpg" alt="profile-photo" /><figcaption>profile-photo</figcaption>
-</figure>
-<h2 id="pronouns">Pronouns</h2>
-<p>he/him/his</p>
-<h2 id="hometown">Hometown</h2>
-<p>Raleigh, NC, USA</p>
-<h2 id="unc-status">UNC Status</h2>
-<p>Class of 2021</p>
-<h2 id="major">Major</h2>
-<p>Bachelor of Arts in Computer Science</p>
-<h2 id="interests">Interests</h2>
-<p>Working out, video games, learning to cook new things, eating good foods, sleeping :D</p>
-<h2 id="non-academic-fun-fact">Non-academic fun fact</h2>
-<p>I don’t like pelicans they’re weird lmao</p>
-</div>
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+    
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            
+            <div id="button-box class="link-pag box">
             </div>
 
+            <div id="menu-overview" class="link-page box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul><li><a href="#questions">Questions</a><ul>
+<li><a href="#conceptual-questions">Conceptual Questions</a></li>
+<li><a href="#memory-diagrams">Memory Diagrams</a></li>
+<li><a href="#code-tracing">Code Tracing</a></li>
+<li><a href="#function-writing">Function Writing</a></li>
+</ul></li>
+<li><a href="#solutions">Solutions</a><ul>
+<li><a href="#conceptual-questions-1">Conceptual Questions</a></li>
+<li><a href="#memory-diagrams-1">Memory Diagrams</a></li>
+<li><a href="#code-tracing-1">Code Tracing</a></li>
+<li><a href="#function-writing-1">Function Writing</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><!--
+Note: this wkst pulls from the qz02 and qz03 worksheets from resources/practice/fa21 with some
+minor changes/additions
+-->
+<h1 id="questions">Questions</h1>
+<p>The quiz itself will be similar in difficulty but longer in length than this practice worksheet.</p>
+<p>Solutions for each problem can be found at the bottom of this page.</p>
+<h2 id="conceptual-questions">Conceptual Questions</h2>
+<ol type="1">
+<li>The values in a list cannot be changed while your program is running. (T/F)</li>
+<li>The last index of a list is the length of the list. (T/F)</li>
+<li>You can initialize an empty list with no items. (T/F)</li>
+<li>For the purposes of this class, all items in a list are of the same type. (T/F)</li>
+<li>While loops inside a function may continue looping after a return statement is reached. (T/F)</li>
+<li>The condition of a while loop must be a boolean expression (T/F)</li>
+<li>Global variables are limited to the scope of the function they are declared in. (T/F)</li>
+<li>Variables can have the same name but store different values if they are defined in a different scope. (T/F)</li>
+<li>Named constants should be used to store values that may change throughout the program. (T/F)</li>
+<li>All pytest test function names must begin with <code>test</code>.</li>
+<li>A test will pass if it does not hit a <code>False</code> assertion or some other type of error.</li>
+<li>Test functions should be written in a file with a name matching the file that the functions are defined in, followed by <code>_test</code>.</li>
+<li>When using a <code>for...in</code> loop, on the first line of the loop you must specify the type of the variable (variable refers to <code>i</code> in <code>for i in nums</code>). (T/F)</li>
+<li>In Python dictionaries, each dictionary’s value type must match its key type. (T/F)</li>
+<li>Writing a <code>for...in</code> loop on a <code>dict</code> loops through the keys of a dictionary. (T/F)</li>
+<li>The values in a dictionary cannot be changed once they are assigned. (T/F)</li>
+<li>Explain the similarities and differences between Python’s <code>list</code> and <code>dict</code>.</li>
+</ol>
+<h2 id="memory-diagrams">Memory Diagrams</h2>
+<ol start="18" type="1">
+<li><p>Produce a memory diagram for the following code snippet, being sure to include its stack and output.<br />
+<img src="/static/practice_worksheets/fa21/qz02-question11.png" /></p></li>
+<li><p>Produce a memory diagram for the following code snippet, being sure to include its stack and output.<br />
+<img src="/static/practice_worksheets/fa21/qz02-question12new.png" /></p></li>
+<li><p>Produce a memory diagram for the following code snippet, being sure to include its stack and output.<br />
+<img src="/static/practice_worksheets/fa21/qz03-question12.png" /></p></li>
+</ol>
+<h2 id="code-tracing">Code Tracing</h2>
+<ol start="21" type="1">
+<li><p>Given the following code snippet, answer the questions below.<br />
+<img src="/static/practice_worksheets/fa21/qz02-question13.png" /><br />
+21.1. What is the printed output once the code snippet completes?<br />
+21.2. What are the values of the global variables <code>a</code>, <code>b</code>, and <code>c</code> once the code snippet completes?</p></li>
+<li><p>Given the following code snippet, answer the questions below.<br />
+<img src="/static/practice_worksheets/fa21/qz02-question14.png" /><br />
+22.1. What is the value of <code>list_1</code> once the code snippet completes?<br />
+22.2. What is the final value of <code>i</code> in line 13?<br />
+22.3. How many total frames are created on the stack throughout the run of this program (including the globals frame)?</p></li>
+</ol>
+<h2 id="function-writing">Function Writing</h2>
+<ol start="23" type="1">
+<li><p>Write a function called <code>odd_and_even</code>. Given a list of <code>ints</code>, <code>odd_and_even</code> should return a new list containing the elements that are odd and have an even index.<br />
+Example Usage:<br />
+<img src="/static/practice_worksheets/fa21/qz02-question15demo.png" /></p></li>
+<li><p>Write a function named <code>vowels_and_threes</code>. Given a string, <code>vowels_and_threes</code> should return a new string containing the characters that are either at an index that is a multiple of 3 or a vowel (one or the other, not both). You can assume that the input string is all lowercase, for simplicity.<br />
+Example Usage:<br />
+<img src="/static/practice_worksheets/fa21/qz02-question16demo.png" /></p></li>
+<li><p>Write a function called <code>average_grades</code>. Given a dictionary with <code>str</code> keys and <code>list[int]</code> values, <code>average_grades</code> should return a new dictionary of type <code>dict[str, float]</code> that maps each student to their average.<br />
+<img src="/static/practice_worksheets/sp22/qz02-solution17.png" /></p></li>
+</ol>
+<h1 id="solutions">Solutions</h1>
+<h2 id="conceptual-questions-1">Conceptual Questions</h2>
+<ol type="1">
+<li>False</li>
+<li>False</li>
+<li>True</li>
+<li>True</li>
+<li>False</li>
+<li>True</li>
+<li>False</li>
+<li>True</li>
+<li>False</li>
+<li>True</li>
+<li>True</li>
+<li>True</li>
+<li>False</li>
+<li>False</li>
+<li>True</li>
+<li>False</li>
+<li>Similarities:<br />
+Both are collections that can be looped through using a <code>for...in</code> loop, reference types that live on the heap, mutable, can duplicate values, subscription notation to access values, <code>.pop()</code> to remove items<br />
+Differences:<br />
+<code>list</code> – Index by increasing integers, add items with <code>.append()</code>, ordered, <code>for...in</code> loop gives items<br />
+<code>dict</code> – Matched Key-Value pairs, pair with assignment operator <code>=</code> (<code>dict_name[key] = value</code>), control over key type (not limited to <code>int</code>), <code>for...in</code> gives keys<br />
+Note: these are not all of the similarities and differences, just some important ones to remember</li>
+</ol>
+<h2 id="memory-diagrams-1">Memory Diagrams</h2>
+<ol start="18" type="1">
+<li><p><img src="/static/practice_worksheets/fa21/qz02-solution11.png" /></p></li>
+<li><p><img src="/static/practice_worksheets/fa21/qz02-solution12n.png" /></p></li>
+<li><p><img src="/static/practice_worksheets/fa21/qz03-solution12.png" /></p></li>
+</ol>
+<h2 id="code-tracing-1">Code Tracing</h2>
+<ol start="21" type="1">
+<li><p>21.1. <code>[3, 7, 10, 13]</code><br />
+21.2. a = 3, b = 0, c = 13.5</p></li>
+<li><p>22.1. <code>[6, 7, 5, 3, 0]</code><br />
+22.2. 3<br />
+22.3. 4</p></li>
+</ol>
+<h2 id="function-writing-1">Function Writing</h2>
+<p>Note: Your solution does not need to be identical to these, these are just two of many possible solutions.</p>
+<ol start="23" type="1">
+<li><p><img src="/static/practice_worksheets/fa21/qz02-solution15.png" /></p></li>
+<li><p><img src="/static/practice_worksheets/fa21/qz02-solution16.png" /></p></li>
+<li><p><img src="/static/practice_worksheets/fa21/qz03-solution14.png" /></p></li>
+</ol>
+</div>
+
+    </div> 
+
             <div class="authors-box">
-                <span> Contributor(s): San Bae</span>
+                <span> Contributor(s):                        Megan Zhang, David Karash</span>
             </div>
             
             <div class='link-page wrapper'>
