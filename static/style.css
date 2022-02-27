@@ -355,17 +355,22 @@ code {
 .lessons-wrap {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-end;
 }
+
+/* This deals with padding and spacing of lessons (lessons page) when column-based; Play around with padding depending on length lesson title! */
 
 .lessons-wrap .plan {
   flex: 0 0 33.3333%;
-  /* This padding just pushes the 2 and 3 item on each row to the right so that it is centered */
-  padding: 0.5em 0.5em 0.75em 8em;
 }
 
-.lessons-wrap .plan:nth-child(3n + 1) {
-  padding: 0.5em 0.5em 0.75em 0;
+/* Positioning for middle lessons */
+.lessons-wrap .plan:nth-child(3n + 2) {
+  padding: 0em 0.5em 0.25em 7em;
+}
+
+/* Positioning for Right-most lessons*/
+.lessons-wrap .plan:nth-child(3n) {
+  padding: 0em 0.5em 0.25em 3em;
 }
 
 .authors-box {
@@ -1099,9 +1104,11 @@ code span.in {
     align-items: baseline;
   }
 
-  .lessons-wrap .plan {
+  .lessons-wrap .plan,
+  .lessons-wrap .plan:nth-child(3n + 2),
+  .lessons-wrap .plan:nth-child(3n) {
     flex: 0 0 50%;
-    padding: 0.5em 0 0.75em 0;
+    padding: 0 0 0.25em 0;
   }
 }
 
