@@ -471,5 +471,41 @@
     "2022-02-18": [],
     "2022-02-19": [],
     "2022-02-20": [],
-    "2022-02-21": []
+    "2022-02-21": [],
+    "2022-02-22": [
+        {
+            "kind": "LS",
+            "n": 19,
+            "title": "Dictionaries",
+            "date": "2022-02-22",
+            "deadline": "2022-02-23",
+            "links": {
+                "Watch Lesson": "https://www.youtube.com/watch?v=2B8Nh3pJEFE"
+            }
+        }
+    ],
+    "2022-02-23": [],
+    "2022-02-24": [
+        {
+            "kind": "CL",
+            "n": 13,
+            "title": "In-Person: Practice with Dictionaries",
+            "date": "2022-02-24",
+            "deadline": "None",
+            "links": {
+                "Quarantine Stream": "https://youtu.be/xB06srfd70Y",
+                "Slides": "/static/slides/cl13-dictionaries-sequences.pdf"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 6,
+            "title": "Dictionary Utilities - Due Weds Mar 2",
+            "date": "2022-02-24",
+            "deadline": "2022-03-02",
+            "links": {
+                "Write-up": "/exercises/ex06.html"
+            }
+        }
+    ]
 }
