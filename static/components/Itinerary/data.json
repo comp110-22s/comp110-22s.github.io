@@ -532,6 +532,16 @@
             "links": {
                 "Watch Lesson": "https://www.youtube.com/watch?v=HJgX1WWC26A"
             }
+        },
+        {
+            "kind": "RV",
+            "n": 1,
+            "title": "Review Session for Quiz 1",
+            "date": "2022-03-01",
+            "deadline": "None",
+            "links": {
+                "6:30pm in Sitterson 014": ""
+            }
         }
     ],
     "2022-03-02": [],
@@ -542,7 +552,9 @@
             "title": "Quiz 2",
             "date": "2022-03-03",
             "deadline": "2022-03-03",
-            "links": {}
+            "links": {
+                "Practice Questions": "/resources/practice/sp22/quiz2-worksheet.html"
+            }
         }
     ],
     "2022-03-04": [],
