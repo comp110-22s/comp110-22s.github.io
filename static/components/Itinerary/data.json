@@ -561,9 +561,52 @@
     "2022-03-05": [],
     "2022-03-06": [],
     "2022-03-07": [],
-    "2022-03-08": [],
-    "2022-03-09": [],
-    "2022-03-10": [],
+    "2022-03-08": [
+        {
+            "kind": "LS",
+            "n": 22,
+            "title": "Row-orientation vs. Column-orientation Data Structures",
+            "date": "2022-03-08",
+            "deadline": "2022-04-06",
+            "links": {
+                "Watch Lesson": "https://www.youtube.com/watch?v=s5UkpdxbSiM"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 23,
+            "title": "CSV file Reading",
+            "date": "2022-03-08",
+            "deadline": "2022-03-09",
+            "links": {
+                "Watch Lesson": "https://www.youtube.com/watch?v=z4ax7ilh-RY"
+            }
+        }
+    ],
+    "2022-03-09": [
+        {
+            "kind": "EX",
+            "n": 7,
+            "title": "Data Wrangling - Due Tues 3/22 at 11:59pm",
+            "date": "2022-03-09",
+            "deadline": "2022-03-22",
+            "links": {
+                "Read Write-up": "/exercises/ex07.html"
+            }
+        }
+    ],
+    "2022-03-10": [
+        {
+            "kind": "CL",
+            "n": 13,
+            "title": "Data",
+            "date": "2022-03-10",
+            "deadline": "None",
+            "links": {
+                "Quarantine Stream": "https://youtu.be/mTFlO6QjmMU"
+            }
+        }
+    ],
     "2022-03-11": [],
     "2022-03-12": [],
     "2022-03-13": [],
