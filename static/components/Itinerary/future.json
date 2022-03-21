@@ -1,96 +1,188 @@
 {
-    "2022-03-05": [],
-    "2022-03-06": [],
-    "2022-03-07": [],
-    "2022-03-08": [
+    "2022-03-19": [],
+    "2022-03-20": [],
+    "2022-03-21": [
+        {
+            "kind": "RD",
+            "n": 1,
+            "title": "Weapons of Math Destruction - Due Sun 4/10",
+            "date": "2022-03-21",
+            "deadline": "2022-04-10",
+            "links": {
+                "Reading found on Gradescope": "https://gradescope.com"
+            }
+        }
+    ],
+    "2022-03-22": [
         {
             "kind": "LS",
-            "n": 22,
-            "title": "Row-orientation vs. Column-orientation Data Structures",
-            "date": "2022-03-08",
-            "deadline": "2022-04-06",
+            "n": 24,
+            "title": "Intro to Object-oriented Programming: Classes, Methods, and __init__",
+            "date": "2022-03-22",
+            "deadline": "2022-03-23",
             "links": {
-                "Watch Lesson": "https://www.youtube.com/watch?v=s5UkpdxbSiM"
+                "Watch Lesson": "https://www.youtube.com/watch?v=wBhS8OXtM5Q"
             }
         },
         {
-            "kind": "LS",
-            "n": 23,
-            "title": "CSV file Reading",
-            "date": "2022-03-08",
-            "deadline": "2022-03-09",
-            "links": {
-                "Watch Lesson": "https://www.youtube.com/watch?v=z4ax7ilh-RY"
-            }
-        }
-    ],
-    "2022-03-09": [
-        {
             "kind": "EX",
-            "n": 7,
-            "title": "Data Wrangling - Due Tues 3/22 at 11:59pm",
-            "date": "2022-03-09",
-            "deadline": "2022-03-22",
+            "n": 8,
+            "title": "Choose Your Own Analysis - Due Mon 3/28",
+            "date": "2022-03-22",
+            "deadline": "2022-03-28",
             "links": {
-                "Read Write-up": "/exercises/ex07.html"
+                "Write-up Posts Tuesday 3/22": ""
             }
         }
     ],
-    "2022-03-10": [
+    "2022-03-23": [],
+    "2022-03-24": [
         {
             "kind": "CL",
-            "n": 13,
-            "title": "Data",
-            "date": "2022-03-10",
+            "n": 19,
+            "title": "Optional Parameters, Union Types, and OOP Practice",
+            "date": "2022-03-24",
             "deadline": "None",
             "links": {
-                "Quarantine Stream": "https://youtu.be/mTFlO6QjmMU"
+                "Quarantine Stream": "https://youtu.be/pZ3m630uGqw"
             }
         }
     ],
-    "2022-03-11": [],
-    "2022-03-12": [],
-    "2022-03-13": [],
-    "2022-03-14": [],
-    "2022-03-15": [],
-    "2022-03-16": [],
-    "2022-03-17": [],
-    "2022-03-18": [],
-    "2022-03-19": [],
-    "2022-03-20": [],
-    "2022-03-21": [],
-    "2022-03-22": [],
-    "2022-03-23": [],
-    "2022-03-24": [],
     "2022-03-25": [],
     "2022-03-26": [],
     "2022-03-27": [],
     "2022-03-28": [],
-    "2022-03-29": [],
+    "2022-03-29": [
+        {
+            "kind": "LS",
+            "n": 25,
+            "title": "Magic Methods",
+            "date": "2022-03-29",
+            "deadline": "2022-03-30",
+            "links": {
+                "Watch Lesson": "https://www.youtube.com/watch?v=yxDIEqm_K6c"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 26,
+            "title": "Operator Overloading",
+            "date": "2022-03-29",
+            "deadline": "2022-03-30",
+            "links": {
+                "Watch Lesson": "https://youtu.be/JJLnGL-cShU"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 27,
+            "title": "Filtering Column-oriented Data",
+            "date": "2022-03-29",
+            "deadline": "2022-03-30",
+            "links": {
+                "Watch Lesson": "https://www.youtube.com/watch?v=_htZ8sB2qe8"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 9,
+            "title": "Simpy - Due Mon 4/11",
+            "date": "2022-03-29",
+            "deadline": "2022-04-11",
+            "links": {
+                "Write-up Posts Tuesday 3/29": ""
+            }
+        }
+    ],
     "2022-03-30": [],
     "2022-03-31": [
         {
-            "kind": "QZ",
-            "n": 3,
-            "title": "Quiz 3",
+            "kind": "CL",
+            "n": 21,
+            "title": "Vectorized Operations and OOP Code Writing",
             "date": "2022-03-31",
-            "deadline": "2022-03-31",
-            "links": {}
+            "deadline": "None",
+            "links": {
+                "Quarantine Stream": "https://youtu.be/hNC9VLLNxVU"
+            }
         }
     ],
     "2022-04-01": [],
     "2022-04-02": [],
     "2022-04-03": [],
     "2022-04-04": [],
-    "2022-04-05": [],
+    "2022-04-05": [
+        {
+            "kind": "LS",
+            "n": 28,
+            "title": "Intro to Recursion",
+            "date": "2022-04-05",
+            "deadline": "2022-04-06",
+            "links": {
+                "Lesson posts 4/5": ""
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 29,
+            "title": "Recursive Data Structures",
+            "date": "2022-04-05",
+            "deadline": "2022-04-06",
+            "links": {
+                "Lesson posts 4/5": ""
+            }
+        }
+    ],
     "2022-04-06": [],
-    "2022-04-07": [],
+    "2022-04-07": [
+        {
+            "kind": "QZ",
+            "n": 3,
+            "title": "Quiz 3",
+            "date": "2022-04-07",
+            "deadline": "2022-04-07",
+            "links": {}
+        }
+    ],
     "2022-04-08": [],
     "2022-04-09": [],
     "2022-04-10": [],
-    "2022-04-11": [],
-    "2022-04-12": [],
-    "2022-04-13": [],
+    "2022-04-11": [
+        {
+            "kind": "RD",
+            "n": 2,
+            "title": "Gender Shades - Due 4/22",
+            "date": "2022-04-11",
+            "deadline": "2022-04-22",
+            "links": {
+                "Reading posts on Gradescope on 4/11": "https://gradescope.com"
+            }
+        }
+    ],
+    "2022-04-12": [
+        {
+            "kind": "LS",
+            "n": 30,
+            "title": "Intro to NumPy and Pandas",
+            "date": "2022-04-12",
+            "deadline": "2022-04-13",
+            "links": {
+                "Lesson posts on Gradescope on 4/9": "https://gradescope.com"
+            }
+        }
+    ],
+    "2022-04-13": [
+        {
+            "kind": "EX",
+            "n": 10,
+            "title": "Linked List Utils - Due 4/25",
+            "date": "2022-04-13",
+            "deadline": "2022-04-25",
+            "links": {
+                "Write-up Posts Wednesday 4/13": ""
+            }
+        }
+    ],
     "2022-04-14": [],
     "2022-04-15": [],
     "2022-04-16": [],
