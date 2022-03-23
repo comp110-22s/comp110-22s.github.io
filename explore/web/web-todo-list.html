@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> To-do List Web App - COMP110 - 22S</title>
+    <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css?v=1648054572.8668516">
+    <script src="/static/scripts/scroll-handler.js"></script>
+    <script src="/static/scripts/sunset_sunrise.js"></script>
+
+</head>
+
+<body class="scrolling-page" >
+    <script>
+        const lat = 35.912005; // latitude and longitude for Chapel Hill
+        const long = -79.051210; // Replace with some way to gain User location if/when desired
+    </script>
+    <script>
+        // resets user pref in the event of styling overhaul
+        if ((localStorage.getItem('mode') == "halloween-mode") || (localStorage.getItem('userPref') == "halloween-mode")) {
+            localStorage.setItem('userPref', null);
+            localStorage.setItem('mode', null);
+        }
+    
+        var datetime = new Date(); // NOTE: This is my additional scripting to check whereabouts the sun is
+        var time = datetime.getHours() + (datetime.getMinutes() / 60);
+        var timer = 240000000; // a very big number
+        if(localStorage.getItem('userPref') === null) {
+            if(time < getSunrise(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = getSunrise(lat, long) - time;
+            } else if(time > getSunset(lat, long)) {
+                localStorage.setItem('mode', 'dark-mode');
+                timer = (getSunrise(lat, long) + 24) - time;
+            } else {
+                localStorage.setItem('mode', 'light-mode');
+                timer = getSunset(lat, long) - time;
+            }
+        }
+    </script>
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('userPref')); // userPref holds which mode the user prefers
+        document.body.classList.add(localStorage.getItem('mode')); // mode holds the current state of the site
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <a name="top"></a>
+    <div id="page-container">
+    <div id="content-wrapper">
+    <div class="wrapper">
+        <nav id="navbarStick" class="navbar navbar-scroll navbar-expand">
+            <div class="container-fluid">
+                <div class = 'show-during-scroll'>
+                <div class="container nav-const">
+                    <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                                alt="COMP110 - Spring - 2021"></a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-small" onClick="window.scroll({top: 0, left: 0, behavior: 'smooth'});"> back to top </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+                </div>
+                <div class = 'hide-during-scroll'>
+                    <div class="container nav-const">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                        <a class="navbar-brand web" href="/"><img class="lightmode-element-only img-fluid logo img-responsive" src="/static/lightbrand.png"
+                        alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo img-responsive" src="/static/darkbrand.png"
+                        alt="COMP110 - Spring - 2021"></a>
+                        <ul class="navbar-nav web">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/resources">resources</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/lessons-page">lessons</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/topics">topics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/support">support</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/explore">explore</a>
+                            </li>
+                        </ul>
+                            <a href="javascript:void(0);" class="icon" id="hamburger">
+                                <i class="fa fa-bars fa-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+                    <div class="switches">
+                        <input type="checkbox" id="1" onclick="
+                            if (localStorage.getItem('mode') === 'dark-mode') {
+                                localStorage.setItem('userPref', 'light-mode');
+                                localStorage.setItem('mode', 'light-mode');
+                            } else {
+                                localStorage.setItem('userPref', 'dark-mode');
+                                localStorage.setItem('mode', 'dark-mode');
+                            }
+                            location.reload();">
+                        <label for="1">
+                            <span id="mode-label">Dark Mode</span>
+                            <span></span>
+                        </label>
+                        <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                        <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+                    </div>
+                </div>
+            </div>
+            <a class="navbar-brand mobile brand-left" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/lightbrand.png"
+                alt="COMP110 - Spring - 2021"><img class="darkmode-element-only img-fluid logo" src="/static/darkbrand.png"
+                alt="COMP110 - Spring - 2021">
+            </a>
+        </nav>
+        <ul class="navbar-nav mobile menu-dropdown base-nav-dropdown" id="mobile">
+            <li class="nav-item" id="link1">
+                <a class="nav-link" href="/">home</a>
+            </li>
+            <li class="nav-item" id="link2">
+                <a class="nav-link" href="/resources">resources</a>
+            </li>
+            <li class="nav-item" id="link3">
+                <a class="nav-link" href="/lessons-page">lessons</a>
+            </li>
+            <li class="nav-item" id="link4">
+                <a class="nav-link" href="/topics">topics</a>
+            </li>
+            <li class="nav-item" id="link5">
+                <a class="nav-link" href="/support">support</a>
+            </li>
+             <li class="nav-item" id="last-link">
+                <a class="nav-link" href="/explore">explore</a>
+            </li>
+        </ul>
+
+        <script>
+            document.getElementById("hamburger").addEventListener("click", function() {
+            var x = [];
+            x[0] = document.getElementById("link1");
+            x[1] = document.getElementById("link2");
+            x[2] = document.getElementById("link3");
+            x[3] = document.getElementById("link4");
+            x[4] = document.getElementById("link5");
+            x[5] = document.getElementById("last-link");
+            for (let i = 0; i < 6; i++) {
+                if (x[i].style.display === "block") {
+                    x[i].style.display = "none";
+                    document.getElementById("mobile").style.paddingTop="0";
+                    document.getElementById("mobile").style.paddingBottom="0";
+                } else {
+                    x[i].style.display = "block";
+                }
+            }
+            });
+        </script>
+
+        <div id="explore-page" class="container">
+            <div class="row pt-4">
+
+
+                <div class="col-12">
+                    <h1 class="display-5">To-do List Web App</h1>
+                    <hr class="title"/>
+                </div>
+            </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+    
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            
+            <div id="button-box class="link-pag box">
+            </div>
+
+            <div id="menu-overview" class="link-page box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul><li><a href="#getting-started">Getting started</a></li>
+<li><a href="#languages-and-tools">Languages and Tools</a><ul>
+<li><a href="#task-developer-tools">Task: Developer Tools</a></li>
+</ul></li>
+<li><a href="#css-and-html">CSS and HTML</a><ul>
+<li><a href="#task-index.html">Task: index.html</a></li>
+<li><a href="#html-tags">HTML Tags</a></li>
+<li><a href="#task-styles.css">Task: styles.css</a></li>
+</ul></li>
+<li><a href="#basic-flask">Basic Flask</a><ul>
+<li><a href="#task-setting-up-flask">Task: Setting up Flask</a></li>
+<li><a href="#task-adding-a-new-page">Task: Adding a new page</a></li>
+</ul></li>
+<li><a href="#handling-methods">Handling Methods</a><ul>
+<li><a href="#task-form-submission">Task: Form Submission</a></li>
+<li><a href="#task-returning-to-quiz">Task: Returning to Quiz</a></li>
+</ul></li>
+<li><a href="#working-with-data">Working With Data</a><ul>
+<li><a href="#task-obtaining-the-data">Task: Obtaining the data</a></li>
+<li><a href="#task-storing-the-data">Task: Storing the Data</a></li>
+<li><a href="#task-displaying-all-todos">Task: Displaying All Todos</a></li>
+</ul></li>
+<li><a href="#bonus-menu-and-styling">Bonus: Menu and Styling</a></li>
+<li><a href="#bonus-add-categories">Bonus: Add Categories</a></li>
+<li><a href="#bonus-editing-tasks">Bonus: Editing Tasks</a></li>
+<li><a href="#bonus-list-functionality">Bonus: List Functionality</a></li>
+<li><a href="#bonus-hot-reload">Bonus: Hot Reload</a></li>
+<li><a href="#documentation-tools-and-resources">Documentation, Tools and Resources</a><ul>
+<li><a href="#helpful-vscode-extensions">Helpful VSCode Extensions</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><h2 id="getting-started">Getting started</h2>
+<blockquote>
+<p>In this tutorial you will create a todo list web application! We will learn some basic HTML, CSS and Flask and your website will be able to save data to render on different pages while it is running. Flask is a python library used for web development and is actually what we use while developing this course’s website!</p>
+</blockquote>
+<p>We will begin this tutorial from scratch! Start setting up the following to prepare:</p>
+<ol type="1">
+<li>On github.com, click the green New Repository button and name the repository <code>todo-list-tutorial</code>.
+<ul>
+<li>Leave it public</li>
+<li>Check the Add a README option</li>
+</ul></li>
+<li>Navigate to the repo you just created on github and click the green code button. Copy the HTTPS URL from the box that opens.</li>
+<li>Open VSCode and then at the top of your screen click View &gt; Command Palette.
+<ul>
+<li>In the command palette start to type <code>Git:Clone</code> and hit enter.</li>
+<li>Paste the URL in the box that pops up and hit enter.</li>
+<li>You can leave the location on your computer as default or select a location you prefer.</li>
+</ul></li>
+<li>Open your newly cloned repository in vscode!</li>
+</ol>
+<h2 id="languages-and-tools">Languages and Tools</h2>
+<p>HTML and CSS are the building blocks for the entire web. They are markup languages used for defining and styling content. The final tool needed for basic web development is a scripting language. Javascript or Typescript are the most commonly used scripting languages in web development, but in this tutorial we will use python.</p>
+<blockquote>
+<p>HTML stands for HyperText Markup Language and is the standard languge used for defining content on web pages! CSS stands for Cascading Style Sheets and is what we use to style the content defined with HTML.</p>
+</blockquote>
+<h3 id="task-developer-tools">Task: Developer Tools</h3>
+<ol type="1">
+<li>Navigate to an online news article or website that you visit frequently <strong>on google chrome</strong>. This page is made with HTML and CSS as core building blocks and we can actually inspect them!</li>
+<li>At the top of your screen select View &gt; Developer &gt; Developer Tools.
+<ul>
+<li>Mac shortcut: Option + ⌘ + J</li>
+<li>Windows shortcut: Shift + CTRL + J</li>
+</ul></li>
+<li>Select the arrow tool in the top left corner of the tool box. You can use this tool to inspect specific elements and edit them in browser!</li>
+<li>Using the tool, select the headline or title of the page you are on. You should see the HTML for that headline pop up in the Dev Tools Box. If you double click into the text you can go ahead and edit it!</li>
+</ol>
+<p>Developer Tools are one of the most important things to make use of when working on a web project so make sure to take note of how to access them!</p>
+<h2 id="css-and-html">CSS and HTML</h2>
+<p>A basic webpage can be created with a single file and styled with a second. From there you can continue to add new page and evolve your website!</p>
+<h3 id="task-index.html">Task: index.html</h3>
+<ol type="1">
+<li>Make a new file in your repository named <code>index.html</code>. This file name is a convention for the HTML file that represents your home page.</li>
+<li>Copy and paste the following HTML snippet into the file:</li>
+</ol>
+<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb1-1" title="1">&lt;!DOCTYPE html&gt;</a>
+<a class="sourceLine" id="cb1-2" title="2">&lt;html lang=&quot;en&quot;&gt;</a>
+<a class="sourceLine" id="cb1-3" title="3">    &lt;head&gt;</a>
+<a class="sourceLine" id="cb1-4" title="4">        &lt;meta charset=&quot;UTF-8&quot;&gt;</a>
+<a class="sourceLine" id="cb1-5" title="5">        &lt;title&gt;Intro to Web Dev!&lt;/title&gt;</a>
+<a class="sourceLine" id="cb1-6" title="6">    &lt;/head&gt;</a>
+<a class="sourceLine" id="cb1-7" title="7">    &lt;body&gt;</a>
+<a class="sourceLine" id="cb1-8" title="8">        &lt;p&gt;Hello World!&lt;/p&gt;</a>
+<a class="sourceLine" id="cb1-9" title="9">    &lt;/body&gt;</a>
+<a class="sourceLine" id="cb1-10" title="10">&lt;/html&gt;</a></code></pre></div>
+<ol start="3" type="1">
+<li>Make sure the file is saved and then right click the file in the file explorer and click reveal in finder (Mac) or show in folder (Windows).</li>
+<li>In finder / file explorer, right click on the file and open it with google chrome. You should now see a basic webpage that says Hello World!</li>
+</ol>
+<h3 id="html-tags">HTML Tags</h3>
+<p>So what exactly did we add to the <code>index.html</code> file? HTML is made up of elements wrapped with <code>tags</code> that help label pieces of content. For instance, The <code>&lt;p&gt;&lt;/p&gt;</code> tag that surrounds <code>Hello World!</code> indicates that we are adding a <code>paragraph</code> element to our webpage.</p>
+<p>These <code>tags</code> can hold other <code>tags</code> as well!</p>
+<h3 id="task-styles.css">Task: styles.css</h3>
+<ol type="1">
+<li>Make a new file in your repository named <code>styles.css</code>. This file name is a convention for the CSS file that holds the core styling.</li>
+<li>Copy and paste the following CSS snippet into the file:</li>
+</ol>
+<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb2-1" title="1">p {</a>
+<a class="sourceLine" id="cb2-2" title="2">    color: #75c3f7;</a>
+<a class="sourceLine" id="cb2-3" title="3">  }</a></code></pre></div>
+<ol start="3" type="1">
+<li>Make sure the file is saved and then add the following <code>link</code> tag inside the <code>&lt;head&gt;&lt;/head&gt;</code> tag in your <code>index.html</code> file. This will link your CSS file to your HTML file so that the styles we add are applied to our webpage.</li>
+</ol>
+<div class="sourceCode" id="cb3" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb3-1" title="1">&lt;link rel=&#39;stylesheet&#39; href=&#39;styles.css&#39; /&gt;</a></code></pre></div>
+<ol start="4" type="1">
+<li>Once both files are saved, reload the chrome page with your webpage and you should see the color of the <code>Hello World!</code> text change!</li>
+</ol>
+<h2 id="basic-flask">Basic Flask</h2>
+<h3 id="task-setting-up-flask">Task: Setting up Flask</h3>
+<ol type="1">
+<li>Create a new directory in your repo named <code>templates</code> and move your <code>index.html</code> file inside of it.</li>
+<li>Create a new directory in your repo named <code>static</code> and move your <code>styles.css</code> file inside of it.</li>
+<li>Create a new file called <code>app.py</code> in your repo and add the following code snippet.</li>
+</ol>
+<div class="sourceCode" id="cb4" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1"><span class="im">from</span> flask <span class="im">import</span> Flask, render_template</a>
+<a class="sourceLine" id="cb4-2" title="2"></a>
+<a class="sourceLine" id="cb4-3" title="3">app: Flask <span class="op">=</span> Flask(<span class="va">__name__</span>)</a>
+<a class="sourceLine" id="cb4-4" title="4"></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="at">@app.route</span>(<span class="st">&quot;/&quot;</span>)</a>
+<a class="sourceLine" id="cb4-6" title="6"><span class="kw">def</span> index():</a>
+<a class="sourceLine" id="cb4-7" title="7">    <span class="cf">return</span> render_template(<span class="st">&#39;index.html&#39;</span>)</a>
+<a class="sourceLine" id="cb4-8" title="8"></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</a>
+<a class="sourceLine" id="cb4-10" title="10">    app.run(debug<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
+<ol start="4" type="1">
+<li><p>Since we have moved the <code>styles.css</code> file we need to make sure to update our reference to it in <code>index.html</code>. Change <code>&lt;link rel='stylesheet' href='styles.css' /&gt;</code> to <code>&lt;link rel='stylesheet' href='/static/styles.css' /&gt;</code>.</p></li>
+<li><p>To run your app we need to run the <code>app.py</code> file as a python module: <code>python -m app</code> and then open your browser to the link it spits out in the terminal (http://127.0.0.1:5000/)</p></li>
+</ol>
+<h3 id="task-adding-a-new-page">Task: Adding a new page</h3>
+<ol type="1">
+<li>Create a new file called <code>create-todo.html</code> in your <code>templates</code> folder and paste the following HTML into it.</li>
+</ol>
+<div class="sourceCode" id="cb5" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb5-1" title="1">&lt;!DOCTYPE html&gt;</a>
+<a class="sourceLine" id="cb5-2" title="2">&lt;html lang=&quot;en&quot;&gt;</a>
+<a class="sourceLine" id="cb5-3" title="3">    &lt;head&gt;</a>
+<a class="sourceLine" id="cb5-4" title="4">        &lt;meta charset=&quot;UTF-8&quot;&gt;</a>
+<a class="sourceLine" id="cb5-5" title="5">        &lt;title&gt;Create Todo!&lt;/title&gt;</a>
+<a class="sourceLine" id="cb5-6" title="6">    &lt;/head&gt;</a>
+<a class="sourceLine" id="cb5-7" title="7">    &lt;body&gt;</a>
+<a class="sourceLine" id="cb5-8" title="8">        &lt;form method=&quot;post&quot;&gt;</a>
+<a class="sourceLine" id="cb5-9" title="9">            &lt;label for=&quot;title&quot;&gt;Todo title:&lt;/label&gt;</a>
+<a class="sourceLine" id="cb5-10" title="10">            &lt;br /&gt;</a>
+<a class="sourceLine" id="cb5-11" title="11">            &lt;input type=&quot;text&quot; id=&quot;title&quot; name=&quot;title&quot;&gt;</a>
+<a class="sourceLine" id="cb5-12" title="12">            &lt;br /&gt;</a>
+<a class="sourceLine" id="cb5-13" title="13">            &lt;br /&gt;</a>
+<a class="sourceLine" id="cb5-14" title="14">            &lt;label for=&quot;description&quot;&gt;Todo description:&lt;/label&gt;</a>
+<a class="sourceLine" id="cb5-15" title="15">            &lt;br /&gt;</a>
+<a class="sourceLine" id="cb5-16" title="16">            &lt;input type=&quot;text&quot; id=&quot;description&quot; name=&quot;description&quot;&gt;</a>
+<a class="sourceLine" id="cb5-17" title="17">            &lt;br /&gt;</a>
+<a class="sourceLine" id="cb5-18" title="18">            &lt;br /&gt;</a>
+<a class="sourceLine" id="cb5-19" title="19">            &lt;input type=&quot;submit&quot; value=&quot;Create&quot;&gt;</a>
+<a class="sourceLine" id="cb5-20" title="20">        &lt;/form&gt;</a>
+<a class="sourceLine" id="cb5-21" title="21">    &lt;/body&gt;</a>
+<a class="sourceLine" id="cb5-22" title="22">&lt;/html&gt;</a></code></pre></div>
+<ol start="2" type="1">
+<li>Return to your <code>index.html</code> file and add the following HTML element in the body.</li>
+</ol>
+<div class="sourceCode" id="cb6" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb6-1" title="1">&lt;a href=&quot;/create-todo&quot;&gt;Create Todo!&lt;/a&gt;</a></code></pre></div>
+<ol start="3" type="1">
+<li>If you attempt to click on <code>Create Todo!</code> while viewing your <code>index.html</code> file on chrome, you will get an error! This is because we need to define the route to the quiz URL in our <code>app.py</code> file. Add the following code snippet in <code>app.py</code>, save all the files, and attempt to click take quiz again.</li>
+</ol>
+<div class="sourceCode" id="cb7" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/create-todo&#39;</span>)</a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="kw">def</span> create_todo():</a>
+<a class="sourceLine" id="cb7-3" title="3">    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a></code></pre></div>
+<h2 id="handling-methods">Handling Methods</h2>
+<p>In order to add interactivity to the quiz form on our site we need to learn about HTTP request methods. We won’t need to know a lot about HTTP, but a simple definition for HTTP is a defined set of rules or protocols for fetching resources such as our HTML or CSS files.</p>
+<p>Two of these rules are the <code>GET</code> and <code>POST</code> methods. The <code>GET</code> method is a basic protocol for viewing or <em>getting</em> some resource such as our <code>index.html</code> file. The <code>POST</code> method is a protocol for updating or inserting new data. You can imagine when you <em>post</em> something on social media the data is getting uploaded so that everyone can now see your post.</p>
+<h3 id="task-form-submission">Task: Form Submission</h3>
+<p>When we click the submit button that we defined in our <code>create-todo.html</code> file, we want to show the user that theu succesfully created a new todo item. The easiest way to do this is by setting up a new HTML <code>template</code> that we will render instead of <code>create-todo.html</code> when the user submits the form. For now we will hardcode the success view, but later we will actually show the new todo.</p>
+<ol type="1">
+<li>Create a new file in your templates folder named <code>success.html</code> that will be used to confirm the creation of the todo. Add the following HTML to this file:</li>
+</ol>
+<div class="sourceCode" id="cb8" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb8-1" title="1">&lt;!DOCTYPE html&gt;</a>
+<a class="sourceLine" id="cb8-2" title="2">&lt;html lang=&quot;en&quot;&gt;</a>
+<a class="sourceLine" id="cb8-3" title="3">     &lt;p&gt;Successfully created todo!!!&lt;/p&gt;</a>
+<a class="sourceLine" id="cb8-4" title="4">&lt;/html&gt;</a></code></pre></div>
+<ol start="2" type="1">
+<li>Notice how the HTML for the form in <code>create-todo.html</code> says <code>method="post"</code>. When you click the submit button inside the form element it will use the HTTP protocol <code>POST</code>. This makes sense since we are going to be saving or <em>posting</em> new data for the users answers when they click the submit button. We can use this fact to render our result template in our quiz function. First, we will need to import the <code>request</code> ability from Flask. Update the Flask import at the top of your <code>app.py</code> file:</li>
+</ol>
+<div class="sourceCode" id="cb9" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" title="1"><span class="im">from</span> flask <span class="im">import</span> Flask, render_template, request</a></code></pre></div>
+<ol start="3" type="1">
+<li>Now we are ready to handle different types of requests. Update your <code>create_todo</code> function in <code>app.py</code> as seen below:</li>
+</ol>
+<div class="sourceCode" id="cb10" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/create-todo&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="kw">def</span> create_todo():</a>
+<a class="sourceLine" id="cb10-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</a>
+<a class="sourceLine" id="cb10-4" title="4">        <span class="cf">return</span> render_template(<span class="st">&quot;success.html&quot;</span>)</a>
+<a class="sourceLine" id="cb10-5" title="5">    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a></code></pre></div>
+<ol start="3" type="1">
+<li>Now, when you click the Submit button when viewing your <code>/create-todo</code> page, our function will check if the request method was <code>POST</code> and render a success if so. Otherwise, we will see our normal create todo page. Keep in mind that the route or URL in your browser still shows <code>/create-todo</code> since all we changed is what is rendered in our <code>create_todo</code> function.</li>
+</ol>
+<h3 id="task-returning-to-quiz">Task: Returning to Quiz</h3>
+<p>We also want users to be able to create more todos so we will add a button that lets us return to the create view.</p>
+<ol type="1">
+<li>Add the following HTML snippet into your <code>success.html</code> template underneath <code>&lt;p&gt;Successfully created todo!!!&lt;/p&gt;</code>:</li>
+</ol>
+<div class="sourceCode" id="cb11" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb11-1" title="1">&lt;form method=&quot;get&quot;&gt;</a>
+<a class="sourceLine" id="cb11-2" title="2">            &lt;input type=&quot;submit&quot; value=&quot;Create another!&quot;&gt;</a>
+<a class="sourceLine" id="cb11-3" title="3">        &lt;/form&gt;</a></code></pre></div>
+<ol start="2" type="1">
+<li>In this <code>form</code> we specified that <code>method="get"</code>. This makes sense since we are just requesting the <code>create-todo.html</code> view instead of updating or posting any data. We could now update our <code>create_todo</code> method to the code snippet below, but it is actually logically equivalent to what we have already written since any method that is not <code>POST</code> will render our <code>create_todo.html</code> file as a default so there is no need.</li>
+</ol>
+<div class="sourceCode" id="cb12" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/create-todo&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="kw">def</span> create_todo():</a>
+<a class="sourceLine" id="cb12-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</a>
+<a class="sourceLine" id="cb12-4" title="4">        <span class="cf">return</span> render_template(<span class="st">&quot;success.html&quot;</span>)</a>
+<a class="sourceLine" id="cb12-5" title="5">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;GET&quot;</span>:</a>
+<a class="sourceLine" id="cb12-6" title="6">        <span class="cf">return</span> render_template(<span class="st">&quot;create_todo.html&quot;</span>)</a>
+<a class="sourceLine" id="cb12-7" title="7">    <span class="cf">return</span> render_template(<span class="st">&quot;create_todo.html&quot;</span>)</a></code></pre></div>
+<ol start="3" type="1">
+<li>If you try clicking the <code>Create another!</code> button you should now see the create view. It should be easy to navigate between these two views now.</li>
+</ol>
+<h2 id="working-with-data">Working With Data</h2>
+<p>When a user submits their new todo we want to be able to store and display their result! Let’s learn how to check what a user inputted into the form.</p>
+<h3 id="task-obtaining-the-data">Task: Obtaining the data</h3>
+<p>Now we will grab the submitted data from the form and then display it on the success page.</p>
+<ol type="1">
+<li>In order to show the result of the quiz we will need to add a variable into our <code>success.html</code> file. Add the following below <code>&lt;p&gt;Successfully created todo!!!&lt;/p&gt;</code>:</li>
+</ol>
+<div class="sourceCode" id="cb13" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb13-1" title="1">&lt;p&gt; Title: {{title}}&lt;/p&gt;</a>
+<a class="sourceLine" id="cb13-2" title="2">&lt;p&gt; Description: {{description}}&lt;/p&gt;</a></code></pre></div>
+<blockquote>
+<p>The <code>{{title}}</code> syntax is similar to what you have already worked with while using <code>f-strings</code>. In our case we are telling our <code>success.html</code> template to expect two <code>str</code> variables named <code>title</code> and <code>description</code>.</p>
+</blockquote>
+<ol start="2" type="1">
+<li>Now we need to make sure to pass the <code>title</code> and <code>description</code> variables to the <code>render_template</code> function. Update the <code>create_todo</code> function to the following:</li>
+</ol>
+<div class="sourceCode" id="cb14" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/create-todo&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="kw">def</span> create_todo():</a>
+<a class="sourceLine" id="cb14-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</a>
+<a class="sourceLine" id="cb14-4" title="4"></a>
+<a class="sourceLine" id="cb14-5" title="5">        title: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;title&#39;</span>]</a>
+<a class="sourceLine" id="cb14-6" title="6">        description: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;description&#39;</span>]</a>
+<a class="sourceLine" id="cb14-7" title="7"></a>
+<a class="sourceLine" id="cb14-8" title="8">        <span class="cf">if</span> title <span class="op">==</span> <span class="st">&#39;&#39;</span>:</a>
+<a class="sourceLine" id="cb14-9" title="9">            <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a>
+<a class="sourceLine" id="cb14-10" title="10"></a>
+<a class="sourceLine" id="cb14-11" title="11">        <span class="cf">return</span> render_template(<span class="st">&quot;success.html&quot;</span>, title<span class="op">=</span>title, description<span class="op">=</span>description)</a>
+<a class="sourceLine" id="cb14-12" title="12">    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a></code></pre></div>
+<blockquote>
+<ul>
+<li>In this code snippet we first grab the data for the <code>title</code> and <code>description</code> and store them into variables.</li>
+<li>Then we make sure that the user filled out at least the title. If they didn’t, we go back to the <code>create-todo.html</code> view.</li>
+<li>Finally we pass our <code>title</code> and <code>description</code> variables to the <code>render_template</code> function.</li>
+</ul>
+</blockquote>
+<ol start="3" type="1">
+<li>Navigate to your <code>/create-todo</code> page and make a todo. When you press create your webpage should display a success page that shows the details of the todo you just created!</li>
+</ol>
+<h3 id="task-storing-the-data">Task: Storing the Data</h3>
+<p>We also want to be able to keep track of all succesfully created todos and therefore need to be able to store our data instead of just displaying it once. In modern web development, the handling, storing and fetching of data is what is usually called <code>backend</code> development. In our program we will do a simple version of this by storing our data in global variables that our <code>app</code> file can access.</p>
+<ol type="1">
+<li>We want to use best practices while accomplishing this so we will now define a class for a <code>todo</code> to keep our code organized and readable. We could write this class in our <code>app.py</code> file but for organization we will add a helper file for classes and functions. Create a new file named <code>helpers.py</code> and add the following class:</li>
+</ol>
+<div class="sourceCode" id="cb15" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">class</span> todo:</a>
+<a class="sourceLine" id="cb15-2" title="2">    <span class="bu">id</span>: <span class="bu">int</span></a>
+<a class="sourceLine" id="cb15-3" title="3">    title: <span class="bu">str</span></a>
+<a class="sourceLine" id="cb15-4" title="4">    description: <span class="bu">str</span></a>
+<a class="sourceLine" id="cb15-5" title="5"></a>
+<a class="sourceLine" id="cb15-6" title="6">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, <span class="bu">id</span>: <span class="bu">int</span>, title: <span class="bu">str</span>, description: <span class="bu">str</span>, color: <span class="bu">str</span>):</a>
+<a class="sourceLine" id="cb15-7" title="7">        <span class="va">self</span>.<span class="bu">id</span> <span class="op">=</span> <span class="bu">id</span></a>
+<a class="sourceLine" id="cb15-8" title="8">        <span class="va">self</span>.title <span class="op">=</span> title</a>
+<a class="sourceLine" id="cb15-9" title="9">        <span class="va">self</span>.description <span class="op">=</span> description</a></code></pre></div>
+<blockquote>
+<p>We need todos to be uniquely identifiable. For instance, what if we had two todos titled <em>Do Laundry</em> with no descriptin or matching descriptions? There would be no way to tell them apart. For this reason, we make sure to store an <code>id</code> field along with the <code>title</code> and <code>description</code> fields.</p>
+</blockquote>
+<ol start="2" type="1">
+<li>To use this class in our app, add the following import statement into your <code>app.py</code> file:</li>
+</ol>
+<div class="sourceCode" id="cb16" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" title="1"><span class="im">from</span> helpers <span class="im">import</span> todo</a></code></pre></div>
+<ol start="3" type="1">
+<li>We also need to define our global variables that we will use to store our data. Add the following variables underneath your global <code>app</code> variable in your <code>app.py</code> file:</li>
+</ol>
+<div class="sourceCode" id="cb17" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" title="1">todo_list: <span class="bu">list</span>[todo] <span class="op">=</span> []</a>
+<a class="sourceLine" id="cb17-2" title="2">todo_count: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></a></code></pre></div>
+<blockquote>
+<p>We will use the <code>todo_list</code> global variable to keep a list of all created todos. We will use the <code>todo_count</code> to keep track of how many todos we have so far and what the next <code>id</code> number should be.</p>
+</blockquote>
+<ol start="4" type="1">
+<li>Let’s incorporate the storing of data into our <code>create_todo</code> function. Update the <code>create_todo</code> functionality to the following code snippet:</li>
+</ol>
+<div class="sourceCode" id="cb18" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/create-todo&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
+<a class="sourceLine" id="cb18-2" title="2"><span class="kw">def</span> create_todo():</a>
+<a class="sourceLine" id="cb18-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</a>
+<a class="sourceLine" id="cb18-4" title="4">        <span class="kw">global</span> todo_list</a>
+<a class="sourceLine" id="cb18-5" title="5">        <span class="kw">global</span> todo_count</a>
+<a class="sourceLine" id="cb18-6" title="6"></a>
+<a class="sourceLine" id="cb18-7" title="7">        title: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;title&#39;</span>]</a>
+<a class="sourceLine" id="cb18-8" title="8">        description: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;description&#39;</span>]</a>
+<a class="sourceLine" id="cb18-9" title="9"></a>
+<a class="sourceLine" id="cb18-10" title="10">        <span class="cf">if</span> title <span class="op">==</span> <span class="st">&#39;&#39;</span>:</a>
+<a class="sourceLine" id="cb18-11" title="11">            <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a>
+<a class="sourceLine" id="cb18-12" title="12"></a>
+<a class="sourceLine" id="cb18-13" title="13">        house: <span class="bu">str</span> <span class="op">=</span> find_house(animal)</a>
+<a class="sourceLine" id="cb18-14" title="14">        new_user: user <span class="op">=</span> user(user_number, fname, lname, house)</a>
+<a class="sourceLine" id="cb18-15" title="15">        users.append(new_user)</a>
+<a class="sourceLine" id="cb18-16" title="16"></a>
+<a class="sourceLine" id="cb18-17" title="17">        new_todo: todo <span class="op">=</span> todo(todo_count, title, description)</a>
+<a class="sourceLine" id="cb18-18" title="18">        todo_list.append(new_todo)</a>
+<a class="sourceLine" id="cb18-19" title="19"></a>
+<a class="sourceLine" id="cb18-20" title="20">        todo_count <span class="op">+=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb18-21" title="21"></a>
+<a class="sourceLine" id="cb18-22" title="22">        <span class="cf">return</span> render_template(<span class="st">&quot;success.html&quot;</span>, title<span class="op">=</span>title, description<span class="op">=</span>description)</a>
+<a class="sourceLine" id="cb18-23" title="23">    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a></code></pre></div>
+<blockquote>
+<ul>
+<li>First, we label our <code>todo_list</code> and <code>todo_count</code> as global variables since we plan to update them.</li>
+<li>Then we create a new <code>todo</code> object and append it to our global <code>todo_list</code> list.</li>
+<li>Finally we want to increment the <code>todo_count</code> variable so that the next todo will have a new <code>id</code>.</li>
+</ul>
+</blockquote>
+<h3 id="task-displaying-all-todos">Task: Displaying All Todos</h3>
+<p>With all of the data from each created todo being stored, we can render a page that shows the whole todo list!</p>
+<ol type="1">
+<li>First lets add a new template we can use for displaying all results. Create a new file in the <code>templates</code> directory and name it <code>view-list.html</code>.</li>
+<li>Add the following HTML to the file and save it.</li>
+</ol>
+<div class="sourceCode" id="cb19" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb19-1" title="1">&lt;!DOCTYPE html&gt;</a>
+<a class="sourceLine" id="cb19-2" title="2">&lt;html lang=&quot;en&quot;&gt;</a>
+<a class="sourceLine" id="cb19-3" title="3">    &lt;head&gt;</a>
+<a class="sourceLine" id="cb19-4" title="4">        &lt;meta charset=&quot;UTF-8&quot;&gt;</a>
+<a class="sourceLine" id="cb19-5" title="5">        &lt;title&gt;View List!&lt;/title&gt;</a>
+<a class="sourceLine" id="cb19-6" title="6">    &lt;/head&gt;</a>
+<a class="sourceLine" id="cb19-7" title="7">    &lt;body&gt;</a>
+<a class="sourceLine" id="cb19-8" title="8">        &lt;h2&gt;Todo List&lt;/h2&gt;</a>
+<a class="sourceLine" id="cb19-9" title="9">        {% for todo in todo_list %}</a>
+<a class="sourceLine" id="cb19-10" title="10">            &lt;br/&gt;</a>
+<a class="sourceLine" id="cb19-11" title="11">            &lt;h4&gt;{{todo.title}}&lt;/h4&gt;</a>
+<a class="sourceLine" id="cb19-12" title="12">            &lt;p&gt;{{todo.description}}&lt;/p&gt;</a>
+<a class="sourceLine" id="cb19-13" title="13">        {% endfor %}</a>
+<a class="sourceLine" id="cb19-14" title="14">    &lt;/body&gt;</a>
+<a class="sourceLine" id="cb19-15" title="15">&lt;/html&gt;</a></code></pre></div>
+<blockquote>
+<p>You may notice some more odd looking syntax inside of the <code>&lt;body&gt;&lt;/body&gt;</code> tags in this snippet. This file expects a list of <code>todo</code> objects in a variable <code>todo_list</code>. It then uses a python <code>for</code> loop to iterate through each user in the list and add some html tags for each todo’s data. For instance, if the first todo created was titled <code>Watch Game</code> and the description was <code>8:00pm</code>, this html would be generated for it: <code>&lt;br/&gt;&lt;h4&gt;Watch Game&lt;/h4&gt;&lt;p&gt;8:00pm&lt;/p&gt;</code>.</p>
+</blockquote>
+<ol start="3" type="1">
+<li>Finally, we need to add a new route where we can display our template and pass it our <code>todo_list</code>. Add the following function snippet in your <code>app.py</code> file.</li>
+</ol>
+<div class="sourceCode" id="cb20" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/view-todo-list&#39;</span>)</a>
+<a class="sourceLine" id="cb20-2" title="2"><span class="kw">def</span> view_todo_list():</a>
+<a class="sourceLine" id="cb20-3" title="3">    <span class="cf">return</span> render_template(<span class="st">&#39;view-list.html&#39;</span>, todo_list<span class="op">=</span>todo_list)</a></code></pre></div>
+<blockquote>
+<p>Here we are simply rendering our <code>view-list.html</code> template and passing it our <code>todo_list</code> as an argument.</p>
+</blockquote>
+<ol start="4" type="1">
+<li>Try creating a few todo items on the create-todo page. Then try navigating to <code>/view-todo-list</code> in your browser. You should see the data from every todo submission!</li>
+</ol>
+<h2 id="bonus-menu-and-styling">Bonus: Menu and Styling</h2>
+<p>In this bonus task you will add a navigation menu to your site and improve the general looks of your web app! Finishing this bonus step will give you a great starting point to customize for your own project.</p>
+<ol type="1">
+<li>In your <code>static</code> folder create a new file named <code>bootstrap.min.css</code>. Then visit <a href="https://github.com/ezriwhite/hack110-todo-demo/blob/main/static/bootstrap.min.css">this link</a> and click the button that looks like two overlapping rounded squares that says <em>Copy raw contents</em>. This will copy the entire contents of the file to your clipboard. Then return to the file you just made and use your computers paste shortcut to add what you copied into the file. Save the file.</li>
+</ol>
+<blockquote>
+<p>Bootstrap is a <em>front-end framework</em> which essentially means pre written CSS rules that you can use instead of writing your own. In step one you are adding a copy of these rules into our static folder so we can use them!</p>
+</blockquote>
+<ol start="2" type="1">
+<li><p>Right click on your <code>static</code> folder and click <em>Reveal in Finder</em> or <em>Reveal in File Explorer</em> to determine where the folder is located on your computer. Now visit <a href="https://github.com/ezriwhite/hack110-todo-demo/blob/main/static/logo.png">this link</a> and press the <em>Download</em> button above the Comp 110 logo png. Find where on your computer the download has saved and then move or drag the png image into your static folder. Confirm the name of this file is exactly <code>logo.png</code>. Alternatively, you may download any png image you wish at this step, move it into the static folder, and rename it to <code>logo.png</code>.</p></li>
+<li><p>We will also add some of our own css rules from the course website to the <code>styles.css</code> file. Copy and paste the following into your <code>styles.css</code> file:</p></li>
+</ol>
+<div class="sourceCode" id="cb21" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb21-1" title="1">@import url(&quot;https://fonts.googleapis.com/css?family=Quicksand&amp;display=swap&quot;);</a>
+<a class="sourceLine" id="cb21-2" title="2"></a>
+<a class="sourceLine" id="cb21-3" title="3">/** ---------------------- GENERAL ---------------------- **/</a>
+<a class="sourceLine" id="cb21-4" title="4"></a>
+<a class="sourceLine" id="cb21-5" title="5">html {</a>
+<a class="sourceLine" id="cb21-6" title="6">  min-height: 100%;</a>
+<a class="sourceLine" id="cb21-7" title="7">}</a>
+<a class="sourceLine" id="cb21-8" title="8"></a>
+<a class="sourceLine" id="cb21-9" title="9">body {</a>
+<a class="sourceLine" id="cb21-10" title="10">  background: linear-gradient(to bottom right, #e6e3e3, #e0e0e0);</a>
+<a class="sourceLine" id="cb21-11" title="11">  color: #555555;</a>
+<a class="sourceLine" id="cb21-12" title="12">  font-size: 1em;</a>
+<a class="sourceLine" id="cb21-13" title="13">  font-family: &quot;Quicksand&quot;;</a>
+<a class="sourceLine" id="cb21-14" title="14">  background-attachment: fixed;</a>
+<a class="sourceLine" id="cb21-15" title="15">}</a>
+<a class="sourceLine" id="cb21-16" title="16"></a>
+<a class="sourceLine" id="cb21-17" title="17">.container {</a>
+<a class="sourceLine" id="cb21-18" title="18">  margin-top: 1rem;</a>
+<a class="sourceLine" id="cb21-19" title="19">}</a>
+<a class="sourceLine" id="cb21-20" title="20"></a>
+<a class="sourceLine" id="cb21-21" title="21">/** ---------------------- NAVBAR ---------------------- **/</a>
+<a class="sourceLine" id="cb21-22" title="22"></a>
+<a class="sourceLine" id="cb21-23" title="23">.navbar {</a>
+<a class="sourceLine" id="cb21-24" title="24">  z-index: 1;</a>
+<a class="sourceLine" id="cb21-25" title="25">  background: #f5f5f5;</a>
+<a class="sourceLine" id="cb21-26" title="26">  border-image: linear-gradient(</a>
+<a class="sourceLine" id="cb21-27" title="27">    to right,</a>
+<a class="sourceLine" id="cb21-28" title="28">    #fe9f9f,</a>
+<a class="sourceLine" id="cb21-29" title="29">    #fec79f,</a>
+<a class="sourceLine" id="cb21-30" title="30">    #fadf94,</a>
+<a class="sourceLine" id="cb21-31" title="31">    #befe9f,</a>
+<a class="sourceLine" id="cb21-32" title="32">    #9ffec5,</a>
+<a class="sourceLine" id="cb21-33" title="33">    #9fedfe,</a>
+<a class="sourceLine" id="cb21-34" title="34">    #cfa3df,</a>
+<a class="sourceLine" id="cb21-35" title="35">    #fe9fe9</a>
+<a class="sourceLine" id="cb21-36" title="36">  );</a>
+<a class="sourceLine" id="cb21-37" title="37">  border-left: 0px;</a>
+<a class="sourceLine" id="cb21-38" title="38">  border-right: 0px;</a>
+<a class="sourceLine" id="cb21-39" title="39">  border-top: 0px;</a>
+<a class="sourceLine" id="cb21-40" title="40">  border-bottom: 5px solid;</a>
+<a class="sourceLine" id="cb21-41" title="41">  border-image-slice: 1;</a>
+<a class="sourceLine" id="cb21-42" title="42">  width: 100%;</a>
+<a class="sourceLine" id="cb21-43" title="43">  height: 6.2em;</a>
+<a class="sourceLine" id="cb21-44" title="44">}</a>
+<a class="sourceLine" id="cb21-45" title="45"></a>
+<a class="sourceLine" id="cb21-46" title="46">.navbar-expand {</a>
+<a class="sourceLine" id="cb21-47" title="47">  -webkit-box-orient: horizontal;</a>
+<a class="sourceLine" id="cb21-48" title="48">  -webkit-box-direction: normal;</a>
+<a class="sourceLine" id="cb21-49" title="49">  flex-flow: row nowrap;</a>
+<a class="sourceLine" id="cb21-50" title="50">  -webkit-box-pack: start;</a>
+<a class="sourceLine" id="cb21-51" title="51">  justify-content: flex-start;</a>
+<a class="sourceLine" id="cb21-52" title="52">}</a>
+<a class="sourceLine" id="cb21-53" title="53"></a>
+<a class="sourceLine" id="cb21-54" title="54">.nav-item {</a>
+<a class="sourceLine" id="cb21-55" title="55">  margin-left: 2em;</a>
+<a class="sourceLine" id="cb21-56" title="56">  vertical-align: bottom;</a>
+<a class="sourceLine" id="cb21-57" title="57">}</a>
+<a class="sourceLine" id="cb21-58" title="58"></a>
+<a class="sourceLine" id="cb21-59" title="59">.nav-link {</a>
+<a class="sourceLine" id="cb21-60" title="60">  font-family: &quot;Quicksand&quot;;</a>
+<a class="sourceLine" id="cb21-61" title="61">  font-size: 2.25vw;</a>
+<a class="sourceLine" id="cb21-62" title="62">  font-weight: bold;</a>
+<a class="sourceLine" id="cb21-63" title="63">  color: #727272;</a>
+<a class="sourceLine" id="cb21-64" title="64">  text-shadow: 0px 0px 0px #e6e6e6;</a>
+<a class="sourceLine" id="cb21-65" title="65">  letter-spacing: 0.15em;</a>
+<a class="sourceLine" id="cb21-66" title="66">  margin-top: 0.5em;</a>
+<a class="sourceLine" id="cb21-67" title="67">}</a>
+<a class="sourceLine" id="cb21-68" title="68"></a>
+<a class="sourceLine" id="cb21-69" title="69">.nav-link:hover {</a>
+<a class="sourceLine" id="cb21-70" title="70">  color: #aaaaaa;</a>
+<a class="sourceLine" id="cb21-71" title="71">}</a>
+<a class="sourceLine" id="cb21-72" title="72"></a>
+<a class="sourceLine" id="cb21-73" title="73">img.logo {</a>
+<a class="sourceLine" id="cb21-74" title="74">  max-height: 7vw;</a>
+<a class="sourceLine" id="cb21-75" title="75">}</a></code></pre></div>
+<ol start="4" type="1">
+<li>To ensure that all the new CSS we have added is displayed, make sure the following two lines are inside the <code>&lt;head&gt;&lt;/head&gt;</code> tag on every single html template in the <code>templates</code> folder:</li>
+</ol>
+<div class="sourceCode" id="cb22" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb22-1" title="1">&lt;link rel=&#39;stylesheet&#39; href=&#39;/static/bootstrap.min.css&#39;&gt;</a>
+<a class="sourceLine" id="cb22-2" title="2">&lt;link rel=&#39;stylesheet&#39; href=&#39;/static/styles.css&#39;&gt;</a></code></pre></div>
+<ol start="5" type="1">
+<li>Finally we will add our navbar menu! Copy and paste the following html snippet inside the <code>&lt;body&gt;&lt;/body&gt;</code> tag but above any other html you have written inside the body:</li>
+</ol>
+<div class="sourceCode" id="cb23" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb23-1" title="1">&lt;!-- navigation bar --&gt;</a>
+<a class="sourceLine" id="cb23-2" title="2">    &lt;nav class=&quot;navbar navbar-expand&quot;&gt;</a>
+<a class="sourceLine" id="cb23-3" title="3">        &lt;div class=&quot;collapse navbar-collapse&quot;&gt;</a>
+<a class="sourceLine" id="cb23-4" title="4">            &lt;ul class=&quot;navbar-nav&quot;&gt;</a>
+<a class="sourceLine" id="cb23-5" title="5">                &lt;li class=&quot;nav-item&quot;&gt;</a>
+<a class="sourceLine" id="cb23-6" title="6">                    &lt;a href=&quot;/&quot;&gt;&lt;img class=&quot;logo&quot; src=&quot;/static/logo.png&quot; alt=&quot;logo&quot;&gt;&lt;/a&gt;</a>
+<a class="sourceLine" id="cb23-7" title="7">                &lt;/li&gt;</a>
+<a class="sourceLine" id="cb23-8" title="8">                &lt;li class=&quot;nav-item&quot;&gt;</a>
+<a class="sourceLine" id="cb23-9" title="9">                    &lt;a class=&quot;nav-link&quot; href=&quot;/&quot;&gt;home&lt;/a&gt;</a>
+<a class="sourceLine" id="cb23-10" title="10">                &lt;/li&gt;</a>
+<a class="sourceLine" id="cb23-11" title="11">                &lt;li class=&quot;nav-item&quot;&gt;</a>
+<a class="sourceLine" id="cb23-12" title="12">                    &lt;a class=&quot;nav-link&quot; href=&quot;/create-todo&quot;&gt;create&lt;/a&gt;</a>
+<a class="sourceLine" id="cb23-13" title="13">                &lt;/li&gt;</a>
+<a class="sourceLine" id="cb23-14" title="14">                &lt;li class=&quot;nav-item&quot;&gt;</a>
+<a class="sourceLine" id="cb23-15" title="15">                    &lt;a class=&quot;nav-link&quot; href=&quot;/view-todo-list&quot;&gt;view&lt;/a&gt;</a>
+<a class="sourceLine" id="cb23-16" title="16">                &lt;/li&gt;</a>
+<a class="sourceLine" id="cb23-17" title="17">            &lt;/ul&gt;</a>
+<a class="sourceLine" id="cb23-18" title="18">        &lt;/div&gt;</a>
+<a class="sourceLine" id="cb23-19" title="19">    &lt;/nav&gt;</a></code></pre></div>
+<blockquote>
+<p>In order to be able to use this menu bar from every page of our webapp, we must make sure to add it to every template file!</p>
+</blockquote>
+<p>Refresh your web app and try navigating around your site using the new menu.</p>
+<h2 id="bonus-add-categories">Bonus: Add Categories</h2>
+<p>TODO</p>
+<h2 id="bonus-editing-tasks">Bonus: Editing Tasks</h2>
+<p>TODO</p>
+<h2 id="bonus-list-functionality">Bonus: List Functionality</h2>
+<p>TODO</p>
+<h2 id="bonus-hot-reload">Bonus: Hot Reload</h2>
+<p>As you develop a new project, it can get tedious to have to refresh your browser every time you make a small style change to see the update. Instead we can make the browser auto-refresh every time you save a file. This behavior is commonly called live refresh or hot reload.</p>
+<ol type="1">
+<li>Open a new terminal and run <code>pip install livereload</code></li>
+<li>Create a new file in your repo named <code>dev.py</code></li>
+<li>Paste in the following code snippet and save.</li>
+</ol>
+<div class="sourceCode" id="cb24" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" title="1"><span class="im">from</span> app <span class="im">import</span> app</a>
+<a class="sourceLine" id="cb24-2" title="2"><span class="im">from</span> livereload <span class="im">import</span> Server</a>
+<a class="sourceLine" id="cb24-3" title="3"></a>
+<a class="sourceLine" id="cb24-4" title="4"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</a>
+<a class="sourceLine" id="cb24-5" title="5">   server <span class="op">=</span> Server(app.wsgi_app)</a>
+<a class="sourceLine" id="cb24-6" title="6">   server.serve()</a></code></pre></div>
+<ol start="4" type="1">
+<li>Whenever you would like to run your app with livereload run <code>python -m dev</code> in your terminal and open your browser to <code>http://127.0.0.1:5500/</code></li>
+</ol>
+<h2 id="documentation-tools-and-resources">Documentation, Tools and Resources</h2>
+<h4 id="finished-tutorial-code"><a href="https://github.com/ezriwhite/todo-list-tutorial">Finished Tutorial Code</a></h4>
+<p>This code should be identical to yours after completing the tutorial.</p>
+<h4 id="styled-starter-code"><a href="https://github.com/ezriwhite/hack110-todo-demo">Styled Starter Code</a></h4>
+<p>This code is the same as the tutorial with some more exciting styling and navigation bar already built. Feel free to use this to kickstart your project!</p>
+<h4 id="flask-documentation"><a href="https://flask.palletsprojects.com/en/2.0.x/quickstart/#what-to-do-if-the-server-does-not-start">Flask Documentation</a></h4>
+<p>Check this documentation for any questions related to flask.</p>
+<h4 id="w3schools-introduction-to-html"><a href="https://www.w3schools.com/html/html_intro.asp">W3Schools Introduction to HTML</a></h4>
+<p>This is a great site for learning more about basic HTML.</p>
+<h4 id="w3schools-introduction-to-css"><a href="https://www.w3schools.com/html/html_css.asp">W3Schools Introduction to CSS</a></h4>
+<p>This is a great site for learning more about basic CSS.</p>
+<h3 id="helpful-vscode-extensions">Helpful VSCode Extensions</h3>
+<p>To add these extensions, click the Extensions tab on the sidebar in vscode. (Looks like three squares with a fourth square drifting away) Then you can search for and install the extensions you would like.</p>
+<ul>
+<li><code>Auto Close Tag</code>: automatically adds closing tags to your HTML code.</li>
+<li><code>Auto Rename Tag</code>: when you rename an opening HTML tag, automatically changes the closing tag to match.</li>
+<li><code>Paste and Indent</code>: automatically adds the appropriate indents to code pasted into your project.</li>
+<li><code>Color Highlight</code>: displays swatches of and highlights CSS colors in your code for easy identification.</li>
+<li><code>Beautify</code>: automatically formats HTML and CSS code.
+<ul>
+<li>To get this to work, click Settings (the cog in the bottom left corner)</li>
+<li>Click the { } curly braces in the top right corner</li>
+<li>Copy and paste this in the curly braces: “editor.formatOnSave”: true</li>
+</ul></li>
+<li><code>Better Jinja</code>: syntax highlighting for jinja</li>
+</ul>
+</div>
+
+    </div> 
+
+            <div class="authors-box">
+                <span> Contributor(s): Ezri White</span>
+            </div>
+            
+            <div class='link-page wrapper'>
+            <footer>
+                    <p class="footer-content">&copy; 2021 <a href="https://krisjordan.com">Kris Jordan</a>
+                        - <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScQMteEvnQpBfGsAYP5TpuqokQenhZUIf8CNvfAUUZEjMCWZQ/viewform?usp=sf_link">Feedback
+                            Form</a> - <a href="https://forms.gle/AjcyFHirwegBKXbq9">Grievances Form</a> - Made with 💛in <a href="https://cs.unc.edu/">Chapel Hill</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"
+        integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
