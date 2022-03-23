@@ -348,28 +348,31 @@ code {
   height: 28.5em;
 }
 
+.height-adjusted{
+ 
+  height: 23em;
+ 
+}
 .lessons-col-box {
   margin-bottom: 1.5em;
 }
 
-.lessons-wrap {
+
+.lessons-wrap-col {
   display: flex;
   flex-wrap: wrap;
 }
 
 /* This deals with padding and spacing of lessons (lessons page) when column-based; Play around with padding depending on length lesson title! */
 
-.lessons-wrap .plan {
-  flex: 0 0 33.3333%;
-}
-
+ 
 /* Positioning for middle lessons */
-.lessons-wrap .plan:nth-child(3n + 2) {
+.lessons-wrap-col .plan:nth-child(3n + 2) {
   padding: 0em 0.5em 0.25em 7em;
 }
 
 /* Positioning for Right-most lessons*/
-.lessons-wrap .plan:nth-child(3n) {
+.lessons-wrap-col .plan:nth-child(3n) {
   padding: 0em 0.5em 0.25em 3em;
 }
 
@@ -1099,6 +1102,10 @@ code span.in {
     height: 30.5em;
   }
 
+  .height-adjusted{
+    height: 25em;
+  }
+
   .lessons-wrap {
     justify-content: center;
     align-items: baseline;
@@ -1122,11 +1129,19 @@ code span.in {
   .lessons-fixed-box {
     height: 37em;
   }
+
+  .height-adjusted{
+    height: 30em;
+  }
 }
 
 @media screen and (max-width: 536px) {
   .lessons-fixed-box {
     height: 38em;
+  }
+
+  .height-adjusted{
+    height: 33em;
   }
 }
 
