@@ -22,19 +22,20 @@
             "links": {
                 "Watch Lesson": "https://www.youtube.com/watch?v=wBhS8OXtM5Q"
             }
-        },
+        }
+    ],
+    "2022-03-23": [
         {
             "kind": "EX",
             "n": 8,
-            "title": "Choose Your Own Analysis - Due Mon 3/28",
-            "date": "2022-03-22",
-            "deadline": "2022-03-28",
+            "title": "Choose Your Own Analysis - Due Tues 3/29",
+            "date": "2022-03-23",
+            "deadline": "2022-03-29",
             "links": {
-                "Write-up Posts Tuesday 3/22": ""
+                "Write-up Posts Weds 3/23": ""
             }
         }
     ],
-    "2022-03-23": [],
     "2022-03-24": [
         {
             "kind": "CL",
@@ -81,19 +82,20 @@
             "links": {
                 "Watch Lesson": "https://www.youtube.com/watch?v=_htZ8sB2qe8"
             }
-        },
+        }
+    ],
+    "2022-03-30": [
         {
             "kind": "EX",
             "n": 9,
             "title": "Simpy - Due Mon 4/11",
-            "date": "2022-03-29",
+            "date": "2022-03-30",
             "deadline": "2022-04-11",
             "links": {
-                "Write-up Posts Tuesday 3/29": ""
+                "Write-up Posts Weds 3/30": ""
             }
         }
     ],
-    "2022-03-30": [],
     "2022-03-31": [
         {
             "kind": "CL",
