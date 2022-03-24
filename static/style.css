@@ -916,7 +916,7 @@ code span.wa {
   font-style: italic;
 } /* Warning */
 code span.cn {
-  -webkit-text-fill-color: #0d64fa;
+  -webkit-text-fill-color: #6da2ff;
   font-weight: normal;
   font-style: normal;
 } /* Constant */
