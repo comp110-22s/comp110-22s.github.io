@@ -661,7 +661,8 @@
             "date": "2022-03-24",
             "deadline": "None",
             "links": {
-                "Quarantine Stream": "https://youtu.be/pZ3m630uGqw"
+                "Quarantine Stream": "https://youtu.be/pZ3m630uGqw",
+                "Slides": "/static/slides/cl19-oop-practice.pdf"
             }
         }
     ],

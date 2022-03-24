@@ -1,16 +1,4 @@
 {
-    "2022-03-21": [
-        {
-            "kind": "RD",
-            "n": 1,
-            "title": "Weapons of Math Destruction - Due Sun 4/10",
-            "date": "2022-03-21",
-            "deadline": "2022-04-10",
-            "links": {
-                "Reading found on Gradescope": "https://gradescope.com"
-            }
-        }
-    ],
     "2022-03-22": [
         {
             "kind": "LS",
@@ -43,7 +31,8 @@
             "date": "2022-03-24",
             "deadline": "None",
             "links": {
-                "Quarantine Stream": "https://youtu.be/pZ3m630uGqw"
+                "Quarantine Stream": "https://youtu.be/pZ3m630uGqw",
+                "Slides": "/static/slides/cl19-oop-practice.pdf"
             }
         }
     ],
