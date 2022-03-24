@@ -7,7 +7,7 @@
     <title> EX08 - Analysis for Continuous Improvement - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1648066742.7577991">
+    <link rel="stylesheet" href="/static/style.css?v=1648120242.9940474">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -262,7 +262,7 @@
 <li>Additionally, create another file <code>data_utils.py</code> and copy in your functions from the previous exercise’s file with the same name!</li>
 </ol>
 <h2 id="tour-of-the-data">Tour of the Data</h2>
-<p><code>row_number</code> – Row number. Unique for each row of the CSV.</p>
+<p><code>row</code> – Row number. Unique for each row of the CSV.</p>
 <p><code>year</code> – Expected graduation year. Possible values: 21, 22, 23, 24, 25. (Note: This is clearly a non-exhaustive list. Just simplified for the sake of the project)</p>
 <p><code>unc_status</code> – UNC status. Possible values: Returning UNC Student, Incoming Transfer Student, Incoming First-year Student</p>
 <p><code>comp_major</code> – Intention to major in CS. Possible values: Yes - BS, Yes - BA, Yes - Minor, No.</p>
@@ -290,7 +290,6 @@
 <p><code>qz_effective</code> – Preparing for quizzes is effective in helping student learn the topics of the course. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
 <p><code>oh_effective</code> – Office hours 1:1 appointments are effective in helping student learn the topics of the course. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree, Empty string if student has not attended OH)</em>: 1, 2, 3, 4, 5, 6, 7, ""</p>
 <p><code>tutoring_effective</code> – Tutoring is effective in helping student learn the topics of the course. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree, Empty string if student has not attended tutoring)</em>: 1, 2, 3, 4, 5, 6, 7, ""</p>
-<p><code>kaki_effective</code> – Kaki’s review sessions are effective in helping student learn the topics of the course. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree, Empty string if student has not attended Kaki’s review sessions)</em>: 1, 2, 3, 4, 5, 6, 7, ""</p>
 <p><code>pace</code> – Student finds the pace of COMP110 to be moving… Possible values <em>(1 being Very Slowly and 7 being Very Quickly)</em>: 1, 2, 3, 4, 5, 6, 7</p>
 <p><code>difficulty</code> – Student is finding COMP110 to be… Possible values <em>(1 being Very Easy and 7 being Very Difficult)</em>: 1, 2, 3, 4, 5, 6, 7</p>
 <p><code>understanding</code> – So far, student is feeling like they typically… Possible values <em>(1 being Are Lost and 7 being Understand Everything)</em>: 1, 2, 3, 4, 5, 6, 7</p>
