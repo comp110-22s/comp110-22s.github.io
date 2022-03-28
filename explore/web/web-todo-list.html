@@ -7,7 +7,7 @@
     <title> To-do List Web App - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1648483880.0095365">
+    <link rel="stylesheet" href="/static/style.css?v=1648484052.0792687">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -202,7 +202,7 @@
 </ul></li>
 <li><a href="#handling-methods">Handling Methods</a><ul>
 <li><a href="#task-form-submission">Task: Form Submission</a></li>
-<li><a href="#task-returning-to-the-list">Task: Returning to the List</a></li>
+<li><a href="#task-returning-to-create-page">Task: Returning to Create Page</a></li>
 </ul></li>
 <li><a href="#working-with-data">Working With Data</a><ul>
 <li><a href="#task-obtaining-the-data">Task: Obtaining the data</a></li>
@@ -211,10 +211,8 @@
 </ul></li>
 <li><a href="#bonus-menu-and-styling">Bonus: Menu and Styling</a></li>
 <li><a href="#bonus-add-categories">Bonus: Add Categories</a></li>
+<li><a href="#bonus-checking-off-items">Bonus: Checking off Items</a></li>
 <li><a href="#bonus-editing-tasks">Bonus: Editing Tasks</a></li>
-<li><a href="#bonus-list-functionality">Bonus: List Functionality</a><ul>
-<li><a href="#extension-checking-off-items">Extension: Checking off Items</a></li>
-</ul></li>
 <li><a href="#bonus-hot-reload">Bonus: Hot Reload</a></li>
 <li><a href="#documentation-tools-and-resources">Documentation, Tools and Resources</a><ul>
 <li><a href="#helpful-vscode-extensions">Helpful VSCode Extensions</a></li>
@@ -375,13 +373,13 @@
 </ol>
 <div class="sourceCode" id="cb9" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/create-todo&quot;</span><span class="kw">&gt;</span>Create Todo!<span class="kw">&lt;/a&gt;</span></a></code></pre></div>
 <ol start="3" type="1">
-<li>If you attempt to click on <code>Create Todo!</code> while viewing your <code>index.html</code> file on chrome, you will get an error! This is because we need to define the route to the quiz URL in our <code>app.py</code> file. Add the following code snippet in <code>app.py</code>, save all the files, and attempt to click take quiz again.</li>
+<li>If you attempt to click on <code>Create Todo!</code> while viewing your <code>index.html</code> file on chrome, you will get an error! This is because we need to define the route to the <code>create-todo</code> URL in our <code>app.py</code> file. Add the following code snippet in <code>app.py</code>, save all the files, and attempt to click <code>Create Todo!</code> again.</li>
 </ol>
 <div class="sourceCode" id="cb10" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/create-todo&#39;</span>)</a>
 <a class="sourceLine" id="cb10-2" title="2"><span class="kw">def</span> create_todo():</a>
 <a class="sourceLine" id="cb10-3" title="3">    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a></code></pre></div>
 <h2 id="handling-methods">Handling Methods</h2>
-<p>In order to add interactivity to the quiz form on our site we need to learn about HTTP request methods. We won’t need to know a lot about HTTP, but a simple definition for HTTP is a defined set of rules or protocols for fetching resources such as our HTML or CSS files.</p>
+<p>In order to add interactivity to the create todo page on our site we need to learn about HTTP request methods. We won’t need to know a lot about HTTP, but a simple definition for HTTP is a defined set of rules or protocols for fetching resources such as our HTML or CSS files.</p>
 <p>Two of these rules are the <code>GET</code> and <code>POST</code> methods. The <code>GET</code> method is a basic protocol for viewing or <em>getting</em> some resource such as our <code>index.html</code> file. The <code>POST</code> method is a protocol for updating or inserting new data. You can imagine when you <em>post</em> something on social media the data is getting uploaded so that everyone can now see your post.</p>
 <h3 id="task-form-submission">Task: Form Submission</h3>
 <p>When we click the submit button that we defined in our <code>create-todo.html</code> file, we want to show the user that they succesfully created a new todo item. The easiest way to do this is by setting up a new HTML <code>template</code> that we will render instead of <code>create-todo.html</code> when the user submits the form. For now we will hardcode the success view, but later we will actually show the new todo.</p>
@@ -393,7 +391,7 @@
 <a class="sourceLine" id="cb11-3" title="3">     <span class="kw">&lt;p&gt;</span>Successfully created todo!!!<span class="kw">&lt;/p&gt;</span></a>
 <a class="sourceLine" id="cb11-4" title="4"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
 <ol start="2" type="1">
-<li>Notice how the HTML for the form in <code>create-todo.html</code> says <code>method="post"</code>. When you click the submit button inside the form element it will use the HTTP protocol <code>POST</code>. This makes sense since we are going to be saving or <em>posting</em> new data for the user’s answers when they click the submit button. We can use this fact to render our result template in our quiz function. First, we will need to import the <code>request</code> ability from Flask. Update the Flask import at the top of your <code>app.py</code> file:</li>
+<li>Notice how the HTML for the form in <code>create-todo.html</code> says <code>method="post"</code>. When you click the submit button inside the form element it will use the HTTP protocol <code>POST</code>. This makes sense since we are going to be saving or <em>posting</em> new data for the users answers when they click the submit button. We can use this fact to render our sucsess template in our <code>create_todo</code> function. First, we will need to import the <code>request</code> ability from Flask. Update the Flask import at the top of your <code>app.py</code> file:</li>
 </ol>
 <div class="sourceCode" id="cb12" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" title="1"><span class="im">from</span> flask <span class="im">import</span> Flask, render_template, request</a></code></pre></div>
 <ol start="3" type="1">
@@ -407,7 +405,7 @@
 <ol start="3" type="1">
 <li>Now, when you click the Submit button when viewing your <code>/create-todo</code> page, our function will check if the request method was <code>POST</code> and render a success if so. Otherwise, we will see our normal create todo page. Keep in mind that the route or URL in your browser still shows <code>/create-todo</code> since all we changed is what is rendered in our <code>create_todo</code> function.</li>
 </ol>
-<h3 id="task-returning-to-the-list">Task: Returning to the List</h3>
+<h3 id="task-returning-to-create-page">Task: Returning to Create Page</h3>
 <p>We also want users to be able to create more todos so we will add a button that lets us return to the create view.</p>
 <ol type="1">
 <li>Add the following HTML snippet into your <code>success.html</code> template underneath <code>&lt;p&gt;Successfully created todo!!!&lt;/p&gt;</code>:</li>
@@ -433,7 +431,7 @@
 <h3 id="task-obtaining-the-data">Task: Obtaining the data</h3>
 <p>Now we will grab the submitted data from the form and then display it on the success page.</p>
 <ol type="1">
-<li>In order to show the result of the quiz we will need to add a variable into our <code>success.html</code> file. Add the following below <code>&lt;p&gt;Successfully created todo!!!&lt;/p&gt;</code>:</li>
+<li>In order to show the success page we will need to add a variable into our <code>success.html</code> file. Add the following below <code>&lt;p&gt;Successfully created todo!!!&lt;/p&gt;</code>:</li>
 </ol>
 <div class="sourceCode" id="cb16" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">&lt;p&gt;</span> Title: {{title}}<span class="kw">&lt;/p&gt;</span></a>
 <a class="sourceLine" id="cb16-2" title="2"><span class="kw">&lt;p&gt;</span> Description: {{description}}<span class="kw">&lt;/p&gt;</span></a></code></pre></div>
@@ -511,17 +509,13 @@
 <a class="sourceLine" id="cb21-10" title="10">        <span class="cf">if</span> title <span class="op">==</span> <span class="st">&#39;&#39;</span>:</a>
 <a class="sourceLine" id="cb21-11" title="11">            <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a>
 <a class="sourceLine" id="cb21-12" title="12"></a>
-<a class="sourceLine" id="cb21-13" title="13">        house: <span class="bu">str</span> <span class="op">=</span> find_house(animal)</a>
-<a class="sourceLine" id="cb21-14" title="14">        new_user: user <span class="op">=</span> user(user_number, fname, lname, house)</a>
-<a class="sourceLine" id="cb21-15" title="15">        users.append(new_user)</a>
-<a class="sourceLine" id="cb21-16" title="16"></a>
-<a class="sourceLine" id="cb21-17" title="17">        new_todo: todo <span class="op">=</span> todo(todo_count, title, description)</a>
-<a class="sourceLine" id="cb21-18" title="18">        todo_list.append(new_todo)</a>
-<a class="sourceLine" id="cb21-19" title="19"></a>
-<a class="sourceLine" id="cb21-20" title="20">        todo_count <span class="op">+=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb21-21" title="21"></a>
-<a class="sourceLine" id="cb21-22" title="22">        <span class="cf">return</span> render_template(<span class="st">&quot;success.html&quot;</span>, title<span class="op">=</span>title, description<span class="op">=</span>description)</a>
-<a class="sourceLine" id="cb21-23" title="23">    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb21-13" title="13">        new_todo: todo <span class="op">=</span> todo(todo_count, title, description)</a>
+<a class="sourceLine" id="cb21-14" title="14">        todo_list.append(new_todo)</a>
+<a class="sourceLine" id="cb21-15" title="15"></a>
+<a class="sourceLine" id="cb21-16" title="16">        todo_count <span class="op">+=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb21-17" title="17"></a>
+<a class="sourceLine" id="cb21-18" title="18">        <span class="cf">return</span> render_template(<span class="st">&quot;success.html&quot;</span>, title<span class="op">=</span>title, description<span class="op">=</span>description)</a>
+<a class="sourceLine" id="cb21-19" title="19">    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a></code></pre></div>
 <blockquote>
 <ul>
 <li>First, we label our <code>todo_list</code> and <code>todo_count</code> as global variables since we plan to update them.</li>
@@ -769,11 +763,7 @@
 <a class="sourceLine" id="cb31-6" title="6">        {% endfor %}</a></code></pre></div>
 <p>Here we are surrounding each title and description with a <code>div</code> element that we can turn into a container with a border using our css <code>todo</code> class. We also add the <code>{{todo.color}}-border</code> class to the <code>div</code> element. For a specific todo that had the color property of <code>purple</code>, this snippet would evaluate to <code>purple-border</code> and therefore apply the <code>purple-border</code> css class styling we added to <code>styles.css</code> in step 3.</p>
 <p>Make sure all files are saved then attempt to create a few todos with different categories. When you go to view them they should display with different color borders!</p>
-<h2 id="bonus-editing-tasks">Bonus: Editing Tasks</h2>
-<p>TODO</p>
-<h2 id="bonus-list-functionality">Bonus: List Functionality</h2>
-<p>TODO</p>
-<h3 id="extension-checking-off-items">Extension: Checking off Items</h3>
+<h2 id="bonus-checking-off-items">Bonus: Checking off Items</h2>
 <p>One hallmark of any great todo list is the ability to mark items as complete or incomplete. In this extension, you will modify individual todo list items to contain a button which will check them off, and use some additional styling to visually distinguish complete items from incomplete ones.</p>
 <ol type="1">
 <li>First, we’ll add some new styling for a todo item that is checked off:</li>
@@ -837,6 +827,65 @@
 <a class="sourceLine" id="cb36-6" title="6">    <span class="cf">return</span> render_template(<span class="st">&#39;view-list.html&#39;</span>, todo_list<span class="op">=</span>todo_list)</a></code></pre></div>
 <p><code>view_todo_list</code> now supports those POST requests we’ll be sending when a user presses a button. When a user presses a button, the <code>request.form['check-button']</code> will contain the <em>index</em> of <code>todo_list</code> that they want to check/uncheck (see the button’s value property!!). From there, we go into the <code>todo_list</code> and flip its <code>visible</code> property. If it was <code>True</code>, it will become <code>False</code>, and vice versa. Then, when the page reloads, the item will be seen as checked, and the styling will be applied!</p>
 <p>(The check that len(todo_list) &gt; 0 is not required, but can prevent crashing when you refresh the page and potentially empty out your todo_list…)</p>
+<h2 id="bonus-editing-tasks">Bonus: Editing Tasks</h2>
+<p>Note: The Checking Items Bonus must be complete to implement the Editing Tasks bonus.</p>
+<p>In this bonus task you will add the ability to edit your tasks from the view list page. We will do this using a feature of flask that allows us to use variables in our routes. We can make use of this feature in order to show an edit page for an individual todo.</p>
+<ol type="1">
+<li><p>Lets define two more files in our <code>templates</code> directory for displaying an edit form page and successful edit page. Create a new file in <code>templates</code> named <code>edit-todo.html</code>. Copy and paste the contents of your <code>create-todo.html</code> file into the new edit file.</p></li>
+<li><p>Create a new file in <code>templates</code> named <code>edit-success.html</code>. Copy and paste the contents of your <code>success.html</code> file into the new success file. Update the contents of this file to say something about a successful edit instead of a successful creation. You can also add the following html tag somewhere in your body for an easy way of returning to the view list page:</p></li>
+</ol>
+<div class="sourceCode" id="cb37"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb37-1" title="1"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/view-todo-list&quot;</span><span class="kw">&gt;</span>Return to list view<span class="kw">&lt;/a&gt;</span></a></code></pre></div>
+<ol start="3" type="1">
+<li>Now we need to add a route for rendering these new templates. Add the following code snippet in your <code>app.py</code> file:</li>
+</ol>
+<div class="sourceCode" id="cb38" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb38-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/edit-todo&lt;todo_number&gt;&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
+<a class="sourceLine" id="cb38-2" title="2"><span class="kw">def</span> edit_todo(todo_number: <span class="bu">str</span>):</a>
+<a class="sourceLine" id="cb38-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</a>
+<a class="sourceLine" id="cb38-4" title="4">        <span class="kw">global</span> todo_list</a>
+<a class="sourceLine" id="cb38-5" title="5"></a>
+<a class="sourceLine" id="cb38-6" title="6">        title: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;title&#39;</span>]</a>
+<a class="sourceLine" id="cb38-7" title="7">        description: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;description&#39;</span>]</a>
+<a class="sourceLine" id="cb38-8" title="8">        color: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;color&#39;</span>]</a>
+<a class="sourceLine" id="cb38-9" title="9"></a>
+<a class="sourceLine" id="cb38-10" title="10">        <span class="cf">if</span> title <span class="op">==</span> <span class="st">&#39;&#39;</span>:</a>
+<a class="sourceLine" id="cb38-11" title="11">            <span class="cf">return</span> render_template(<span class="st">&quot;edit-todo.html&quot;</span>)</a>
+<a class="sourceLine" id="cb38-12" title="12"></a>
+<a class="sourceLine" id="cb38-13" title="13">        todo_list[<span class="bu">int</span>(todo_number)].title <span class="op">=</span> title</a>
+<a class="sourceLine" id="cb38-14" title="14">        todo_list[<span class="bu">int</span>(todo_number)].description <span class="op">=</span> description</a>
+<a class="sourceLine" id="cb38-15" title="15">        todo_list[<span class="bu">int</span>(todo_number)].color <span class="op">=</span> color</a>
+<a class="sourceLine" id="cb38-16" title="16"></a>
+<a class="sourceLine" id="cb38-17" title="17">        <span class="cf">return</span> render_template(<span class="st">&quot;edit-success.html&quot;</span>)</a>
+<a class="sourceLine" id="cb38-18" title="18">    <span class="cf">return</span> render_template(<span class="st">&#39;edit-todo.html&#39;</span>, todo<span class="op">=</span>todo_list[<span class="bu">int</span>(todo_number)])</a></code></pre></div>
+<blockquote>
+<p>This route is slightly more complex than ones we have defined previously. The syntax <code>&lt;todo_number&gt;</code> defines an unknown in the URL with a variable name of <code>todo_number</code>. When this route is accessed, it will pass the given <code>todo_number</code> to the <code>edit_todo</code> function. Then the <code>todo_number</code> can be converted to an <code>int</code> and used to select the correct todo our of our <code>todos</code> list. For instance, if we navigate to the URL <code>/edit-todo2</code>, we could expect to be shown all the data about the third todo that was created. (Since we started at 0)</p>
+</blockquote>
+<ol start="4" type="1">
+<li>Most of the logic in the <code>edit_todo</code> function matches the <code>create_todo</code> function. Notice however, that when we render the <code>edit-todo.html</code> template we pass it a todo. Let’s update the copied HTML in <code>edit-todo.html</code> to show the values of the todo we are trying to edit.</li>
+</ol>
+<div class="sourceCode" id="cb39" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb39-1" title="1">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;title&quot;</span><span class="ot"> name=</span><span class="st">&quot;title&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb39-2" title="2">        // updates to</a>
+<a class="sourceLine" id="cb39-3" title="3">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;title&quot;</span><span class="ot"> name=</span><span class="st">&quot;title&quot;</span><span class="ot"> value=</span><span class="st">&quot;{{todo.title}}&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb39-4" title="4"></a>
+<a class="sourceLine" id="cb39-5" title="5">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;description&quot;</span><span class="ot"> name=</span><span class="st">&quot;description&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb39-6" title="6">        // updates to</a>
+<a class="sourceLine" id="cb39-7" title="7">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;description&quot;</span><span class="ot"> name=</span><span class="st">&quot;description&quot;</span><span class="ot"> value=</span><span class="st">&quot;{{todo.description}}&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb39-8" title="8"></a>
+<a class="sourceLine" id="cb39-9" title="9">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Create&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb39-10" title="10">        // updates to</a>
+<a class="sourceLine" id="cb39-11" title="11">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Update&quot;</span><span class="kw">&gt;</span></a></code></pre></div>
+<p>Now if you create a todo, then visit the url <code>/edit-todo0</code>, you should see the original text displayed and be able to edit and save your changes with the Update button.</p>
+<ol start="5" type="1">
+<li>Finally we need to add an edit button to each todo on the view list page. Add the following html snippet for a button underneath the Check/ Uncheck button.</li>
+</ol>
+<div class="sourceCode" id="cb40" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb40-1" title="1"><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;/edit-todo{{i}}&quot;</span><span class="ot"> method=</span><span class="st">&quot;GET&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb40-2" title="2">    <span class="kw">&lt;button</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> style=</span><span class="st">&quot;float: right&quot;</span><span class="ot"> value=</span><span class="st">&quot;{{i}}&quot;</span><span class="ot"> name=</span><span class="st">&quot;edit-button&quot;</span><span class="ot"> id=</span><span class="st">&quot;edit-button&quot;</span><span class="ot"> todo-id=</span><span class="st">&quot;{{i}}&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb40-3" title="3">        Edit</a>
+<a class="sourceLine" id="cb40-4" title="4">    <span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb40-5" title="5"><span class="kw">&lt;/form&gt;</span></a></code></pre></div>
+<blockquote>
+<p>Here the specified route for the action adds the <code>i</code> counter/ todo id so that when you click this button it navigates to that specific todo based on it’s id number.</p>
+</blockquote>
+<p>Try creating a few todos and then clicking edit from the view list page to get to your edit page!</p>
 <h2 id="bonus-hot-reload">Bonus: Hot Reload</h2>
 <p>As you develop a new project, it can get tedious to have to refresh your browser every time you make a small style change to see the update. Instead we can make the browser auto-refresh every time you save a file. This behavior is commonly called live refresh or hot reload.</p>
 <ol type="1">
@@ -844,12 +893,12 @@
 <li>Create a new file in your repo named <code>dev.py</code></li>
 <li>Paste in the following code snippet and save.</li>
 </ol>
-<div class="sourceCode" id="cb37" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb37-1" title="1"><span class="im">from</span> app <span class="im">import</span> app</a>
-<a class="sourceLine" id="cb37-2" title="2"><span class="im">from</span> livereload <span class="im">import</span> Server</a>
-<a class="sourceLine" id="cb37-3" title="3"></a>
-<a class="sourceLine" id="cb37-4" title="4"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</a>
-<a class="sourceLine" id="cb37-5" title="5">   server <span class="op">=</span> Server(app.wsgi_app)</a>
-<a class="sourceLine" id="cb37-6" title="6">   server.serve()</a></code></pre></div>
+<div class="sourceCode" id="cb41" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb41-1" title="1"><span class="im">from</span> app <span class="im">import</span> app</a>
+<a class="sourceLine" id="cb41-2" title="2"><span class="im">from</span> livereload <span class="im">import</span> Server</a>
+<a class="sourceLine" id="cb41-3" title="3"></a>
+<a class="sourceLine" id="cb41-4" title="4"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</a>
+<a class="sourceLine" id="cb41-5" title="5">   server <span class="op">=</span> Server(app.wsgi_app)</a>
+<a class="sourceLine" id="cb41-6" title="6">   server.serve()</a></code></pre></div>
 <ol start="4" type="1">
 <li>Whenever you would like to run your app with livereload run <code>python -m dev</code> in your terminal and open your browser to <code>http://127.0.0.1:5500/</code></li>
 </ol>
