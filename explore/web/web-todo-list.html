@@ -7,7 +7,7 @@
     <title> To-do List Web App - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1648484052.0792687">
+    <link rel="stylesheet" href="/static/style.css?v=1648484385.7263703">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -780,21 +780,23 @@
 <a class="sourceLine" id="cb33-2" title="2">      &lt;div</a>
 <a class="sourceLine" id="cb33-3" title="3">        class=&quot;todo {{ &#39;checked&#39; if not todo.visible else &#39;&#39;}}&quot;</a>
 <a class="sourceLine" id="cb33-4" title="4">      &gt;</a>
-<a class="sourceLine" id="cb33-5" title="5">        &lt;form action=&quot;/view-todo-list&quot; method=&quot;POST&quot;&gt;</a>
-<a class="sourceLine" id="cb33-6" title="6">          &lt;button</a>
-<a class="sourceLine" id="cb33-7" title="7">            type=&quot;submit&quot;</a>
-<a class="sourceLine" id="cb33-8" title="8">            style=&quot;float: right&quot;</a>
-<a class="sourceLine" id="cb33-9" title="9">            value=&quot;{{i}}&quot;</a>
-<a class="sourceLine" id="cb33-10" title="10">            name=&quot;check-button&quot;</a>
-<a class="sourceLine" id="cb33-11" title="11">            id=&quot;check-button&quot;</a>
-<a class="sourceLine" id="cb33-12" title="12">          &gt;</a>
-<a class="sourceLine" id="cb33-13" title="13">            {{&#39;Check&#39; if todo.visible else &#39;Uncheck&#39;}}</a>
-<a class="sourceLine" id="cb33-14" title="14">          &lt;/button&gt;</a>
-<a class="sourceLine" id="cb33-15" title="15">        &lt;/form&gt;</a>
-<a class="sourceLine" id="cb33-16" title="16">        &lt;h4&gt;{{todo.title}}&lt;/h4&gt;</a>
-<a class="sourceLine" id="cb33-17" title="17">        &lt;p&gt;{{todo.description}}&lt;/p&gt;</a>
-<a class="sourceLine" id="cb33-18" title="18">      &lt;/div&gt;</a>
-<a class="sourceLine" id="cb33-19" title="19">      {% endfor %}</a></code></pre></div>
+<a class="sourceLine" id="cb33-5" title="5">      &lt;div&gt;</a>
+<a class="sourceLine" id="cb33-6" title="6">        &lt;form action=&quot;/view-todo-list&quot; method=&quot;POST&quot;&gt;</a>
+<a class="sourceLine" id="cb33-7" title="7">          &lt;button</a>
+<a class="sourceLine" id="cb33-8" title="8">            type=&quot;submit&quot;</a>
+<a class="sourceLine" id="cb33-9" title="9">            style=&quot;float: right&quot;</a>
+<a class="sourceLine" id="cb33-10" title="10">            value=&quot;{{i}}&quot;</a>
+<a class="sourceLine" id="cb33-11" title="11">            name=&quot;check-button&quot;</a>
+<a class="sourceLine" id="cb33-12" title="12">            id=&quot;check-button&quot;</a>
+<a class="sourceLine" id="cb33-13" title="13">          &gt;</a>
+<a class="sourceLine" id="cb33-14" title="14">            {{&#39;Check&#39; if todo.visible else &#39;Uncheck&#39;}}</a>
+<a class="sourceLine" id="cb33-15" title="15">          &lt;/button&gt;</a>
+<a class="sourceLine" id="cb33-16" title="16">        &lt;/form&gt;</a>
+<a class="sourceLine" id="cb33-17" title="17">        &lt;/div&gt;</a>
+<a class="sourceLine" id="cb33-18" title="18">        &lt;h4&gt;{{todo.title}}&lt;/h4&gt;</a>
+<a class="sourceLine" id="cb33-19" title="19">        &lt;p&gt;{{todo.description}}&lt;/p&gt;</a>
+<a class="sourceLine" id="cb33-20" title="20">      &lt;/div&gt;</a>
+<a class="sourceLine" id="cb33-21" title="21">      {% endfor %}</a></code></pre></div>
 <p>(You’ll notice that some tags take up multiple lines now. This is purely for readability and is totally ok!)</p>
 <p>Notice several changes to the html that renders each todo item:</p>
 <ul>
@@ -875,7 +877,7 @@
 <a class="sourceLine" id="cb39-11" title="11">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Update&quot;</span><span class="kw">&gt;</span></a></code></pre></div>
 <p>Now if you create a todo, then visit the url <code>/edit-todo0</code>, you should see the original text displayed and be able to edit and save your changes with the Update button.</p>
 <ol start="5" type="1">
-<li>Finally we need to add an edit button to each todo on the view list page. Add the following html snippet for a button underneath the Check/ Uncheck button.</li>
+<li>Finally we need to add an edit button to each todo on the view list page. Add the following html snippet for a button underneath the Check/ Uncheck button (but within the div tag that surrounds it).</li>
 </ol>
 <div class="sourceCode" id="cb40" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb40-1" title="1"><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;/edit-todo{{i}}&quot;</span><span class="ot"> method=</span><span class="st">&quot;GET&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb40-2" title="2">    <span class="kw">&lt;button</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> style=</span><span class="st">&quot;float: right&quot;</span><span class="ot"> value=</span><span class="st">&quot;{{i}}&quot;</span><span class="ot"> name=</span><span class="st">&quot;edit-button&quot;</span><span class="ot"> id=</span><span class="st">&quot;edit-button&quot;</span><span class="ot"> todo-id=</span><span class="st">&quot;{{i}}&quot;</span><span class="kw">&gt;</span></a>
