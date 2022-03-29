@@ -7,7 +7,7 @@
     <title> To-do List Web App - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1648565759.7102005">
+    <link rel="stylesheet" href="/static/style.css?v=1648578186.3636863">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -773,30 +773,44 @@
   opacity: 0.2;
 }</code></pre>
 <p>When the checked class is attached to a todo item, it will have a lime background and appear blurred out due to the decreased opacity (default opacity is 1, 0 is fully invisible).</p>
+<p>But how do we distinguish a checked todo item from an unchecked one? Our <code>todo</code> class currently contains no data for determining this! Let’s add a <code>checked</code> property, of type <code>bool</code>, that will be <code>False</code> when an item is unchecked, and <code>True</code> when it is checked.</p>
+<div class="sourceCode" id="cb33" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb33-1" title="1"><span class="kw">class</span> todo:</a>
+<a class="sourceLine" id="cb33-2" title="2">    <span class="bu">id</span>: <span class="bu">int</span></a>
+<a class="sourceLine" id="cb33-3" title="3">    title: <span class="bu">str</span></a>
+<a class="sourceLine" id="cb33-4" title="4">    description: <span class="bu">str</span></a>
+<a class="sourceLine" id="cb33-5" title="5">    color: <span class="bu">str</span></a>
+<a class="sourceLine" id="cb33-6" title="6">    checked: <span class="bu">bool</span></a>
+<a class="sourceLine" id="cb33-7" title="7"></a>
+<a class="sourceLine" id="cb33-8" title="8">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, <span class="bu">id</span>: <span class="bu">int</span>, title: <span class="bu">str</span>, description: <span class="bu">str</span>, color: <span class="bu">str</span>):</a>
+<a class="sourceLine" id="cb33-9" title="9">        <span class="va">self</span>.<span class="bu">id</span> <span class="op">=</span> <span class="bu">id</span></a>
+<a class="sourceLine" id="cb33-10" title="10">        <span class="va">self</span>.title <span class="op">=</span> title</a>
+<a class="sourceLine" id="cb33-11" title="11">        <span class="va">self</span>.description <span class="op">=</span> description</a>
+<a class="sourceLine" id="cb33-12" title="12">        <span class="va">self</span>.color <span class="op">=</span> color</a>
+<a class="sourceLine" id="cb33-13" title="13">        <span class="va">self</span>.checked <span class="op">=</span> <span class="va">False</span> <span class="co"># Every new item begins as unchecked</span></a></code></pre></div>
 <ol start="2" type="1">
 <li>Inside your <code>view-list.html</code> template, there is currently a for-in loop responsible for rendering each of the items. Replace the current for-in loop with the following code snippet</li>
 </ol>
-<div class="sourceCode" id="cb33" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb33-1" title="1">    {% for i in range(todo_list| length) %} {% set todo = todo_list[i] %}</a>
-<a class="sourceLine" id="cb33-2" title="2">      &lt;div</a>
-<a class="sourceLine" id="cb33-3" title="3">        class=&quot;todo {{ &#39;checked&#39; if not todo.visible else &#39;&#39;}}&quot;</a>
-<a class="sourceLine" id="cb33-4" title="4">      &gt;</a>
-<a class="sourceLine" id="cb33-5" title="5">      &lt;div&gt;</a>
-<a class="sourceLine" id="cb33-6" title="6">        &lt;form action=&quot;/view-todo-list&quot; method=&quot;POST&quot;&gt;</a>
-<a class="sourceLine" id="cb33-7" title="7">          &lt;button</a>
-<a class="sourceLine" id="cb33-8" title="8">            type=&quot;submit&quot;</a>
-<a class="sourceLine" id="cb33-9" title="9">            style=&quot;float: right&quot;</a>
-<a class="sourceLine" id="cb33-10" title="10">            value=&quot;{{i}}&quot;</a>
-<a class="sourceLine" id="cb33-11" title="11">            name=&quot;check-button&quot;</a>
-<a class="sourceLine" id="cb33-12" title="12">            id=&quot;check-button&quot;</a>
-<a class="sourceLine" id="cb33-13" title="13">          &gt;</a>
-<a class="sourceLine" id="cb33-14" title="14">            {{&#39;Check&#39; if todo.visible else &#39;Uncheck&#39;}}</a>
-<a class="sourceLine" id="cb33-15" title="15">          &lt;/button&gt;</a>
-<a class="sourceLine" id="cb33-16" title="16">        &lt;/form&gt;</a>
-<a class="sourceLine" id="cb33-17" title="17">        &lt;/div&gt;</a>
-<a class="sourceLine" id="cb33-18" title="18">        &lt;h4&gt;{{todo.title}}&lt;/h4&gt;</a>
-<a class="sourceLine" id="cb33-19" title="19">        &lt;p&gt;{{todo.description}}&lt;/p&gt;</a>
-<a class="sourceLine" id="cb33-20" title="20">      &lt;/div&gt;</a>
-<a class="sourceLine" id="cb33-21" title="21">      {% endfor %}</a></code></pre></div>
+<div class="sourceCode" id="cb34" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb34-1" title="1">    {% for i in range(todo_list| length) %} {% set todo = todo_list[i] %}</a>
+<a class="sourceLine" id="cb34-2" title="2">      &lt;div</a>
+<a class="sourceLine" id="cb34-3" title="3">        class=&quot;todo {{ &#39;checked&#39; if todo.checked else &#39;&#39;}}&quot;</a>
+<a class="sourceLine" id="cb34-4" title="4">      &gt;</a>
+<a class="sourceLine" id="cb34-5" title="5">      &lt;div&gt;</a>
+<a class="sourceLine" id="cb34-6" title="6">        &lt;form action=&quot;/view-todo-list&quot; method=&quot;POST&quot;&gt;</a>
+<a class="sourceLine" id="cb34-7" title="7">          &lt;button</a>
+<a class="sourceLine" id="cb34-8" title="8">            type=&quot;submit&quot;</a>
+<a class="sourceLine" id="cb34-9" title="9">            style=&quot;float: right&quot;</a>
+<a class="sourceLine" id="cb34-10" title="10">            value=&quot;{{i}}&quot;</a>
+<a class="sourceLine" id="cb34-11" title="11">            name=&quot;check-button&quot;</a>
+<a class="sourceLine" id="cb34-12" title="12">            id=&quot;check-button&quot;</a>
+<a class="sourceLine" id="cb34-13" title="13">          &gt;</a>
+<a class="sourceLine" id="cb34-14" title="14">            {{&#39;Uncheck&#39; if todo.checked else &#39;Check&#39;}}</a>
+<a class="sourceLine" id="cb34-15" title="15">          &lt;/button&gt;</a>
+<a class="sourceLine" id="cb34-16" title="16">        &lt;/form&gt;</a>
+<a class="sourceLine" id="cb34-17" title="17">        &lt;/div&gt;</a>
+<a class="sourceLine" id="cb34-18" title="18">        &lt;h4&gt;{{todo.title}}&lt;/h4&gt;</a>
+<a class="sourceLine" id="cb34-19" title="19">        &lt;p&gt;{{todo.description}}&lt;/p&gt;</a>
+<a class="sourceLine" id="cb34-20" title="20">      &lt;/div&gt;</a>
+<a class="sourceLine" id="cb34-21" title="21">      {% endfor %}</a></code></pre></div>
 <p>(You’ll notice that some tags take up multiple lines now. This is purely for readability and is totally ok!)</p>
 <p>Notice several changes to the html that renders each todo item:</p>
 <ul>
@@ -809,26 +823,23 @@
 <li>Every button has the same <code>name</code> and <code>id</code>, <code>check-button</code></li>
 </ul>
 <blockquote>
-<p>Also recall that a <code>todo</code> object has a <code>visible</code> property, which we haven’t used yet! This <code>bool</code> field will represent whether the item is checked off or not. Every <code>todo</code> item starts out with <code>visible = True</code>, which we will say indicates that it is incomplete. When <code>todo.visible = False</code>, the item is complete.</p>
-</blockquote>
-<blockquote>
 <p>The most interesting part of these is the presence of new conditional statements, of this form:</p>
 </blockquote>
 <pre><code>{{ value1 if boolean_condition else value2 }}</code></pre>
 <p>These are called <em>ternary expressions</em>, and are present in many programming languages (including python!) The expression will evaluate to <code>value1</code> when <code>boolean_condition</code> is <code>True</code>, and <code>value2</code> when <code>boolean_condition</code> is <code>False</code>. For example, the Button’s text content is</p>
-<pre><code>{{&#39;Check&#39; if todo.visible else &#39;Uncheck&#39;}}</code></pre>
-<p>meaning that the button will say Check when <code>todo.visible</code> is <code>True</code> (the item is incomplete) and <code>Uncheck</code> when <code>todo.visible</code> is <code>False</code>. The same is true for the button’s classes - the checked class will be applied when <code>todo.visible</code> is <code>False</code>, but not when it is <code>True</code>.</p>
+<pre><code>{{&#39;Check&#39; if not todo.checked else &#39;Uncheck&#39;}}</code></pre>
+<p>meaning that the button will say Check when <code>todo.checked</code> is <code>False</code> (the item is not checked) and <code>Uncheck</code> when <code>todo.checked</code> is <code>True</code>. The same is true for the button’s classes - the checked class will be applied when <code>todo.checked</code> is <code>True</code>, but not when it is <code>False</code>.</p>
 <ol start="3" type="1">
 <li>Now that we’ve laid the groundwork with html and css, we need to change our python code to handle when a user pushes one of the buttons. Change your <code>view_todo_list</code> method to the following:</li>
 </ol>
-<div class="sourceCode" id="cb36" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/view-todo-list&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
-<a class="sourceLine" id="cb36-2" title="2"><span class="kw">def</span> view_todo_list():</a>
-<a class="sourceLine" id="cb36-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span> <span class="kw">and</span> <span class="bu">len</span>(todo_list) <span class="op">&gt;</span> <span class="dv">0</span>:</a>
-<a class="sourceLine" id="cb36-4" title="4">        idx: <span class="bu">int</span> <span class="op">=</span> <span class="bu">int</span>(request.form[<span class="st">&#39;check-button&#39;</span>])</a>
-<a class="sourceLine" id="cb36-5" title="5">        todo_list[idx].visible <span class="op">=</span> <span class="kw">not</span> todo_list[idx].visible</a>
-<a class="sourceLine" id="cb36-6" title="6">    <span class="cf">return</span> render_template(<span class="st">&#39;view-list.html&#39;</span>, todo_list<span class="op">=</span>todo_list)</a></code></pre></div>
-<p><code>view_todo_list</code> now supports those POST requests we’ll be sending when a user presses a button. When a user presses a button, the <code>request.form['check-button']</code> will contain the <em>index</em> of <code>todo_list</code> that they want to check/uncheck (see the button’s value property!!). From there, we go into the <code>todo_list</code> and flip its <code>visible</code> property. If it was <code>True</code>, it will become <code>False</code>, and vice versa. Then, when the page reloads, the item will be seen as checked, and the styling will be applied!</p>
-<p>(The check that len(todo_list) &gt; 0 is not required, but can prevent crashing when you refresh the page and potentially empty out your todo_list…)</p>
+<div class="sourceCode" id="cb37" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb37-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/view-todo-list&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
+<a class="sourceLine" id="cb37-2" title="2"><span class="kw">def</span> view_todo_list():</a>
+<a class="sourceLine" id="cb37-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span> <span class="kw">and</span> <span class="bu">len</span>(todo_list) <span class="op">&gt;</span> <span class="dv">0</span>:</a>
+<a class="sourceLine" id="cb37-4" title="4">        idx: <span class="bu">int</span> <span class="op">=</span> <span class="bu">int</span>(request.form[<span class="st">&#39;check-button&#39;</span>])</a>
+<a class="sourceLine" id="cb37-5" title="5">        todo_list[idx].checked <span class="op">=</span> <span class="kw">not</span> todo_list[idx].checked</a>
+<a class="sourceLine" id="cb37-6" title="6">    <span class="cf">return</span> render_template(<span class="st">&#39;view-list.html&#39;</span>, todo_list<span class="op">=</span>todo_list)</a></code></pre></div>
+<p><code>view_todo_list</code> now supports those POST requests we’ll be sending when a user presses a button. When a user presses a button, the <code>request.form['check-button']</code> will contain the <em>index</em> of <code>todo_list</code> that they want to check/uncheck (see the button’s value attribute!!). From there, we go into the <code>todo_list</code> and flip its <code>checked</code> property. If it was <code>True</code>, it will become <code>False</code>, and vice versa. Then, when the page reloads, the item will be seen as checked, and the styling will be applied!</p>
+<p>(The check that <code>len(todo_list) &gt; 0</code> is not required, but can prevent crashing when you refresh the page and potentially empty out your todo_list…)</p>
 <h2 id="bonus-editing-tasks">Bonus: Editing Tasks</h2>
 <p>Note: The Checking Items Bonus must be complete to implement the Editing Tasks bonus.</p>
 <p>In this bonus task you will add the ability to edit your tasks from the view list page. We will do this using a feature of flask that allows us to use variables in our routes. We can make use of this feature in order to show an edit page for an individual todo.</p>
@@ -836,54 +847,54 @@
 <li><p>Lets define two more files in our <code>templates</code> directory for displaying an edit form page and successful edit page. Create a new file in <code>templates</code> named <code>edit-todo.html</code>. Copy and paste the contents of your <code>create-todo.html</code> file into the new edit file.</p></li>
 <li><p>Create a new file in <code>templates</code> named <code>edit-success.html</code>. Copy and paste the contents of your <code>success.html</code> file into the new success file. Update the contents of this file to say something about a successful edit instead of a successful creation. You can also add the following html tag somewhere in your body for an easy way of returning to the view list page:</p></li>
 </ol>
-<div class="sourceCode" id="cb37"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb37-1" title="1"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/view-todo-list&quot;</span><span class="kw">&gt;</span>Return to list view<span class="kw">&lt;/a&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/view-todo-list&quot;</span><span class="kw">&gt;</span>Return to list view<span class="kw">&lt;/a&gt;</span></a></code></pre></div>
 <ol start="3" type="1">
 <li>Now we need to add a route for rendering these new templates. Add the following code snippet in your <code>app.py</code> file:</li>
 </ol>
-<div class="sourceCode" id="cb38" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb38-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/edit-todo&lt;todo_number&gt;&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
-<a class="sourceLine" id="cb38-2" title="2"><span class="kw">def</span> edit_todo(todo_number: <span class="bu">str</span>):</a>
-<a class="sourceLine" id="cb38-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</a>
-<a class="sourceLine" id="cb38-4" title="4">        <span class="kw">global</span> todo_list</a>
-<a class="sourceLine" id="cb38-5" title="5"></a>
-<a class="sourceLine" id="cb38-6" title="6">        title: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;title&#39;</span>]</a>
-<a class="sourceLine" id="cb38-7" title="7">        description: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;description&#39;</span>]</a>
-<a class="sourceLine" id="cb38-8" title="8">        color: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;color&#39;</span>]</a>
-<a class="sourceLine" id="cb38-9" title="9"></a>
-<a class="sourceLine" id="cb38-10" title="10">        <span class="cf">if</span> title <span class="op">==</span> <span class="st">&#39;&#39;</span>:</a>
-<a class="sourceLine" id="cb38-11" title="11">            <span class="cf">return</span> render_template(<span class="st">&quot;edit-todo.html&quot;</span>)</a>
-<a class="sourceLine" id="cb38-12" title="12"></a>
-<a class="sourceLine" id="cb38-13" title="13">        todo_list[<span class="bu">int</span>(todo_number)].title <span class="op">=</span> title</a>
-<a class="sourceLine" id="cb38-14" title="14">        todo_list[<span class="bu">int</span>(todo_number)].description <span class="op">=</span> description</a>
-<a class="sourceLine" id="cb38-15" title="15">        todo_list[<span class="bu">int</span>(todo_number)].color <span class="op">=</span> color</a>
-<a class="sourceLine" id="cb38-16" title="16"></a>
-<a class="sourceLine" id="cb38-17" title="17">        <span class="cf">return</span> render_template(<span class="st">&quot;edit-success.html&quot;</span>)</a>
-<a class="sourceLine" id="cb38-18" title="18">    <span class="cf">return</span> render_template(<span class="st">&#39;edit-todo.html&#39;</span>, todo<span class="op">=</span>todo_list[<span class="bu">int</span>(todo_number)])</a></code></pre></div>
+<div class="sourceCode" id="cb39" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb39-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/edit-todo&lt;todo_number&gt;&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
+<a class="sourceLine" id="cb39-2" title="2"><span class="kw">def</span> edit_todo(todo_number: <span class="bu">str</span>):</a>
+<a class="sourceLine" id="cb39-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</a>
+<a class="sourceLine" id="cb39-4" title="4">        <span class="kw">global</span> todo_list</a>
+<a class="sourceLine" id="cb39-5" title="5"></a>
+<a class="sourceLine" id="cb39-6" title="6">        title: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;title&#39;</span>]</a>
+<a class="sourceLine" id="cb39-7" title="7">        description: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;description&#39;</span>]</a>
+<a class="sourceLine" id="cb39-8" title="8">        color: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;color&#39;</span>]</a>
+<a class="sourceLine" id="cb39-9" title="9"></a>
+<a class="sourceLine" id="cb39-10" title="10">        <span class="cf">if</span> title <span class="op">==</span> <span class="st">&#39;&#39;</span>:</a>
+<a class="sourceLine" id="cb39-11" title="11">            <span class="cf">return</span> render_template(<span class="st">&quot;edit-todo.html&quot;</span>)</a>
+<a class="sourceLine" id="cb39-12" title="12"></a>
+<a class="sourceLine" id="cb39-13" title="13">        todo_list[<span class="bu">int</span>(todo_number)].title <span class="op">=</span> title</a>
+<a class="sourceLine" id="cb39-14" title="14">        todo_list[<span class="bu">int</span>(todo_number)].description <span class="op">=</span> description</a>
+<a class="sourceLine" id="cb39-15" title="15">        todo_list[<span class="bu">int</span>(todo_number)].color <span class="op">=</span> color</a>
+<a class="sourceLine" id="cb39-16" title="16"></a>
+<a class="sourceLine" id="cb39-17" title="17">        <span class="cf">return</span> render_template(<span class="st">&quot;edit-success.html&quot;</span>)</a>
+<a class="sourceLine" id="cb39-18" title="18">    <span class="cf">return</span> render_template(<span class="st">&#39;edit-todo.html&#39;</span>, todo<span class="op">=</span>todo_list[<span class="bu">int</span>(todo_number)])</a></code></pre></div>
 <blockquote>
 <p>This route is slightly more complex than ones we have defined previously. The syntax <code>&lt;todo_number&gt;</code> defines an unknown in the URL with a variable name of <code>todo_number</code>. When this route is accessed, it will pass the given <code>todo_number</code> to the <code>edit_todo</code> function. Then the <code>todo_number</code> can be converted to an <code>int</code> and used to select the correct todo our of our <code>todos</code> list. For instance, if we navigate to the URL <code>/edit-todo2</code>, we could expect to be shown all the data about the third todo that was created. (Since we started at 0)</p>
 </blockquote>
 <ol start="4" type="1">
 <li>Most of the logic in the <code>edit_todo</code> function matches the <code>create_todo</code> function. Notice however, that when we render the <code>edit-todo.html</code> template we pass it a todo. Let’s update the copied HTML in <code>edit-todo.html</code> to show the values of the todo we are trying to edit.</li>
 </ol>
-<div class="sourceCode" id="cb39" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb39-1" title="1">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;title&quot;</span><span class="ot"> name=</span><span class="st">&quot;title&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb39-2" title="2">        // updates to</a>
-<a class="sourceLine" id="cb39-3" title="3">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;title&quot;</span><span class="ot"> name=</span><span class="st">&quot;title&quot;</span><span class="ot"> value=</span><span class="st">&quot;{{todo.title}}&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb39-4" title="4"></a>
-<a class="sourceLine" id="cb39-5" title="5">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;description&quot;</span><span class="ot"> name=</span><span class="st">&quot;description&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb39-6" title="6">        // updates to</a>
-<a class="sourceLine" id="cb39-7" title="7">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;description&quot;</span><span class="ot"> name=</span><span class="st">&quot;description&quot;</span><span class="ot"> value=</span><span class="st">&quot;{{todo.description}}&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb39-8" title="8"></a>
-<a class="sourceLine" id="cb39-9" title="9">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Create&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb39-10" title="10">        // updates to</a>
-<a class="sourceLine" id="cb39-11" title="11">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Update&quot;</span><span class="kw">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb40" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb40-1" title="1">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;title&quot;</span><span class="ot"> name=</span><span class="st">&quot;title&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb40-2" title="2">        // updates to</a>
+<a class="sourceLine" id="cb40-3" title="3">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;title&quot;</span><span class="ot"> name=</span><span class="st">&quot;title&quot;</span><span class="ot"> value=</span><span class="st">&quot;{{todo.title}}&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb40-4" title="4"></a>
+<a class="sourceLine" id="cb40-5" title="5">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;description&quot;</span><span class="ot"> name=</span><span class="st">&quot;description&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb40-6" title="6">        // updates to</a>
+<a class="sourceLine" id="cb40-7" title="7">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;description&quot;</span><span class="ot"> name=</span><span class="st">&quot;description&quot;</span><span class="ot"> value=</span><span class="st">&quot;{{todo.description}}&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb40-8" title="8"></a>
+<a class="sourceLine" id="cb40-9" title="9">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Create&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb40-10" title="10">        // updates to</a>
+<a class="sourceLine" id="cb40-11" title="11">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Update&quot;</span><span class="kw">&gt;</span></a></code></pre></div>
 <p>Now if you create a todo, then visit the url <code>/edit-todo0</code>, you should see the original text displayed and be able to edit and save your changes with the Update button.</p>
 <ol start="5" type="1">
 <li>Finally we need to add an edit button to each todo on the view list page. Add the following html snippet for a button underneath the Check/ Uncheck button (but within the div tag that surrounds it).</li>
 </ol>
-<div class="sourceCode" id="cb40" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb40-1" title="1"><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;/edit-todo{{i}}&quot;</span><span class="ot"> method=</span><span class="st">&quot;GET&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb40-2" title="2">    <span class="kw">&lt;button</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> style=</span><span class="st">&quot;float: right&quot;</span><span class="ot"> value=</span><span class="st">&quot;{{i}}&quot;</span><span class="ot"> name=</span><span class="st">&quot;edit-button&quot;</span><span class="ot"> id=</span><span class="st">&quot;edit-button&quot;</span><span class="ot"> todo-id=</span><span class="st">&quot;{{i}}&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb40-3" title="3">        Edit</a>
-<a class="sourceLine" id="cb40-4" title="4">    <span class="kw">&lt;/button&gt;</span></a>
-<a class="sourceLine" id="cb40-5" title="5"><span class="kw">&lt;/form&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb41" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb41-1" title="1"><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;/edit-todo{{i}}&quot;</span><span class="ot"> method=</span><span class="st">&quot;GET&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb41-2" title="2">    <span class="kw">&lt;button</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> style=</span><span class="st">&quot;float: right&quot;</span><span class="ot"> value=</span><span class="st">&quot;{{i}}&quot;</span><span class="ot"> name=</span><span class="st">&quot;edit-button&quot;</span><span class="ot"> id=</span><span class="st">&quot;edit-button&quot;</span><span class="ot"> todo-id=</span><span class="st">&quot;{{i}}&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb41-3" title="3">        Edit</a>
+<a class="sourceLine" id="cb41-4" title="4">    <span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb41-5" title="5"><span class="kw">&lt;/form&gt;</span></a></code></pre></div>
 <blockquote>
 <p>Here the specified route for the action adds the <code>i</code> counter/ todo id so that when you click this button it navigates to that specific todo based on it’s id number.</p>
 </blockquote>
@@ -895,12 +906,12 @@
 <li>Create a new file in your repo named <code>dev.py</code></li>
 <li>Paste in the following code snippet and save.</li>
 </ol>
-<div class="sourceCode" id="cb41" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb41-1" title="1"><span class="im">from</span> app <span class="im">import</span> app</a>
-<a class="sourceLine" id="cb41-2" title="2"><span class="im">from</span> livereload <span class="im">import</span> Server</a>
-<a class="sourceLine" id="cb41-3" title="3"></a>
-<a class="sourceLine" id="cb41-4" title="4"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</a>
-<a class="sourceLine" id="cb41-5" title="5">   server <span class="op">=</span> Server(app.wsgi_app)</a>
-<a class="sourceLine" id="cb41-6" title="6">   server.serve()</a></code></pre></div>
+<div class="sourceCode" id="cb42" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb42-1" title="1"><span class="im">from</span> app <span class="im">import</span> app</a>
+<a class="sourceLine" id="cb42-2" title="2"><span class="im">from</span> livereload <span class="im">import</span> Server</a>
+<a class="sourceLine" id="cb42-3" title="3"></a>
+<a class="sourceLine" id="cb42-4" title="4"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</a>
+<a class="sourceLine" id="cb42-5" title="5">   server <span class="op">=</span> Server(app.wsgi_app)</a>
+<a class="sourceLine" id="cb42-6" title="6">   server.serve()</a></code></pre></div>
 <ol start="4" type="1">
 <li>Whenever you would like to run your app with livereload run <code>python -m dev</code> in your terminal and open your browser to <code>http://127.0.0.1:5500/</code></li>
 </ol>
