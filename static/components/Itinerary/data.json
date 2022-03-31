@@ -722,7 +722,8 @@
             "date": "2022-03-31",
             "deadline": "None",
             "links": {
-                "Quarantine Stream": "https://youtu.be/hNC9VLLNxVU"
+                "Quarantine Stream": "https://youtu.be/hNC9VLLNxVU",
+                "Slides": "/static/slides/c21-vectorized-ops-and-oop.pdf"
             }
         }
     ],
