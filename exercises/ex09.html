@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> David Nassif - COMP110 - 22S</title>
+    <title> EX09 - Simpy - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1648693804.8755934">
+    <link rel="stylesheet" href="/static/style.css?v=1648693774.354447">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -164,45 +164,87 @@
             });
         </script>
 
-        <div id="profile-page" class="container">
+        <div id="exercises-page" class="container">
             <div class="row pt-4">
 
 
                 <div class="col-12">
-                    <h1 class="display-5">David Nassif</h1>
+                    <h1 class="display-5">EX09 - Simpy</h1>
                     <hr class="title"/>
                 </div>
             </div>
 
-    <div class="container">
-        <div class="row"><div class="col">
-                <div class="content"><figure>
-<img src="../../../static/profile-photos/danassif.jpeg" alt="profile-photo" /><figcaption>profile-photo</figcaption>
-</figure>
-<h2 id="pronouns">Pronouns</h2>
-<p>He/Him/His </div>
-            </div><div class="col">
-                <div class="content"></p>
-<h2 id="hometown">Hometown</h2>
-<p>Naples, Florida</p>
-<h2 id="unc-status">UNC Status</h2>
-<p>Class of 2023</p>
-<h2 id="major">Major</h2>
-<p>Economics &amp; Computer Science, Statistics Minor </div>
-            </div><div class="col">
-                <div class="content"></p>
-<h2 id="interests">Interests</h2>
-<p>Lifting Weights, board games, food enthusiast, music lover</p>
-<h2 id="non-academic-fun-fact">Non-academic fun fact</h2>
-<p>I once hiked a 5000+ ft. tall mountain barefoot. I would not recommend.</p>
-<h2 id="favorite-music-artist">Favorite music artist</h2>
-<p>🎵 The Weeknd 🎵</p>
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+    
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            
+            <div id="button-box class="link-pag box">
+            </div>
+
+            <div id="menu-overview" class="link-page box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul><li><a href="#overview">Overview</a></li>
+<li><a href="#pull-the-skeleton-code">0. Pull the skeleton code</a></li>
+<li><a href="#starter-files">1. Starter Files</a></li>
+<li><a href="#corrections">Corrections</a></li>
+<li><a href="#autograding">Autograding</a></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><h2 id="overview">Overview</h2>
+<p>In Exercise 09, you will write a utility class for working with a column of numerical values. This will give practice with constructors, methods, operator overloading and more. In the process, you will develop a keen understanding for the intuition and abstractions provided by a highly popular and valuable to understand library called <code>NumPy</code>. We will explore <em>NumPy</em> later in the course!</p>
+<p>In this exercise, you will build-up an abstraction, with many powerful capabilities, in the form of a class called <code>Simpy</code>.</p>
+<p>The lectures posted to the course site on 3/29 cover all the conceptual material needed to complete the exericse.</p>
+<p><strong>Due Monday 4/11 at 11:59pm - Start Early!</strong></p>
+<h2 id="pull-the-skeleton-code">0. Pull the skeleton code</h2>
+<p>You will find the starter files needed by “pulling” from the course workspace repository. Before beginning, be sure to:</p>
+<ol start="0" type="1">
+<li>Be sure you are in your course workspace. Open the file explorer and you should see your work for the course. If you do not, open your course workspace through File &gt; Open Recent.</li>
+<li>Open the <em>Source Control View</em> by clicking the 3-node (circles) graph (connected by lines) icon in your sidebar or opening the command palatte and searching for <em>Source Control</em>.</li>
+<li>Click the Ellipses in the Source Control pane and select “Pull” from the drop-down menu. This will begin the pulling process from the course repository. It should silently succeed.</li>
+<li>Return to the File Explorer pane and open the <code>exercises</code> directory. You should see it now contains another directory named <code>ex09</code>. If you expand that directory, you should see the starter file for the three functions you’ll be writing.</li>
+<li>If you do not see the <code>ex09</code> directory, try once more but selecting <code>"Pull From"</code> and select <code>upstream</code> in step 2. If you expand that directory, you will see the starter files: <code>Simpy.py</code> and <code>SimpyDemos.ipynb</code>.</li>
+</ol>
+<p>Assignment Outline</p>
+<ul>
+<li>Parts 0 through 5 – 30 Points Autograded</li>
+<li>Parts 6 through 10 – 50 Points Autograded</li>
+<li>Checks for Understanding #1 and # 2 – 10 Points Handgraded</li>
+<li>Style, Linting – 10 Points Autograded</li>
+</ul>
+<h2 id="starter-files">1. Starter Files</h2>
+<p>Your work in this exercise will be completed across two files:</p>
+<ol type="1">
+<li><p><code>Simpy.py</code> - This is the Python module where your <code>Simpy</code> class is implemented.</p></li>
+<li><p><code>SimpyDemos.ipynb</code> - This is the Jupyter Notebook file that walks you through each of the methods of <code>Simpy</code> and provides sample uses. There are additionally a few <em>check for understanding</em> cells that will ask you to solve problems in terms of methods you previously implemented.</p></li>
+</ol>
+<p>The descriptions of the functions you will need to implement, as well as example code that makes use of those functions once they are correctly implemented, can be found in the <code>SimpyDemos.ipynb</code> file.</p>
+<p>If your screen is large enough, you are encouraged to open these files side-by-side in VSCode by dragging the tab of one to the right side of VSCode so that it changes to a split pane view. Closing your file explorer can help give you additional horizontal space.</p>
+<p><strong>Be sure to save your work in <code>Simpy.py</code> before reevaluating cells in <code>SimpyDemos.ipynb</code>. Sometimes the Jupyter Notebook can reach a bad state and the only way to fix is to close your <code>ipynb</code> tab and reopen a new one, thus restarting the kernel.</strong></p>
+<h2 id="corrections">Corrections</h2>
+<p>If there are corrections or clarifications needed to the instructions in the <code>ipynb</code> file, they will post in this section.</p>
+<h2 id="autograding">Autograding</h2>
+<p>Save your <code>.ipynb</code> file before submission! You should have <em>Run All</em> cells to do so.</p>
+<p>Login to Gradescope and select the assignment named “EX09 - Simpy”. You’ll see an area to upload a zip file. To produce a zip file for autograding, return back to Visual Studio Code.</p>
+<p>If you <em>do not</em> see a Terminal at the bottom of your screen, open the Command Palette and search for “View: Toggle Integrated Terminal”.</p>
+<p>To produce a zip file for <code>ex09</code>, type the following command (all on a single line):</p>
+<p><code>python -m tools.submission exercises/ex09</code></p>
+<p>In the file explorer pane, look to find the zip file named “21.mm.dd-hh.mm-exercises-ex09.zip”. The “mm”, “dd”, and so on, are timestamps with the current month, day, hour, minute. If you right click on this file and select “Reveal in File Explorer” on Windows or “Reveal in Finder” on Mac, the zip file’s location on your computer will open. Upload this file to Gradescope to submit your work for this exercise.</p>
+<p>Autograding will take a few moments to complete. For this exercise there will be 15 points manually graded for the <code>Checks for Understanding</code> cells in the notebook being completed. If there are issues reported, you are encouraged to try and resolve them and resubmit. If for any reason you aren’t receiving full credit and aren’t sure what to try next, come give us a visit in office hours!</p>
 </div>
-            </div></div>
-    </div>
+
+    </div> 
 
             <div class="authors-box">
-                <span> Contributor(s): David Nassif</span>
+                <span> Contributor(s):                        Kris Jordan, Kaki Ryan</span>
             </div>
             
             <div class='link-page wrapper'>

@@ -628,5 +628,45 @@
                 "Reading found on Gradescope": "https://gradescope.com"
             }
         }
-    ]
+    ],
+    "2022-03-22": [
+        {
+            "kind": "LS",
+            "n": 24,
+            "title": "Intro to Object-oriented Programming: Classes, Methods, and __init__",
+            "date": "2022-03-22",
+            "deadline": "2022-03-23",
+            "links": {
+                "Watch Lesson": "https://www.youtube.com/watch?v=wBhS8OXtM5Q"
+            }
+        }
+    ],
+    "2022-03-23": [
+        {
+            "kind": "EX",
+            "n": 8,
+            "title": "Analysis for Continuous Improvement - Due Tues 3/29",
+            "date": "2022-03-23",
+            "deadline": "2022-03-29",
+            "links": {
+                "Write-up": "/exercises/ex08.html"
+            }
+        }
+    ],
+    "2022-03-24": [
+        {
+            "kind": "CL",
+            "n": 19,
+            "title": "Optional Parameters, Union Types, and OOP Practice",
+            "date": "2022-03-24",
+            "deadline": "None",
+            "links": {
+                "Quarantine Stream": "https://youtu.be/pZ3m630uGqw",
+                "Slides": "/static/slides/cl19-oop-practice.pdf"
+            }
+        }
+    ],
+    "2022-03-25": [],
+    "2022-03-26": [],
+    "2022-03-27": []
 }
