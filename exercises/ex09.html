@@ -7,7 +7,7 @@
     <title> EX09 - Simpy - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1648841490.3582935">
+    <link rel="stylesheet" href="/static/style.css?v=1648843630.2064612">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -230,7 +230,11 @@
 <p>If your screen is large enough, you are encouraged to open these files side-by-side in VSCode by dragging the tab of one to the right side of VSCode so that it changes to a split pane view. Closing your file explorer can help give you additional horizontal space.</p>
 <p><strong>Be sure to save your work in <code>Simpy.py</code> before reevaluating cells in <code>SimpyDemos.ipynb</code>. Sometimes the Jupyter Notebook can reach a bad state and the only way to fix is to close your <code>ipynb</code> tab and reopen a new one, thus restarting the kernel.</strong></p>
 <h2 id="corrections">Corrections</h2>
-<p>If there are corrections or clarifications needed to the instructions in the <code>ipynb</code> file, they will post in this section.</p>
+<p>In the code cell for Part 3, the second set of examples should read as follows:</p>
+<pre><code>fractional = Simpy([])
+fractional.arange(0.0, 1.0, 0.25)
+print(&quot;Actual: &quot;, fractional, &quot; - Expected: Simpy([0.0, 0.25, 0.5, 0.75])&quot;)</code></pre>
+<p>The variable name <code>fractional</code> should be used for the <code>Simpy</code> object, rather than <code>positive</code> which was a carry over from the example above.</p>
 <h2 id="autograding">Autograding</h2>
 <p>Save your <code>.ipynb</code> file before submission! You should have <em>Run All</em> cells to do so.</p>
 <p>Login to Gradescope and select the assignment named “EX09 - Simpy”. You’ll see an area to upload a zip file. To produce a zip file for autograding, return back to Visual Studio Code.</p>
