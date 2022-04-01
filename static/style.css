@@ -349,9 +349,7 @@ code {
 }
 
 .height-adjusted{
- 
-  height: 23em;
- 
+  height: 32em;
 }
 .lessons-col-box {
   margin-bottom: 1.5em;
@@ -453,6 +451,11 @@ a:hover {
 }
 
 /* All mobile devices */
+@media screen and (max-width: 1200px) {
+  .height-adjusted{
+    height: 34em;
+  }
+}
 @media screen and (max-width: 1050px) {
   /* Navbar spacing */
   .navbar-expand,
@@ -1103,7 +1106,7 @@ code span.in {
   }
 
   .height-adjusted{
-    height: 25em;
+    height: 38em;
   }
 
   .lessons-wrap {
@@ -1131,17 +1134,17 @@ code span.in {
   }
 
   .height-adjusted{
-    height: 30em;
+    height: 44em;
   }
 }
 
 @media screen and (max-width: 536px) {
   .lessons-fixed-box {
-    height: 38em;
+    height: 46em;
   }
 
   .height-adjusted{
-    height: 33em;
+    height: 53em;
   }
 }
 
@@ -1149,7 +1152,11 @@ code span.in {
   .lessons-fixed-box {
     height: 43em;
   }
+  .height-adjusted{
+    height: 50em;
+  }
 }
+
 
 .datebox {
   width: 100%;
