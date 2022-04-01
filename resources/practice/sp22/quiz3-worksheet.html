@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Quiz 02 Practice - COMP110 - 22S</title>
+    <title> Quiz 03 Practice - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1648841515.2201948">
+    <link rel="stylesheet" href="/static/style.css?v=1648841515.007361">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -169,7 +169,7 @@
 
 
                 <div class="col-12">
-                    <h1 class="display-5">Quiz 02 Practice</h1>
+                    <h1 class="display-5">Quiz 03 Practice</h1>
                     <hr class="title"/>
                 </div>
             </div>
@@ -190,13 +190,13 @@
                         <ul><li><a href="#questions">Questions</a><ul>
 <li><a href="#conceptual-questions">Conceptual Questions</a></li>
 <li><a href="#memory-diagrams">Memory Diagrams</a></li>
-<li><a href="#code-tracing">Code Tracing</a></li>
+<li><a href="#class-writing">Class Writing</a></li>
 <li><a href="#function-writing">Function Writing</a></li>
 </ul></li>
 <li><a href="#solutions">Solutions</a><ul>
 <li><a href="#conceptual-questions-1">Conceptual Questions</a></li>
 <li><a href="#memory-diagrams-1">Memory Diagrams</a></li>
-<li><a href="#code-tracing-1">Code Tracing</a></li>
+<li><a href="#class-writing-1">Class Writing</a></li>
 <li><a href="#function-writing-1">Function Writing</a></li>
 </ul></li>
 </ul>
@@ -207,70 +207,54 @@
         </div>
 
         <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><!--
-Note: this wkst pulls from the qz02 and qz03 worksheets from resources/practice/fa21 with some
+Note: this wkst is a copy of the qz04 worksheet from resources/practice/fa21 with some
 minor changes/additions
 -->
 <h1 id="questions">Questions</h1>
-<p>The quiz itself will be similar in difficulty but longer in length than this practice worksheet.</p>
 <p>Solutions for each problem can be found at the bottom of this page.</p>
 <h2 id="conceptual-questions">Conceptual Questions</h2>
 <ol type="1">
-<li>The values in a list cannot be changed while your program is running. (T/F)</li>
-<li>The last index of a list is the length of the list. (T/F)</li>
-<li>You can initialize an empty list with no items. (T/F)</li>
-<li>For the purposes of this class, all items in a list are of the same type. (T/F)</li>
-<li>While loops inside a function may continue looping after a return statement is reached. (T/F)</li>
-<li>The condition of a while loop must be a boolean expression (T/F)</li>
-<li>Global variables are limited to the scope of the function they are declared in. (T/F)</li>
-<li>Variables can have the same name but store different values if they are defined in a different scope. (T/F)</li>
-<li>Named constants should be used to store values that may change throughout the program. (T/F)</li>
-<li>All pytest test function names must begin with <code>test</code>.</li>
-<li>A test will pass if it does not hit a <code>False</code> assertion or some other type of error.</li>
-<li>Test functions should be written in a file with a name matching the file that the functions are defined in, followed by <code>_test</code>.</li>
-<li>When using a <code>for...in</code> loop, on the first line of the loop you must specify the type of the variable (variable refers to <code>i</code> in <code>for i in nums</code>). (T/F)</li>
-<li>In Python dictionaries, each dictionary’s value type must match its key type. (T/F)</li>
-<li>Writing a <code>for...in</code> loop on a <code>dict</code> loops through the keys of a dictionary. (T/F)</li>
-<li>The values in a dictionary cannot be changed once they are assigned. (T/F)</li>
-<li>Explain the similarities and differences between Python’s <code>list</code> and <code>dict</code>.</li>
+<li>A class definition provides a pattern for creating objects, but doesn’t make any objects itself. (T/F)</li>
+<li>By convention, Python class names start with a lowercase letter. (T/F)</li>
+<li>When you define a method in a class, all objects of that class have that method associated with it. (T/F)</li>
+<li>The first parameter of a method is a copy of the object the method is called on. (T/F)</li>
+<li>A class definition must come before an object of that class is instantiated. (T/F)</li>
+<li>You must have an instance of a class (an object) to call the class’s constructor. (T/F)</li>
+<li>Constructors must have the <code>self</code> parameter in their signature. (T/F)</li>
+<li>Constructors must take at least one parameter other than the self parameter. (T/F)</li>
+<li>Objects are passed into functions by reference. (T/F)</li>
+<li>The type of an object is the same as the name of the class it is an instance of. (T/F)</li>
+<li>A method is not pure if it creates a new object. (T/F)</li>
+<li>Required (positional) arguments always come before optional arguments. (T/F)</li>
+<li>Union types allow for arguments to be one of multiple types. (T/F)</li>
 </ol>
 <h2 id="memory-diagrams">Memory Diagrams</h2>
-<ol start="18" type="1">
+<ol start="14" type="1">
 <li><p>Produce a memory diagram for the following code snippet, being sure to include its stack and output.<br />
-<img src="/static/practice_worksheets/fa21/qz02-question11.png" /></p></li>
+<img src="/static/practice_worksheets/fa21/qz04-question11.png" /></p></li>
 <li><p>Produce a memory diagram for the following code snippet, being sure to include its stack and output.<br />
-<img src="/static/practice_worksheets/fa21/qz02-question12new.png" /></p></li>
-<li><p>Produce a memory diagram for the following code snippet, being sure to include its stack and output.<br />
-<img src="/static/practice_worksheets/fa21/qz03-question12.png" /></p></li>
+<img src="/static/practice_worksheets/fa21/qz04-question12.png" /></p></li>
 </ol>
-<h2 id="code-tracing">Code Tracing</h2>
-<ol start="21" type="1">
-<li><p>Given the following code snippet, answer the questions below.<br />
-<img src="/static/practice_worksheets/fa21/qz02-question13.png" /><br />
-21.1. What is the printed output once the code snippet completes?<br />
-21.2. What are the values of the global variables <code>a</code>, <code>b</code>, and <code>c</code> once the code snippet completes?</p></li>
-<li><p>Given the following code snippet, answer the questions below.<br />
-<img src="/static/practice_worksheets/fa21/qz02-question14.png" /><br />
-22.1. What is the value of <code>list_1</code> once the code snippet completes?<br />
-22.2. What is the value of <code>i</code> on line 13 during the <em>last</em> call to <code>change_and_check</code>?<br />
-22.3. How many total frames are created on the stack throughout the run of this program (including the globals frame)?</p></li>
+<h2 id="class-writing">Class Writing</h2>
+<ol start="16" type="1">
+<li>This class is slightly challenging, but take it step by step! Create a <code>ChristmasTreeFarm</code> class with the following specifications:
+<ol type="a">
+<li>The <code>ChristmasTreeFarm</code> class should have one attribute: a <code>list[int]</code> named <code>plots</code>. This list will hold values that represent the size of the tree planted in each plot. If the value at an index of the list is 0, then the plot at that index is empty (does not have a tree). Any value other than 0 indicates that a tree is growing in that plot!</li>
+<li>The constructor for the class should take two arguments, both of type int. The first parameter should be called <code>plots</code> and is an <code>int</code> representing the total number of plots in the farm. Notice that the attribute <code>plots</code> and the parameter <code>plots</code> for this constructor are different, and represent different things! The second parameter should be called <code>initial_planting</code> representing the amount of plots that should be planted initially. These initially planted plots will be trees of size 1. The constructor should initialize the <code>plots</code> attribute to an empty <code>list</code>, and then append <code>initial_planting</code> trees of size 1. After that, the constructor should fill the rest of the plots with zeroes to indicate that they are empty!</li>
+<li>The class should define a method called <code>plant</code>. This method should take an argument of type <code>int</code>, representing the plot index at which a tree should be planted. The tree should be size 1 when planted. If this method is called on a plot that already has a tree, the old tree will be uprooted and replaced with a new baby tree (size 1).</li>
+<li>The class should define a method called <code>growth</code>. This method should increase the size of each planted tree by 1. Remember that unplanted plots are represented by a 0 in the <code>plots</code> list.</li>
+<li>The class should define a method called <code>harvest</code>. This method should take an argument called <code>replant</code> of type <code>bool</code> that will determine whether this method replants trees (sets them to size 1 after harvest) or leaves the plots empty (sets them to size 0 after harvest). For our method, trees that are at least size 5 will be harvested. The method will return the count of how many trees were successfully harvested (type <code>int</code>).<br />
+</li>
+<li>The class should overload the addition operator. This method should be pure and work between two objects of type <code>ChristmasTreeFarm</code>. The method should return a new <code>ChristmasTreeFarm</code> object whose size is the sum of the given <code>ChristmasTreeFarm</code>s, and whose initial plantings are the sum of the number of planted trees in the given <code>ChristmasTreeFarm</code>s.</li>
+</ol></li>
 </ol>
 <h2 id="function-writing">Function Writing</h2>
-<ol start="23" type="1">
-<li><p>Write a function called <code>odd_and_even</code>. Given a list of <code>ints</code>, <code>odd_and_even</code> should return a new list containing the elements that are odd and have an even index.<br />
-Example Usage:<br />
-<img src="/static/practice_worksheets/fa21/qz02-question15demo.png" /></p></li>
-<li><p>Write a function named <code>vowels_and_threes</code>. Given a string, <code>vowels_and_threes</code> should return a new string containing the characters that are either at an index that is a multiple of 3 or a vowel (one or the other, not both). You can assume that the input string is all lowercase, for simplicity.<br />
-Example Usage:<br />
-<img src="/static/practice_worksheets/fa21/qz02-question16demo.png" /></p></li>
-<li><p>Write a function called <code>average_grades</code>. Given a dictionary with <code>str</code> keys and <code>list[int]</code> values, <code>average_grades</code> should return a new dictionary of type <code>dict[str, float]</code> that maps each student to their average.<br />
-<img src="/static/practice_worksheets/sp22/qz02-solution17.png" /></p></li>
-</ol>
+<p>17A. Write a function called <code>find_courses</code>. Given the following <code>Course</code> class definition, <code>find_courses</code> should take in a <code>list[Courses]</code> and a <code>str</code> prerequisite to search for. The function should return a list of the <code>names</code> of each Course whose <code>level</code> is 400+ and whose <code>prerequisites</code> list contains the given string.<br />
+<img src="/static/practice_worksheets/fa21/qz04-question14.png" /></p>
+<p>17B. Write a method called <code>is_valid_course</code> for the <code>Course</code> class. The method should take in a <code>str</code> prerequisite and return a <code>bool</code> that represents whether the course’s <code>level</code> is 400+ and if its <code>prerequisites</code> list contains the given string.</p>
 <h1 id="solutions">Solutions</h1>
 <h2 id="conceptual-questions-1">Conceptual Questions</h2>
 <ol type="1">
-<li>False</li>
-<li>False</li>
-<li>True</li>
 <li>True</li>
 <li>False</li>
 <li>True</li>
@@ -278,40 +262,25 @@ Example Usage:<br />
 <li>True</li>
 <li>False</li>
 <li>True</li>
-<li>True</li>
-<li>True</li>
-<li>False</li>
 <li>False</li>
 <li>True</li>
+<li>True</li>
 <li>False</li>
-<li>Similarities:<br />
-Both are collections that can be looped through using a <code>for...in</code> loop, reference types that live on the heap, mutable, can duplicate values, subscription notation to access values, <code>.pop()</code> to remove items<br />
-Differences:<br />
-<code>list</code> – Index by increasing integers, add items with <code>.append()</code>, ordered, <code>for...in</code> loop gives items<br />
-<code>dict</code> – Matched Key-Value pairs, pair with assignment operator <code>=</code> (<code>dict_name[key] = value</code>), control over key type (not limited to <code>int</code>), <code>for...in</code> gives keys<br />
-Note: these are not all of the similarities and differences, just some important ones to remember</li>
+<li>True</li>
+<li>True</li>
 </ol>
 <h2 id="memory-diagrams-1">Memory Diagrams</h2>
-<ol start="18" type="1">
-<li><p><img src="/static/practice_worksheets/fa21/qz02-solution11.png" /></p></li>
-<li><p><img src="/static/practice_worksheets/fa21/qz02-solution12n.png" /></p></li>
-<li><p><img src="/static/practice_worksheets/fa21/qz03-solution12.png" /></p></li>
+<ol start="14" type="1">
+<li><p><img src="/static/practice_worksheets/fa21/qz04-solution11.png" /></p></li>
+<li><p><img src="/static/practice_worksheets/fa21/qz04-solution12.png" /></p></li>
 </ol>
-<h2 id="code-tracing-1">Code Tracing</h2>
-<ol start="21" type="1">
-<li><p>21.1. <code>[3, 7, 10, 13]</code><br />
-21.2. a = 3, b = 0, c = 13.5</p></li>
-<li><p>22.1. <code>[6, 7, 5, 3, 0]</code><br />
-22.2. 3<br />
-22.3. 4</p></li>
+<h2 id="class-writing-1">Class Writing</h2>
+<ol start="16" type="1">
+<li><img src="/static/practice_worksheets/fa21/qz04-solution13.png" /> <img src="/static/practice_worksheets/sp22/qz03-solution16-from-fa21-sol13.png" /></li>
 </ol>
 <h2 id="function-writing-1">Function Writing</h2>
-<p>Note: Your solution does not need to be identical to these, these are just two of many possible solutions.</p>
-<ol start="23" type="1">
-<li><p><img src="/static/practice_worksheets/fa21/qz02-solution15.png" /></p></li>
-<li><p><img src="/static/practice_worksheets/fa21/qz02-solution16.png" /></p></li>
-<li><p><img src="/static/practice_worksheets/fa21/qz03-solution14.png" /></p></li>
-</ol>
+<p>17A. <img src="/static/practice_worksheets/fa21/qz04-solution14A.png" /></p>
+<p>17B. <img src="/static/practice_worksheets/fa21/qz04-solution14B.png" /></p>
 </div>
 
     </div> 

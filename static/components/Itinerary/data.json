@@ -761,7 +761,9 @@
             "title": "Quiz 3",
             "date": "2022-04-07",
             "deadline": "2022-04-07",
-            "links": {}
+            "links": {
+                "Practice Questions": "/resources/practice/sp22/quiz3-worksheet.html"
+            }
         }
     ],
     "2022-04-08": [],

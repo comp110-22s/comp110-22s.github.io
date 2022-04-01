@@ -669,5 +669,37 @@
     "2022-03-25": [],
     "2022-03-26": [],
     "2022-03-27": [],
-    "2022-03-28": []
+    "2022-03-28": [],
+    "2022-03-29": [
+        {
+            "kind": "LS",
+            "n": 25,
+            "title": "Magic Methods",
+            "date": "2022-03-29",
+            "deadline": "2022-03-30",
+            "links": {
+                "Watch Lesson": "https://www.youtube.com/watch?v=yxDIEqm_K6c"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 26,
+            "title": "Operator Overloading",
+            "date": "2022-03-29",
+            "deadline": "2022-03-30",
+            "links": {
+                "Watch Lesson": "https://youtu.be/JJLnGL-cShU"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 27,
+            "title": "Filtering Column-oriented Data",
+            "date": "2022-03-29",
+            "deadline": "2022-03-30",
+            "links": {
+                "Watch Lesson": "https://www.youtube.com/watch?v=_htZ8sB2qe8"
+            }
+        }
+    ]
 }
