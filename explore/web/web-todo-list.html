@@ -7,7 +7,7 @@
     <title> To-do List Web App - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1648843643.8323412">
+    <link rel="stylesheet" href="/static/style.css?v=1648844463.8527472">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -475,7 +475,7 @@
 <a class="sourceLine" id="cb18-3" title="3">    title: <span class="bu">str</span></a>
 <a class="sourceLine" id="cb18-4" title="4">    description: <span class="bu">str</span></a>
 <a class="sourceLine" id="cb18-5" title="5"></a>
-<a class="sourceLine" id="cb18-6" title="6">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, <span class="bu">id</span>: <span class="bu">int</span>, title: <span class="bu">str</span>, description: <span class="bu">str</span>, color: <span class="bu">str</span>):</a>
+<a class="sourceLine" id="cb18-6" title="6">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, <span class="bu">id</span>: <span class="bu">int</span>, title: <span class="bu">str</span>, description: <span class="bu">str</span>):</a>
 <a class="sourceLine" id="cb18-7" title="7">        <span class="va">self</span>.<span class="bu">id</span> <span class="op">=</span> <span class="bu">id</span></a>
 <a class="sourceLine" id="cb18-8" title="8">        <span class="va">self</span>.title <span class="op">=</span> title</a>
 <a class="sourceLine" id="cb18-9" title="9">        <span class="va">self</span>.description <span class="op">=</span> description</a></code></pre></div>
@@ -729,7 +729,7 @@
 <a class="sourceLine" id="cb29-16" title="16"></a>
 <a class="sourceLine" id="cb29-17" title="17">        todo_count <span class="op">+=</span> <span class="dv">1</span></a>
 <a class="sourceLine" id="cb29-18" title="18"></a>
-<a class="sourceLine" id="cb29-19" title="19">        <span class="cf">return</span> render_template(<span class="st">&quot;success.html&quot;</span>, , title<span class="op">=</span>title, description<span class="op">=</span>descriptiono)</a>
+<a class="sourceLine" id="cb29-19" title="19">        <span class="cf">return</span> render_template(<span class="st">&quot;success.html&quot;</span>, , title<span class="op">=</span>title, description<span class="op">=</span>description)</a>
 <a class="sourceLine" id="cb29-20" title="20">    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a></code></pre></div>
 <p>We are now reading and storing the data for the color category we added in the create todo form and are ready to change our view list display to reflect this!</p>
 <ol start="3" type="1">
