@@ -701,5 +701,31 @@
                 "Watch Lesson": "https://www.youtube.com/watch?v=_htZ8sB2qe8"
             }
         }
-    ]
+    ],
+    "2022-03-30": [
+        {
+            "kind": "EX",
+            "n": 9,
+            "title": "Simpy - Due Mon 4/11",
+            "date": "2022-03-30",
+            "deadline": "2022-04-11",
+            "links": {
+                "Write-up": "/exercises/ex09.html"
+            }
+        }
+    ],
+    "2022-03-31": [
+        {
+            "kind": "CL",
+            "n": 21,
+            "title": "Vectorized Operations and OOP Code Writing",
+            "date": "2022-03-31",
+            "deadline": "None",
+            "links": {
+                "Quarantine Stream": "https://youtu.be/hNC9VLLNxVU",
+                "Slides": "/static/slides/c21-vectorized-ops-and-oop.pdf"
+            }
+        }
+    ],
+    "2022-04-01": []
 }

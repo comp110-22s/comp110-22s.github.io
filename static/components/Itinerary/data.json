@@ -733,23 +733,15 @@
     "2022-04-04": [],
     "2022-04-05": [
         {
-            "kind": "LS",
-            "n": 28,
-            "title": "Intro to Recursion",
+            "kind": "CL",
+            "n": 22,
+            "title": "Practice Diagrams for Quiz 3 - No Gradescope Submission",
             "date": "2022-04-05",
-            "deadline": "2022-04-06",
+            "deadline": "None",
             "links": {
-                "Lesson posts 4/5": ""
-            }
-        },
-        {
-            "kind": "LS",
-            "n": 29,
-            "title": "Recursive Data Structures",
-            "date": "2022-04-05",
-            "deadline": "2022-04-06",
-            "links": {
-                "Lesson posts 4/5": ""
+                "Practice Diagram #1": "https://youtu.be/XFynblkouZ4",
+                "Practice Diagram #2": "https://youtu.be/f1bnbit3Rlo",
+                "Practice Diagram #3": "https://youtu.be/YfprfyavgzY"
             }
         }
     ],
