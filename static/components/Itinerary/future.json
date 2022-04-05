@@ -1,5 +1,4 @@
 {
-    "2022-04-02": [],
     "2022-04-03": [],
     "2022-04-04": [],
     "2022-04-05": [
@@ -13,6 +12,16 @@
                 "Practice Diagram #1": "https://youtu.be/XFynblkouZ4",
                 "Practice Diagram #2": "https://youtu.be/f1bnbit3Rlo",
                 "Practice Diagram #3": "https://youtu.be/YfprfyavgzY"
+            }
+        },
+        {
+            "kind": "RV",
+            "n": 2,
+            "title": "Review Session for Quiz 3",
+            "date": "2022-04-05",
+            "deadline": "None",
+            "links": {
+                "6:30pm-7:30pm in Fred Brooks 007": ""
             }
         }
     ],
