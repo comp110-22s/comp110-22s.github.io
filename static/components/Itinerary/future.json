@@ -21,7 +21,8 @@
             "date": "2022-04-05",
             "deadline": "None",
             "links": {
-                "6:30pm-7:30pm in Fred Brooks 007": ""
+                "6:30pm-7:30pm in Fred Brooks 007": "",
+                "Zoom": "https://unc.zoom.us/j/99613004320"
             }
         }
     ],
@@ -61,8 +62,7 @@
             "date": "2022-04-12",
             "deadline": "2022-04-13",
             "links": {
-                "Lesson posts on Gradescope on 4/9": "https://gradescope.com",
-                "Zoom": "https://unc.zoom.us/j/99613004320"
+                "Lesson posts on Gradescope on 4/9": "https://gradescope.com"
             }
         }
     ],
