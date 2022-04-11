@@ -792,7 +792,7 @@
             "date": "2022-04-12",
             "deadline": "2022-04-13",
             "links": {
-                "Lesson posts on Gradescope on 4/9": "https://gradescope.com"
+                "Lesson Posted on Gradescope": "https://gradescope.com"
             }
         }
     ],
@@ -802,22 +802,70 @@
     "2022-04-16": [],
     "2022-04-17": [],
     "2022-04-18": [],
-    "2022-04-19": [],
+    "2022-04-19": [
+        {
+            "kind": "LS",
+            "n": 31,
+            "title": "Recursion Introduction - Async",
+            "date": "2022-04-19",
+            "deadline": "2022-04-22",
+            "links": {
+                "Video Posts ": ""
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 10,
+            "title": "Recursion Exercise - Due 4/27",
+            "date": "2022-04-19",
+            "deadline": "2022-04-27",
+            "links": {
+                "Write-up Posts Tuesday 4/19": ""
+            }
+        }
+    ],
     "2022-04-20": [],
-    "2022-04-21": [],
+    "2022-04-21": [
+        {
+            "kind": "CL",
+            "n": 26,
+            "title": "Recursion in-person",
+            "date": "2022-04-21",
+            "deadline": "None",
+            "links": {
+                "Quarantine Stream": "https://youtu.be/LmV4ArXOAXc"
+            }
+        }
+    ],
     "2022-04-22": [],
     "2022-04-23": [],
     "2022-04-24": [],
     "2022-04-25": [],
-    "2022-04-26": [],
+    "2022-04-26": [
+        {
+            "kind": "CL",
+            "n": 27,
+            "title": "LDOC",
+            "date": "2022-04-26",
+            "deadline": "None",
+            "links": {
+                "Quarantine Stream": "https://youtu.be/mVrHPx1RqSo"
+            }
+        }
+    ],
     "2022-04-30": [
         {
             "kind": "FN",
             "n": 0,
-            "title": "Final @ 08:00:00",
+            "title": "Final @ 8:00AM",
             "date": "2022-04-30",
             "deadline": "None",
-            "links": {}
+            "links": {
+                "Sec001 in Hamilton 100": "",
+                "Sec002 in Genome G100": "",
+                "Final Exam Conflict Reschedule - 8am May 1st in SN014": "",
+                "3 in 24 Reschedule - 8am May 1st in SN014": ""
+            }
         }
     ]
 }
