@@ -706,9 +706,9 @@
         {
             "kind": "EX",
             "n": 9,
-            "title": "Simpy - Due Mon 4/11",
+            "title": "Simpy - Due Tues 4/12",
             "date": "2022-03-30",
-            "deadline": "2022-04-11",
+            "deadline": "2022-04-12",
             "links": {
                 "Write-up": "/exercises/ex09.html"
             }
@@ -796,18 +796,7 @@
             }
         }
     ],
-    "2022-04-13": [
-        {
-            "kind": "EX",
-            "n": 10,
-            "title": "Linked List Utils - Due 4/25",
-            "date": "2022-04-13",
-            "deadline": "2022-04-25",
-            "links": {
-                "Write-up Posts Wednesday 4/13": ""
-            }
-        }
-    ],
+    "2022-04-13": [],
     "2022-04-14": [],
     "2022-04-15": [],
     "2022-04-16": [],

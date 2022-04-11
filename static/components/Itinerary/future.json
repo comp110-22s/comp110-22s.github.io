@@ -1,44 +1,4 @@
 {
-    "2022-04-04": [],
-    "2022-04-05": [
-        {
-            "kind": "CL",
-            "n": 22,
-            "title": "Practice Diagrams for Quiz 3 - No Gradescope Submission",
-            "date": "2022-04-05",
-            "deadline": "None",
-            "links": {
-                "Practice Diagram #1": "https://youtu.be/XFynblkouZ4",
-                "Practice Diagram #2": "https://youtu.be/f1bnbit3Rlo",
-                "Practice Diagram #3": "https://youtu.be/YfprfyavgzY"
-            }
-        },
-        {
-            "kind": "RV",
-            "n": 2,
-            "title": "Review Session for Quiz 3",
-            "date": "2022-04-05",
-            "deadline": "None",
-            "links": {
-                "Slides": "https://docs.google.com/presentation/d/17w_grUufmj9eEydFSYjOHLAddPsaW1rze7np7sEaSdc/edit?usp=sharing",
-                "Recording (PW: DcPj49=N)": "https://docs.google.com/presentation/d/17w_grUufmj9eEydFSYjOHLAddPsaW1rze7np7sEaSdc/edit?usp=sharing"
-            }
-        }
-    ],
-    "2022-04-06": [],
-    "2022-04-07": [
-        {
-            "kind": "QZ",
-            "n": 3,
-            "title": "Quiz 3",
-            "date": "2022-04-07",
-            "deadline": "2022-04-07",
-            "links": {
-                "Practice Questions": "/resources/practice/sp22/quiz3-worksheet.html"
-            }
-        }
-    ],
-    "2022-04-08": [],
     "2022-04-09": [],
     "2022-04-10": [],
     "2022-04-11": [
@@ -65,18 +25,7 @@
             }
         }
     ],
-    "2022-04-13": [
-        {
-            "kind": "EX",
-            "n": 10,
-            "title": "Linked List Utils - Due 4/25",
-            "date": "2022-04-13",
-            "deadline": "2022-04-25",
-            "links": {
-                "Write-up Posts Wednesday 4/13": ""
-            }
-        }
-    ],
+    "2022-04-13": [],
     "2022-04-14": [],
     "2022-04-15": [],
     "2022-04-16": [],

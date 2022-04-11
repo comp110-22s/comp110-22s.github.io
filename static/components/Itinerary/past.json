@@ -706,9 +706,9 @@
         {
             "kind": "EX",
             "n": 9,
-            "title": "Simpy - Due Mon 4/11",
+            "title": "Simpy - Due Tues 4/12",
             "date": "2022-03-30",
-            "deadline": "2022-04-11",
+            "deadline": "2022-04-12",
             "links": {
                 "Write-up": "/exercises/ex09.html"
             }
@@ -729,5 +729,45 @@
     ],
     "2022-04-01": [],
     "2022-04-02": [],
-    "2022-04-03": []
+    "2022-04-03": [],
+    "2022-04-04": [],
+    "2022-04-05": [
+        {
+            "kind": "CL",
+            "n": 22,
+            "title": "Practice Diagrams for Quiz 3 - No Gradescope Submission",
+            "date": "2022-04-05",
+            "deadline": "None",
+            "links": {
+                "Practice Diagram #1": "https://youtu.be/XFynblkouZ4",
+                "Practice Diagram #2": "https://youtu.be/f1bnbit3Rlo",
+                "Practice Diagram #3": "https://youtu.be/YfprfyavgzY"
+            }
+        },
+        {
+            "kind": "RV",
+            "n": 2,
+            "title": "Review Session for Quiz 3",
+            "date": "2022-04-05",
+            "deadline": "None",
+            "links": {
+                "Slides": "https://docs.google.com/presentation/d/17w_grUufmj9eEydFSYjOHLAddPsaW1rze7np7sEaSdc/edit?usp=sharing",
+                "Recording (PW: DcPj49=N)": "https://docs.google.com/presentation/d/17w_grUufmj9eEydFSYjOHLAddPsaW1rze7np7sEaSdc/edit?usp=sharing"
+            }
+        }
+    ],
+    "2022-04-06": [],
+    "2022-04-07": [
+        {
+            "kind": "QZ",
+            "n": 3,
+            "title": "Quiz 3",
+            "date": "2022-04-07",
+            "deadline": "2022-04-07",
+            "links": {
+                "Practice Questions": "/resources/practice/sp22/quiz3-worksheet.html"
+            }
+        }
+    ],
+    "2022-04-08": []
 }
