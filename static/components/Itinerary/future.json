@@ -1,45 +1,16 @@
 {
-    "2022-04-09": [],
-    "2022-04-10": [],
-    "2022-04-11": [
-        {
-            "kind": "RD",
-            "n": 2,
-            "title": "Gender Shades - Due 4/22",
-            "date": "2022-04-11",
-            "deadline": "2022-04-22",
-            "links": {
-                "Reading on Sakai Reserves, Questions on Gradescope": "https://gradescope.com"
-            }
-        }
-    ],
-    "2022-04-12": [
-        {
-            "kind": "LS",
-            "n": 30,
-            "title": "Intro to NumPy and Pandas",
-            "date": "2022-04-12",
-            "deadline": "2022-04-13",
-            "links": {
-                "Lesson Posted on Gradescope": "https://gradescope.com"
-            }
-        }
-    ],
-    "2022-04-13": [],
-    "2022-04-14": [],
-    "2022-04-15": [],
-    "2022-04-16": [],
     "2022-04-17": [],
     "2022-04-18": [],
     "2022-04-19": [
         {
             "kind": "LS",
-            "n": 31,
+            "n": 29,
             "title": "Recursion Introduction - Async",
             "date": "2022-04-19",
-            "deadline": "2022-04-22",
+            "deadline": "2022-04-20",
             "links": {
-                "Video Posts 4/19": ""
+                "Follow-along Lesson": "https://www.youtube.com/watch?v=nVv7RDDtwdg",
+                "Gradescope Questions": "https://gradescope.com"
             }
         },
         {

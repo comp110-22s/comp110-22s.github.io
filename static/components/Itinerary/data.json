@@ -787,7 +787,7 @@
     "2022-04-12": [
         {
             "kind": "LS",
-            "n": 30,
+            "n": 28,
             "title": "Intro to NumPy and Pandas",
             "date": "2022-04-12",
             "deadline": "2022-04-13",
@@ -805,12 +805,13 @@
     "2022-04-19": [
         {
             "kind": "LS",
-            "n": 31,
+            "n": 29,
             "title": "Recursion Introduction - Async",
             "date": "2022-04-19",
-            "deadline": "2022-04-22",
+            "deadline": "2022-04-20",
             "links": {
-                "Video Posts 4/19": ""
+                "Follow-along Lesson": "https://www.youtube.com/watch?v=nVv7RDDtwdg",
+                "Gradescope Questions": "https://gradescope.com"
             }
         },
         {

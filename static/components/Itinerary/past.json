@@ -769,5 +769,35 @@
             }
         }
     ],
-    "2022-04-08": []
+    "2022-04-08": [],
+    "2022-04-09": [],
+    "2022-04-10": [],
+    "2022-04-11": [
+        {
+            "kind": "RD",
+            "n": 2,
+            "title": "Gender Shades - Due 4/22",
+            "date": "2022-04-11",
+            "deadline": "2022-04-22",
+            "links": {
+                "Reading on Sakai Reserves, Questions on Gradescope": "https://gradescope.com"
+            }
+        }
+    ],
+    "2022-04-12": [
+        {
+            "kind": "LS",
+            "n": 28,
+            "title": "Intro to NumPy and Pandas",
+            "date": "2022-04-12",
+            "deadline": "2022-04-13",
+            "links": {
+                "Lesson Posted on Gradescope": "https://gradescope.com"
+            }
+        }
+    ],
+    "2022-04-13": [],
+    "2022-04-14": [],
+    "2022-04-15": [],
+    "2022-04-16": []
 }
