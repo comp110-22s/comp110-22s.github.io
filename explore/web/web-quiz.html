@@ -7,7 +7,7 @@
     <title> Web Development - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1650484350.351569">
+    <link rel="stylesheet" href="/static/style.css?v=1650892941.4526305">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -187,34 +187,43 @@
                 <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
-                        <ul><li><a href="#getting-started">Getting started</a></li>
-<li><a href="#languages-and-tools">Languages and Tools</a><ul>
+                        <ul>doc-toc">
+<ul>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#languages-and-tools">Languages and Tools</a>
+<ul>
 <li><a href="#task-developer-tools">Task: Developer Tools</a></li>
 </ul></li>
-<li><a href="#css-and-html">CSS and HTML</a><ul>
+<li><a href="#css-and-html">CSS and HTML</a>
+<ul>
 <li><a href="#task-index.html">Task: index.html</a></li>
 <li><a href="#html-tags">HTML Tags</a></li>
 <li><a href="#task-styles.css">Task: styles.css</a></li>
 </ul></li>
-<li><a href="#basic-flask">Basic Flask</a><ul>
+<li><a href="#basic-flask">Basic Flask</a>
+<ul>
 <li><a href="#task-setting-up-flask">Task: Setting up Flask</a></li>
 <li><a href="#task-adding-a-new-page">Task: Adding a new page</a></li>
 </ul></li>
-<li><a href="#handling-methods">Handling Methods</a><ul>
+<li><a href="#handling-methods">Handling Methods</a>
+<ul>
 <li><a href="#task-form-submission">Task: Form Submission</a></li>
 <li><a href="#task-returning-to-quiz">Task: Returning to Quiz</a></li>
 </ul></li>
-<li><a href="#working-with-data">Working With Data</a><ul>
+<li><a href="#working-with-data">Working With Data</a>
+<ul>
 <li><a href="#task-evaluating-the-result">Task: Evaluating the Result</a></li>
 <li><a href="#task-displaying-the-result">Task: Displaying the Result</a></li>
 </ul></li>
-<li><a href="#displaying-stored-data">Displaying Stored Data</a><ul>
+<li><a href="#displaying-stored-data">Displaying Stored Data</a>
+<ul>
 <li><a href="#task-storing-the-data">Task: Storing the Data</a></li>
 <li><a href="#task-displaying-all-results">Task: Displaying All Results</a></li>
 <li><a href="#task-individual-results">Task: Individual Results</a></li>
 </ul></li>
 <li><a href="#bonus-hot-reload">Bonus: Hot Reload</a></li>
-<li><a href="#documentation-tools-and-resources">Documentation, Tools and Resources</a><ul>
+<li><a href="#documentation-tools-and-resources">Documentation, Tools and Resources</a>
+<ul>
 <li><a href="#helpful-vscode-extensions">Helpful VSCode Extensions</a></li>
 </ul></li>
 </ul>
@@ -268,16 +277,16 @@
 <li>Make a new file in your repository named <code>index.html</code>. This file name is a convention for the HTML file that represents your home page.</li>
 <li>Copy and paste the following HTML snippet into the file:</li>
 </ol>
-<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb1-1" title="1">&lt;!DOCTYPE html&gt;</a>
-<a class="sourceLine" id="cb1-2" title="2">&lt;html lang=&quot;en&quot;&gt;</a>
-<a class="sourceLine" id="cb1-3" title="3">    &lt;head&gt;</a>
-<a class="sourceLine" id="cb1-4" title="4">        &lt;meta charset=&quot;UTF-8&quot;&gt;</a>
-<a class="sourceLine" id="cb1-5" title="5">        &lt;title&gt;Intro to Web Dev!&lt;/title&gt;</a>
-<a class="sourceLine" id="cb1-6" title="6">    &lt;/head&gt;</a>
-<a class="sourceLine" id="cb1-7" title="7">    &lt;body&gt;</a>
-<a class="sourceLine" id="cb1-8" title="8">        &lt;p&gt;Hello World!&lt;/p&gt;</a>
-<a class="sourceLine" id="cb1-9" title="9">    &lt;/body&gt;</a>
-<a class="sourceLine" id="cb1-10" title="10">&lt;/html&gt;</a></code></pre></div>
+<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>&lt;!DOCTYPE html&gt;</span>
+<span id="cb1-2"><a href="#cb1-2"></a>&lt;html lang=&quot;en&quot;&gt;</span>
+<span id="cb1-3"><a href="#cb1-3"></a>    &lt;head&gt;</span>
+<span id="cb1-4"><a href="#cb1-4"></a>        &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<span id="cb1-5"><a href="#cb1-5"></a>        &lt;title&gt;Intro to Web Dev!&lt;/title&gt;</span>
+<span id="cb1-6"><a href="#cb1-6"></a>    &lt;/head&gt;</span>
+<span id="cb1-7"><a href="#cb1-7"></a>    &lt;body&gt;</span>
+<span id="cb1-8"><a href="#cb1-8"></a>        &lt;p&gt;Hello World!&lt;/p&gt;</span>
+<span id="cb1-9"><a href="#cb1-9"></a>    &lt;/body&gt;</span>
+<span id="cb1-10"><a href="#cb1-10"></a>&lt;/html&gt;</span></code></pre></div>
 <ol start="3" type="1">
 <li>Make sure the file is saved and then right click the file in the file explorer and click reveal in finder (Mac) or show in folder (Windows).</li>
 <li>In finder / file explorer, right click on the file and open it with google chrome. You should now see a basic webpage that says Hello World!</li>
@@ -290,13 +299,13 @@
 <li>Make a new file in your repository named <code>styles.css</code>. This file name is a convention for the CSS file that holds the core styling.</li>
 <li>Copy and paste the following CSS snippet into the file:</li>
 </ol>
-<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb2-1" title="1">p {</a>
-<a class="sourceLine" id="cb2-2" title="2">    color: #75c3f7;</a>
-<a class="sourceLine" id="cb2-3" title="3">  }</a></code></pre></div>
+<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>p {</span>
+<span id="cb2-2"><a href="#cb2-2"></a>    color: #75c3f7;</span>
+<span id="cb2-3"><a href="#cb2-3"></a>  }</span></code></pre></div>
 <ol start="3" type="1">
 <li>Make sure the file is saved and then add the following <code>link</code> tag inside the <code>&lt;head&gt;&lt;/head&gt;</code> tag in your <code>index.html</code> file. This will link your CSS file to your HTML file so that the styles we add are applied to our webpage.</li>
 </ol>
-<div class="sourceCode" id="cb3" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb3-1" title="1">&lt;link rel=&#39;stylesheet&#39; href=&#39;styles.css&#39; /&gt;</a></code></pre></div>
+<div class="sourceCode" id="cb3" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>&lt;link rel=&#39;stylesheet&#39; href=&#39;styles.css&#39; /&gt;</span></code></pre></div>
 <ol start="4" type="1">
 <li>Once both files are saved, reload the chrome page with your webpage and you should see the color of the <code>Hello World!</code> text change!</li>
 </ol>
@@ -311,16 +320,16 @@ TODO: add content on CSS selectores -->
 <li>Create a new directory in your repo named <code>static</code> and move your <code>styles.css</code> file inside of it.</li>
 <li>Create a new file called <code>app.py</code> in your repo and add the following code snippet.</li>
 </ol>
-<div class="sourceCode" id="cb4" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1"><span class="im">from</span> flask <span class="im">import</span> Flask, render_template</a>
-<a class="sourceLine" id="cb4-2" title="2"></a>
-<a class="sourceLine" id="cb4-3" title="3">app: Flask <span class="op">=</span> Flask(<span class="va">__name__</span>)</a>
-<a class="sourceLine" id="cb4-4" title="4"></a>
-<a class="sourceLine" id="cb4-5" title="5"><span class="at">@app.route</span>(<span class="st">&quot;/&quot;</span>)</a>
-<a class="sourceLine" id="cb4-6" title="6"><span class="kw">def</span> index():</a>
-<a class="sourceLine" id="cb4-7" title="7">    <span class="cf">return</span> render_template(<span class="st">&#39;index.html&#39;</span>)</a>
-<a class="sourceLine" id="cb4-8" title="8"></a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</a>
-<a class="sourceLine" id="cb4-10" title="10">    app.run(debug<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb4" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, render_template</span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a>app: Flask <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="at">@app.route</span>(<span class="st">&quot;/&quot;</span>)</span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="kw">def</span> index():</span>
+<span id="cb4-7"><a href="#cb4-7"></a>    <span class="cf">return</span> render_template(<span class="st">&#39;index.html&#39;</span>)</span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</span>
+<span id="cb4-10"><a href="#cb4-10"></a>    app.run(debug<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 <ol start="4" type="1">
 <li><p>Since we have moved the <code>styles.css</code> file we need to make sure to update our reference to it in <code>index.html</code>. Change <code>&lt;link rel='stylesheet' href='styles.css' /&gt;</code> to <code>&lt;link rel='stylesheet' href='/static/styles.css' /&gt;</code>.</p></li>
 <li><p>To run your app we need to run the <code>app.py</code> file as a python module: <code>python -m app</code> and then open your browser to the link it spits out in the terminal (http://127.0.0.1:5000/)</p></li>
@@ -332,44 +341,44 @@ TODO: Add content on routes / URLS -->
 <ol type="1">
 <li>Create a new file called <code>quiz.html</code> in your <code>templates</code> folder and paste the following HTML into it.</li>
 </ol>
-<div class="sourceCode" id="cb5" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb5-1" title="1">&lt;!DOCTYPE html&gt;</a>
-<a class="sourceLine" id="cb5-2" title="2">&lt;html lang=&quot;en&quot;&gt;</a>
-<a class="sourceLine" id="cb5-3" title="3">    &lt;head&gt;</a>
-<a class="sourceLine" id="cb5-4" title="4">        &lt;meta charset=&quot;UTF-8&quot;&gt;</a>
-<a class="sourceLine" id="cb5-5" title="5">        &lt;title&gt;Take the Quiz!&lt;/title&gt;</a>
-<a class="sourceLine" id="cb5-6" title="6">    &lt;/head&gt;</a>
-<a class="sourceLine" id="cb5-7" title="7">    &lt;body&gt;</a>
-<a class="sourceLine" id="cb5-8" title="8">        &lt;form method=&quot;post&quot;&gt;</a>
-<a class="sourceLine" id="cb5-9" title="9">            &lt;label for=&quot;fname&quot;&gt;First name:&lt;/label&gt;</a>
-<a class="sourceLine" id="cb5-10" title="10">            &lt;br /&gt;</a>
-<a class="sourceLine" id="cb5-11" title="11">            &lt;input type=&quot;text&quot; name=&quot;fname&quot;&gt;</a>
-<a class="sourceLine" id="cb5-12" title="12">            &lt;br /&gt;</a>
-<a class="sourceLine" id="cb5-13" title="13">            &lt;label for=&quot;lname&quot;&gt;Last name:&lt;/label&gt;</a>
-<a class="sourceLine" id="cb5-14" title="14">            &lt;br /&gt;</a>
-<a class="sourceLine" id="cb5-15" title="15">            &lt;input type=&quot;text&quot; name=&quot;lname&quot;&gt;</a>
-<a class="sourceLine" id="cb5-16" title="16">            &lt;br /&gt;</a>
-<a class="sourceLine" id="cb5-17" title="17">            &lt;label for=&quot;animal&quot;&gt;Favorite animal:&lt;/label&gt;</a>
-<a class="sourceLine" id="cb5-18" title="18">            &lt;select name=&quot;animal&quot;&gt;</a>
-<a class="sourceLine" id="cb5-19" title="19">                &lt;option value=&quot;lion&quot;&gt;lion&lt;/option&gt;</a>
-<a class="sourceLine" id="cb5-20" title="20">                &lt;option value=&quot;snake&quot;&gt;snake&lt;/option&gt;</a>
-<a class="sourceLine" id="cb5-21" title="21">                &lt;option value=&quot;eagle&quot;&gt;eagle&lt;/option&gt;</a>
-<a class="sourceLine" id="cb5-22" title="22">                &lt;option value=&quot;badger&quot;&gt;badger&lt;/option&gt;</a>
-<a class="sourceLine" id="cb5-23" title="23">            &lt;/select&gt;</a>
-<a class="sourceLine" id="cb5-24" title="24">            &lt;br /&gt;</a>
-<a class="sourceLine" id="cb5-25" title="25">            &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;</a>
-<a class="sourceLine" id="cb5-26" title="26">        &lt;/form&gt;</a>
-<a class="sourceLine" id="cb5-27" title="27">    &lt;/body&gt;</a>
-<a class="sourceLine" id="cb5-28" title="28">&lt;/html&gt;</a></code></pre></div>
+<div class="sourceCode" id="cb5" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>&lt;!DOCTYPE html&gt;</span>
+<span id="cb5-2"><a href="#cb5-2"></a>&lt;html lang=&quot;en&quot;&gt;</span>
+<span id="cb5-3"><a href="#cb5-3"></a>    &lt;head&gt;</span>
+<span id="cb5-4"><a href="#cb5-4"></a>        &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<span id="cb5-5"><a href="#cb5-5"></a>        &lt;title&gt;Take the Quiz!&lt;/title&gt;</span>
+<span id="cb5-6"><a href="#cb5-6"></a>    &lt;/head&gt;</span>
+<span id="cb5-7"><a href="#cb5-7"></a>    &lt;body&gt;</span>
+<span id="cb5-8"><a href="#cb5-8"></a>        &lt;form method=&quot;post&quot;&gt;</span>
+<span id="cb5-9"><a href="#cb5-9"></a>            &lt;label for=&quot;fname&quot;&gt;First name:&lt;/label&gt;</span>
+<span id="cb5-10"><a href="#cb5-10"></a>            &lt;br /&gt;</span>
+<span id="cb5-11"><a href="#cb5-11"></a>            &lt;input type=&quot;text&quot; name=&quot;fname&quot;&gt;</span>
+<span id="cb5-12"><a href="#cb5-12"></a>            &lt;br /&gt;</span>
+<span id="cb5-13"><a href="#cb5-13"></a>            &lt;label for=&quot;lname&quot;&gt;Last name:&lt;/label&gt;</span>
+<span id="cb5-14"><a href="#cb5-14"></a>            &lt;br /&gt;</span>
+<span id="cb5-15"><a href="#cb5-15"></a>            &lt;input type=&quot;text&quot; name=&quot;lname&quot;&gt;</span>
+<span id="cb5-16"><a href="#cb5-16"></a>            &lt;br /&gt;</span>
+<span id="cb5-17"><a href="#cb5-17"></a>            &lt;label for=&quot;animal&quot;&gt;Favorite animal:&lt;/label&gt;</span>
+<span id="cb5-18"><a href="#cb5-18"></a>            &lt;select name=&quot;animal&quot;&gt;</span>
+<span id="cb5-19"><a href="#cb5-19"></a>                &lt;option value=&quot;lion&quot;&gt;lion&lt;/option&gt;</span>
+<span id="cb5-20"><a href="#cb5-20"></a>                &lt;option value=&quot;snake&quot;&gt;snake&lt;/option&gt;</span>
+<span id="cb5-21"><a href="#cb5-21"></a>                &lt;option value=&quot;eagle&quot;&gt;eagle&lt;/option&gt;</span>
+<span id="cb5-22"><a href="#cb5-22"></a>                &lt;option value=&quot;badger&quot;&gt;badger&lt;/option&gt;</span>
+<span id="cb5-23"><a href="#cb5-23"></a>            &lt;/select&gt;</span>
+<span id="cb5-24"><a href="#cb5-24"></a>            &lt;br /&gt;</span>
+<span id="cb5-25"><a href="#cb5-25"></a>            &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;</span>
+<span id="cb5-26"><a href="#cb5-26"></a>        &lt;/form&gt;</span>
+<span id="cb5-27"><a href="#cb5-27"></a>    &lt;/body&gt;</span>
+<span id="cb5-28"><a href="#cb5-28"></a>&lt;/html&gt;</span></code></pre></div>
 <ol start="2" type="1">
 <li>Return to your <code>index.html</code> file and add the following HTML element in the body.</li>
 </ol>
-<div class="sourceCode" id="cb6" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb6-1" title="1">&lt;a href=&quot;/quiz&quot;&gt;take quiz&lt;/a&gt;</a></code></pre></div>
+<div class="sourceCode" id="cb6" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>&lt;a href=&quot;/quiz&quot;&gt;take quiz&lt;/a&gt;</span></code></pre></div>
 <ol start="3" type="1">
 <li>If you attempt to click on take quiz while viewing your <code>index.html</code> file on chrome, you will get an error! This is because we need to define the route to the quiz URL in our <code>app.py</code> file. Add the following code snippet in <code>app.py</code>, save all the files, and attempt to click take quiz again.</li>
 </ol>
-<div class="sourceCode" id="cb7" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/quiz&#39;</span>)</a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="kw">def</span> quiz():</a>
-<a class="sourceLine" id="cb7-3" title="3">    <span class="cf">return</span> render_template(<span class="st">&quot;quiz.html&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb7" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="at">@app.route</span>(<span class="st">&#39;/quiz&#39;</span>)</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="kw">def</span> quiz():</span>
+<span id="cb7-3"><a href="#cb7-3"></a>    <span class="cf">return</span> render_template(<span class="st">&quot;quiz.html&quot;</span>)</span></code></pre></div>
 <h2 id="handling-methods">Handling Methods</h2>
 <p>In order to add interactivity to the quiz form on our site we need to learn about HTTP request methods. We won’t need to know a lot about HTTP, but a simple definition is HTTP is a defined set of rules or protocols for fetching resources such as our HTML or CSS files.</p>
 <p>Two of these rules are the <code>GET</code> and <code>POST</code> methods. The <code>GET</code> method is a basic protocol for viewing or <em>getting</em> some resource such as our <code>index.html</code> file. The <code>POST</code> method is a protocol for updating or inserting new data. You can imagine when you <em>post</em> something on social media the data is getting uploaded so that everyone can now see your post.</p>
@@ -378,28 +387,28 @@ TODO: Add content on routes / URLS -->
 <ol type="1">
 <li>Create a new file in your templates folder named <code>result.html</code> that will be used to show the result of the quiz. Add the following HTML to this file:</li>
 </ol>
-<div class="sourceCode" id="cb8" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb8-1" title="1">&lt;!DOCTYPE html&gt;</a>
-<a class="sourceLine" id="cb8-2" title="2">&lt;html lang=&quot;en&quot;&gt;</a>
-<a class="sourceLine" id="cb8-3" title="3">    &lt;head&gt;</a>
-<a class="sourceLine" id="cb8-4" title="4">        &lt;meta charset=&quot;UTF-8&quot;&gt;</a>
-<a class="sourceLine" id="cb8-5" title="5">        &lt;title&gt;Take the Quiz!&lt;/title&gt;</a>
-<a class="sourceLine" id="cb8-6" title="6">    &lt;/head&gt;</a>
-<a class="sourceLine" id="cb8-7" title="7">    &lt;body&gt;</a>
-<a class="sourceLine" id="cb8-8" title="8">        &lt;p&gt;You were sorted into ravenclaw!&lt;/p&gt;</a>
-<a class="sourceLine" id="cb8-9" title="9">    &lt;/body&gt;</a>
-<a class="sourceLine" id="cb8-10" title="10">&lt;/html&gt;</a></code></pre></div>
+<div class="sourceCode" id="cb8" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>&lt;!DOCTYPE html&gt;</span>
+<span id="cb8-2"><a href="#cb8-2"></a>&lt;html lang=&quot;en&quot;&gt;</span>
+<span id="cb8-3"><a href="#cb8-3"></a>    &lt;head&gt;</span>
+<span id="cb8-4"><a href="#cb8-4"></a>        &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<span id="cb8-5"><a href="#cb8-5"></a>        &lt;title&gt;Take the Quiz!&lt;/title&gt;</span>
+<span id="cb8-6"><a href="#cb8-6"></a>    &lt;/head&gt;</span>
+<span id="cb8-7"><a href="#cb8-7"></a>    &lt;body&gt;</span>
+<span id="cb8-8"><a href="#cb8-8"></a>        &lt;p&gt;You were sorted into ravenclaw!&lt;/p&gt;</span>
+<span id="cb8-9"><a href="#cb8-9"></a>    &lt;/body&gt;</span>
+<span id="cb8-10"><a href="#cb8-10"></a>&lt;/html&gt;</span></code></pre></div>
 <ol start="2" type="1">
 <li>Notice how the HTML for the form in <code>quiz.html</code> says <code>method="post"</code>. When you click the submit button inside the form element it will use the HTTP protocol <code>POST</code>. This makes sense since we are going to be saving or <em>posting</em> new data for the users answers when they click the submit button. We can use this fact to render our result template in our quiz function. First, we will need to import the <code>request</code> ability from Flask. Update the Flask import at the top of your <code>app.py</code> file:</li>
 </ol>
-<div class="sourceCode" id="cb9" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" title="1"><span class="im">from</span> flask <span class="im">import</span> Flask, render_template, request</a></code></pre></div>
+<div class="sourceCode" id="cb9" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, render_template, request</span></code></pre></div>
 <ol start="3" type="1">
 <li>Now we are ready to handle different types of requests. Update your <code>quiz</code> function in <code>app.py</code> as seen below:</li>
 </ol>
-<div class="sourceCode" id="cb10" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/quiz&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="kw">def</span> quiz():</a>
-<a class="sourceLine" id="cb10-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</a>
-<a class="sourceLine" id="cb10-4" title="4">        <span class="cf">return</span> render_template(<span class="st">&quot;result.html&quot;</span>)</a>
-<a class="sourceLine" id="cb10-5" title="5">    <span class="cf">return</span> render_template(<span class="st">&quot;quiz.html&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb10" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="at">@app.route</span>(<span class="st">&#39;/quiz&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="kw">def</span> quiz():</span>
+<span id="cb10-3"><a href="#cb10-3"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</span>
+<span id="cb10-4"><a href="#cb10-4"></a>        <span class="cf">return</span> render_template(<span class="st">&quot;result.html&quot;</span>)</span>
+<span id="cb10-5"><a href="#cb10-5"></a>    <span class="cf">return</span> render_template(<span class="st">&quot;quiz.html&quot;</span>)</span></code></pre></div>
 <ol start="3" type="1">
 <li>Now, when you click the Submit button when viewing your <code>/quiz</code> page, our function will check if the request method was <code>POST</code> and render a result if so. Otherwise, we will see our normal quiz page. Keep in mind that the route or URL in your browser still shows <code>/quiz</code> since all we changed is what is rendered in our <code>quiz</code> function.</li>
 </ol>
@@ -408,19 +417,19 @@ TODO: Add content on routes / URLS -->
 <ol type="1">
 <li>Add the following HTML snippet into your <code>result.html</code> template underneath <code>&lt;p&gt;You were sorted into ravenclaw!&lt;/p&gt;</code>:</li>
 </ol>
-<div class="sourceCode" id="cb11" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb11-1" title="1">&lt;form method=&quot;get&quot;&gt;</a>
-<a class="sourceLine" id="cb11-2" title="2">    &lt;input type=&quot;submit&quot; value=&quot;Take the quiz again!&quot;&gt;</a>
-<a class="sourceLine" id="cb11-3" title="3">&lt;/form&gt;</a></code></pre></div>
+<div class="sourceCode" id="cb11" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb11-1"><a href="#cb11-1"></a>&lt;form method=&quot;get&quot;&gt;</span>
+<span id="cb11-2"><a href="#cb11-2"></a>    &lt;input type=&quot;submit&quot; value=&quot;Take the quiz again!&quot;&gt;</span>
+<span id="cb11-3"><a href="#cb11-3"></a>&lt;/form&gt;</span></code></pre></div>
 <ol start="2" type="1">
 <li>In this <code>form</code> we specified that <code>method="get"</code>. This makes sense since we are just requesting the <code>quiz.html</code> view instead of updating or posting any data. We could now update our <code>quiz</code> method to the code snippet below, but it is actually logically equivalent to what we have already written since any method that is not <code>POST</code> will render our <code>quiz.html</code> file as a default so there is no need.</li>
 </ol>
-<div class="sourceCode" id="cb12" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/quiz&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
-<a class="sourceLine" id="cb12-2" title="2"><span class="kw">def</span> quiz():</a>
-<a class="sourceLine" id="cb12-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</a>
-<a class="sourceLine" id="cb12-4" title="4">        <span class="cf">return</span> render_template(<span class="st">&quot;result.html&quot;</span>)</a>
-<a class="sourceLine" id="cb12-5" title="5">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;GET&quot;</span>:</a>
-<a class="sourceLine" id="cb12-6" title="6">        <span class="cf">return</span> render_template(<span class="st">&quot;quiz.html&quot;</span>)</a>
-<a class="sourceLine" id="cb12-7" title="7">    <span class="cf">return</span> render_template(<span class="st">&quot;quiz.html&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb12" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="at">@app.route</span>(<span class="st">&#39;/quiz&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="kw">def</span> quiz():</span>
+<span id="cb12-3"><a href="#cb12-3"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</span>
+<span id="cb12-4"><a href="#cb12-4"></a>        <span class="cf">return</span> render_template(<span class="st">&quot;result.html&quot;</span>)</span>
+<span id="cb12-5"><a href="#cb12-5"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;GET&quot;</span>:</span>
+<span id="cb12-6"><a href="#cb12-6"></a>        <span class="cf">return</span> render_template(<span class="st">&quot;quiz.html&quot;</span>)</span>
+<span id="cb12-7"><a href="#cb12-7"></a>    <span class="cf">return</span> render_template(<span class="st">&quot;quiz.html&quot;</span>)</span></code></pre></div>
 <ol start="3" type="1">
 <li>If you try clicking the <code>Take the quiz again!</code> button you should now see the quiz view. It should be easy to navigate between these two views now.</li>
 </ol>
@@ -431,46 +440,46 @@ TODO: Add content on routes / URLS -->
 <li>Once a user submits the form we will need a function that can check which house they will be sorted into. We could write this function in our <code>app.py</code> file but for organization we will add a helper file instead. Create a new file named <code>helpers.py</code></li>
 <li>Paste in the following function:</li>
 </ol>
-<div class="sourceCode" id="cb13" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">def</span> find_house(animal: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</a>
-<a class="sourceLine" id="cb13-2" title="2">    <span class="cf">if</span> animal <span class="op">==</span> <span class="st">&#39;eagle&#39;</span>:</a>
-<a class="sourceLine" id="cb13-3" title="3">        <span class="cf">return</span> <span class="st">&#39;Ravenclaw&#39;</span></a>
-<a class="sourceLine" id="cb13-4" title="4">    <span class="cf">elif</span> animal <span class="op">==</span> <span class="st">&#39;lion&#39;</span>:</a>
-<a class="sourceLine" id="cb13-5" title="5">        <span class="cf">return</span> <span class="st">&#39;Gryffindor&#39;</span></a>
-<a class="sourceLine" id="cb13-6" title="6">    <span class="cf">elif</span> animal <span class="op">==</span> <span class="st">&#39;badger&#39;</span>:</a>
-<a class="sourceLine" id="cb13-7" title="7">        <span class="cf">return</span> <span class="st">&#39;Hufflepuff&#39;</span></a>
-<a class="sourceLine" id="cb13-8" title="8">    <span class="cf">else</span>:</a>
-<a class="sourceLine" id="cb13-9" title="9">        <span class="cf">return</span> <span class="st">&#39;Slytherin&#39;</span></a></code></pre></div>
+<div class="sourceCode" id="cb13" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">def</span> find_house(animal: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb13-2"><a href="#cb13-2"></a>    <span class="cf">if</span> animal <span class="op">==</span> <span class="st">&#39;eagle&#39;</span>:</span>
+<span id="cb13-3"><a href="#cb13-3"></a>        <span class="cf">return</span> <span class="st">&#39;Ravenclaw&#39;</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a>    <span class="cf">elif</span> animal <span class="op">==</span> <span class="st">&#39;lion&#39;</span>:</span>
+<span id="cb13-5"><a href="#cb13-5"></a>        <span class="cf">return</span> <span class="st">&#39;Gryffindor&#39;</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>    <span class="cf">elif</span> animal <span class="op">==</span> <span class="st">&#39;badger&#39;</span>:</span>
+<span id="cb13-7"><a href="#cb13-7"></a>        <span class="cf">return</span> <span class="st">&#39;Hufflepuff&#39;</span></span>
+<span id="cb13-8"><a href="#cb13-8"></a>    <span class="cf">else</span>:</span>
+<span id="cb13-9"><a href="#cb13-9"></a>        <span class="cf">return</span> <span class="st">&#39;Slytherin&#39;</span></span></code></pre></div>
 <ol start="3" type="1">
 <li>Currently the only question in our quiz is picking an animal, so our sorting function is pretty simple. Given the selected animal, this function can determine which house a user should be sorted into. In your own projects, this function could be more exciting! To use this function in our app, add the following import statement into your <code>app.py</code> file:</li>
 </ol>
-<div class="sourceCode" id="cb14" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" title="1"><span class="im">from</span> helpers <span class="im">import</span> find_house</a></code></pre></div>
+<div class="sourceCode" id="cb14" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="im">from</span> helpers <span class="im">import</span> find_house</span></code></pre></div>
 <h3 id="task-displaying-the-result">Task: Displaying the Result</h3>
 <p>Now that we have a function for sorting, all that is left is to grab the submitted data from the form and then display our result!</p>
 <ol type="1">
 <li>In order to show the result of the quiz we will need to add a variable into our <code>result.html</code> file. Change <code>&lt;p&gt;You were sorted into ravenclaw!&lt;/p&gt;</code> to the following:</li>
 </ol>
-<div class="sourceCode" id="cb15" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb15-1" title="1">&lt;p&gt;You were sorted into {{house}}!!!&lt;/p&gt;</a></code></pre></div>
+<div class="sourceCode" id="cb15" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb15-1"><a href="#cb15-1"></a>&lt;p&gt;You were sorted into {{house}}!!!&lt;/p&gt;</span></code></pre></div>
 <blockquote>
 <p>The <code>{{house}}</code> syntax is similar to what you have already worked with while using <code>f-strings</code>. In our case we are telling our <code>result.html</code> template to expect a <code>str</code> variable called <code>house</code>.</p>
 </blockquote>
 <ol start="2" type="1">
 <li>Now we need to make sure to pass the <code>house</code> variable to the <code>render_template</code> function. Update the <code>quiz</code> function to the following:</li>
 </ol>
-<div class="sourceCode" id="cb16" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/quiz&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
-<a class="sourceLine" id="cb16-2" title="2"><span class="kw">def</span> quiz():</a>
-<a class="sourceLine" id="cb16-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</a>
-<a class="sourceLine" id="cb16-4" title="4"></a>
-<a class="sourceLine" id="cb16-5" title="5">        fname: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;fname&#39;</span>]</a>
-<a class="sourceLine" id="cb16-6" title="6">        lname: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;lname&#39;</span>]</a>
-<a class="sourceLine" id="cb16-7" title="7">        animal: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;animal&#39;</span>]</a>
-<a class="sourceLine" id="cb16-8" title="8"></a>
-<a class="sourceLine" id="cb16-9" title="9">        <span class="cf">if</span> fname <span class="op">==</span> <span class="st">&#39;&#39;</span> <span class="kw">or</span> lname <span class="op">==</span> <span class="st">&#39;&#39;</span>:</a>
-<a class="sourceLine" id="cb16-10" title="10">            <span class="cf">return</span> render_template(<span class="st">&quot;quiz.html&quot;</span>)</a>
-<a class="sourceLine" id="cb16-11" title="11"></a>
-<a class="sourceLine" id="cb16-12" title="12">        house: <span class="bu">str</span> <span class="op">=</span> find_house(animal)</a>
-<a class="sourceLine" id="cb16-13" title="13"></a>
-<a class="sourceLine" id="cb16-14" title="14">        <span class="cf">return</span> render_template(<span class="st">&quot;result.html&quot;</span>, house<span class="op">=</span>house)</a>
-<a class="sourceLine" id="cb16-15" title="15">    <span class="cf">return</span> render_template(<span class="st">&quot;quiz.html&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb16" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="at">@app.route</span>(<span class="st">&#39;/quiz&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="kw">def</span> quiz():</span>
+<span id="cb16-3"><a href="#cb16-3"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</span>
+<span id="cb16-4"><a href="#cb16-4"></a></span>
+<span id="cb16-5"><a href="#cb16-5"></a>        fname: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;fname&#39;</span>]</span>
+<span id="cb16-6"><a href="#cb16-6"></a>        lname: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;lname&#39;</span>]</span>
+<span id="cb16-7"><a href="#cb16-7"></a>        animal: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;animal&#39;</span>]</span>
+<span id="cb16-8"><a href="#cb16-8"></a></span>
+<span id="cb16-9"><a href="#cb16-9"></a>        <span class="cf">if</span> fname <span class="op">==</span> <span class="st">&#39;&#39;</span> <span class="kw">or</span> lname <span class="op">==</span> <span class="st">&#39;&#39;</span>:</span>
+<span id="cb16-10"><a href="#cb16-10"></a>            <span class="cf">return</span> render_template(<span class="st">&quot;quiz.html&quot;</span>)</span>
+<span id="cb16-11"><a href="#cb16-11"></a></span>
+<span id="cb16-12"><a href="#cb16-12"></a>        house: <span class="bu">str</span> <span class="op">=</span> find_house(animal)</span>
+<span id="cb16-13"><a href="#cb16-13"></a></span>
+<span id="cb16-14"><a href="#cb16-14"></a>        <span class="cf">return</span> render_template(<span class="st">&quot;result.html&quot;</span>, house<span class="op">=</span>house)</span>
+<span id="cb16-15"><a href="#cb16-15"></a>    <span class="cf">return</span> render_template(<span class="st">&quot;quiz.html&quot;</span>)</span></code></pre></div>
 <blockquote>
 <ul>
 <li>In this code snippet we first grab the date for the first name or <code>fname</code>, last name or <code>lname</code> and the chosen <code>animal</code> and store them into variables.</li>
@@ -490,56 +499,56 @@ TODO: Add content on routes / URLS -->
 <ol type="1">
 <li>We want to use best practices while accomplishing this so we will now define a class for a <code>user</code> to keep our code organized and readable. In your <code>helpers.py</code> file add the following class:</li>
 </ol>
-<div class="sourceCode" id="cb17" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">class</span> user:</a>
-<a class="sourceLine" id="cb17-2" title="2">    <span class="bu">id</span>: <span class="bu">int</span></a>
-<a class="sourceLine" id="cb17-3" title="3">    first_name: <span class="bu">str</span></a>
-<a class="sourceLine" id="cb17-4" title="4">    last_name: <span class="bu">str</span></a>
-<a class="sourceLine" id="cb17-5" title="5">    house: <span class="bu">str</span></a>
-<a class="sourceLine" id="cb17-6" title="6"></a>
-<a class="sourceLine" id="cb17-7" title="7">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, <span class="bu">id</span>: <span class="bu">int</span>, fname: <span class="bu">str</span>, lname: <span class="bu">str</span>, house: <span class="bu">str</span>):</a>
-<a class="sourceLine" id="cb17-8" title="8">        <span class="va">self</span>.<span class="bu">id</span> <span class="op">=</span> <span class="bu">id</span></a>
-<a class="sourceLine" id="cb17-9" title="9">        <span class="va">self</span>.first_name <span class="op">=</span> fname</a>
-<a class="sourceLine" id="cb17-10" title="10">        <span class="va">self</span>.last_name <span class="op">=</span> lname</a>
-<a class="sourceLine" id="cb17-11" title="11">        <span class="va">self</span>.house <span class="op">=</span> house</a></code></pre></div>
+<div class="sourceCode" id="cb17" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">class</span> user:</span>
+<span id="cb17-2"><a href="#cb17-2"></a>    <span class="bu">id</span>: <span class="bu">int</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a>    first_name: <span class="bu">str</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a>    last_name: <span class="bu">str</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>    house: <span class="bu">str</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a></span>
+<span id="cb17-7"><a href="#cb17-7"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, <span class="bu">id</span>: <span class="bu">int</span>, fname: <span class="bu">str</span>, lname: <span class="bu">str</span>, house: <span class="bu">str</span>):</span>
+<span id="cb17-8"><a href="#cb17-8"></a>        <span class="va">self</span>.<span class="bu">id</span> <span class="op">=</span> <span class="bu">id</span></span>
+<span id="cb17-9"><a href="#cb17-9"></a>        <span class="va">self</span>.first_name <span class="op">=</span> fname</span>
+<span id="cb17-10"><a href="#cb17-10"></a>        <span class="va">self</span>.last_name <span class="op">=</span> lname</span>
+<span id="cb17-11"><a href="#cb17-11"></a>        <span class="va">self</span>.house <span class="op">=</span> house</span></code></pre></div>
 <blockquote>
 <p>We need users to be uniquely identifiable. For instance, what if we had two users named John Smith who were both Hufflepuffs? There would be no way to tell them apart. For this reason, we make sure to store an <code>id</code> field along with the <code>first_name</code>, <code>last_name</code> and <code>house</code> fields.</p>
 </blockquote>
 <ol start="2" type="1">
 <li>To use this class in our app, update the <code>helpers</code> import statement into your <code>app.py</code> file:</li>
 </ol>
-<div class="sourceCode" id="cb18" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" title="1"><span class="im">from</span> helpers <span class="im">import</span> find_house, user</a></code></pre></div>
+<div class="sourceCode" id="cb18" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="im">from</span> helpers <span class="im">import</span> find_house, user</span></code></pre></div>
 <ol start="3" type="1">
 <li>We also need to define our global variables that we will use to store our data. Add the following underneath your global <code>app</code> variable in your <code>app.py</code> file:</li>
 </ol>
-<div class="sourceCode" id="cb19" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb19-1" title="1">users: <span class="bu">list</span>[user] <span class="op">=</span> []</a>
-<a class="sourceLine" id="cb19-2" title="2">user_number: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></a></code></pre></div>
+<div class="sourceCode" id="cb19" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>users: <span class="bu">list</span>[user] <span class="op">=</span> []</span>
+<span id="cb19-2"><a href="#cb19-2"></a>user_number: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span></code></pre></div>
 <blockquote>
 <p>We will use the <code>users</code> global variable to keep a list of all users who have taken the quiz so far. We will use the <code>user_number</code> to keep track of how many users we have so far and what the next user <code>id</code> should be. (Note: we could just use the length of the list, but for clarity purposes will use an extra variable here)</p>
 </blockquote>
 <ol start="4" type="1">
 <li>Let’s incorporate the storing of data into our <code>quiz</code> function. Update the <code>quiz</code> functionality to the following code snippet:</li>
 </ol>
-<div class="sourceCode" id="cb20" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/quiz&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
-<a class="sourceLine" id="cb20-2" title="2"><span class="kw">def</span> quiz():</a>
-<a class="sourceLine" id="cb20-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</a>
-<a class="sourceLine" id="cb20-4" title="4">        <span class="kw">global</span> users</a>
-<a class="sourceLine" id="cb20-5" title="5">        <span class="kw">global</span> user_number</a>
-<a class="sourceLine" id="cb20-6" title="6"></a>
-<a class="sourceLine" id="cb20-7" title="7">        fname: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;fname&#39;</span>]</a>
-<a class="sourceLine" id="cb20-8" title="8">        lname: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;lname&#39;</span>]</a>
-<a class="sourceLine" id="cb20-9" title="9">        animal: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;animal&#39;</span>]</a>
-<a class="sourceLine" id="cb20-10" title="10"></a>
-<a class="sourceLine" id="cb20-11" title="11">        <span class="cf">if</span> fname <span class="op">==</span> <span class="st">&#39;&#39;</span> <span class="kw">or</span> lname <span class="op">==</span> <span class="st">&#39;&#39;</span>:</a>
-<a class="sourceLine" id="cb20-12" title="12">            <span class="cf">return</span> render_template(<span class="st">&quot;quiz.html&quot;</span>)</a>
-<a class="sourceLine" id="cb20-13" title="13"></a>
-<a class="sourceLine" id="cb20-14" title="14">        house: <span class="bu">str</span> <span class="op">=</span> find_house(animal)</a>
-<a class="sourceLine" id="cb20-15" title="15">        new_user: user <span class="op">=</span> user(user_number, fname, lname, house)</a>
-<a class="sourceLine" id="cb20-16" title="16">        users.append(new_user)</a>
-<a class="sourceLine" id="cb20-17" title="17"></a>
-<a class="sourceLine" id="cb20-18" title="18">        user_number <span class="op">+=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb20-19" title="19"></a>
-<a class="sourceLine" id="cb20-20" title="20">        <span class="cf">return</span> render_template(<span class="st">&quot;result.html&quot;</span>, house<span class="op">=</span>house)</a>
-<a class="sourceLine" id="cb20-21" title="21">    <span class="cf">return</span> render_template(<span class="st">&quot;quiz.html&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb20" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="at">@app.route</span>(<span class="st">&#39;/quiz&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="kw">def</span> quiz():</span>
+<span id="cb20-3"><a href="#cb20-3"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</span>
+<span id="cb20-4"><a href="#cb20-4"></a>        <span class="kw">global</span> users</span>
+<span id="cb20-5"><a href="#cb20-5"></a>        <span class="kw">global</span> user_number</span>
+<span id="cb20-6"><a href="#cb20-6"></a></span>
+<span id="cb20-7"><a href="#cb20-7"></a>        fname: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;fname&#39;</span>]</span>
+<span id="cb20-8"><a href="#cb20-8"></a>        lname: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;lname&#39;</span>]</span>
+<span id="cb20-9"><a href="#cb20-9"></a>        animal: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;animal&#39;</span>]</span>
+<span id="cb20-10"><a href="#cb20-10"></a></span>
+<span id="cb20-11"><a href="#cb20-11"></a>        <span class="cf">if</span> fname <span class="op">==</span> <span class="st">&#39;&#39;</span> <span class="kw">or</span> lname <span class="op">==</span> <span class="st">&#39;&#39;</span>:</span>
+<span id="cb20-12"><a href="#cb20-12"></a>            <span class="cf">return</span> render_template(<span class="st">&quot;quiz.html&quot;</span>)</span>
+<span id="cb20-13"><a href="#cb20-13"></a></span>
+<span id="cb20-14"><a href="#cb20-14"></a>        house: <span class="bu">str</span> <span class="op">=</span> find_house(animal)</span>
+<span id="cb20-15"><a href="#cb20-15"></a>        new_user: user <span class="op">=</span> user(user_number, fname, lname, house)</span>
+<span id="cb20-16"><a href="#cb20-16"></a>        users.append(new_user)</span>
+<span id="cb20-17"><a href="#cb20-17"></a></span>
+<span id="cb20-18"><a href="#cb20-18"></a>        user_number <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb20-19"><a href="#cb20-19"></a></span>
+<span id="cb20-20"><a href="#cb20-20"></a>        <span class="cf">return</span> render_template(<span class="st">&quot;result.html&quot;</span>, house<span class="op">=</span>house)</span>
+<span id="cb20-21"><a href="#cb20-21"></a>    <span class="cf">return</span> render_template(<span class="st">&quot;quiz.html&quot;</span>)</span></code></pre></div>
 <blockquote>
 <ul>
 <li>First, we label our <code>users</code> and <code>user_number</code> variables as global variables we plan to update.</li>
@@ -555,28 +564,28 @@ TODO: Add content on routes / URLS -->
 <li>First lets add a new template we can use for displaying all results. Create a new file in the <code>templates</code> directory and name it <code>all-results.html</code>.</li>
 <li>Add the following HTML to the file and save it.</li>
 </ol>
-<div class="sourceCode" id="cb21" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb21-1" title="1">&lt;!DOCTYPE html&gt;</a>
-<a class="sourceLine" id="cb21-2" title="2">&lt;html lang=&quot;en&quot;&gt;</a>
-<a class="sourceLine" id="cb21-3" title="3">    &lt;head&gt;</a>
-<a class="sourceLine" id="cb21-4" title="4">        &lt;meta charset=&quot;UTF-8&quot;&gt;</a>
-<a class="sourceLine" id="cb21-5" title="5">        &lt;title&gt;Take the Quiz!&lt;/title&gt;</a>
-<a class="sourceLine" id="cb21-6" title="6">    &lt;/head&gt;</a>
-<a class="sourceLine" id="cb21-7" title="7">    &lt;body&gt;</a>
-<a class="sourceLine" id="cb21-8" title="8">        &lt;h2&gt;Welcome to results!&lt;/h2&gt;</a>
-<a class="sourceLine" id="cb21-9" title="9">        {% for user in users %}</a>
-<a class="sourceLine" id="cb21-10" title="10">        &lt;p&gt;{{user.first_name}} {{user.last_name}} is in {{user.house}}&lt;/p&gt;</a>
-<a class="sourceLine" id="cb21-11" title="11">        {% endfor %}</a>
-<a class="sourceLine" id="cb21-12" title="12">    &lt;/body&gt;</a>
-<a class="sourceLine" id="cb21-13" title="13">&lt;/html&gt;</a></code></pre></div>
+<div class="sourceCode" id="cb21" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb21-1"><a href="#cb21-1"></a>&lt;!DOCTYPE html&gt;</span>
+<span id="cb21-2"><a href="#cb21-2"></a>&lt;html lang=&quot;en&quot;&gt;</span>
+<span id="cb21-3"><a href="#cb21-3"></a>    &lt;head&gt;</span>
+<span id="cb21-4"><a href="#cb21-4"></a>        &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<span id="cb21-5"><a href="#cb21-5"></a>        &lt;title&gt;Take the Quiz!&lt;/title&gt;</span>
+<span id="cb21-6"><a href="#cb21-6"></a>    &lt;/head&gt;</span>
+<span id="cb21-7"><a href="#cb21-7"></a>    &lt;body&gt;</span>
+<span id="cb21-8"><a href="#cb21-8"></a>        &lt;h2&gt;Welcome to results!&lt;/h2&gt;</span>
+<span id="cb21-9"><a href="#cb21-9"></a>        {% for user in users %}</span>
+<span id="cb21-10"><a href="#cb21-10"></a>        &lt;p&gt;{{user.first_name}} {{user.last_name}} is in {{user.house}}&lt;/p&gt;</span>
+<span id="cb21-11"><a href="#cb21-11"></a>        {% endfor %}</span>
+<span id="cb21-12"><a href="#cb21-12"></a>    &lt;/body&gt;</span>
+<span id="cb21-13"><a href="#cb21-13"></a>&lt;/html&gt;</span></code></pre></div>
 <blockquote>
 <p>You may notice some more odd looking syntax inside of the <code>&lt;body&gt;&lt;/body&gt;</code> tags in this snippet. This file expects a list of <code>user</code> objects in a variable <code>users</code>. It then uses a python <code>for</code> loop to iterate through each user in the list and add a <code>&lt;p&gt;&lt;/p&gt;</code> tag for each users data. For instance, if the first person who filled out the quiz was named <code>Harry Potter</code> and selected <code>lion</code> as their favorite animal, the first <code>&lt;p&gt;&lt;/p&gt;</code> tag added would look like <code>&lt;p&gt;Harry Potter is in Gryffindor&lt;/p&gt;</code>.</p>
 </blockquote>
 <ol start="3" type="1">
 <li>Finally, we need to add a new route where we can display our template and pass it our <code>users</code> list. Add the following function snippet in your <code>app.py</code> file.</li>
 </ol>
-<div class="sourceCode" id="cb22" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb22-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/all-results&#39;</span>)</a>
-<a class="sourceLine" id="cb22-2" title="2"><span class="kw">def</span> all_results():</a>
-<a class="sourceLine" id="cb22-3" title="3">    <span class="cf">return</span> render_template(<span class="st">&#39;all-results.html&#39;</span>, users<span class="op">=</span>users)</a></code></pre></div>
+<div class="sourceCode" id="cb22" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="at">@app.route</span>(<span class="st">&#39;/all-results&#39;</span>)</span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="kw">def</span> all_results():</span>
+<span id="cb22-3"><a href="#cb22-3"></a>    <span class="cf">return</span> render_template(<span class="st">&#39;all-results.html&#39;</span>, users<span class="op">=</span>users)</span></code></pre></div>
 <blockquote>
 <p>Here we are simply rendering our <code>all-results.html</code> template and passing it our users list as an argument.</p>
 </blockquote>
@@ -589,26 +598,26 @@ TODO: Add content on routes / URLS -->
 <li>Lets define one more file in our <code>templates</code> directory for displaying all information about a particular user. Create a new file in <code>templates</code> named <code>user.html</code>.</li>
 <li>Paste the following HTML into the file:</li>
 </ol>
-<div class="sourceCode" id="cb23" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb23-1" title="1">&lt;!DOCTYPE html&gt;</a>
-<a class="sourceLine" id="cb23-2" title="2">&lt;html lang=&quot;en&quot;&gt;</a>
-<a class="sourceLine" id="cb23-3" title="3">    &lt;head&gt;</a>
-<a class="sourceLine" id="cb23-4" title="4">        &lt;meta charset=&quot;UTF-8&quot;&gt;</a>
-<a class="sourceLine" id="cb23-5" title="5">        &lt;title&gt;Take the Quiz!&lt;/title&gt;</a>
-<a class="sourceLine" id="cb23-6" title="6">    &lt;/head&gt;</a>
-<a class="sourceLine" id="cb23-7" title="7">    &lt;body&gt;</a>
-<a class="sourceLine" id="cb23-8" title="8">        &lt;p&gt;Hello {{user.first_name}} {{user.last_name}}&lt;/p&gt;</a>
-<a class="sourceLine" id="cb23-9" title="9">        &lt;p&gt;You are in {{user.house}} !!!&lt;/p&gt;</a>
-<a class="sourceLine" id="cb23-10" title="10">    &lt;/body&gt;</a>
-<a class="sourceLine" id="cb23-11" title="11">&lt;/html&gt;</a></code></pre></div>
+<div class="sourceCode" id="cb23" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb23-1"><a href="#cb23-1"></a>&lt;!DOCTYPE html&gt;</span>
+<span id="cb23-2"><a href="#cb23-2"></a>&lt;html lang=&quot;en&quot;&gt;</span>
+<span id="cb23-3"><a href="#cb23-3"></a>    &lt;head&gt;</span>
+<span id="cb23-4"><a href="#cb23-4"></a>        &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<span id="cb23-5"><a href="#cb23-5"></a>        &lt;title&gt;Take the Quiz!&lt;/title&gt;</span>
+<span id="cb23-6"><a href="#cb23-6"></a>    &lt;/head&gt;</span>
+<span id="cb23-7"><a href="#cb23-7"></a>    &lt;body&gt;</span>
+<span id="cb23-8"><a href="#cb23-8"></a>        &lt;p&gt;Hello {{user.first_name}} {{user.last_name}}&lt;/p&gt;</span>
+<span id="cb23-9"><a href="#cb23-9"></a>        &lt;p&gt;You are in {{user.house}} !!!&lt;/p&gt;</span>
+<span id="cb23-10"><a href="#cb23-10"></a>    &lt;/body&gt;</span>
+<span id="cb23-11"><a href="#cb23-11"></a>&lt;/html&gt;</span></code></pre></div>
 <blockquote>
 <p>This template expects a variable called <code>user</code> of the class type <code>user</code> that we defined earlier. It then renders the important information stored in the user object.</p>
 </blockquote>
 <ol start="3" type="1">
 <li>Now we need to add a route for rendering this <code>user.html</code> template. Add the following code snippet in your <code>app.py</code> file:</li>
 </ol>
-<div class="sourceCode" id="cb24" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/user&lt;usernumber&gt;&#39;</span>)</a>
-<a class="sourceLine" id="cb24-2" title="2"><span class="kw">def</span> display_user(usernumber: <span class="bu">str</span>):</a>
-<a class="sourceLine" id="cb24-3" title="3">    <span class="cf">return</span> render_template(<span class="st">&#39;user.html&#39;</span>, user<span class="op">=</span>users[<span class="bu">int</span>(usernumber)])</a></code></pre></div>
+<div class="sourceCode" id="cb24" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="at">@app.route</span>(<span class="st">&#39;/user&lt;usernumber&gt;&#39;</span>)</span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="kw">def</span> display_user(usernumber: <span class="bu">str</span>):</span>
+<span id="cb24-3"><a href="#cb24-3"></a>    <span class="cf">return</span> render_template(<span class="st">&#39;user.html&#39;</span>, user<span class="op">=</span>users[<span class="bu">int</span>(usernumber)])</span></code></pre></div>
 <blockquote>
 <p>This route is slightly more complex than ones we have defined previously. The syntax <code>&lt;usernumber&gt;</code> defines an unknown in the URL with a variable name of <code>usernumber</code>. When this route is accessed, it will pass the given <code>usernumber</code> to the <code>display_user</code> function. Then the <code>usernumber</code> can be converted to an <code>int</code> and used to select the correct user our of our <code>users</code> list. For instance, if we navigate to the URL <code>/user2</code>, we could expect to be shown all the data about the third person who took the quiz. (Since we started at user0)</p>
 </blockquote>
@@ -622,12 +631,12 @@ TODO: Add content on routes / URLS -->
 <li>Create a new file in your repo named <code>dev.py</code></li>
 <li>Paste in the following code snippet and save.</li>
 </ol>
-<div class="sourceCode" id="cb25" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb25-1" title="1"><span class="im">from</span> app <span class="im">import</span> app</a>
-<a class="sourceLine" id="cb25-2" title="2"><span class="im">from</span> livereload <span class="im">import</span> Server</a>
-<a class="sourceLine" id="cb25-3" title="3"></a>
-<a class="sourceLine" id="cb25-4" title="4"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</a>
-<a class="sourceLine" id="cb25-5" title="5">   server <span class="op">=</span> Server(app.wsgi_app)</a>
-<a class="sourceLine" id="cb25-6" title="6">   server.serve()</a></code></pre></div>
+<div class="sourceCode" id="cb25" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="im">from</span> app <span class="im">import</span> app</span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="im">from</span> livereload <span class="im">import</span> Server</span>
+<span id="cb25-3"><a href="#cb25-3"></a></span>
+<span id="cb25-4"><a href="#cb25-4"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</span>
+<span id="cb25-5"><a href="#cb25-5"></a>   server <span class="op">=</span> Server(app.wsgi_app)</span>
+<span id="cb25-6"><a href="#cb25-6"></a>   server.serve()</span></code></pre></div>
 <ol start="4" type="1">
 <li>Whenever you would like to run your app with livereload run <code>python -m dev</code> in your terminal and open your browser to <code>http://127.0.0.1:5500/</code></li>
 </ol>

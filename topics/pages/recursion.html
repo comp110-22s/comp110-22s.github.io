@@ -7,7 +7,7 @@
     <title> Recursion Overview - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1650484345.9076726">
+    <link rel="stylesheet" href="/static/style.css?v=1650892936.6462939">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -187,9 +187,12 @@
                 <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
-                        <ul><li><a href="#thinking-about-recursion">Thinking About Recursion</a></li>
+                        <ul>doc-toc">
+<ul>
+<li><a href="#thinking-about-recursion">Thinking About Recursion</a></li>
 <li><a href="#rules-for-recursive-functions">Rules for Recursive Functions</a></li>
-<li><a href="#examples">Examples</a><ul>
+<li><a href="#examples">Examples</a>
+<ul>
 <li><a href="#factorial-function">Factorial Function</a></li>
 <li><a href="#addition-function">Addition Function</a></li>
 </ul></li>
@@ -228,11 +231,11 @@
 <h2 id="examples">Examples</h2>
 <h3 id="factorial-function">Factorial Function</h3>
 <p>Let’s test your knowledge. Can you identify the base case and recursive case for the factorial function below?</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">    <span class="kw">def</span> factorial(n):</a>
-<a class="sourceLine" id="cb1-2" title="2">        <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</a>
-<a class="sourceLine" id="cb1-3" title="3">            <span class="cf">return</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb1-4" title="4">        <span class="cf">else</span>:</a>
-<a class="sourceLine" id="cb1-5" title="5">            <span class="cf">return</span> n <span class="op">*</span> factorial(n<span class="dv">-1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>    <span class="kw">def</span> factorial(n):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>        <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>            <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>        <span class="cf">else</span>:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>            <span class="cf">return</span> n <span class="op">*</span> factorial(n<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
 <p>The recursive case is where the function calls itself. In this case, we recur in the else block when we <strong>return n * factorial(n-1)</strong>.</p>
 <p>The base case is what terminates the recursion. In our factorial function, the base case occurs when <strong>n == 0</strong>. By returning 1 instead of a call to factorial, the recursion halts and the result, n!, is returned.</p>
 <p>Still a little confused on what’s going on? Try drawing an environment diagram for the function call <strong>factorial(4)</strong> to see what this function looks like in action!</p>
@@ -246,11 +249,11 @@
 <li><p>Following this logic, what might be a base case when working with multiplication? Would multiplying our value by 0 be a good idea?</p></li>
 </ul>
 <p>And there we have it! We have figured out how to write a recursive funtion that adds two numbers. This process is a tricky to wrap your head around at first, but stick to the 3 rules of recursive functions and you’re golden!</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1">    <span class="kw">def</span> add(n, m):</a>
-<a class="sourceLine" id="cb2-2" title="2">        <span class="cf">if</span> m <span class="op">&lt;=</span> <span class="dv">0</span>:</a>
-<a class="sourceLine" id="cb2-3" title="3">            <span class="cf">return</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb2-4" title="4">        <span class="cf">else</span>:</a>
-<a class="sourceLine" id="cb2-5" title="5">            <span class="cf">return</span> <span class="dv">1</span> <span class="op">+</span> add(n, m<span class="dv">-1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>    <span class="kw">def</span> add(n, m):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>        <span class="cf">if</span> m <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>            <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>        <span class="cf">else</span>:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>            <span class="cf">return</span> <span class="dv">1</span> <span class="op">+</span> add(n, m<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
 <p>Note: In the function our base case actually ends up occuring when <strong>m &lt;= 0</strong>. Can you think of why this might be? Why might using <strong>m == 0</strong> cause problems? What would happen if we called then function with a negative value for m?</p>
 <p>Again, if you are feeling lost, try creating an environment diagram for the call add(3, 2) and trace what is happening.</p>
 </div>

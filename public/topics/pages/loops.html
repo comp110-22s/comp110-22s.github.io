@@ -7,7 +7,7 @@
     <title> Loops - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1650484314.9464977">
+    <link rel="stylesheet" href="/static/style.css?v=1650892904.6360924">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -187,14 +187,18 @@
                 <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
-                        <ul><li><a href="#while-loops">While Loops</a><ul>
+                        <ul>doc-toc">
+<ul>
+<li><a href="#while-loops">While Loops</a>
+<ul>
 <li><a href="#syntax">Syntax</a></li>
 <li><a href="#while-loop-checklist">While Loop Checklist</a></li>
 <li><a href="#examples-of-counters">Examples of Counters</a></li>
 <li><a href="#something-is-wrong">Something is Wrong!</a></li>
 <li><a href="#nested-while-loops">Nested While Loops!</a></li>
 </ul></li>
-<li><a href="#for-in-loops">For-in Loops</a><ul>
+<li><a href="#for-in-loops">For-in Loops</a>
+<ul>
 <li><a href="#the-syntax">The Syntax:</a></li>
 <li><a href="#how-does-this-work">How Does this Work?</a></li>
 <li><a href="#converting-a-while-loop">Converting a While Loop</a></li>
@@ -212,13 +216,13 @@
         <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><h2 id="while-loops">While Loops</h2>
 <p>A <strong>while loop</strong> is a block of code that will continue ‘looping’ (repeating) until its boolean condition becomes false.</p>
 <h3 id="syntax">Syntax</h3>
-<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="cf">while</span> [boolean expression <span class="st">&quot;test&quot;</span>]:</a>
-<a class="sourceLine" id="cb1-2" title="2">    <span class="co"># useful code that executes as long as the boolean </span></a>
-<a class="sourceLine" id="cb1-3" title="3">    <span class="co"># expression is true (repeat block)</span></a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5">    <span class="co"># Manipulation of boolean condition (i.e. changing boolean </span></a>
-<a class="sourceLine" id="cb1-6" title="6">    <span class="co"># expression &quot;test&quot; from True to False by manipulating </span></a>
-<a class="sourceLine" id="cb1-7" title="7">    <span class="co"># counter variable, i.e. i += 1)</span></a></code></pre></div>
+<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="cf">while</span> [boolean expression <span class="st">&quot;test&quot;</span>]:</span>
+<span id="cb1-2"><a href="#cb1-2"></a>    <span class="co"># useful code that executes as long as the boolean </span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="co"># expression is true (repeat block)</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>    <span class="co"># Manipulation of boolean condition (i.e. changing boolean </span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span class="co"># expression &quot;test&quot; from True to False by manipulating </span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>    <span class="co"># counter variable, i.e. i += 1)</span></span></code></pre></div>
 <p>After the last statement in the repeat block completes, the computer will <strong>jump backwards</strong> to the test and start anew. If the test evaluates to <strong>True</strong>, the computer will <em>move through the repeat block again</em>. If the test evaluates to <strong>False</strong>, the computer will ‘exit’ the loop, <em>skipping over the repeat block</em>.</p>
 <h3 id="while-loop-checklist">While Loop Checklist</h3>
 <ol type="1">
@@ -233,62 +237,62 @@
 </ol>
 <h3 id="examples-of-counters">Examples of Counters</h3>
 <p><strong>Numerical counter:</strong></p>
-<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1"><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">10</span>:</a>
-<a class="sourceLine" id="cb2-2" title="2">    <span class="co"># looping code</span></a>
-<a class="sourceLine" id="cb2-3" title="3">    i <span class="op">+=</span> <span class="dv">1</span></a></code></pre></div>
+<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">10</span>:</span>
+<span id="cb2-2"><a href="#cb2-2"></a>    <span class="co"># looping code</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>    i <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
 <p>Common ways to increment a numerical counter include:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1">i <span class="op">+=</span> <span class="dv">1</span>  <span class="co"># the same as i = i + 1</span></a>
-<a class="sourceLine" id="cb3-2" title="2">i <span class="op">-=</span> <span class="dv">1</span>  <span class="co"># the same as i = i - 1</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>i <span class="op">+=</span> <span class="dv">1</span>  <span class="co"># the same as i = i + 1</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>i <span class="op">-=</span> <span class="dv">1</span>  <span class="co"># the same as i = i - 1</span></span></code></pre></div>
 <p>The counter variable can also be incremented by numerical amounts other than 1.</p>
-<div class="sourceCode" id="cb4" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1">i <span class="op">=</span> i <span class="op">+</span> <span class="dv">3</span></a>
-<a class="sourceLine" id="cb4-2" title="2">i <span class="op">=</span> i <span class="op">-</span> <span class="dv">5</span></a></code></pre></div>
+<div class="sourceCode" id="cb4" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>i <span class="op">=</span> i <span class="op">+</span> <span class="dv">3</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>i <span class="op">=</span> i <span class="op">-</span> <span class="dv">5</span></span></code></pre></div>
 <p><strong>Boolean expression:</strong></p>
-<div class="sourceCode" id="cb5" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" title="1">weekend: <span class="bu">bool</span> <span class="op">=</span> <span class="va">False</span></a>
-<a class="sourceLine" id="cb5-2" title="2">day_of_week: <span class="bu">int</span> <span class="op">=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb5-3" title="3"></a>
-<a class="sourceLine" id="cb5-4" title="4"><span class="cf">while</span> weekend <span class="op">==</span> false:</a>
-<a class="sourceLine" id="cb5-5" title="5">    <span class="co"># looping code</span></a>
-<a class="sourceLine" id="cb5-6" title="6">    <span class="cf">if</span> day_of_week <span class="op">==</span> <span class="dv">6</span> <span class="kw">or</span> day_of_week <span class="op">==</span> <span class="dv">7</span>:</a>
-<a class="sourceLine" id="cb5-7" title="7">        weekend <span class="op">=</span> <span class="va">True</span></a>
-<a class="sourceLine" id="cb5-8" title="8">        <span class="bu">print</span>(<span class="st">&quot;Yay, it&#39;s the weekend!&quot;</span>)</a>
-<a class="sourceLine" id="cb5-9" title="9">    day_of_week <span class="op">+=</span> <span class="dv">1</span></a></code></pre></div>
+<div class="sourceCode" id="cb5" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>weekend: <span class="bu">bool</span> <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>day_of_week: <span class="bu">int</span> <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="cf">while</span> weekend <span class="op">==</span> false:</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    <span class="co"># looping code</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>    <span class="cf">if</span> day_of_week <span class="op">==</span> <span class="dv">6</span> <span class="kw">or</span> day_of_week <span class="op">==</span> <span class="dv">7</span>:</span>
+<span id="cb5-7"><a href="#cb5-7"></a>        weekend <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a>        <span class="bu">print</span>(<span class="st">&quot;Yay, it&#39;s the weekend!&quot;</span>)</span>
+<span id="cb5-9"><a href="#cb5-9"></a>    day_of_week <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
 <h3 id="something-is-wrong">Something is Wrong!</h3>
 <p>If your loop just won’t end, you probably have implemented an <em>infinite loop</em>. Make sure that your condition can eventually become false! Example:</p>
-<div class="sourceCode" id="cb6" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># incorrect:</span></a>
-<a class="sourceLine" id="cb6-2" title="2"></a>
-<a class="sourceLine" id="cb6-3" title="3">i: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">110</span>:</a>
-<a class="sourceLine" id="cb6-5" title="5">    <span class="bu">print</span>(<span class="st">&quot;I love COMP110!&quot;</span>)</a>
-<a class="sourceLine" id="cb6-6" title="6"><span class="bu">print</span>(<span class="st">&quot;Done&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb6" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># incorrect:</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a>i: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">110</span>:</span>
+<span id="cb6-5"><a href="#cb6-5"></a>    <span class="bu">print</span>(<span class="st">&quot;I love COMP110!&quot;</span>)</span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="bu">print</span>(<span class="st">&quot;Done&quot;</span>)</span></code></pre></div>
 <p>This is incorrect because the counter ‘i’ is <strong>never changed</strong> and thus will never be &gt;= 110. Therefore, the while loop will <strong>INFINITELY</strong> execute and the string “Done” will never print.</p>
-<div class="sourceCode" id="cb7" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># correct:</span></a>
-<a class="sourceLine" id="cb7-2" title="2"></a>
-<a class="sourceLine" id="cb7-3" title="3">i: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb7-4" title="4"><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">110</span>:</a>
-<a class="sourceLine" id="cb7-5" title="5">    <span class="bu">print</span>(<span class="st">&quot;I love COMP110!)</span></a>
-<a class="sourceLine" id="cb7-6" title="6"><span class="st">    i += 1</span></a>
-<a class="sourceLine" id="cb7-7" title="7"><span class="st">print(&quot;</span>Done<span class="st">&quot;)</span></a></code></pre></div>
+<div class="sourceCode" id="cb7" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># correct:</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a>i: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">110</span>:</span>
+<span id="cb7-5"><a href="#cb7-5"></a>    <span class="bu">print</span>(<span class="st">&quot;I love COMP110!)</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="st">    i += 1</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="st">print(&quot;</span>Done<span class="st">&quot;)</span></span></code></pre></div>
 <p>Now, the while loop will execute 110 times, printing “I love COMP110 <em>each time</em>. The string”Done" will be printed once i = 110.</p>
 <h3 id="nested-while-loops">Nested While Loops!</h3>
 <p>We can nest while loops, meaning we can place one while loop inside of another! Check out this example:</p>
-<div class="sourceCode" id="cb8" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" title="1">sound: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;&quot;</span></a>
-<a class="sourceLine" id="cb8-2" title="2">i: <span class="bu">int</span> <span class="op">=</span> <span class="dv">1</span>  </a>
-<a class="sourceLine" id="cb8-3" title="3"><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">20</span>: </a>
-<a class="sourceLine" id="cb8-4" title="4">    count: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span> <span class="co"># each time the outer loop runs, count is reassigned to 0</span></a>
-<a class="sourceLine" id="cb8-5" title="5">    <span class="cf">while</span> count <span class="op">&lt;</span> <span class="dv">4</span>:</a>
-<a class="sourceLine" id="cb8-6" title="6">        i <span class="op">*=</span> <span class="dv">2</span>  <span class="co"># increase the value in i, the counter variable for the outer loop</span></a>
-<a class="sourceLine" id="cb8-7" title="7">        count <span class="op">+=</span> <span class="dv">1</span>  <span class="co"># increment count, the counter variable for the inner loop</span></a>
-<a class="sourceLine" id="cb8-8" title="8">        sound <span class="op">+=</span> <span class="st">&quot;e&quot;</span></a>
-<a class="sourceLine" id="cb8-9" title="9">    sound <span class="op">+=</span> <span class="st">&quot;-iii-&quot;</span></a>
-<a class="sourceLine" id="cb8-10" title="10">sound <span class="op">+=</span> <span class="st">&quot;oh&quot;</span></a>
-<a class="sourceLine" id="cb8-11" title="11"></a>
-<a class="sourceLine" id="cb8-12" title="12"><span class="bu">print</span>(sound)  <span class="co"># will print the string &quot;eeee-iii-eeee-iii-oh&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb8" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>sound: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>i: <span class="bu">int</span> <span class="op">=</span> <span class="dv">1</span>  </span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">20</span>: </span>
+<span id="cb8-4"><a href="#cb8-4"></a>    count: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span> <span class="co"># each time the outer loop runs, count is reassigned to 0</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>    <span class="cf">while</span> count <span class="op">&lt;</span> <span class="dv">4</span>:</span>
+<span id="cb8-6"><a href="#cb8-6"></a>        i <span class="op">*=</span> <span class="dv">2</span>  <span class="co"># increase the value in i, the counter variable for the outer loop</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>        count <span class="op">+=</span> <span class="dv">1</span>  <span class="co"># increment count, the counter variable for the inner loop</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>        sound <span class="op">+=</span> <span class="st">&quot;e&quot;</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a>    sound <span class="op">+=</span> <span class="st">&quot;-iii-&quot;</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a>sound <span class="op">+=</span> <span class="st">&quot;oh&quot;</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a></span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="bu">print</span>(sound)  <span class="co"># will print the string &quot;eeee-iii-eeee-iii-oh&quot;</span></span></code></pre></div>
 <p>These nested loops build up the string ‘sound’. The inner loop starts over and runs through again each time we reenter the outer loop.</p>
 <h2 id="for-in-loops">For-in Loops</h2>
 <p><strong>for-in loops</strong> are similar to <strong>while loops</strong>, but instead of looping through a statement until a boolean condition changes, a <strong>for-in loop</strong> iterates over a collection of items.</p>
 <h3 id="the-syntax">The Syntax:</h3>
-<div class="sourceCode" id="cb9" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" title="1"><span class="cf">for</span> [identifier] <span class="kw">in</span> [sequence]:</a>
-<a class="sourceLine" id="cb9-2" title="2">    <span class="co"># useful code that processes each identifier(item) in a sequence(collection). (repeat block)</span></a></code></pre></div>
+<div class="sourceCode" id="cb9" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="cf">for</span> [identifier] <span class="kw">in</span> [sequence]:</span>
+<span id="cb9-2"><a href="#cb9-2"></a>    <span class="co"># useful code that processes each identifier(item) in a sequence(collection). (repeat block)</span></span></code></pre></div>
 <p><strong>identifier</strong> is a variable name you choose for <em>each item</em> in the repeat block.</p>
 <h3 id="how-does-this-work">How Does this Work?</h3>
 <p>The assignment of the <strong>identifier</strong> to each item in the sequence is handled for you, and so is the progression from one item to the next. (Thank you, computers!)</p>
@@ -297,19 +301,19 @@
 <p>One advantage of <strong>for-in loops</strong> are since iteration is taken care of by the computer, we don’t have to worry about forgetting to increment/decrement our counter variable (<em>goodbye infinite loops!</em>).</p>
 <h3 id="converting-a-while-loop">Converting a While Loop</h3>
 <p>Any <strong>while loop</strong> can be turned into an equivalent <strong>for-in loop</strong>. Here’s an example of printing out elements of a List:</p>
-<div class="sourceCode" id="cb10" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" title="1"><span class="im">from</span> typing <span class="im">import</span> List</a>
-<a class="sourceLine" id="cb10-2" title="2"></a>
-<a class="sourceLine" id="cb10-3" title="3">i: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb10-4" title="4">my_list: List[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</a>
-<a class="sourceLine" id="cb10-5" title="5"></a>
-<a class="sourceLine" id="cb10-6" title="6"><span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(my_list):</a>
-<a class="sourceLine" id="cb10-7" title="7">    <span class="bu">print</span>(my_list[i])</a>
-<a class="sourceLine" id="cb10-8" title="8">    i <span class="op">+=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb10-9" title="9"></a>
-<a class="sourceLine" id="cb10-10" title="10"><span class="co"># can be rewritten as:</span></a>
-<a class="sourceLine" id="cb10-11" title="11"></a>
-<a class="sourceLine" id="cb10-12" title="12"><span class="cf">for</span> item <span class="kw">in</span> my_list:</a>
-<a class="sourceLine" id="cb10-13" title="13">    <span class="bu">print</span>(item)</a></code></pre></div>
+<div class="sourceCode" id="cb10" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">from</span> typing <span class="im">import</span> List</span>
+<span id="cb10-2"><a href="#cb10-2"></a></span>
+<span id="cb10-3"><a href="#cb10-3"></a>i: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>my_list: List[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
+<span id="cb10-5"><a href="#cb10-5"></a></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(my_list):</span>
+<span id="cb10-7"><a href="#cb10-7"></a>    <span class="bu">print</span>(my_list[i])</span>
+<span id="cb10-8"><a href="#cb10-8"></a>    i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a></span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="co"># can be rewritten as:</span></span>
+<span id="cb10-11"><a href="#cb10-11"></a></span>
+<span id="cb10-12"><a href="#cb10-12"></a><span class="cf">for</span> item <span class="kw">in</span> my_list:</span>
+<span id="cb10-13"><a href="#cb10-13"></a>    <span class="bu">print</span>(item)</span></code></pre></div>
 <p>The output for both of these loops will be exactly the same: <em>1, 2, 3, 4, 5, 6</em>. These two types of loops are completely interchangeable; however, the syntax of a <strong>for-in loop</strong> often proves to be preferable as you get more comfortable with the process.</p>
 <h3 id="which-loop-to-use">Which Loop to Use?</h3>
 <p>Although <strong>for-in loops</strong> and <strong>while loops</strong> are interchangeable, there are some instances where you want to use one over the other.</p>
@@ -317,26 +321,26 @@
 <p><strong>for-in loops</strong> are fantastic for-in looping through an entire collection of data in a deceptively simple way.</p>
 <h3 id="nested-for-loops">Nested For Loops!</h3>
 <p>We can nest <strong>for-in loops</strong>, too!</p>
-<div class="sourceCode" id="cb11" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb11-1" title="1"><span class="im">from</span> typing <span class="im">import</span> List</a>
-<a class="sourceLine" id="cb11-2" title="2"></a>
-<a class="sourceLine" id="cb11-3" title="3">list_1: List[<span class="bu">str</span>] <span class="op">=</span> [<span class="st">&quot;spooky&quot;</span>, <span class="st">&quot;scary&quot;</span>]</a>
-<a class="sourceLine" id="cb11-4" title="4">list_2: List[<span class="bu">str</span>] <span class="op">=</span> [<span class="st">&quot;skeletons&quot;</span>, <span class="st">&quot;shivers&quot;</span>]</a>
-<a class="sourceLine" id="cb11-5" title="5"></a>
-<a class="sourceLine" id="cb11-6" title="6"><span class="cf">for</span> word <span class="kw">in</span> list_1:</a>
-<a class="sourceLine" id="cb11-7" title="7">    <span class="cf">for</span> item <span class="kw">in</span> list_2:</a>
-<a class="sourceLine" id="cb11-8" title="8">        <span class="bu">print</span>(word, item)</a></code></pre></div>
+<div class="sourceCode" id="cb11" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="im">from</span> typing <span class="im">import</span> List</span>
+<span id="cb11-2"><a href="#cb11-2"></a></span>
+<span id="cb11-3"><a href="#cb11-3"></a>list_1: List[<span class="bu">str</span>] <span class="op">=</span> [<span class="st">&quot;spooky&quot;</span>, <span class="st">&quot;scary&quot;</span>]</span>
+<span id="cb11-4"><a href="#cb11-4"></a>list_2: List[<span class="bu">str</span>] <span class="op">=</span> [<span class="st">&quot;skeletons&quot;</span>, <span class="st">&quot;shivers&quot;</span>]</span>
+<span id="cb11-5"><a href="#cb11-5"></a></span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="cf">for</span> word <span class="kw">in</span> list_1:</span>
+<span id="cb11-7"><a href="#cb11-7"></a>    <span class="cf">for</span> item <span class="kw">in</span> list_2:</span>
+<span id="cb11-8"><a href="#cb11-8"></a>        <span class="bu">print</span>(word, item)</span></code></pre></div>
 <p>The nested loops print out combinations of the two lists. The output of this will be ‘<em>spooky skeletons, spooky shivers, scary skeletons, scary shivers</em>’.</p>
 <h2 id="range-objects-in-loops">Range Objects in Loops</h2>
 <p>You can also loop through a defined range using Python’s <strong>range()</strong> function.</p>
 <p>Check out <a href="https://pynative.com/python-range-function/">this page</a> for more information about this function!</p>
 <p>While the syntax looks a bit different for using range within <strong>with loops</strong> and <strong>for-in loops</strong>, both can use the <strong>range()</strong> function in their implementation!</p>
-<div class="sourceCode" id="cb12" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" title="1">i: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb12-2" title="2"><span class="cf">while</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</a>
-<a class="sourceLine" id="cb12-3" title="3">    <span class="bu">print</span>(i <span class="op">+</span> <span class="st">&quot;, &quot;</span>)</a>
-<a class="sourceLine" id="cb12-4" title="4">    i <span class="op">+=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb12-5" title="5"></a>
-<a class="sourceLine" id="cb12-6" title="6"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</a>
-<a class="sourceLine" id="cb12-7" title="7">    <span class="bu">print</span>(i <span class="op">+</span> <span class="st">&quot;, &quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb12" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>i: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="cf">while</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb12-3"><a href="#cb12-3"></a>    <span class="bu">print</span>(i <span class="op">+</span> <span class="st">&quot;, &quot;</span>)</span>
+<span id="cb12-4"><a href="#cb12-4"></a>    i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb12-7"><a href="#cb12-7"></a>    <span class="bu">print</span>(i <span class="op">+</span> <span class="st">&quot;, &quot;</span>)</span></code></pre></div>
 <p>Both loops’ outputs are ‘<em>0 1 2 3 4</em>’. This is another way to control the amount of times a loop repeats!</p>
 </div>
 

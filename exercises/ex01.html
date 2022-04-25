@@ -7,7 +7,7 @@
     <title> EX01 - Chardle - Input, Variables, and Conditionals - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1650484345.4399133">
+    <link rel="stylesheet" href="/static/style.css?v=1650892936.1474478">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -187,7 +187,9 @@
                 <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
-                        <ul><li><a href="#part-0.-setting-up-the-python-program">Part 0. Setting up the Python Program</a></li>
+                        <ul>doc-toc">
+<ul>
+<li><a href="#part-0.-setting-up-the-python-program">Part 0. Setting up the Python Program</a></li>
 <li><a href="#part-1.-prompting-for-inputs-20-points">Part 1. Prompting for Inputs – 20 Points</a></li>
 <li><a href="#part-2.-checking-indices-for-matches-20-points">Part 2. Checking Indices for Matches – 20 Points</a></li>
 <li><a href="#part-3.-counting-matching-indices-30-points">Part 3. Counting Matching Indices – 30 Points</a></li>
@@ -255,10 +257,10 @@
 <li><code>ex01_chardle.py</code></li>
 </ul>
 <p>Before beginning work on the program, you should add a <em>docstring</em> to the top of your Python <em>module</em> just as you did in EX00. Then, you should add a line with the special variable named <code>__author__</code> assigned to be a string with your 9-digit student PID. (Disclaimer: Out in the real world the <code>__author__</code> variable is typically your name and e-mail address, but since we will grade your programs we’d like to avoid potential bias in seeing your names as part of the programs as we’re grading.) Add the following lines above the line of code that calls the <code>print</code> function. Fill in <em>your</em> 9-digit UNC PID number, without any spaces or dashes, in the <code>__author__</code> string.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1">    <span class="co">&quot;&quot;&quot;EX01 - Chardle - A cute step toward Wordle.&quot;&quot;&quot;</span></a>
-<a class="sourceLine" id="cb2-2" title="2"></a>
-<a class="sourceLine" id="cb2-3" title="3">    __author__ <span class="op">=</span> <span class="st">&quot;1234567890&quot;</span></a>
-<a class="sourceLine" id="cb2-4" title="4"></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;EX01 - Chardle - A cute step toward Wordle.&quot;&quot;&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    __author__ <span class="op">=</span> <span class="st">&quot;1234567890&quot;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a></span></code></pre></div>
 <h2 id="part-1.-prompting-for-inputs-20-points">Part 1. Prompting for Inputs – 20 Points</h2>
 <p>The first task of this program is to gather inputs from the user. Using the concepts you learned in <a href="https://youtu.be/wXoUw0scEsI">LS06 - Variables and User Input</a>, you will want to ask the user to enter a 5-character word and a single character, storing both in <code>str</code> variables. You will then print out a diagnostic message, built-up using string concatenation, that confirms you have correctly stored each input in a variable. <strong>Please choose meaningful, descriptive names for your variables.</strong> Write your prompts and diagnostic message such that you can reproduce the following in the shell after saving and running your program:</p>
 <pre class="plaintext"><code>    $ python -m exercises.ex01_chardle 

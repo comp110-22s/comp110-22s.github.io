@@ -7,7 +7,7 @@
     <title> Style, Linting and Autograder Guide - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1650484340.112429">
+    <link rel="stylesheet" href="/static/style.css?v=1650892930.6327944">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -189,21 +189,21 @@
 <li>Note that <code>add_one</code> returns an <code>int</code> and therefore must have a return statment. However <code>print_word</code> returns <code>None</code> and therefore a return statement is not required.</li>
 </ul></li>
 </ol>
-<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co">&quot;&quot;&quot;This is a Docstring.&quot;&quot;&quot;</span></a>
-<a class="sourceLine" id="cb1-2" title="2"></a>
-<a class="sourceLine" id="cb1-3" title="3">__author__ <span class="op">=</span> <span class="st">&quot;123456789&quot;</span></a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5">NAMED_CONSTANT: <span class="bu">int</span> <span class="op">=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb1-6" title="6"></a>
-<a class="sourceLine" id="cb1-7" title="7"></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="kw">def</span> add_one(num: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</a>
-<a class="sourceLine" id="cb1-9" title="9">    <span class="co">&quot;&quot;&quot;Adds one to a given number.&quot;&quot;&quot;</span></a>
-<a class="sourceLine" id="cb1-10" title="10">    <span class="cf">return</span> num <span class="op">+</span> NAMED_CONSTANT</a>
-<a class="sourceLine" id="cb1-11" title="11"></a>
-<a class="sourceLine" id="cb1-12" title="12"></a>
-<a class="sourceLine" id="cb1-13" title="13"><span class="kw">def</span> print_word(word: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</a>
-<a class="sourceLine" id="cb1-14" title="14">    <span class="co">&quot;&quot;&quot;Prints out a given word.&quot;&quot;&quot;</span></a>
-<a class="sourceLine" id="cb1-15" title="15">    <span class="bu">print</span>(word)</a></code></pre></div>
+<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">&quot;&quot;&quot;This is a Docstring.&quot;&quot;&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>__author__ <span class="op">=</span> <span class="st">&quot;123456789&quot;</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>NAMED_CONSTANT: <span class="bu">int</span> <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="kw">def</span> add_one(num: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb1-9"><a href="#cb1-9"></a>    <span class="co">&quot;&quot;&quot;Adds one to a given number.&quot;&quot;&quot;</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>    <span class="cf">return</span> num <span class="op">+</span> NAMED_CONSTANT</span>
+<span id="cb1-11"><a href="#cb1-11"></a></span>
+<span id="cb1-12"><a href="#cb1-12"></a></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="kw">def</span> print_word(word: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-14"><a href="#cb1-14"></a>    <span class="co">&quot;&quot;&quot;Prints out a given word.&quot;&quot;&quot;</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a>    <span class="bu">print</span>(word)</span></code></pre></div>
 <h2 id="how-to-read-the-autograder">How to Read the Autograder</h2>
 <p>If you don’t recieve full credit when submitting to the autograder, there will likely be error messages outputted. Understanding how to read these messages can be key to figuring out what is wrong with your code.</p>
 <h4 id="basic-failed-test">Basic Failed Test</h4>
@@ -212,7 +212,7 @@
 <ul>
 <li><code>graders/exercises/ex02/cipher_test.py:38</code> tells you which line of the grader found the missing functionality in your code. Since you cannot see the grader, you can ignore this part.</li>
 <li><code>AssertionError: assert 'n' == 'njml'</code> tells you that your code outputted <code>'n'</code> but the autograder was expecting <code>'njml'</code>.</li>
-<li><code>- njml,  + n</code> tells you the same thing, <code>njml</code> was missing from your output but <code>n</code> was present.</li>
+<li>` - njml, + n<code>tells you the same thing,</code>njml<code>was missing from your output but</code>n` was present.</li>
 </ul>
 <h4 id="code-style-and-linting-errors">Code Style and Linting Errors</h4>
 <p>Below is an example of a possible autograder error message for a style issue.</p>

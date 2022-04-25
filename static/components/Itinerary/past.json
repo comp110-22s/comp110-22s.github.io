@@ -799,5 +799,43 @@
     "2022-04-13": [],
     "2022-04-14": [],
     "2022-04-15": [],
-    "2022-04-16": []
+    "2022-04-16": [],
+    "2022-04-17": [],
+    "2022-04-18": [],
+    "2022-04-19": [
+        {
+            "kind": "LS",
+            "n": 29,
+            "title": "Recursion Introduction - Async",
+            "date": "2022-04-19",
+            "deadline": "2022-04-20",
+            "links": {
+                "Follow-along Lesson": "https://www.youtube.com/watch?v=nVv7RDDtwdg",
+                "Gradescope Questions": "https://gradescope.com"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 10,
+            "title": "Recursion Exercise - Due 4/27",
+            "date": "2022-04-19",
+            "deadline": "2022-04-27",
+            "links": {
+                "Write-up": "/exercises/ex10.html"
+            }
+        }
+    ],
+    "2022-04-20": [],
+    "2022-04-21": [
+        {
+            "kind": "CL",
+            "n": 26,
+            "title": "Recursion in-person",
+            "date": "2022-04-21",
+            "deadline": "None",
+            "links": {
+                "Quarantine Stream": "https://youtu.be/LmV4ArXOAXc"
+            }
+        }
+    ]
 }

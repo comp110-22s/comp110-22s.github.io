@@ -7,7 +7,7 @@
     <title> To-do List Web App - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1650484349.5550244">
+    <link rel="stylesheet" href="/static/style.css?v=1650892940.5843267">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -187,24 +187,31 @@
                 <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
-                        <ul><li><a href="#getting-started">Getting started</a></li>
-<li><a href="#languages-and-tools">Languages and Tools</a><ul>
+                        <ul>doc-toc">
+<ul>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#languages-and-tools">Languages and Tools</a>
+<ul>
 <li><a href="#task-developer-tools">Task: Developer Tools</a></li>
 </ul></li>
-<li><a href="#css-and-html">CSS and HTML</a><ul>
+<li><a href="#css-and-html">CSS and HTML</a>
+<ul>
 <li><a href="#task-index.html">Task: index.html</a></li>
 <li><a href="#html-tags">HTML Tags</a></li>
 <li><a href="#task-styles.css">Task: styles.css</a></li>
 </ul></li>
-<li><a href="#basic-flask">Basic Flask</a><ul>
+<li><a href="#basic-flask">Basic Flask</a>
+<ul>
 <li><a href="#task-setting-up-flask">Task: Setting up Flask</a></li>
 <li><a href="#task-adding-a-new-page">Task: Adding a new page</a></li>
 </ul></li>
-<li><a href="#handling-methods">Handling Methods</a><ul>
+<li><a href="#handling-methods">Handling Methods</a>
+<ul>
 <li><a href="#task-form-submission">Task: Form Submission</a></li>
 <li><a href="#task-returning-to-create-page">Task: Returning to Create Page</a></li>
 </ul></li>
-<li><a href="#working-with-data">Working With Data</a><ul>
+<li><a href="#working-with-data">Working With Data</a>
+<ul>
 <li><a href="#task-obtaining-the-data">Task: Obtaining the data</a></li>
 <li><a href="#task-storing-the-data">Task: Storing the Data</a></li>
 <li><a href="#task-displaying-all-todos">Task: Displaying All Todos</a></li>
@@ -214,7 +221,8 @@
 <li><a href="#bonus-checking-off-items">Bonus: Checking off Items</a></li>
 <li><a href="#bonus-editing-tasks">Bonus: Editing Tasks</a></li>
 <li><a href="#bonus-hot-reload">Bonus: Hot Reload</a></li>
-<li><a href="#documentation-tools-and-resources">Documentation, Tools and Resources</a><ul>
+<li><a href="#documentation-tools-and-resources">Documentation, Tools and Resources</a>
+<ul>
 <li><a href="#helpful-vscode-extensions">Helpful VSCode Extensions</a></li>
 </ul></li>
 </ul>
@@ -268,19 +276,19 @@
 <li>Make a new file in your repository named <code>index.html</code>. This file name is a convention for the HTML file that represents your home page.</li>
 <li>Copy and paste the following HTML snippet into the file:</li>
 </ol>
-<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" title="1"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb1-3" title="3">    <span class="kw">&lt;head&gt;</span></a>
-<a class="sourceLine" id="cb1-4" title="4">        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb1-5" title="5">        <span class="kw">&lt;title&gt;</span>Intro to Web Dev!<span class="kw">&lt;/title&gt;</span></a>
-<a class="sourceLine" id="cb1-6" title="6">    <span class="kw">&lt;/head&gt;</span></a>
-<a class="sourceLine" id="cb1-7" title="7">    <span class="kw">&lt;body&gt;</span></a>
-<a class="sourceLine" id="cb1-8" title="8">        <span class="kw">&lt;p&gt;</span>Hello World!<span class="kw">&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb1-9" title="9">        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&#39;hello&#39;</span> <span class="kw">&gt;</span>Hello World!<span class="kw">&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb1-10" title="10">        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&#39;hello&#39;</span> <span class="kw">&gt;</span>Hello World!<span class="kw">&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb1-11" title="11">        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&#39;hello&#39;</span><span class="ot"> id=</span><span class="st">&#39;world&#39;</span> <span class="kw">&gt;</span>Hello World!<span class="kw">&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb1-12" title="12">    <span class="kw">&lt;/body&gt;</span></a>
-<a class="sourceLine" id="cb1-13" title="13"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>        <span class="kw">&lt;title&gt;</span>Intro to Web Dev!<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>        <span class="kw">&lt;p&gt;</span>Hello World!<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&#39;hello&#39;</span> <span class="kw">&gt;</span>Hello World!<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&#39;hello&#39;</span> <span class="kw">&gt;</span>Hello World!<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&#39;hello&#39;</span><span class="ot"> id=</span><span class="st">&#39;world&#39;</span> <span class="kw">&gt;</span>Hello World!<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
 <ol start="3" type="1">
 <li>Make sure the file is saved and then right click the file in the file explorer and click reveal in finder (Mac) or show in folder (Windows).</li>
 <li>In finder / file explorer, right click on the file and open it with google chrome. You should now see a basic webpage that says Hello World!</li>
@@ -293,9 +301,9 @@
 <li>Make a new file in your repository named <code>styles.css</code>. This file name is a convention for the CSS file that holds the core styling.</li>
 <li>Copy and paste the following CSS snippet into the file:</li>
 </ol>
-<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource css numberLines"><code class="sourceCode css"><a class="sourceLine" id="cb2-1" title="1">p {</a>
-<a class="sourceLine" id="cb2-2" title="2">    <span class="kw">color</span>: <span class="cn">#75c3f7</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb2-3" title="3">  }</a></code></pre></div>
+<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource css numberLines"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1"></a>p {</span>
+<span id="cb2-2"><a href="#cb2-2"></a>    <span class="kw">color</span>: <span class="cn">#75c3f7</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>  }</span></code></pre></div>
 <ol start="3" type="1">
 <li>Make sure the file is saved and then add the following <code>link</code> tag inside the <code>&lt;head&gt;&lt;/head&gt;</code> tag in your <code>index.html</code> file. This will link your CSS file to your HTML file so that the styles we add are applied to our webpage.</li>
 </ol>
@@ -303,16 +311,16 @@
 <ol start="4" type="1">
 <li>Once both files are saved, reload the chrome page with your webpage and you should see the color of all the <code>Hello World!</code> texts change! Now add the following CSS snippet:</li>
 </ol>
-<div class="sourceCode" id="cb4" data-startFrom="1"><pre class="sourceCode numberSource css numberLines"><code class="sourceCode css"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">.hello</span> {</a>
-<a class="sourceLine" id="cb4-2" title="2">    <span class="kw">color</span>: <span class="cn">#befe9f</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-3" title="3">  }</a></code></pre></div>
+<div class="sourceCode" id="cb4" data-startFrom="1"><pre class="sourceCode numberSource css numberLines"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">.hello</span> {</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    <span class="kw">color</span>: <span class="cn">#befe9f</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  }</span></code></pre></div>
 <p>When you refresh the page again you should see the bottom three <code>Hello World!</code>’s have changed to green. In <code>index.html</code> you may notice the last three <code>Hello World!</code>’s are labeled with <code>class='hello'</code>. Sometimes we may not want to apply a style to every single element of the <code>&lt;p&gt;</code> tag type (or other types). Instead we can label groups of elements with a class and then select the class in our css file to style it. We did this with the <code>hello</code> class when we changed the bottom <code>Hello World!</code>’s to green.</p>
 <ol start="5" type="1">
 <li>One other option for styling specific elements is id’s. Add the following CSS snippet:</li>
 </ol>
-<div class="sourceCode" id="cb5" data-startFrom="1"><pre class="sourceCode numberSource css numberLines"><code class="sourceCode css"><a class="sourceLine" id="cb5-1" title="1"><span class="pp">#world</span> {</a>
-<a class="sourceLine" id="cb5-2" title="2">    <span class="kw">color</span>: <span class="cn">#cfa3df</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb5-3" title="3">  }</a></code></pre></div>
+<div class="sourceCode" id="cb5" data-startFrom="1"><pre class="sourceCode numberSource css numberLines"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1"></a><span class="pp">#world</span> {</span>
+<span id="cb5-2"><a href="#cb5-2"></a>    <span class="kw">color</span>: <span class="cn">#cfa3df</span><span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>  }</span></code></pre></div>
 <p>When you refresh the page again you should see the last <code>Hello World!</code> has changed to purple. In <code>index.html</code> you may notice the last <code>Hello World!</code> is labeled with <code>id='world'</code>. If you want to apply a style to a singular element then you should use an Id. Id’s SHOULD NEVER be added to more than one element, they are intended to be unique identifiers. Id’s can be useful for styling because they are even more specific than classes. Notice that the last <code>Hello World</code> element is also labeled with <code>class='hello'</code> but the styling for the id overrode it.</p>
 <blockquote>
 <p>Note: pay attention to the syntax for selecting different css rules to style. If you are styling all elements of a <code>tag</code> type, you simply write the tag name and then the rules. If you are styling a class, you preface it’s name with a <code>.</code> and if you are styling an <code>id</code> you preface it’s name with a <code>#</code>.</p>
@@ -328,16 +336,16 @@
 <ol start="4" type="1">
 <li>Once that finishes, create a new file called <code>app.py</code> in your repo and add the following code snippet.</li>
 </ol>
-<div class="sourceCode" id="cb7" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" title="1"><span class="im">from</span> flask <span class="im">import</span> Flask, render_template</a>
-<a class="sourceLine" id="cb7-2" title="2"></a>
-<a class="sourceLine" id="cb7-3" title="3">app: Flask <span class="op">=</span> Flask(<span class="va">__name__</span>)</a>
-<a class="sourceLine" id="cb7-4" title="4"></a>
-<a class="sourceLine" id="cb7-5" title="5"><span class="at">@app.route</span>(<span class="st">&quot;/&quot;</span>)</a>
-<a class="sourceLine" id="cb7-6" title="6"><span class="kw">def</span> index():</a>
-<a class="sourceLine" id="cb7-7" title="7">    <span class="cf">return</span> render_template(<span class="st">&#39;index.html&#39;</span>)</a>
-<a class="sourceLine" id="cb7-8" title="8"></a>
-<a class="sourceLine" id="cb7-9" title="9"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</a>
-<a class="sourceLine" id="cb7-10" title="10">    app.run(debug<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb7" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, render_template</span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a>app: Flask <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb7-4"><a href="#cb7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="at">@app.route</span>(<span class="st">&quot;/&quot;</span>)</span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="kw">def</span> index():</span>
+<span id="cb7-7"><a href="#cb7-7"></a>    <span class="cf">return</span> render_template(<span class="st">&#39;index.html&#39;</span>)</span>
+<span id="cb7-8"><a href="#cb7-8"></a></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</span>
+<span id="cb7-10"><a href="#cb7-10"></a>    app.run(debug<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 <ol start="4" type="1">
 <li><p>Since we have moved the <code>styles.css</code> file we need to make sure to update our reference to it in <code>index.html</code>. Change <code>&lt;link rel='stylesheet' href='styles.css' /&gt;</code> to <code>&lt;link rel='stylesheet' href='/static/styles.css' /&gt;</code>.</p></li>
 <li><p>To run your app we need to run the <code>app.py</code> file as a python module: <code>python -m app</code> and then open your browser to the link it spits out in the terminal (http://127.0.0.1:5000/)</p></li>
@@ -346,38 +354,38 @@
 <ol type="1">
 <li>Create a new file called <code>create-todo.html</code> in your <code>templates</code> folder and paste the following HTML into it.</li>
 </ol>
-<div class="sourceCode" id="cb8" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb8-1" title="1"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb8-3" title="3">    <span class="kw">&lt;head&gt;</span></a>
-<a class="sourceLine" id="cb8-4" title="4">        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb8-5" title="5">        <span class="kw">&lt;title&gt;</span>Create Todo!<span class="kw">&lt;/title&gt;</span></a>
-<a class="sourceLine" id="cb8-6" title="6">    <span class="kw">&lt;/head&gt;</span></a>
-<a class="sourceLine" id="cb8-7" title="7">    <span class="kw">&lt;body&gt;</span></a>
-<a class="sourceLine" id="cb8-8" title="8">        <span class="kw">&lt;form</span><span class="ot"> method=</span><span class="st">&quot;post&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb8-9" title="9">            <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;title&quot;</span><span class="kw">&gt;</span>Todo title:<span class="kw">&lt;/label&gt;</span></a>
-<a class="sourceLine" id="cb8-10" title="10">            <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></a>
-<a class="sourceLine" id="cb8-11" title="11">            <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;title&quot;</span><span class="ot"> name=</span><span class="st">&quot;title&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb8-12" title="12">            <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></a>
-<a class="sourceLine" id="cb8-13" title="13">            <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></a>
-<a class="sourceLine" id="cb8-14" title="14">            <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;description&quot;</span><span class="kw">&gt;</span>Todo description:<span class="kw">&lt;/label&gt;</span></a>
-<a class="sourceLine" id="cb8-15" title="15">            <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></a>
-<a class="sourceLine" id="cb8-16" title="16">            <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;description&quot;</span><span class="ot"> name=</span><span class="st">&quot;description&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb8-17" title="17">            <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></a>
-<a class="sourceLine" id="cb8-18" title="18">            <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></a>
-<a class="sourceLine" id="cb8-19" title="19">            <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Create&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb8-20" title="20">        <span class="kw">&lt;/form&gt;</span></a>
-<a class="sourceLine" id="cb8-21" title="21">    <span class="kw">&lt;/body&gt;</span></a>
-<a class="sourceLine" id="cb8-22" title="22"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb8" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>        <span class="kw">&lt;title&gt;</span>Create Todo!<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>        <span class="kw">&lt;form</span><span class="ot"> method=</span><span class="st">&quot;post&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a>            <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;title&quot;</span><span class="kw">&gt;</span>Todo title:<span class="kw">&lt;/label&gt;</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a>            <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a>            <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;title&quot;</span><span class="ot"> name=</span><span class="st">&quot;title&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a>            <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a>            <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a>            <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;description&quot;</span><span class="kw">&gt;</span>Todo description:<span class="kw">&lt;/label&gt;</span></span>
+<span id="cb8-15"><a href="#cb8-15"></a>            <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb8-16"><a href="#cb8-16"></a>            <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;description&quot;</span><span class="ot"> name=</span><span class="st">&quot;description&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb8-17"><a href="#cb8-17"></a>            <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a>            <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb8-19"><a href="#cb8-19"></a>            <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Create&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb8-20"><a href="#cb8-20"></a>        <span class="kw">&lt;/form&gt;</span></span>
+<span id="cb8-21"><a href="#cb8-21"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb8-22"><a href="#cb8-22"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
 <ol start="2" type="1">
 <li>Return to your <code>index.html</code> file and add the following HTML element in the body.</li>
 </ol>
-<div class="sourceCode" id="cb9" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/create-todo&quot;</span><span class="kw">&gt;</span>Create Todo!<span class="kw">&lt;/a&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb9" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/create-todo&quot;</span><span class="kw">&gt;</span>Create Todo!<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
 <ol start="3" type="1">
 <li>If you attempt to click on <code>Create Todo!</code> while viewing your <code>index.html</code> file on chrome, you will get an error! This is because we need to define the route to the <code>create-todo</code> URL in our <code>app.py</code> file. Add the following code snippet in <code>app.py</code>, save all the files, and attempt to click <code>Create Todo!</code> again.</li>
 </ol>
-<div class="sourceCode" id="cb10" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/create-todo&#39;</span>)</a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="kw">def</span> create_todo():</a>
-<a class="sourceLine" id="cb10-3" title="3">    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb10" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="at">@app.route</span>(<span class="st">&#39;/create-todo&#39;</span>)</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="kw">def</span> create_todo():</span>
+<span id="cb10-3"><a href="#cb10-3"></a>    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</span></code></pre></div>
 <h2 id="handling-methods">Handling Methods</h2>
 <p>In order to add interactivity to the create todo page on our site we need to learn about HTTP request methods. We won’t need to know a lot about HTTP, but a simple definition for HTTP is a defined set of rules or protocols for fetching resources such as our HTML or CSS files.</p>
 <p>Two of these rules are the <code>GET</code> and <code>POST</code> methods. The <code>GET</code> method is a basic protocol for viewing or <em>getting</em> some resource such as our <code>index.html</code> file. The <code>POST</code> method is a protocol for updating or inserting new data. You can imagine when you <em>post</em> something on social media the data is getting uploaded so that everyone can now see your post.</p>
@@ -386,22 +394,22 @@
 <ol type="1">
 <li>Create a new file in your templates folder named <code>success.html</code> that will be used to confirm the creation of the todo. Add the following HTML to this file:</li>
 </ol>
-<div class="sourceCode" id="cb11" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb11-1" title="1"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></a>
-<a class="sourceLine" id="cb11-2" title="2"><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb11-3" title="3">     <span class="kw">&lt;p&gt;</span>Successfully created todo!!!<span class="kw">&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb11-4" title="4"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb11" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>     <span class="kw">&lt;p&gt;</span>Successfully created todo!!!<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
 <ol start="2" type="1">
 <li>Notice how the HTML for the form in <code>create-todo.html</code> says <code>method="post"</code>. When you click the submit button inside the form element it will use the HTTP protocol <code>POST</code>. This makes sense since we are going to be saving or <em>posting</em> new data for the users answers when they click the submit button. We can use this fact to render our sucsess template in our <code>create_todo</code> function. First, we will need to import the <code>request</code> ability from Flask. Update the Flask import at the top of your <code>app.py</code> file:</li>
 </ol>
-<div class="sourceCode" id="cb12" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" title="1"><span class="im">from</span> flask <span class="im">import</span> Flask, render_template, request</a></code></pre></div>
+<div class="sourceCode" id="cb12" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, render_template, request</span></code></pre></div>
 <ol start="3" type="1">
 <li>Now we are ready to handle different types of requests. Update your <code>create_todo</code> function in <code>app.py</code> as seen below:</li>
 </ol>
-<div class="sourceCode" id="cb13" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/create-todo&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
-<a class="sourceLine" id="cb13-2" title="2"><span class="kw">def</span> create_todo():</a>
-<a class="sourceLine" id="cb13-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</a>
-<a class="sourceLine" id="cb13-4" title="4">        <span class="cf">return</span> render_template(<span class="st">&quot;success.html&quot;</span>)</a>
-<a class="sourceLine" id="cb13-5" title="5">    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb13" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="at">@app.route</span>(<span class="st">&#39;/create-todo&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="kw">def</span> create_todo():</span>
+<span id="cb13-3"><a href="#cb13-3"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</span>
+<span id="cb13-4"><a href="#cb13-4"></a>        <span class="cf">return</span> render_template(<span class="st">&quot;success.html&quot;</span>)</span>
+<span id="cb13-5"><a href="#cb13-5"></a>    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</span></code></pre></div>
 <ol start="3" type="1">
 <li>Now, when you click the Submit button when viewing your <code>/create-todo</code> page, our function will check if the request method was <code>POST</code> and render a success if so. Otherwise, we will see our normal create todo page. Keep in mind that the route or URL in your browser still shows <code>/create-todo</code> since all we changed is what is rendered in our <code>create_todo</code> function.</li>
 </ol>
@@ -410,19 +418,19 @@
 <ol type="1">
 <li>Add the following HTML snippet into your <code>success.html</code> template underneath <code>&lt;p&gt;Successfully created todo!!!&lt;/p&gt;</code>:</li>
 </ol>
-<div class="sourceCode" id="cb14" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb14-1" title="1">    <span class="kw">&lt;form</span><span class="ot"> method=</span><span class="st">&quot;get&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb14-2" title="2">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Create another!&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb14-3" title="3">    <span class="kw">&lt;/form&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb14" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb14-1"><a href="#cb14-1"></a>    <span class="kw">&lt;form</span><span class="ot"> method=</span><span class="st">&quot;get&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Create another!&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>    <span class="kw">&lt;/form&gt;</span></span></code></pre></div>
 <ol start="2" type="1">
 <li>In this <code>form</code> we specified that <code>method="get"</code>. This makes sense since we are just requesting the <code>create-todo.html</code> view instead of updating or posting any data. We could now update our <code>create_todo</code> method to the code snippet below, but it is actually logically equivalent to what we have already written since any method that is not <code>POST</code> will render our <code>create_todo.html</code> file as a default so there is no need.</li>
 </ol>
-<div class="sourceCode" id="cb15" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/create-todo&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
-<a class="sourceLine" id="cb15-2" title="2"><span class="kw">def</span> create_todo():</a>
-<a class="sourceLine" id="cb15-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</a>
-<a class="sourceLine" id="cb15-4" title="4">        <span class="cf">return</span> render_template(<span class="st">&quot;success.html&quot;</span>)</a>
-<a class="sourceLine" id="cb15-5" title="5">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;GET&quot;</span>:</a>
-<a class="sourceLine" id="cb15-6" title="6">        <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a>
-<a class="sourceLine" id="cb15-7" title="7">    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb15" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="at">@app.route</span>(<span class="st">&#39;/create-todo&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="kw">def</span> create_todo():</span>
+<span id="cb15-3"><a href="#cb15-3"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</span>
+<span id="cb15-4"><a href="#cb15-4"></a>        <span class="cf">return</span> render_template(<span class="st">&quot;success.html&quot;</span>)</span>
+<span id="cb15-5"><a href="#cb15-5"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;GET&quot;</span>:</span>
+<span id="cb15-6"><a href="#cb15-6"></a>        <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</span>
+<span id="cb15-7"><a href="#cb15-7"></a>    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</span></code></pre></div>
 <ol start="3" type="1">
 <li>If you try clicking the <code>Create another!</code> button you should now see the create view. It should be easy to navigate between these two views now.</li>
 </ol>
@@ -433,26 +441,26 @@
 <ol type="1">
 <li>In order to show the success page we will need to add a variable into our <code>success.html</code> file. Add the following below <code>&lt;p&gt;Successfully created todo!!!&lt;/p&gt;</code>:</li>
 </ol>
-<div class="sourceCode" id="cb16" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">&lt;p&gt;</span> Title: {{title}}<span class="kw">&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb16-2" title="2"><span class="kw">&lt;p&gt;</span> Description: {{description}}<span class="kw">&lt;/p&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb16" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">&lt;p&gt;</span> Title: {{title}}<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="kw">&lt;p&gt;</span> Description: {{description}}<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
 <blockquote>
 <p>The <code>{{title}}</code> syntax is similar to what you have already worked with while using <code>f-strings</code>. In our case we are telling our <code>success.html</code> template to expect two <code>str</code> variables named <code>title</code> and <code>description</code>.</p>
 </blockquote>
 <ol start="2" type="1">
 <li>Now we need to make sure to pass the <code>title</code> and <code>description</code> variables to the <code>render_template</code> function. Update the <code>create_todo</code> function to the following:</li>
 </ol>
-<div class="sourceCode" id="cb17" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/create-todo&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
-<a class="sourceLine" id="cb17-2" title="2"><span class="kw">def</span> create_todo():</a>
-<a class="sourceLine" id="cb17-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</a>
-<a class="sourceLine" id="cb17-4" title="4"></a>
-<a class="sourceLine" id="cb17-5" title="5">        title: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;title&#39;</span>]</a>
-<a class="sourceLine" id="cb17-6" title="6">        description: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;description&#39;</span>]</a>
-<a class="sourceLine" id="cb17-7" title="7"></a>
-<a class="sourceLine" id="cb17-8" title="8">        <span class="cf">if</span> title <span class="op">==</span> <span class="st">&#39;&#39;</span>:</a>
-<a class="sourceLine" id="cb17-9" title="9">            <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a>
-<a class="sourceLine" id="cb17-10" title="10"></a>
-<a class="sourceLine" id="cb17-11" title="11">        <span class="cf">return</span> render_template(<span class="st">&quot;success.html&quot;</span>, title<span class="op">=</span>title, description<span class="op">=</span>description)</a>
-<a class="sourceLine" id="cb17-12" title="12">    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb17" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="at">@app.route</span>(<span class="st">&#39;/create-todo&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="kw">def</span> create_todo():</span>
+<span id="cb17-3"><a href="#cb17-3"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</span>
+<span id="cb17-4"><a href="#cb17-4"></a></span>
+<span id="cb17-5"><a href="#cb17-5"></a>        title: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;title&#39;</span>]</span>
+<span id="cb17-6"><a href="#cb17-6"></a>        description: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;description&#39;</span>]</span>
+<span id="cb17-7"><a href="#cb17-7"></a></span>
+<span id="cb17-8"><a href="#cb17-8"></a>        <span class="cf">if</span> title <span class="op">==</span> <span class="st">&#39;&#39;</span>:</span>
+<span id="cb17-9"><a href="#cb17-9"></a>            <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</span>
+<span id="cb17-10"><a href="#cb17-10"></a></span>
+<span id="cb17-11"><a href="#cb17-11"></a>        <span class="cf">return</span> render_template(<span class="st">&quot;success.html&quot;</span>, title<span class="op">=</span>title, description<span class="op">=</span>description)</span>
+<span id="cb17-12"><a href="#cb17-12"></a>    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</span></code></pre></div>
 <blockquote>
 <ul>
 <li>In this code snippet we first grab the data for the <code>title</code> and <code>description</code> and store them into variables.</li>
@@ -470,52 +478,52 @@
 <ol type="1">
 <li>We want to use best practices while accomplishing this so we will now define a class for a <code>todo</code> to keep our code organized and readable. We could write this class in our <code>app.py</code> file but for organization we will add a helper file for classes and functions. Create a new file named <code>helpers.py</code> and add the following class:</li>
 </ol>
-<div class="sourceCode" id="cb18" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">class</span> todo:</a>
-<a class="sourceLine" id="cb18-2" title="2">    <span class="bu">id</span>: <span class="bu">int</span></a>
-<a class="sourceLine" id="cb18-3" title="3">    title: <span class="bu">str</span></a>
-<a class="sourceLine" id="cb18-4" title="4">    description: <span class="bu">str</span></a>
-<a class="sourceLine" id="cb18-5" title="5"></a>
-<a class="sourceLine" id="cb18-6" title="6">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, <span class="bu">id</span>: <span class="bu">int</span>, title: <span class="bu">str</span>, description: <span class="bu">str</span>):</a>
-<a class="sourceLine" id="cb18-7" title="7">        <span class="va">self</span>.<span class="bu">id</span> <span class="op">=</span> <span class="bu">id</span></a>
-<a class="sourceLine" id="cb18-8" title="8">        <span class="va">self</span>.title <span class="op">=</span> title</a>
-<a class="sourceLine" id="cb18-9" title="9">        <span class="va">self</span>.description <span class="op">=</span> description</a></code></pre></div>
+<div class="sourceCode" id="cb18" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="kw">class</span> todo:</span>
+<span id="cb18-2"><a href="#cb18-2"></a>    <span class="bu">id</span>: <span class="bu">int</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>    title: <span class="bu">str</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>    description: <span class="bu">str</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a></span>
+<span id="cb18-6"><a href="#cb18-6"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, <span class="bu">id</span>: <span class="bu">int</span>, title: <span class="bu">str</span>, description: <span class="bu">str</span>):</span>
+<span id="cb18-7"><a href="#cb18-7"></a>        <span class="va">self</span>.<span class="bu">id</span> <span class="op">=</span> <span class="bu">id</span></span>
+<span id="cb18-8"><a href="#cb18-8"></a>        <span class="va">self</span>.title <span class="op">=</span> title</span>
+<span id="cb18-9"><a href="#cb18-9"></a>        <span class="va">self</span>.description <span class="op">=</span> description</span></code></pre></div>
 <blockquote>
 <p>We need todos to be uniquely identifiable. For instance, what if we had two todos titled <em>Do Laundry</em> with no descriptin or matching descriptions? There would be no way to tell them apart. For this reason, we make sure to store an <code>id</code> field along with the <code>title</code> and <code>description</code> fields.</p>
 </blockquote>
 <ol start="2" type="1">
 <li>To use this class in our app, add the following import statement into your <code>app.py</code> file:</li>
 </ol>
-<div class="sourceCode" id="cb19" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb19-1" title="1"><span class="im">from</span> helpers <span class="im">import</span> todo</a></code></pre></div>
+<div class="sourceCode" id="cb19" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="im">from</span> helpers <span class="im">import</span> todo</span></code></pre></div>
 <ol start="3" type="1">
 <li>We also need to define our global variables that we will use to store our data. Add the following variables underneath your global <code>app</code> variable in your <code>app.py</code> file:</li>
 </ol>
-<div class="sourceCode" id="cb20" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" title="1">todo_list: <span class="bu">list</span>[todo] <span class="op">=</span> []</a>
-<a class="sourceLine" id="cb20-2" title="2">todo_count: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></a></code></pre></div>
+<div class="sourceCode" id="cb20" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>todo_list: <span class="bu">list</span>[todo] <span class="op">=</span> []</span>
+<span id="cb20-2"><a href="#cb20-2"></a>todo_count: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span></code></pre></div>
 <blockquote>
 <p>We will use the <code>todo_list</code> global variable to keep a list of all created todos. We will use the <code>todo_count</code> to keep track of how many todos we have so far and what the next <code>id</code> number should be.</p>
 </blockquote>
 <ol start="4" type="1">
 <li>Let’s incorporate the storing of data into our <code>create_todo</code> function. Update the <code>create_todo</code> functionality to the following code snippet:</li>
 </ol>
-<div class="sourceCode" id="cb21" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb21-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/create-todo&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
-<a class="sourceLine" id="cb21-2" title="2"><span class="kw">def</span> create_todo():</a>
-<a class="sourceLine" id="cb21-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</a>
-<a class="sourceLine" id="cb21-4" title="4">        <span class="kw">global</span> todo_list</a>
-<a class="sourceLine" id="cb21-5" title="5">        <span class="kw">global</span> todo_count</a>
-<a class="sourceLine" id="cb21-6" title="6"></a>
-<a class="sourceLine" id="cb21-7" title="7">        title: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;title&#39;</span>]</a>
-<a class="sourceLine" id="cb21-8" title="8">        description: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;description&#39;</span>]</a>
-<a class="sourceLine" id="cb21-9" title="9"></a>
-<a class="sourceLine" id="cb21-10" title="10">        <span class="cf">if</span> title <span class="op">==</span> <span class="st">&#39;&#39;</span>:</a>
-<a class="sourceLine" id="cb21-11" title="11">            <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a>
-<a class="sourceLine" id="cb21-12" title="12"></a>
-<a class="sourceLine" id="cb21-13" title="13">        new_todo: todo <span class="op">=</span> todo(todo_count, title, description)</a>
-<a class="sourceLine" id="cb21-14" title="14">        todo_list.append(new_todo)</a>
-<a class="sourceLine" id="cb21-15" title="15"></a>
-<a class="sourceLine" id="cb21-16" title="16">        todo_count <span class="op">+=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb21-17" title="17"></a>
-<a class="sourceLine" id="cb21-18" title="18">        <span class="cf">return</span> render_template(<span class="st">&quot;success.html&quot;</span>, title<span class="op">=</span>title, description<span class="op">=</span>description)</a>
-<a class="sourceLine" id="cb21-19" title="19">    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb21" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="at">@app.route</span>(<span class="st">&#39;/create-todo&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="kw">def</span> create_todo():</span>
+<span id="cb21-3"><a href="#cb21-3"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</span>
+<span id="cb21-4"><a href="#cb21-4"></a>        <span class="kw">global</span> todo_list</span>
+<span id="cb21-5"><a href="#cb21-5"></a>        <span class="kw">global</span> todo_count</span>
+<span id="cb21-6"><a href="#cb21-6"></a></span>
+<span id="cb21-7"><a href="#cb21-7"></a>        title: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;title&#39;</span>]</span>
+<span id="cb21-8"><a href="#cb21-8"></a>        description: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;description&#39;</span>]</span>
+<span id="cb21-9"><a href="#cb21-9"></a></span>
+<span id="cb21-10"><a href="#cb21-10"></a>        <span class="cf">if</span> title <span class="op">==</span> <span class="st">&#39;&#39;</span>:</span>
+<span id="cb21-11"><a href="#cb21-11"></a>            <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</span>
+<span id="cb21-12"><a href="#cb21-12"></a></span>
+<span id="cb21-13"><a href="#cb21-13"></a>        new_todo: todo <span class="op">=</span> todo(todo_count, title, description)</span>
+<span id="cb21-14"><a href="#cb21-14"></a>        todo_list.append(new_todo)</span>
+<span id="cb21-15"><a href="#cb21-15"></a></span>
+<span id="cb21-16"><a href="#cb21-16"></a>        todo_count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb21-17"><a href="#cb21-17"></a></span>
+<span id="cb21-18"><a href="#cb21-18"></a>        <span class="cf">return</span> render_template(<span class="st">&quot;success.html&quot;</span>, title<span class="op">=</span>title, description<span class="op">=</span>description)</span>
+<span id="cb21-19"><a href="#cb21-19"></a>    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</span></code></pre></div>
 <blockquote>
 <ul>
 <li>First, we label our <code>todo_list</code> and <code>todo_count</code> as global variables since we plan to update them.</li>
@@ -529,30 +537,30 @@
 <li>First lets add a new template we can use for displaying all results. Create a new file in the <code>templates</code> directory and name it <code>view-list.html</code>.</li>
 <li>Add the following HTML to the file and save it.</li>
 </ol>
-<div class="sourceCode" id="cb22" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb22-1" title="1"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></a>
-<a class="sourceLine" id="cb22-2" title="2"><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb22-3" title="3">    <span class="kw">&lt;head&gt;</span></a>
-<a class="sourceLine" id="cb22-4" title="4">        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb22-5" title="5">        <span class="kw">&lt;title&gt;</span>View List!<span class="kw">&lt;/title&gt;</span></a>
-<a class="sourceLine" id="cb22-6" title="6">    <span class="kw">&lt;/head&gt;</span></a>
-<a class="sourceLine" id="cb22-7" title="7">    <span class="kw">&lt;body&gt;</span></a>
-<a class="sourceLine" id="cb22-8" title="8">        <span class="kw">&lt;h2&gt;</span>Todo List<span class="kw">&lt;/h2&gt;</span></a>
-<a class="sourceLine" id="cb22-9" title="9">        {% for todo in todo_list %}</a>
-<a class="sourceLine" id="cb22-10" title="10">            <span class="kw">&lt;br/&gt;</span></a>
-<a class="sourceLine" id="cb22-11" title="11">            <span class="kw">&lt;h4&gt;</span>{{todo.title}}<span class="kw">&lt;/h4&gt;</span></a>
-<a class="sourceLine" id="cb22-12" title="12">            <span class="kw">&lt;p&gt;</span>{{todo.description}}<span class="kw">&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb22-13" title="13">        {% endfor %}</a>
-<a class="sourceLine" id="cb22-14" title="14">    <span class="kw">&lt;/body&gt;</span></a>
-<a class="sourceLine" id="cb22-15" title="15"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb22" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb22-1"><a href="#cb22-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a>        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a>        <span class="kw">&lt;title&gt;</span>View List!<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb22-6"><a href="#cb22-6"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb22-7"><a href="#cb22-7"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb22-8"><a href="#cb22-8"></a>        <span class="kw">&lt;h2&gt;</span>Todo List<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb22-9"><a href="#cb22-9"></a>        {% for todo in todo_list %}</span>
+<span id="cb22-10"><a href="#cb22-10"></a>            <span class="kw">&lt;br/&gt;</span></span>
+<span id="cb22-11"><a href="#cb22-11"></a>            <span class="kw">&lt;h4&gt;</span>{{todo.title}}<span class="kw">&lt;/h4&gt;</span></span>
+<span id="cb22-12"><a href="#cb22-12"></a>            <span class="kw">&lt;p&gt;</span>{{todo.description}}<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb22-13"><a href="#cb22-13"></a>        {% endfor %}</span>
+<span id="cb22-14"><a href="#cb22-14"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb22-15"><a href="#cb22-15"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
 <blockquote>
 <p>You may notice some more odd looking syntax inside of the <code>&lt;body&gt;&lt;/body&gt;</code> tags in this snippet. This file expects a list of <code>todo</code> objects in a variable <code>todo_list</code>. It then uses a python <code>for</code> loop to iterate through each user in the list and add some html tags for each todo’s data. For instance, if the first todo created was titled <code>Watch Game</code> and the description was <code>8:00pm</code>, this html would be generated for it: <code>&lt;br/&gt;&lt;h4&gt;Watch Game&lt;/h4&gt;&lt;p&gt;8:00pm&lt;/p&gt;</code>.</p>
 </blockquote>
 <ol start="3" type="1">
 <li>Finally, we need to add a new route where we can display our template and pass it our <code>todo_list</code>. Add the following function snippet in your <code>app.py</code> file.</li>
 </ol>
-<div class="sourceCode" id="cb23" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb23-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/view-todo-list&#39;</span>)</a>
-<a class="sourceLine" id="cb23-2" title="2"><span class="kw">def</span> view_todo_list():</a>
-<a class="sourceLine" id="cb23-3" title="3">    <span class="cf">return</span> render_template(<span class="st">&#39;view-list.html&#39;</span>, todo_list<span class="op">=</span>todo_list)</a></code></pre></div>
+<div class="sourceCode" id="cb23" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="at">@app.route</span>(<span class="st">&#39;/view-todo-list&#39;</span>)</span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="kw">def</span> view_todo_list():</span>
+<span id="cb23-3"><a href="#cb23-3"></a>    <span class="cf">return</span> render_template(<span class="st">&#39;view-list.html&#39;</span>, todo_list<span class="op">=</span>todo_list)</span></code></pre></div>
 <blockquote>
 <p>Here we are simply rendering our <code>view-list.html</code> template and passing it our <code>todo_list</code> as an argument.</p>
 </blockquote>
@@ -571,108 +579,108 @@
 <li><p>Right click on your <code>static</code> folder and click <em>Reveal in Finder</em> or <em>Reveal in File Explorer</em> to determine where the folder is located on your computer. Now visit <a href="https://github.com/ezriwhite/hack110-todo-demo/blob/main/static/logo.png">this link</a> and press the <em>Download</em> button above the Comp 110 logo png. Find where on your computer the download has saved and then move or drag the png image into your static folder. Confirm the name of this file is exactly <code>logo.png</code>. Alternatively, you may download any png image you wish at this step, move it into the static folder, and rename it to <code>logo.png</code>.</p></li>
 <li><p>We will also add some of our own css rules from the course website to the <code>styles.css</code> file. Copy and paste the following into your <code>styles.css</code> file:</p></li>
 </ol>
-<div class="sourceCode" id="cb24" data-startFrom="1"><pre class="sourceCode numberSource css numberLines"><code class="sourceCode css"><a class="sourceLine" id="cb24-1" title="1"><span class="im">@import</span> <span class="fu">url(</span><span class="st">&quot;https://fonts.googleapis.com/css?family=Quicksand&amp;display=swap&quot;</span><span class="fu">)</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-2" title="2"></a>
-<a class="sourceLine" id="cb24-3" title="3"><span class="co">/** ---------------------- GENERAL ---------------------- **/</span></a>
-<a class="sourceLine" id="cb24-4" title="4"></a>
-<a class="sourceLine" id="cb24-5" title="5">html {</a>
-<a class="sourceLine" id="cb24-6" title="6">  <span class="kw">min-height</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-7" title="7">}</a>
-<a class="sourceLine" id="cb24-8" title="8"></a>
-<a class="sourceLine" id="cb24-9" title="9">body {</a>
-<a class="sourceLine" id="cb24-10" title="10">  <span class="kw">background</span>: <span class="fu">linear-gradient(</span>to <span class="dv">bottom</span> <span class="dv">right</span><span class="op">,</span> <span class="cn">#e6e3e3</span><span class="op">,</span> <span class="cn">#e0e0e0</span><span class="fu">)</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-11" title="11">  <span class="kw">color</span>: <span class="cn">#555555</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-12" title="12">  <span class="kw">font-size</span>: <span class="dv">1</span><span class="dt">em</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-13" title="13">  <span class="kw">font-family</span>: <span class="st">&quot;Quicksand&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-14" title="14">  <span class="kw">background-attachment</span>: <span class="dv">fixed</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-15" title="15">}</a>
-<a class="sourceLine" id="cb24-16" title="16"></a>
-<a class="sourceLine" id="cb24-17" title="17"><span class="fu">.container</span> {</a>
-<a class="sourceLine" id="cb24-18" title="18">  <span class="kw">margin-top</span>: <span class="dv">1</span><span class="dt">rem</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-19" title="19">}</a>
-<a class="sourceLine" id="cb24-20" title="20"></a>
-<a class="sourceLine" id="cb24-21" title="21"><span class="co">/** ---------------------- NAVBAR ---------------------- **/</span></a>
-<a class="sourceLine" id="cb24-22" title="22"></a>
-<a class="sourceLine" id="cb24-23" title="23"><span class="fu">.navbar</span> {</a>
-<a class="sourceLine" id="cb24-24" title="24">  <span class="kw">z-index</span>: <span class="dv">1</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-25" title="25">  <span class="kw">background</span>: <span class="cn">#f5f5f5</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-26" title="26">  <span class="kw">border-image</span>: <span class="fu">linear-gradient(</span></a>
-<a class="sourceLine" id="cb24-27" title="27">    to <span class="dv">right</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb24-28" title="28">    <span class="cn">#fe9f9f</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb24-29" title="29">    <span class="cn">#fec79f</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb24-30" title="30">    <span class="cn">#fadf94</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb24-31" title="31">    <span class="cn">#befe9f</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb24-32" title="32">    <span class="cn">#9ffec5</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb24-33" title="33">    <span class="cn">#9fedfe</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb24-34" title="34">    <span class="cn">#cfa3df</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb24-35" title="35">    <span class="cn">#fe9fe9</span></a>
-<a class="sourceLine" id="cb24-36" title="36">  <span class="fu">)</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-37" title="37">  <span class="kw">border-left</span>: <span class="dv">0</span><span class="dt">px</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-38" title="38">  <span class="kw">border-right</span>: <span class="dv">0</span><span class="dt">px</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-39" title="39">  <span class="kw">border-top</span>: <span class="dv">0</span><span class="dt">px</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-40" title="40">  <span class="kw">border-bottom</span>: <span class="dv">5</span><span class="dt">px</span> <span class="dv">solid</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-41" title="41">  <span class="kw">border-image-slice</span>: <span class="dv">1</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-42" title="42">  <span class="kw">width</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-43" title="43">  <span class="kw">height</span>: <span class="dv">6.2</span><span class="dt">em</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-44" title="44">}</a>
-<a class="sourceLine" id="cb24-45" title="45"></a>
-<a class="sourceLine" id="cb24-46" title="46"><span class="fu">.navbar-expand</span> {</a>
-<a class="sourceLine" id="cb24-47" title="47">  <span class="kw">-webkit-box-orient</span>: horizontal<span class="op">;</span></a>
-<a class="sourceLine" id="cb24-48" title="48">  <span class="kw">-webkit-box-direction</span>: <span class="dv">normal</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-49" title="49">  <span class="kw">flex-flow</span>: row <span class="dv">nowrap</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-50" title="50">  <span class="kw">-webkit-box-pack</span>: start<span class="op">;</span></a>
-<a class="sourceLine" id="cb24-51" title="51">  <span class="kw">justify-content</span>: flex-start<span class="op">;</span></a>
-<a class="sourceLine" id="cb24-52" title="52">}</a>
-<a class="sourceLine" id="cb24-53" title="53"></a>
-<a class="sourceLine" id="cb24-54" title="54"><span class="fu">.nav-item</span> {</a>
-<a class="sourceLine" id="cb24-55" title="55">  <span class="kw">margin-left</span>: <span class="dv">2</span><span class="dt">em</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-56" title="56">  <span class="kw">vertical-align</span>: <span class="dv">bottom</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-57" title="57">}</a>
-<a class="sourceLine" id="cb24-58" title="58"></a>
-<a class="sourceLine" id="cb24-59" title="59"><span class="fu">.nav-link</span> {</a>
-<a class="sourceLine" id="cb24-60" title="60">  <span class="kw">font-family</span>: <span class="st">&quot;Quicksand&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-61" title="61">  <span class="kw">font-size</span>: <span class="dv">2.25</span><span class="dt">vw</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-62" title="62">  <span class="kw">font-weight</span>: <span class="dv">bold</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-63" title="63">  <span class="kw">color</span>: <span class="cn">#727272</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-64" title="64">  <span class="kw">text-shadow</span>: <span class="dv">0</span><span class="dt">px</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">0</span><span class="dt">px</span> <span class="cn">#e6e6e6</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-65" title="65">  <span class="kw">letter-spacing</span>: <span class="dv">0.15</span><span class="dt">em</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-66" title="66">  <span class="kw">margin-top</span>: <span class="dv">0.5</span><span class="dt">em</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-67" title="67">}</a>
-<a class="sourceLine" id="cb24-68" title="68"></a>
-<a class="sourceLine" id="cb24-69" title="69"><span class="fu">.nav-link</span><span class="in">:hover</span> {</a>
-<a class="sourceLine" id="cb24-70" title="70">  <span class="kw">color</span>: <span class="cn">#aaaaaa</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-71" title="71">}</a>
-<a class="sourceLine" id="cb24-72" title="72"></a>
-<a class="sourceLine" id="cb24-73" title="73">img<span class="fu">.logo</span> {</a>
-<a class="sourceLine" id="cb24-74" title="74">  <span class="kw">max-height</span>: <span class="dv">7</span><span class="dt">vw</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb24-75" title="75">}</a></code></pre></div>
+<div class="sourceCode" id="cb24" data-startFrom="1"><pre class="sourceCode numberSource css numberLines"><code class="sourceCode css"><span id="cb24-1"><a href="#cb24-1"></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">&quot;https://fonts.googleapis.com/css?family=Quicksand&amp;display=swap&quot;</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a></span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="co">/** ---------------------- GENERAL ---------------------- **/</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a></span>
+<span id="cb24-5"><a href="#cb24-5"></a>html {</span>
+<span id="cb24-6"><a href="#cb24-6"></a>  <span class="kw">min-height</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb24-7"><a href="#cb24-7"></a>}</span>
+<span id="cb24-8"><a href="#cb24-8"></a></span>
+<span id="cb24-9"><a href="#cb24-9"></a>body {</span>
+<span id="cb24-10"><a href="#cb24-10"></a>  <span class="kw">background</span>: <span class="fu">linear-gradient(</span>to <span class="dv">bottom</span> <span class="dv">right</span><span class="op">,</span> <span class="cn">#e6e3e3</span><span class="op">,</span> <span class="cn">#e0e0e0</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb24-11"><a href="#cb24-11"></a>  <span class="kw">color</span>: <span class="cn">#555555</span><span class="op">;</span></span>
+<span id="cb24-12"><a href="#cb24-12"></a>  <span class="kw">font-size</span>: <span class="dv">1</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb24-13"><a href="#cb24-13"></a>  <span class="kw">font-family</span>: <span class="st">&quot;Quicksand&quot;</span><span class="op">;</span></span>
+<span id="cb24-14"><a href="#cb24-14"></a>  <span class="kw">background-attachment</span>: <span class="dv">fixed</span><span class="op">;</span></span>
+<span id="cb24-15"><a href="#cb24-15"></a>}</span>
+<span id="cb24-16"><a href="#cb24-16"></a></span>
+<span id="cb24-17"><a href="#cb24-17"></a><span class="fu">.container</span> {</span>
+<span id="cb24-18"><a href="#cb24-18"></a>  <span class="kw">margin-top</span>: <span class="dv">1</span><span class="dt">rem</span><span class="op">;</span></span>
+<span id="cb24-19"><a href="#cb24-19"></a>}</span>
+<span id="cb24-20"><a href="#cb24-20"></a></span>
+<span id="cb24-21"><a href="#cb24-21"></a><span class="co">/** ---------------------- NAVBAR ---------------------- **/</span></span>
+<span id="cb24-22"><a href="#cb24-22"></a></span>
+<span id="cb24-23"><a href="#cb24-23"></a><span class="fu">.navbar</span> {</span>
+<span id="cb24-24"><a href="#cb24-24"></a>  <span class="kw">z-index</span>: <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb24-25"><a href="#cb24-25"></a>  <span class="kw">background</span>: <span class="cn">#f5f5f5</span><span class="op">;</span></span>
+<span id="cb24-26"><a href="#cb24-26"></a>  <span class="kw">border-image</span>: <span class="fu">linear-gradient(</span></span>
+<span id="cb24-27"><a href="#cb24-27"></a>    to <span class="dv">right</span><span class="op">,</span></span>
+<span id="cb24-28"><a href="#cb24-28"></a>    <span class="cn">#fe9f9f</span><span class="op">,</span></span>
+<span id="cb24-29"><a href="#cb24-29"></a>    <span class="cn">#fec79f</span><span class="op">,</span></span>
+<span id="cb24-30"><a href="#cb24-30"></a>    <span class="cn">#fadf94</span><span class="op">,</span></span>
+<span id="cb24-31"><a href="#cb24-31"></a>    <span class="cn">#befe9f</span><span class="op">,</span></span>
+<span id="cb24-32"><a href="#cb24-32"></a>    <span class="cn">#9ffec5</span><span class="op">,</span></span>
+<span id="cb24-33"><a href="#cb24-33"></a>    <span class="cn">#9fedfe</span><span class="op">,</span></span>
+<span id="cb24-34"><a href="#cb24-34"></a>    <span class="cn">#cfa3df</span><span class="op">,</span></span>
+<span id="cb24-35"><a href="#cb24-35"></a>    <span class="cn">#fe9fe9</span></span>
+<span id="cb24-36"><a href="#cb24-36"></a>  <span class="fu">)</span><span class="op">;</span></span>
+<span id="cb24-37"><a href="#cb24-37"></a>  <span class="kw">border-left</span>: <span class="dv">0</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb24-38"><a href="#cb24-38"></a>  <span class="kw">border-right</span>: <span class="dv">0</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb24-39"><a href="#cb24-39"></a>  <span class="kw">border-top</span>: <span class="dv">0</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb24-40"><a href="#cb24-40"></a>  <span class="kw">border-bottom</span>: <span class="dv">5</span><span class="dt">px</span> <span class="dv">solid</span><span class="op">;</span></span>
+<span id="cb24-41"><a href="#cb24-41"></a>  <span class="kw">border-image-slice</span>: <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb24-42"><a href="#cb24-42"></a>  <span class="kw">width</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb24-43"><a href="#cb24-43"></a>  <span class="kw">height</span>: <span class="dv">6.2</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb24-44"><a href="#cb24-44"></a>}</span>
+<span id="cb24-45"><a href="#cb24-45"></a></span>
+<span id="cb24-46"><a href="#cb24-46"></a><span class="fu">.navbar-expand</span> {</span>
+<span id="cb24-47"><a href="#cb24-47"></a>  <span class="kw">-webkit-box-orient</span>: horizontal<span class="op">;</span></span>
+<span id="cb24-48"><a href="#cb24-48"></a>  <span class="kw">-webkit-box-direction</span>: <span class="dv">normal</span><span class="op">;</span></span>
+<span id="cb24-49"><a href="#cb24-49"></a>  <span class="kw">flex-flow</span>: row <span class="dv">nowrap</span><span class="op">;</span></span>
+<span id="cb24-50"><a href="#cb24-50"></a>  <span class="kw">-webkit-box-pack</span>: start<span class="op">;</span></span>
+<span id="cb24-51"><a href="#cb24-51"></a>  <span class="kw">justify-content</span>: flex-start<span class="op">;</span></span>
+<span id="cb24-52"><a href="#cb24-52"></a>}</span>
+<span id="cb24-53"><a href="#cb24-53"></a></span>
+<span id="cb24-54"><a href="#cb24-54"></a><span class="fu">.nav-item</span> {</span>
+<span id="cb24-55"><a href="#cb24-55"></a>  <span class="kw">margin-left</span>: <span class="dv">2</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb24-56"><a href="#cb24-56"></a>  <span class="kw">vertical-align</span>: <span class="dv">bottom</span><span class="op">;</span></span>
+<span id="cb24-57"><a href="#cb24-57"></a>}</span>
+<span id="cb24-58"><a href="#cb24-58"></a></span>
+<span id="cb24-59"><a href="#cb24-59"></a><span class="fu">.nav-link</span> {</span>
+<span id="cb24-60"><a href="#cb24-60"></a>  <span class="kw">font-family</span>: <span class="st">&quot;Quicksand&quot;</span><span class="op">;</span></span>
+<span id="cb24-61"><a href="#cb24-61"></a>  <span class="kw">font-size</span>: <span class="dv">2.25</span><span class="dt">vw</span><span class="op">;</span></span>
+<span id="cb24-62"><a href="#cb24-62"></a>  <span class="kw">font-weight</span>: <span class="dv">bold</span><span class="op">;</span></span>
+<span id="cb24-63"><a href="#cb24-63"></a>  <span class="kw">color</span>: <span class="cn">#727272</span><span class="op">;</span></span>
+<span id="cb24-64"><a href="#cb24-64"></a>  <span class="kw">text-shadow</span>: <span class="dv">0</span><span class="dt">px</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">0</span><span class="dt">px</span> <span class="cn">#e6e6e6</span><span class="op">;</span></span>
+<span id="cb24-65"><a href="#cb24-65"></a>  <span class="kw">letter-spacing</span>: <span class="dv">0.15</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb24-66"><a href="#cb24-66"></a>  <span class="kw">margin-top</span>: <span class="dv">0.5</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb24-67"><a href="#cb24-67"></a>}</span>
+<span id="cb24-68"><a href="#cb24-68"></a></span>
+<span id="cb24-69"><a href="#cb24-69"></a><span class="fu">.nav-link</span><span class="in">:hover</span> {</span>
+<span id="cb24-70"><a href="#cb24-70"></a>  <span class="kw">color</span>: <span class="cn">#aaaaaa</span><span class="op">;</span></span>
+<span id="cb24-71"><a href="#cb24-71"></a>}</span>
+<span id="cb24-72"><a href="#cb24-72"></a></span>
+<span id="cb24-73"><a href="#cb24-73"></a>img<span class="fu">.logo</span> {</span>
+<span id="cb24-74"><a href="#cb24-74"></a>  <span class="kw">max-height</span>: <span class="dv">7</span><span class="dt">vw</span><span class="op">;</span></span>
+<span id="cb24-75"><a href="#cb24-75"></a>}</span></code></pre></div>
 <ol start="4" type="1">
 <li>To ensure that all the new CSS we have added is displayed, make sure the following two lines are inside the <code>&lt;head&gt;&lt;/head&gt;</code> tag on every single html template in the <code>templates</code> folder:</li>
 </ol>
-<div class="sourceCode" id="cb25" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&#39;stylesheet&#39;</span><span class="ot"> href=</span><span class="st">&#39;/static/bootstrap.min.css&#39;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb25-2" title="2"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&#39;stylesheet&#39;</span><span class="ot"> href=</span><span class="st">&#39;/static/styles.css&#39;</span><span class="kw">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb25" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb25-1"><a href="#cb25-1"></a><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&#39;stylesheet&#39;</span><span class="ot"> href=</span><span class="st">&#39;/static/bootstrap.min.css&#39;</span><span class="kw">&gt;</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&#39;stylesheet&#39;</span><span class="ot"> href=</span><span class="st">&#39;/static/styles.css&#39;</span><span class="kw">&gt;</span></span></code></pre></div>
 <ol start="5" type="1">
 <li>Finally we will add our navbar menu! Copy and paste the following html snippet inside the <code>&lt;body&gt;&lt;/body&gt;</code> tag but above any other html you have written inside the body:</li>
 </ol>
-<div class="sourceCode" id="cb26" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb26-1" title="1"><span class="co">&lt;!-- navigation bar --&gt;</span></a>
-<a class="sourceLine" id="cb26-2" title="2">    <span class="kw">&lt;nav</span><span class="ot"> class=</span><span class="st">&quot;navbar navbar-expand&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb26-3" title="3">        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;collapse navbar-collapse&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb26-4" title="4">            <span class="kw">&lt;ul</span><span class="ot"> class=</span><span class="st">&quot;navbar-nav&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb26-5" title="5">                <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;nav-item&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb26-6" title="6">                    <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/&quot;</span><span class="kw">&gt;&lt;img</span><span class="ot"> class=</span><span class="st">&quot;logo&quot;</span><span class="ot"> src=</span><span class="st">&quot;/static/logo.png&quot;</span><span class="ot"> alt=</span><span class="st">&quot;logo&quot;</span><span class="kw">&gt;&lt;/a&gt;</span></a>
-<a class="sourceLine" id="cb26-7" title="7">                <span class="kw">&lt;/li&gt;</span></a>
-<a class="sourceLine" id="cb26-8" title="8">                <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;nav-item&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb26-9" title="9">                    <span class="kw">&lt;a</span><span class="ot"> class=</span><span class="st">&quot;nav-link&quot;</span><span class="ot"> href=</span><span class="st">&quot;/&quot;</span><span class="kw">&gt;</span>home<span class="kw">&lt;/a&gt;</span></a>
-<a class="sourceLine" id="cb26-10" title="10">                <span class="kw">&lt;/li&gt;</span></a>
-<a class="sourceLine" id="cb26-11" title="11">                <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;nav-item&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb26-12" title="12">                    <span class="kw">&lt;a</span><span class="ot"> class=</span><span class="st">&quot;nav-link&quot;</span><span class="ot"> href=</span><span class="st">&quot;/create-todo&quot;</span><span class="kw">&gt;</span>create<span class="kw">&lt;/a&gt;</span></a>
-<a class="sourceLine" id="cb26-13" title="13">                <span class="kw">&lt;/li&gt;</span></a>
-<a class="sourceLine" id="cb26-14" title="14">                <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;nav-item&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb26-15" title="15">                    <span class="kw">&lt;a</span><span class="ot"> class=</span><span class="st">&quot;nav-link&quot;</span><span class="ot"> href=</span><span class="st">&quot;/view-todo-list&quot;</span><span class="kw">&gt;</span>view<span class="kw">&lt;/a&gt;</span></a>
-<a class="sourceLine" id="cb26-16" title="16">                <span class="kw">&lt;/li&gt;</span></a>
-<a class="sourceLine" id="cb26-17" title="17">            <span class="kw">&lt;/ul&gt;</span></a>
-<a class="sourceLine" id="cb26-18" title="18">        <span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb26-19" title="19">    <span class="kw">&lt;/nav&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb26" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb26-1"><a href="#cb26-1"></a><span class="co">&lt;!-- navigation bar --&gt;</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>    <span class="kw">&lt;nav</span><span class="ot"> class=</span><span class="st">&quot;navbar navbar-expand&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a>        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;collapse navbar-collapse&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a>            <span class="kw">&lt;ul</span><span class="ot"> class=</span><span class="st">&quot;navbar-nav&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a>                <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;nav-item&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb26-6"><a href="#cb26-6"></a>                    <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/&quot;</span><span class="kw">&gt;&lt;img</span><span class="ot"> class=</span><span class="st">&quot;logo&quot;</span><span class="ot"> src=</span><span class="st">&quot;/static/logo.png&quot;</span><span class="ot"> alt=</span><span class="st">&quot;logo&quot;</span><span class="kw">&gt;&lt;/a&gt;</span></span>
+<span id="cb26-7"><a href="#cb26-7"></a>                <span class="kw">&lt;/li&gt;</span></span>
+<span id="cb26-8"><a href="#cb26-8"></a>                <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;nav-item&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb26-9"><a href="#cb26-9"></a>                    <span class="kw">&lt;a</span><span class="ot"> class=</span><span class="st">&quot;nav-link&quot;</span><span class="ot"> href=</span><span class="st">&quot;/&quot;</span><span class="kw">&gt;</span>home<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb26-10"><a href="#cb26-10"></a>                <span class="kw">&lt;/li&gt;</span></span>
+<span id="cb26-11"><a href="#cb26-11"></a>                <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;nav-item&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb26-12"><a href="#cb26-12"></a>                    <span class="kw">&lt;a</span><span class="ot"> class=</span><span class="st">&quot;nav-link&quot;</span><span class="ot"> href=</span><span class="st">&quot;/create-todo&quot;</span><span class="kw">&gt;</span>create<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb26-13"><a href="#cb26-13"></a>                <span class="kw">&lt;/li&gt;</span></span>
+<span id="cb26-14"><a href="#cb26-14"></a>                <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;nav-item&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb26-15"><a href="#cb26-15"></a>                    <span class="kw">&lt;a</span><span class="ot"> class=</span><span class="st">&quot;nav-link&quot;</span><span class="ot"> href=</span><span class="st">&quot;/view-todo-list&quot;</span><span class="kw">&gt;</span>view<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb26-16"><a href="#cb26-16"></a>                <span class="kw">&lt;/li&gt;</span></span>
+<span id="cb26-17"><a href="#cb26-17"></a>            <span class="kw">&lt;/ul&gt;</span></span>
+<span id="cb26-18"><a href="#cb26-18"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb26-19"><a href="#cb26-19"></a>    <span class="kw">&lt;/nav&gt;</span></span></code></pre></div>
 <blockquote>
 <p>In order to be able to use this menu bar from every page of our webapp, we must make sure to add it to every template file!</p>
 </blockquote>
@@ -682,85 +690,85 @@
 <ol type="1">
 <li>First we need to add the ability to select a color category during the creation of a todo. In the <code>create-todo.html</code> file, add the following html snippet right above the <code>Create</code> button html:</li>
 </ol>
-<div class="sourceCode" id="cb27" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb27-1" title="1">            <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;color&quot;</span><span class="kw">&gt;</span>Color:<span class="kw">&lt;/label&gt;</span></a>
-<a class="sourceLine" id="cb27-2" title="2">            <span class="kw">&lt;select</span><span class="ot"> id=</span><span class="st">&quot;color&quot;</span><span class="ot"> name=</span><span class="st">&quot;color&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb27-3" title="3">                <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;grey&quot;</span><span class="kw">&gt;</span>Grey<span class="kw">&lt;/option&gt;</span></a>
-<a class="sourceLine" id="cb27-4" title="4">                <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;red&quot;</span><span class="kw">&gt;</span>Red<span class="kw">&lt;/option&gt;</span></a>
-<a class="sourceLine" id="cb27-5" title="5">                <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;orange&quot;</span><span class="kw">&gt;</span>Orange<span class="kw">&lt;/option&gt;</span></a>
-<a class="sourceLine" id="cb27-6" title="6">                <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;yellow&quot;</span><span class="kw">&gt;</span>Yellow<span class="kw">&lt;/option&gt;</span></a>
-<a class="sourceLine" id="cb27-7" title="7">                <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;green&quot;</span><span class="kw">&gt;</span>Green<span class="kw">&lt;/option&gt;</span></a>
-<a class="sourceLine" id="cb27-8" title="8">                <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;blue&quot;</span><span class="kw">&gt;</span>Blue<span class="kw">&lt;/option&gt;</span></a>
-<a class="sourceLine" id="cb27-9" title="9">                <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;purple&quot;</span><span class="kw">&gt;</span>Purple<span class="kw">&lt;/option&gt;</span></a>
-<a class="sourceLine" id="cb27-10" title="10">                <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;pink&quot;</span><span class="kw">&gt;</span>Pink<span class="kw">&lt;/option&gt;</span></a>
-<a class="sourceLine" id="cb27-11" title="11">            <span class="kw">&lt;/select&gt;</span></a>
-<a class="sourceLine" id="cb27-12" title="12">            <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></a>
-<a class="sourceLine" id="cb27-13" title="13">            <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb27" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb27-1"><a href="#cb27-1"></a>            <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;color&quot;</span><span class="kw">&gt;</span>Color:<span class="kw">&lt;/label&gt;</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>            <span class="kw">&lt;select</span><span class="ot"> id=</span><span class="st">&quot;color&quot;</span><span class="ot"> name=</span><span class="st">&quot;color&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a>                <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;grey&quot;</span><span class="kw">&gt;</span>Grey<span class="kw">&lt;/option&gt;</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a>                <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;red&quot;</span><span class="kw">&gt;</span>Red<span class="kw">&lt;/option&gt;</span></span>
+<span id="cb27-5"><a href="#cb27-5"></a>                <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;orange&quot;</span><span class="kw">&gt;</span>Orange<span class="kw">&lt;/option&gt;</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a>                <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;yellow&quot;</span><span class="kw">&gt;</span>Yellow<span class="kw">&lt;/option&gt;</span></span>
+<span id="cb27-7"><a href="#cb27-7"></a>                <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;green&quot;</span><span class="kw">&gt;</span>Green<span class="kw">&lt;/option&gt;</span></span>
+<span id="cb27-8"><a href="#cb27-8"></a>                <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;blue&quot;</span><span class="kw">&gt;</span>Blue<span class="kw">&lt;/option&gt;</span></span>
+<span id="cb27-9"><a href="#cb27-9"></a>                <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;purple&quot;</span><span class="kw">&gt;</span>Purple<span class="kw">&lt;/option&gt;</span></span>
+<span id="cb27-10"><a href="#cb27-10"></a>                <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;pink&quot;</span><span class="kw">&gt;</span>Pink<span class="kw">&lt;/option&gt;</span></span>
+<span id="cb27-11"><a href="#cb27-11"></a>            <span class="kw">&lt;/select&gt;</span></span>
+<span id="cb27-12"><a href="#cb27-12"></a>            <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb27-13"><a href="#cb27-13"></a>            <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span></code></pre></div>
 <p>When you create a todo make sure this dropdown menu is showing up. If you would like to define names for the categories besides the colors, you can replace the capitalized color names with categories such as <code>School</code>, <code>Work</code>, <code>Sport</code>, etc. Just be sure not to change the lowercase <code>value="red"</code> part of each option as it is needed for the functionality you are adding to work.</p>
 <ol start="2" type="1">
 <li>Now we need to update our “Backend” to handle this new piece of data. First we will update our todo class in the <code>helpers.py</code> file to incorporate a color:</li>
 </ol>
-<div class="sourceCode" id="cb28" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">class</span> todo:</a>
-<a class="sourceLine" id="cb28-2" title="2">    <span class="bu">id</span>: <span class="bu">int</span></a>
-<a class="sourceLine" id="cb28-3" title="3">    title: <span class="bu">str</span></a>
-<a class="sourceLine" id="cb28-4" title="4">    description: <span class="bu">str</span></a>
-<a class="sourceLine" id="cb28-5" title="5">    color: <span class="bu">str</span></a>
-<a class="sourceLine" id="cb28-6" title="6"></a>
-<a class="sourceLine" id="cb28-7" title="7">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, <span class="bu">id</span>: <span class="bu">int</span>, title: <span class="bu">str</span>, description: <span class="bu">str</span>, color: <span class="bu">str</span>):</a>
-<a class="sourceLine" id="cb28-8" title="8">        <span class="va">self</span>.<span class="bu">id</span> <span class="op">=</span> <span class="bu">id</span></a>
-<a class="sourceLine" id="cb28-9" title="9">        <span class="va">self</span>.title <span class="op">=</span> title</a>
-<a class="sourceLine" id="cb28-10" title="10">        <span class="va">self</span>.description <span class="op">=</span> description</a>
-<a class="sourceLine" id="cb28-11" title="11">        <span class="va">self</span>.color <span class="op">=</span> color</a></code></pre></div>
+<div class="sourceCode" id="cb28" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a><span class="kw">class</span> todo:</span>
+<span id="cb28-2"><a href="#cb28-2"></a>    <span class="bu">id</span>: <span class="bu">int</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a>    title: <span class="bu">str</span></span>
+<span id="cb28-4"><a href="#cb28-4"></a>    description: <span class="bu">str</span></span>
+<span id="cb28-5"><a href="#cb28-5"></a>    color: <span class="bu">str</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a></span>
+<span id="cb28-7"><a href="#cb28-7"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, <span class="bu">id</span>: <span class="bu">int</span>, title: <span class="bu">str</span>, description: <span class="bu">str</span>, color: <span class="bu">str</span>):</span>
+<span id="cb28-8"><a href="#cb28-8"></a>        <span class="va">self</span>.<span class="bu">id</span> <span class="op">=</span> <span class="bu">id</span></span>
+<span id="cb28-9"><a href="#cb28-9"></a>        <span class="va">self</span>.title <span class="op">=</span> title</span>
+<span id="cb28-10"><a href="#cb28-10"></a>        <span class="va">self</span>.description <span class="op">=</span> description</span>
+<span id="cb28-11"><a href="#cb28-11"></a>        <span class="va">self</span>.color <span class="op">=</span> color</span></code></pre></div>
 <p>We also need to update our <code>create_todo</code> route function to read and store the color data. Update this function in the <code>app.py</code> file to the following:</p>
-<div class="sourceCode" id="cb29" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb29-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/create-todo&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
-<a class="sourceLine" id="cb29-2" title="2"><span class="kw">def</span> create_todo():</a>
-<a class="sourceLine" id="cb29-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</a>
-<a class="sourceLine" id="cb29-4" title="4">        <span class="kw">global</span> todo_list</a>
-<a class="sourceLine" id="cb29-5" title="5">        <span class="kw">global</span> todo_count</a>
-<a class="sourceLine" id="cb29-6" title="6">        </a>
-<a class="sourceLine" id="cb29-7" title="7">        title: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;title&#39;</span>]</a>
-<a class="sourceLine" id="cb29-8" title="8">        description: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;description&#39;</span>]</a>
-<a class="sourceLine" id="cb29-9" title="9">        color: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;color&#39;</span>]</a>
-<a class="sourceLine" id="cb29-10" title="10"></a>
-<a class="sourceLine" id="cb29-11" title="11">        <span class="cf">if</span> title <span class="op">==</span> <span class="st">&#39;&#39;</span>:</a>
-<a class="sourceLine" id="cb29-12" title="12">            <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a>
-<a class="sourceLine" id="cb29-13" title="13"></a>
-<a class="sourceLine" id="cb29-14" title="14">        new_todo: todo <span class="op">=</span> todo(todo_count, title, description, color)</a>
-<a class="sourceLine" id="cb29-15" title="15">        todo_list.append(new_todo)</a>
-<a class="sourceLine" id="cb29-16" title="16"></a>
-<a class="sourceLine" id="cb29-17" title="17">        todo_count <span class="op">+=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb29-18" title="18"></a>
-<a class="sourceLine" id="cb29-19" title="19">        <span class="cf">return</span> render_template(<span class="st">&quot;success.html&quot;</span>, , title<span class="op">=</span>title, description<span class="op">=</span>description)</a>
-<a class="sourceLine" id="cb29-20" title="20">    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb29" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="at">@app.route</span>(<span class="st">&#39;/create-todo&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="kw">def</span> create_todo():</span>
+<span id="cb29-3"><a href="#cb29-3"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</span>
+<span id="cb29-4"><a href="#cb29-4"></a>        <span class="kw">global</span> todo_list</span>
+<span id="cb29-5"><a href="#cb29-5"></a>        <span class="kw">global</span> todo_count</span>
+<span id="cb29-6"><a href="#cb29-6"></a>        </span>
+<span id="cb29-7"><a href="#cb29-7"></a>        title: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;title&#39;</span>]</span>
+<span id="cb29-8"><a href="#cb29-8"></a>        description: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;description&#39;</span>]</span>
+<span id="cb29-9"><a href="#cb29-9"></a>        color: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;color&#39;</span>]</span>
+<span id="cb29-10"><a href="#cb29-10"></a></span>
+<span id="cb29-11"><a href="#cb29-11"></a>        <span class="cf">if</span> title <span class="op">==</span> <span class="st">&#39;&#39;</span>:</span>
+<span id="cb29-12"><a href="#cb29-12"></a>            <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</span>
+<span id="cb29-13"><a href="#cb29-13"></a></span>
+<span id="cb29-14"><a href="#cb29-14"></a>        new_todo: todo <span class="op">=</span> todo(todo_count, title, description, color)</span>
+<span id="cb29-15"><a href="#cb29-15"></a>        todo_list.append(new_todo)</span>
+<span id="cb29-16"><a href="#cb29-16"></a></span>
+<span id="cb29-17"><a href="#cb29-17"></a>        todo_count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb29-18"><a href="#cb29-18"></a></span>
+<span id="cb29-19"><a href="#cb29-19"></a>        <span class="cf">return</span> render_template(<span class="st">&quot;success.html&quot;</span>, , title<span class="op">=</span>title, description<span class="op">=</span>description)</span>
+<span id="cb29-20"><a href="#cb29-20"></a>    <span class="cf">return</span> render_template(<span class="st">&quot;create-todo.html&quot;</span>)</span></code></pre></div>
 <p>We are now reading and storing the data for the color category we added in the create todo form and are ready to change our view list display to reflect this!</p>
 <ol start="3" type="1">
 <li>We will start updating the display of the view list by adding some new css rules. In your <code>styles.css</code> file add the following css:</li>
 </ol>
-<div class="sourceCode" id="cb30" data-startFrom="1"><pre class="sourceCode numberSource css numberLines"><code class="sourceCode css"><a class="sourceLine" id="cb30-1" title="1"><span class="fu">.todo</span> {</a>
-<a class="sourceLine" id="cb30-2" title="2">  <span class="kw">padding</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb30-3" title="3">  <span class="kw">border-radius</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb30-4" title="4">  <span class="kw">margin-bottom</span>: <span class="dv">5</span><span class="dt">px</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb30-5" title="5">  <span class="kw">border-width</span>: <span class="dv">2</span><span class="dt">px</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb30-6" title="6">  <span class="kw">border-style</span>: <span class="dv">solid</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb30-7" title="7">}</a>
-<a class="sourceLine" id="cb30-8" title="8"></a>
-<a class="sourceLine" id="cb30-9" title="9"><span class="fu">.grey-border</span> { <span class="kw">border-color</span>: <span class="cn">#cac9c9</span><span class="op">;</span>}</a>
-<a class="sourceLine" id="cb30-10" title="10"><span class="fu">.red-border</span> { <span class="kw">border-color</span>: <span class="cn">#fe9f9f</span><span class="op">;</span>}</a>
-<a class="sourceLine" id="cb30-11" title="11"><span class="fu">.orange-border</span> { <span class="kw">border-color</span>: <span class="cn">#fec79f</span><span class="op">;</span>}</a>
-<a class="sourceLine" id="cb30-12" title="12"><span class="fu">.yellow-border</span> { <span class="kw">border-color</span>: <span class="cn">#fadf94</span><span class="op">;</span>}</a>
-<a class="sourceLine" id="cb30-13" title="13"><span class="fu">.green-border</span> {<span class="kw">border-color</span>: <span class="cn">#befe9f</span><span class="op">;</span>}</a>
-<a class="sourceLine" id="cb30-14" title="14"><span class="fu">.blue-border</span> {<span class="kw">border-color</span>: <span class="cn">#9fedfe</span><span class="op">;</span>}</a>
-<a class="sourceLine" id="cb30-15" title="15"><span class="fu">.purple-border</span> {<span class="kw">border-color</span>: <span class="cn">#cfa3df</span><span class="op">;</span>}</a>
-<a class="sourceLine" id="cb30-16" title="16"><span class="fu">.pink-border</span> {<span class="kw">border-color</span>: <span class="cn">#fe9fe9</span><span class="op">;</span>}</a></code></pre></div>
+<div class="sourceCode" id="cb30" data-startFrom="1"><pre class="sourceCode numberSource css numberLines"><code class="sourceCode css"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">.todo</span> {</span>
+<span id="cb30-2"><a href="#cb30-2"></a>  <span class="kw">padding</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb30-3"><a href="#cb30-3"></a>  <span class="kw">border-radius</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a>  <span class="kw">margin-bottom</span>: <span class="dv">5</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb30-5"><a href="#cb30-5"></a>  <span class="kw">border-width</span>: <span class="dv">2</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb30-6"><a href="#cb30-6"></a>  <span class="kw">border-style</span>: <span class="dv">solid</span><span class="op">;</span></span>
+<span id="cb30-7"><a href="#cb30-7"></a>}</span>
+<span id="cb30-8"><a href="#cb30-8"></a></span>
+<span id="cb30-9"><a href="#cb30-9"></a><span class="fu">.grey-border</span> { <span class="kw">border-color</span>: <span class="cn">#cac9c9</span><span class="op">;</span>}</span>
+<span id="cb30-10"><a href="#cb30-10"></a><span class="fu">.red-border</span> { <span class="kw">border-color</span>: <span class="cn">#fe9f9f</span><span class="op">;</span>}</span>
+<span id="cb30-11"><a href="#cb30-11"></a><span class="fu">.orange-border</span> { <span class="kw">border-color</span>: <span class="cn">#fec79f</span><span class="op">;</span>}</span>
+<span id="cb30-12"><a href="#cb30-12"></a><span class="fu">.yellow-border</span> { <span class="kw">border-color</span>: <span class="cn">#fadf94</span><span class="op">;</span>}</span>
+<span id="cb30-13"><a href="#cb30-13"></a><span class="fu">.green-border</span> {<span class="kw">border-color</span>: <span class="cn">#befe9f</span><span class="op">;</span>}</span>
+<span id="cb30-14"><a href="#cb30-14"></a><span class="fu">.blue-border</span> {<span class="kw">border-color</span>: <span class="cn">#9fedfe</span><span class="op">;</span>}</span>
+<span id="cb30-15"><a href="#cb30-15"></a><span class="fu">.purple-border</span> {<span class="kw">border-color</span>: <span class="cn">#cfa3df</span><span class="op">;</span>}</span>
+<span id="cb30-16"><a href="#cb30-16"></a><span class="fu">.pink-border</span> {<span class="kw">border-color</span>: <span class="cn">#fe9fe9</span><span class="op">;</span>}</span></code></pre></div>
 <p>Here we are adding some general styling for every todo under the css class <code>todo</code>. We also set up 8 different css classes to help us assign different borders to different todos.</p>
 <ol start="4" type="1">
 <li>Finally we need to update our template to use the generic todo styling and a specific border styling based on the color/category property of each todo. Update the for loop in <code>view-list.html</code> to the following:</li>
 </ol>
-<div class="sourceCode" id="cb31" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb31-1" title="1">        {% for todo in todo_list %}</a>
-<a class="sourceLine" id="cb31-2" title="2">            <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;todo {{todo.color}}-border&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb31-3" title="3">                <span class="kw">&lt;h4&gt;</span>{{todo.title}}<span class="kw">&lt;/h4&gt;</span></a>
-<a class="sourceLine" id="cb31-4" title="4">                <span class="kw">&lt;p&gt;</span>{{todo.description}}<span class="kw">&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb31-5" title="5">            <span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb31-6" title="6">        {% endfor %}</a></code></pre></div>
+<div class="sourceCode" id="cb31" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb31-1"><a href="#cb31-1"></a>        {% for todo in todo_list %}</span>
+<span id="cb31-2"><a href="#cb31-2"></a>            <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;todo {{todo.color}}-border&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a>                <span class="kw">&lt;h4&gt;</span>{{todo.title}}<span class="kw">&lt;/h4&gt;</span></span>
+<span id="cb31-4"><a href="#cb31-4"></a>                <span class="kw">&lt;p&gt;</span>{{todo.description}}<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb31-5"><a href="#cb31-5"></a>            <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a>        {% endfor %}</span></code></pre></div>
 <p>Here we are surrounding each title and description with a <code>div</code> element that we can turn into a container with a border using our css <code>todo</code> class. We also add the <code>{{todo.color}}-border</code> class to the <code>div</code> element. For a specific todo that had the color property of <code>purple</code>, this snippet would evaluate to <code>purple-border</code> and therefore apply the <code>purple-border</code> css class styling we added to <code>styles.css</code> in step 3.</p>
 <p>Make sure all files are saved then attempt to create a few todos with different categories. When you go to view them they should display with different color borders!</p>
 <h2 id="bonus-checking-off-items">Bonus: Checking off Items</h2>
@@ -774,43 +782,43 @@
 }</code></pre>
 <p>When the checked class is attached to a todo item, it will have a lime background and appear blurred out due to the decreased opacity (default opacity is 1, 0 is fully invisible).</p>
 <p>But how do we distinguish a checked todo item from an unchecked one? Our <code>todo</code> class currently contains no data for determining this! Let’s add a <code>checked</code> property, of type <code>bool</code>, that will be <code>False</code> when an item is unchecked, and <code>True</code> when it is checked.</p>
-<div class="sourceCode" id="cb33" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb33-1" title="1"><span class="kw">class</span> todo:</a>
-<a class="sourceLine" id="cb33-2" title="2">    <span class="bu">id</span>: <span class="bu">int</span></a>
-<a class="sourceLine" id="cb33-3" title="3">    title: <span class="bu">str</span></a>
-<a class="sourceLine" id="cb33-4" title="4">    description: <span class="bu">str</span></a>
-<a class="sourceLine" id="cb33-5" title="5">    color: <span class="bu">str</span></a>
-<a class="sourceLine" id="cb33-6" title="6">    checked: <span class="bu">bool</span></a>
-<a class="sourceLine" id="cb33-7" title="7"></a>
-<a class="sourceLine" id="cb33-8" title="8">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, <span class="bu">id</span>: <span class="bu">int</span>, title: <span class="bu">str</span>, description: <span class="bu">str</span>, color: <span class="bu">str</span>):</a>
-<a class="sourceLine" id="cb33-9" title="9">        <span class="va">self</span>.<span class="bu">id</span> <span class="op">=</span> <span class="bu">id</span></a>
-<a class="sourceLine" id="cb33-10" title="10">        <span class="va">self</span>.title <span class="op">=</span> title</a>
-<a class="sourceLine" id="cb33-11" title="11">        <span class="va">self</span>.description <span class="op">=</span> description</a>
-<a class="sourceLine" id="cb33-12" title="12">        <span class="va">self</span>.color <span class="op">=</span> color</a>
-<a class="sourceLine" id="cb33-13" title="13">        <span class="va">self</span>.checked <span class="op">=</span> <span class="va">False</span> <span class="co"># Every new item begins as unchecked</span></a></code></pre></div>
+<div class="sourceCode" id="cb33" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">class</span> todo:</span>
+<span id="cb33-2"><a href="#cb33-2"></a>    <span class="bu">id</span>: <span class="bu">int</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a>    title: <span class="bu">str</span></span>
+<span id="cb33-4"><a href="#cb33-4"></a>    description: <span class="bu">str</span></span>
+<span id="cb33-5"><a href="#cb33-5"></a>    color: <span class="bu">str</span></span>
+<span id="cb33-6"><a href="#cb33-6"></a>    checked: <span class="bu">bool</span></span>
+<span id="cb33-7"><a href="#cb33-7"></a></span>
+<span id="cb33-8"><a href="#cb33-8"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, <span class="bu">id</span>: <span class="bu">int</span>, title: <span class="bu">str</span>, description: <span class="bu">str</span>, color: <span class="bu">str</span>):</span>
+<span id="cb33-9"><a href="#cb33-9"></a>        <span class="va">self</span>.<span class="bu">id</span> <span class="op">=</span> <span class="bu">id</span></span>
+<span id="cb33-10"><a href="#cb33-10"></a>        <span class="va">self</span>.title <span class="op">=</span> title</span>
+<span id="cb33-11"><a href="#cb33-11"></a>        <span class="va">self</span>.description <span class="op">=</span> description</span>
+<span id="cb33-12"><a href="#cb33-12"></a>        <span class="va">self</span>.color <span class="op">=</span> color</span>
+<span id="cb33-13"><a href="#cb33-13"></a>        <span class="va">self</span>.checked <span class="op">=</span> <span class="va">False</span> <span class="co"># Every new item begins as unchecked</span></span></code></pre></div>
 <ol start="2" type="1">
 <li>Inside your <code>view-list.html</code> template, there is currently a for-in loop responsible for rendering each of the items. Replace the current for-in loop with the following code snippet</li>
 </ol>
-<div class="sourceCode" id="cb34" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb34-1" title="1">    {% for i in range(todo_list| length) %} {% set todo = todo_list[i] %}</a>
-<a class="sourceLine" id="cb34-2" title="2">      &lt;div</a>
-<a class="sourceLine" id="cb34-3" title="3">        class=&quot;todo {{ &#39;checked&#39; if todo.checked else &#39;&#39;}}&quot;</a>
-<a class="sourceLine" id="cb34-4" title="4">      &gt;</a>
-<a class="sourceLine" id="cb34-5" title="5">      &lt;div&gt;</a>
-<a class="sourceLine" id="cb34-6" title="6">        &lt;form action=&quot;/view-todo-list&quot; method=&quot;POST&quot;&gt;</a>
-<a class="sourceLine" id="cb34-7" title="7">          &lt;button</a>
-<a class="sourceLine" id="cb34-8" title="8">            type=&quot;submit&quot;</a>
-<a class="sourceLine" id="cb34-9" title="9">            style=&quot;float: right&quot;</a>
-<a class="sourceLine" id="cb34-10" title="10">            value=&quot;{{i}}&quot;</a>
-<a class="sourceLine" id="cb34-11" title="11">            name=&quot;check-button&quot;</a>
-<a class="sourceLine" id="cb34-12" title="12">            id=&quot;check-button&quot;</a>
-<a class="sourceLine" id="cb34-13" title="13">          &gt;</a>
-<a class="sourceLine" id="cb34-14" title="14">            {{&#39;Uncheck&#39; if todo.checked else &#39;Check&#39;}}</a>
-<a class="sourceLine" id="cb34-15" title="15">          &lt;/button&gt;</a>
-<a class="sourceLine" id="cb34-16" title="16">        &lt;/form&gt;</a>
-<a class="sourceLine" id="cb34-17" title="17">        &lt;/div&gt;</a>
-<a class="sourceLine" id="cb34-18" title="18">        &lt;h4&gt;{{todo.title}}&lt;/h4&gt;</a>
-<a class="sourceLine" id="cb34-19" title="19">        &lt;p&gt;{{todo.description}}&lt;/p&gt;</a>
-<a class="sourceLine" id="cb34-20" title="20">      &lt;/div&gt;</a>
-<a class="sourceLine" id="cb34-21" title="21">      {% endfor %}</a></code></pre></div>
+<div class="sourceCode" id="cb34" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb34-1"><a href="#cb34-1"></a>    {% for i in range(todo_list| length) %} {% set todo = todo_list[i] %}</span>
+<span id="cb34-2"><a href="#cb34-2"></a>      &lt;div</span>
+<span id="cb34-3"><a href="#cb34-3"></a>        class=&quot;todo {{ &#39;checked&#39; if todo.checked else &#39;&#39;}}&quot;</span>
+<span id="cb34-4"><a href="#cb34-4"></a>      &gt;</span>
+<span id="cb34-5"><a href="#cb34-5"></a>      &lt;div&gt;</span>
+<span id="cb34-6"><a href="#cb34-6"></a>        &lt;form action=&quot;/view-todo-list&quot; method=&quot;POST&quot;&gt;</span>
+<span id="cb34-7"><a href="#cb34-7"></a>          &lt;button</span>
+<span id="cb34-8"><a href="#cb34-8"></a>            type=&quot;submit&quot;</span>
+<span id="cb34-9"><a href="#cb34-9"></a>            style=&quot;float: right&quot;</span>
+<span id="cb34-10"><a href="#cb34-10"></a>            value=&quot;{{i}}&quot;</span>
+<span id="cb34-11"><a href="#cb34-11"></a>            name=&quot;check-button&quot;</span>
+<span id="cb34-12"><a href="#cb34-12"></a>            id=&quot;check-button&quot;</span>
+<span id="cb34-13"><a href="#cb34-13"></a>          &gt;</span>
+<span id="cb34-14"><a href="#cb34-14"></a>            {{&#39;Uncheck&#39; if todo.checked else &#39;Check&#39;}}</span>
+<span id="cb34-15"><a href="#cb34-15"></a>          &lt;/button&gt;</span>
+<span id="cb34-16"><a href="#cb34-16"></a>        &lt;/form&gt;</span>
+<span id="cb34-17"><a href="#cb34-17"></a>        &lt;/div&gt;</span>
+<span id="cb34-18"><a href="#cb34-18"></a>        &lt;h4&gt;{{todo.title}}&lt;/h4&gt;</span>
+<span id="cb34-19"><a href="#cb34-19"></a>        &lt;p&gt;{{todo.description}}&lt;/p&gt;</span>
+<span id="cb34-20"><a href="#cb34-20"></a>      &lt;/div&gt;</span>
+<span id="cb34-21"><a href="#cb34-21"></a>      {% endfor %}</span></code></pre></div>
 <p>(You’ll notice that some tags take up multiple lines now. This is purely for readability and is totally ok!)</p>
 <p>Notice several changes to the html that renders each todo item:</p>
 <ul>
@@ -832,12 +840,12 @@
 <ol start="3" type="1">
 <li>Now that we’ve laid the groundwork with html and css, we need to change our python code to handle when a user pushes one of the buttons. Change your <code>view_todo_list</code> method to the following:</li>
 </ol>
-<div class="sourceCode" id="cb37" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb37-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/view-todo-list&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
-<a class="sourceLine" id="cb37-2" title="2"><span class="kw">def</span> view_todo_list():</a>
-<a class="sourceLine" id="cb37-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span> <span class="kw">and</span> <span class="bu">len</span>(todo_list) <span class="op">&gt;</span> <span class="dv">0</span>:</a>
-<a class="sourceLine" id="cb37-4" title="4">        idx: <span class="bu">int</span> <span class="op">=</span> <span class="bu">int</span>(request.form[<span class="st">&#39;check-button&#39;</span>])</a>
-<a class="sourceLine" id="cb37-5" title="5">        todo_list[idx].checked <span class="op">=</span> <span class="kw">not</span> todo_list[idx].checked</a>
-<a class="sourceLine" id="cb37-6" title="6">    <span class="cf">return</span> render_template(<span class="st">&#39;view-list.html&#39;</span>, todo_list<span class="op">=</span>todo_list)</a></code></pre></div>
+<div class="sourceCode" id="cb37" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a><span class="at">@app.route</span>(<span class="st">&#39;/view-todo-list&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</span>
+<span id="cb37-2"><a href="#cb37-2"></a><span class="kw">def</span> view_todo_list():</span>
+<span id="cb37-3"><a href="#cb37-3"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span> <span class="kw">and</span> <span class="bu">len</span>(todo_list) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb37-4"><a href="#cb37-4"></a>        idx: <span class="bu">int</span> <span class="op">=</span> <span class="bu">int</span>(request.form[<span class="st">&#39;check-button&#39;</span>])</span>
+<span id="cb37-5"><a href="#cb37-5"></a>        todo_list[idx].checked <span class="op">=</span> <span class="kw">not</span> todo_list[idx].checked</span>
+<span id="cb37-6"><a href="#cb37-6"></a>    <span class="cf">return</span> render_template(<span class="st">&#39;view-list.html&#39;</span>, todo_list<span class="op">=</span>todo_list)</span></code></pre></div>
 <p><code>view_todo_list</code> now supports those POST requests we’ll be sending when a user presses a button. When a user presses a button, the <code>request.form['check-button']</code> will contain the <em>index</em> of <code>todo_list</code> that they want to check/uncheck (see the button’s value attribute!!). From there, we go into the <code>todo_list</code> and flip its <code>checked</code> property. If it was <code>True</code>, it will become <code>False</code>, and vice versa. Then, when the page reloads, the item will be seen as checked, and the styling will be applied!</p>
 <p>(The check that <code>len(todo_list) &gt; 0</code> is not required, but can prevent crashing when you refresh the page and potentially empty out your todo_list…)</p>
 <h2 id="bonus-editing-tasks">Bonus: Editing Tasks</h2>
@@ -847,54 +855,54 @@
 <li><p>Lets define two more files in our <code>templates</code> directory for displaying an edit form page and successful edit page. Create a new file in <code>templates</code> named <code>edit-todo.html</code>. Copy and paste the contents of your <code>create-todo.html</code> file into the new edit file.</p></li>
 <li><p>Create a new file in <code>templates</code> named <code>edit-success.html</code>. Copy and paste the contents of your <code>success.html</code> file into the new success file. Update the contents of this file to say something about a successful edit instead of a successful creation. You can also add the following html tag somewhere in your body for an easy way of returning to the view list page:</p></li>
 </ol>
-<div class="sourceCode" id="cb38"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/view-todo-list&quot;</span><span class="kw">&gt;</span>Return to list view<span class="kw">&lt;/a&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/view-todo-list&quot;</span><span class="kw">&gt;</span>Return to list view<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
 <ol start="3" type="1">
 <li>Now we need to add a route for rendering these new templates. Add the following code snippet in your <code>app.py</code> file:</li>
 </ol>
-<div class="sourceCode" id="cb39" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb39-1" title="1"><span class="at">@app.route</span>(<span class="st">&#39;/edit-todo&lt;todo_number&gt;&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</a>
-<a class="sourceLine" id="cb39-2" title="2"><span class="kw">def</span> edit_todo(todo_number: <span class="bu">str</span>):</a>
-<a class="sourceLine" id="cb39-3" title="3">    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</a>
-<a class="sourceLine" id="cb39-4" title="4">        <span class="kw">global</span> todo_list</a>
-<a class="sourceLine" id="cb39-5" title="5"></a>
-<a class="sourceLine" id="cb39-6" title="6">        title: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;title&#39;</span>]</a>
-<a class="sourceLine" id="cb39-7" title="7">        description: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;description&#39;</span>]</a>
-<a class="sourceLine" id="cb39-8" title="8">        color: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;color&#39;</span>]</a>
-<a class="sourceLine" id="cb39-9" title="9"></a>
-<a class="sourceLine" id="cb39-10" title="10">        <span class="cf">if</span> title <span class="op">==</span> <span class="st">&#39;&#39;</span>:</a>
-<a class="sourceLine" id="cb39-11" title="11">            <span class="cf">return</span> render_template(<span class="st">&quot;edit-todo.html&quot;</span>)</a>
-<a class="sourceLine" id="cb39-12" title="12"></a>
-<a class="sourceLine" id="cb39-13" title="13">        todo_list[<span class="bu">int</span>(todo_number)].title <span class="op">=</span> title</a>
-<a class="sourceLine" id="cb39-14" title="14">        todo_list[<span class="bu">int</span>(todo_number)].description <span class="op">=</span> description</a>
-<a class="sourceLine" id="cb39-15" title="15">        todo_list[<span class="bu">int</span>(todo_number)].color <span class="op">=</span> color</a>
-<a class="sourceLine" id="cb39-16" title="16"></a>
-<a class="sourceLine" id="cb39-17" title="17">        <span class="cf">return</span> render_template(<span class="st">&quot;edit-success.html&quot;</span>)</a>
-<a class="sourceLine" id="cb39-18" title="18">    <span class="cf">return</span> render_template(<span class="st">&#39;edit-todo.html&#39;</span>, todo<span class="op">=</span>todo_list[<span class="bu">int</span>(todo_number)])</a></code></pre></div>
+<div class="sourceCode" id="cb39" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a><span class="at">@app.route</span>(<span class="st">&#39;/edit-todo&lt;todo_number&gt;&#39;</span>, methods<span class="op">=</span>[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])</span>
+<span id="cb39-2"><a href="#cb39-2"></a><span class="kw">def</span> edit_todo(todo_number: <span class="bu">str</span>):</span>
+<span id="cb39-3"><a href="#cb39-3"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&quot;POST&quot;</span>:</span>
+<span id="cb39-4"><a href="#cb39-4"></a>        <span class="kw">global</span> todo_list</span>
+<span id="cb39-5"><a href="#cb39-5"></a></span>
+<span id="cb39-6"><a href="#cb39-6"></a>        title: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;title&#39;</span>]</span>
+<span id="cb39-7"><a href="#cb39-7"></a>        description: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;description&#39;</span>]</span>
+<span id="cb39-8"><a href="#cb39-8"></a>        color: <span class="bu">str</span> <span class="op">=</span> request.form[<span class="st">&#39;color&#39;</span>]</span>
+<span id="cb39-9"><a href="#cb39-9"></a></span>
+<span id="cb39-10"><a href="#cb39-10"></a>        <span class="cf">if</span> title <span class="op">==</span> <span class="st">&#39;&#39;</span>:</span>
+<span id="cb39-11"><a href="#cb39-11"></a>            <span class="cf">return</span> render_template(<span class="st">&quot;edit-todo.html&quot;</span>)</span>
+<span id="cb39-12"><a href="#cb39-12"></a></span>
+<span id="cb39-13"><a href="#cb39-13"></a>        todo_list[<span class="bu">int</span>(todo_number)].title <span class="op">=</span> title</span>
+<span id="cb39-14"><a href="#cb39-14"></a>        todo_list[<span class="bu">int</span>(todo_number)].description <span class="op">=</span> description</span>
+<span id="cb39-15"><a href="#cb39-15"></a>        todo_list[<span class="bu">int</span>(todo_number)].color <span class="op">=</span> color</span>
+<span id="cb39-16"><a href="#cb39-16"></a></span>
+<span id="cb39-17"><a href="#cb39-17"></a>        <span class="cf">return</span> render_template(<span class="st">&quot;edit-success.html&quot;</span>)</span>
+<span id="cb39-18"><a href="#cb39-18"></a>    <span class="cf">return</span> render_template(<span class="st">&#39;edit-todo.html&#39;</span>, todo<span class="op">=</span>todo_list[<span class="bu">int</span>(todo_number)])</span></code></pre></div>
 <blockquote>
 <p>This route is slightly more complex than ones we have defined previously. The syntax <code>&lt;todo_number&gt;</code> defines an unknown in the URL with a variable name of <code>todo_number</code>. When this route is accessed, it will pass the given <code>todo_number</code> to the <code>edit_todo</code> function. Then the <code>todo_number</code> can be converted to an <code>int</code> and used to select the correct todo our of our <code>todos</code> list. For instance, if we navigate to the URL <code>/edit-todo2</code>, we could expect to be shown all the data about the third todo that was created. (Since we started at 0)</p>
 </blockquote>
 <ol start="4" type="1">
 <li>Most of the logic in the <code>edit_todo</code> function matches the <code>create_todo</code> function. Notice however, that when we render the <code>edit-todo.html</code> template we pass it a todo. Let’s update the copied HTML in <code>edit-todo.html</code> to show the values of the todo we are trying to edit.</li>
 </ol>
-<div class="sourceCode" id="cb40" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb40-1" title="1">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;title&quot;</span><span class="ot"> name=</span><span class="st">&quot;title&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb40-2" title="2">        // updates to</a>
-<a class="sourceLine" id="cb40-3" title="3">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;title&quot;</span><span class="ot"> name=</span><span class="st">&quot;title&quot;</span><span class="ot"> value=</span><span class="st">&quot;{{todo.title}}&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb40-4" title="4"></a>
-<a class="sourceLine" id="cb40-5" title="5">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;description&quot;</span><span class="ot"> name=</span><span class="st">&quot;description&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb40-6" title="6">        // updates to</a>
-<a class="sourceLine" id="cb40-7" title="7">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;description&quot;</span><span class="ot"> name=</span><span class="st">&quot;description&quot;</span><span class="ot"> value=</span><span class="st">&quot;{{todo.description}}&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb40-8" title="8"></a>
-<a class="sourceLine" id="cb40-9" title="9">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Create&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb40-10" title="10">        // updates to</a>
-<a class="sourceLine" id="cb40-11" title="11">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Update&quot;</span><span class="kw">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb40" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb40-1"><a href="#cb40-1"></a>        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;title&quot;</span><span class="ot"> name=</span><span class="st">&quot;title&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>        // updates to</span>
+<span id="cb40-3"><a href="#cb40-3"></a>        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;title&quot;</span><span class="ot"> name=</span><span class="st">&quot;title&quot;</span><span class="ot"> value=</span><span class="st">&quot;{{todo.title}}&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb40-4"><a href="#cb40-4"></a></span>
+<span id="cb40-5"><a href="#cb40-5"></a>        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;description&quot;</span><span class="ot"> name=</span><span class="st">&quot;description&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb40-6"><a href="#cb40-6"></a>        // updates to</span>
+<span id="cb40-7"><a href="#cb40-7"></a>        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;description&quot;</span><span class="ot"> name=</span><span class="st">&quot;description&quot;</span><span class="ot"> value=</span><span class="st">&quot;{{todo.description}}&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb40-8"><a href="#cb40-8"></a></span>
+<span id="cb40-9"><a href="#cb40-9"></a>        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Create&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb40-10"><a href="#cb40-10"></a>        // updates to</span>
+<span id="cb40-11"><a href="#cb40-11"></a>        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Update&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
 <p>Now if you create a todo, then visit the url <code>/edit-todo0</code>, you should see the original text displayed and be able to edit and save your changes with the Update button.</p>
 <ol start="5" type="1">
 <li>Finally we need to add an edit button to each todo on the view list page. Add the following html snippet for a button underneath the Check/ Uncheck button (but within the div tag that surrounds it).</li>
 </ol>
-<div class="sourceCode" id="cb41" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><a class="sourceLine" id="cb41-1" title="1"><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;/edit-todo{{i}}&quot;</span><span class="ot"> method=</span><span class="st">&quot;GET&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb41-2" title="2">    <span class="kw">&lt;button</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> style=</span><span class="st">&quot;float: right&quot;</span><span class="ot"> value=</span><span class="st">&quot;{{i}}&quot;</span><span class="ot"> name=</span><span class="st">&quot;edit-button&quot;</span><span class="ot"> id=</span><span class="st">&quot;edit-button&quot;</span><span class="ot"> todo-id=</span><span class="st">&quot;{{i}}&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb41-3" title="3">        Edit</a>
-<a class="sourceLine" id="cb41-4" title="4">    <span class="kw">&lt;/button&gt;</span></a>
-<a class="sourceLine" id="cb41-5" title="5"><span class="kw">&lt;/form&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb41" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb41-1"><a href="#cb41-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;/edit-todo{{i}}&quot;</span><span class="ot"> method=</span><span class="st">&quot;GET&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a>    <span class="kw">&lt;button</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> style=</span><span class="st">&quot;float: right&quot;</span><span class="ot"> value=</span><span class="st">&quot;{{i}}&quot;</span><span class="ot"> name=</span><span class="st">&quot;edit-button&quot;</span><span class="ot"> id=</span><span class="st">&quot;edit-button&quot;</span><span class="ot"> todo-id=</span><span class="st">&quot;{{i}}&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb41-3"><a href="#cb41-3"></a>        Edit</span>
+<span id="cb41-4"><a href="#cb41-4"></a>    <span class="kw">&lt;/button&gt;</span></span>
+<span id="cb41-5"><a href="#cb41-5"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
 <blockquote>
 <p>Here the specified route for the action adds the <code>i</code> counter/ todo id so that when you click this button it navigates to that specific todo based on it’s id number.</p>
 </blockquote>
@@ -906,12 +914,12 @@
 <li>Create a new file in your repo named <code>dev.py</code></li>
 <li>Paste in the following code snippet and save.</li>
 </ol>
-<div class="sourceCode" id="cb42" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb42-1" title="1"><span class="im">from</span> app <span class="im">import</span> app</a>
-<a class="sourceLine" id="cb42-2" title="2"><span class="im">from</span> livereload <span class="im">import</span> Server</a>
-<a class="sourceLine" id="cb42-3" title="3"></a>
-<a class="sourceLine" id="cb42-4" title="4"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</a>
-<a class="sourceLine" id="cb42-5" title="5">   server <span class="op">=</span> Server(app.wsgi_app)</a>
-<a class="sourceLine" id="cb42-6" title="6">   server.serve()</a></code></pre></div>
+<div class="sourceCode" id="cb42" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a><span class="im">from</span> app <span class="im">import</span> app</span>
+<span id="cb42-2"><a href="#cb42-2"></a><span class="im">from</span> livereload <span class="im">import</span> Server</span>
+<span id="cb42-3"><a href="#cb42-3"></a></span>
+<span id="cb42-4"><a href="#cb42-4"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</span>
+<span id="cb42-5"><a href="#cb42-5"></a>   server <span class="op">=</span> Server(app.wsgi_app)</span>
+<span id="cb42-6"><a href="#cb42-6"></a>   server.serve()</span></code></pre></div>
 <ol start="4" type="1">
 <li>Whenever you would like to run your app with livereload run <code>python -m dev</code> in your terminal and open your browser to <code>http://127.0.0.1:5500/</code></li>
 </ol>

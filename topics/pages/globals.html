@@ -7,7 +7,7 @@
     <title> Globals - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1650484347.6097775">
+    <link rel="stylesheet" href="/static/style.css?v=1650892938.4853973">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -187,7 +187,9 @@
                 <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
-                        <ul><li><a href="#global-variables">Global Variables</a></li>
+                        <ul>doc-toc">
+<ul>
+<li><a href="#global-variables">Global Variables</a></li>
 <li><a href="#named-constants-and-magic-numbers">Named Constants and Magic Numbers</a></li>
 <li><a href="#reassigning-a-global-variable">Reassigning A Global Variable</a></li>
 </ul>
@@ -205,8 +207,8 @@
 <p>Looking for a variable but you don’t see it in the current scope? Check the globals frame! This is how the main function is able to call other functions whose identifiers are found in Globals and bound to their definitions.</p>
 <h3 id="named-constants-and-magic-numbers">Named Constants and Magic Numbers</h3>
 <p>The most valuable, and acceptable, use of globally scoped variables are to put names on constant values used throughout your program. Consider the following code listing:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">    <span class="kw">def</span> compound(current: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</a>
-<a class="sourceLine" id="cb1-2" title="2">        <span class="cf">return</span> current <span class="op">+</span> (current <span class="op">*</span> <span class="fl">0.009</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>    <span class="kw">def</span> compound(current: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>        <span class="cf">return</span> current <span class="op">+</span> (current <span class="op">*</span> <span class="fl">0.009</span>)</span></code></pre></div>
 <p>The float-literal 0.009 is a constant value in the program. It will not change. It is also kind of “magical” isn’t it? Where did this number come from and what does it represent? Often the same constant like this is copied throughout a program. Programmers call literals like this a <strong>“magic number”</strong>.</p>
 <p>Magic numbers are a bad practice for two reasons:</p>
 <ol type="1">
@@ -215,26 +217,26 @@
 </ol>
 <p><strong>Named constants</strong> are the preferred technique for avoiding magic numbers. A <strong>named constant</strong> is a global variable whose value is initialized and does not change at runtime.</p>
 <p>Named constants are conventionally named using all capital letters with underscores separating words. This convention makes it easy to distinguise a variable name from a globally named constant. Let’s rewrite the previous example to use a named constant:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1">    INTEREST_RATE: <span class="bu">float</span> <span class="op">=</span> <span class="fl">0.009</span></a>
-<a class="sourceLine" id="cb2-2" title="2"></a>
-<a class="sourceLine" id="cb2-3" title="3">    <span class="kw">def</span> compound(current: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</a>
-<a class="sourceLine" id="cb2-4" title="4">        <span class="cf">return</span> current <span class="op">+</span> (current <span class="op">*</span> INTEREST_RATE)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>    INTEREST_RATE: <span class="bu">float</span> <span class="op">=</span> <span class="fl">0.009</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    <span class="kw">def</span> compound(current: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>        <span class="cf">return</span> current <span class="op">+</span> (current <span class="op">*</span> INTEREST_RATE)</span></code></pre></div>
 <p>Any time you use a “magic number” in your program you should catch yourself as quickly as possible and refactor your program to use a named constant instead.</p>
 <p>Remember: Named constants are intended to remain… constant! Thus, you should never attempt to reassign a named constant.</p>
 <h3 id="reassigning-a-global-variable">Reassigning A Global Variable</h3>
 <p>If you want to reassign a global variable in Python you must specifically declare your intent to do so. An example of what this may look like is shown below:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1">    <span class="op">&gt;&gt;&gt;</span> lauren: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;a friend&quot;</span></a>
-<a class="sourceLine" id="cb3-2" title="2">    <span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> a_forceful_stranger() <span class="op">-&gt;</span> <span class="va">None</span>:</a>
-<a class="sourceLine" id="cb3-3" title="3">    ...   <span class="kw">global</span> lauren</a>
-<a class="sourceLine" id="cb3-4" title="4">    ...   lauren <span class="op">=</span> <span class="st">&quot;MY HORSE&quot;</span></a>
-<a class="sourceLine" id="cb3-5" title="5">    ...   <span class="bu">print</span>(lauren)</a>
-<a class="sourceLine" id="cb3-6" title="6">    ...</a>
-<a class="sourceLine" id="cb3-7" title="7">    <span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(lauren)</a>
-<a class="sourceLine" id="cb3-8" title="8">    a friend</a>
-<a class="sourceLine" id="cb3-9" title="9">    <span class="op">&gt;&gt;&gt;</span> a_forceful_stranger()</a>
-<a class="sourceLine" id="cb3-10" title="10">    MY HORSE</a>
-<a class="sourceLine" id="cb3-11" title="11">    <span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(lauren)</a>
-<a class="sourceLine" id="cb3-12" title="12">    MY HORSE</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>    <span class="op">&gt;&gt;&gt;</span> lauren: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;a friend&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> a_forceful_stranger() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    ...   <span class="kw">global</span> lauren</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    ...   lauren <span class="op">=</span> <span class="st">&quot;MY HORSE&quot;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    ...   <span class="bu">print</span>(lauren)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>    ...</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>    <span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(lauren)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>    a friend</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>    <span class="op">&gt;&gt;&gt;</span> a_forceful_stranger()</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>    MY HORSE</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>    <span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(lauren)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a>    MY HORSE</span></code></pre></div>
 <p>Disclaimer: Global variables can be handy in small programs, but should generally be avoided as your programs grow in size and you learn techniques for avoiding their use. Global variables can make programs more difficult to reason about and more error prone. When in doubt, prefer local variables and named constants!</p>
 </div>
 

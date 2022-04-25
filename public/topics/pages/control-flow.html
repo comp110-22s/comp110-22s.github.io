@@ -7,7 +7,7 @@
     <title> Control Flow - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1650484316.180292">
+    <link rel="stylesheet" href="/static/style.css?v=1650892905.9357917">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -187,7 +187,10 @@
                 <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
-                        <ul><li><a href="#if-statements">If Statements</a><ul>
+                        <ul>doc-toc">
+<ul>
+<li><a href="#if-statements">If Statements</a>
+<ul>
 <li><a href="#if-then">if-then</a></li>
 <li><a href="#if-then-else">if-then-else</a></li>
 <li><a href="#nested-if-else-statements">nested if-else statements</a></li>
@@ -204,37 +207,37 @@
         <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><h2 id="if-statements">If Statements</h2>
 <h3 id="if-then">if-then</h3>
 <p>Using <strong>booleans</strong> or boolean expressions, which evaluate to true or false, we can create complex logical programs. If-then statements involve the keyword <strong>if</strong>, parentheses <strong>()</strong>, a <strong>conditional statement</strong>, curly braces <strong>{}</strong> and some <strong>code</strong> to execute!</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="cf">if</span> <span class="op">&lt;</span>conditional statement<span class="op">&gt;</span>:      </a>
-<a class="sourceLine" id="cb1-2" title="2">   <span class="co"># code to execute</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="cf">if</span> <span class="op">&lt;</span>conditional statement<span class="op">&gt;</span>:      </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>   <span class="co"># code to execute</span></span></code></pre></div>
 <p>The conditional statement acts as a gate to the code contained within its curly braces, only allowing the program to access and execute the code in the braces if the expression evaluates to <strong>true</strong>.</p>
 <p>The code outside the if-block is completely independent from the conditional and will execute regardless of the conditional statement’s truth value.</p>
 <h3 id="if-then-else">if-then-else</h3>
 <p>Adding the <strong>else</strong> keyword to an if-statement allows the programmer to provide an additional code block in the case that the conditional statement evaluates to false.</p>
-<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1"><span class="cf">if</span> <span class="op">&lt;</span>conditional statement<span class="op">&gt;</span>:    </a>
-<a class="sourceLine" id="cb2-2" title="2">    <span class="co"># code to execute</span></a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="cf">else</span>:</a>
-<a class="sourceLine" id="cb2-4" title="4">    <span class="co"># code that executes when conditional statement is false</span></a></code></pre></div>
+<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="cf">if</span> <span class="op">&lt;</span>conditional statement<span class="op">&gt;</span>:    </span>
+<span id="cb2-2"><a href="#cb2-2"></a>    <span class="co"># code to execute</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="cf">else</span>:</span>
+<span id="cb2-4"><a href="#cb2-4"></a>    <span class="co"># code that executes when conditional statement is false</span></span></code></pre></div>
 <p>The code within the else block (surrounded by the curly braces after the <strong>else</strong> keyword and after the comment) executes only when the conditional is false.</p>
 <p><em>IMPORTANT: Only one of the code blocks (that in the if-block or that in the else-block) executes. After it is executed, the loop is exited and we continue with the rest of the code that follows it.</em></p>
 <p>There are tons of conditional operators that can be used within if-else blocks!</p>
 <h3 id="nested-if-else-statements">nested if-else statements</h3>
 <p>Within the <em>then</em> block (the code to execute when the conditional is true) of an if statement or within an else block we can write as many statements as we want.</p>
 <p>We also have just learned that <em>if-then</em> and <em>if-then-else</em> are themselves statements. This means we can put if-then and if-then-else statements within then blocks or else blocks. That may sound a little confusing, but the key point is that anywhere we have a statement we can use an if or if-then-else statement, so we can <strong>nest</strong> these! Nesting <strong>if</strong> statements gives us more control and lets us be more specific with different options for our program. Let’s look at an example to clear things up:</p>
-<div class="sourceCode" id="cb3" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1">person: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;Stanley&quot;</span></a>
-<a class="sourceLine" id="cb3-2" title="2"> </a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="bu">print</span>(<span class="st">&quot;What&#39;s my favorite food?&quot;</span>)</a>
-<a class="sourceLine" id="cb3-4" title="4"> </a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="cf">if</span> (person <span class="op">==</span> <span class="st">&quot;Kevin&quot;</span>):</a>
-<a class="sourceLine" id="cb3-6" title="6">    <span class="bu">print</span>(<span class="st">&quot;chili&quot;</span>)</a>
-<a class="sourceLine" id="cb3-7" title="7"><span class="cf">else</span>:</a>
-<a class="sourceLine" id="cb3-8" title="8">    <span class="cf">if</span> (person <span class="op">==</span> <span class="st">&quot;Stanley&quot;</span>):</a>
-<a class="sourceLine" id="cb3-9" title="9">        <span class="bu">print</span>(<span class="st">&quot;pretzels&quot;</span>)</a>
-<a class="sourceLine" id="cb3-10" title="10">    <span class="cf">else</span>:</a>
-<a class="sourceLine" id="cb3-11" title="11">        <span class="bu">print</span>(<span class="st">&quot;cake&quot;</span>)</a>
-<a class="sourceLine" id="cb3-12" title="12"> </a>
-<a class="sourceLine" id="cb3-13" title="13"><span class="co"># this program will print:</span></a>
-<a class="sourceLine" id="cb3-14" title="14"><span class="co">#  What&#39;s my favorite food?</span></a>
-<a class="sourceLine" id="cb3-15" title="15"><span class="co">#  pretzels</span></a></code></pre></div>
+<div class="sourceCode" id="cb3" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>person: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;Stanley&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a> </span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="bu">print</span>(<span class="st">&quot;What&#39;s my favorite food?&quot;</span>)</span>
+<span id="cb3-4"><a href="#cb3-4"></a> </span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="cf">if</span> (person <span class="op">==</span> <span class="st">&quot;Kevin&quot;</span>):</span>
+<span id="cb3-6"><a href="#cb3-6"></a>    <span class="bu">print</span>(<span class="st">&quot;chili&quot;</span>)</span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="cf">else</span>:</span>
+<span id="cb3-8"><a href="#cb3-8"></a>    <span class="cf">if</span> (person <span class="op">==</span> <span class="st">&quot;Stanley&quot;</span>):</span>
+<span id="cb3-9"><a href="#cb3-9"></a>        <span class="bu">print</span>(<span class="st">&quot;pretzels&quot;</span>)</span>
+<span id="cb3-10"><a href="#cb3-10"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-11"><a href="#cb3-11"></a>        <span class="bu">print</span>(<span class="st">&quot;cake&quot;</span>)</span>
+<span id="cb3-12"><a href="#cb3-12"></a> </span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="co"># this program will print:</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="co">#  What&#39;s my favorite food?</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="co">#  pretzels</span></span></code></pre></div>
 <h3 id="elif-statements">elif statements</h3>
 <p>Since it is common for us to nest if-then and if-then-else statements, we’ve got a way to make this neater and simpler to use. This is where <strong>elif</strong> comes in. Instead of opening an else block and inside of that opening another if-block, we can combine these steps. This is how we get an elif block. It does the same as an if block inside of an else block, but it’s shorter to write! It also makes the formatting of the code more readable and easier to follow.</p>
 <p>Here are the steps to convert from an if nested inside an else block to one elif:</p>
@@ -243,28 +246,28 @@
 <li>Then, remove the extra indentation in the so that if/elif/else are all at the same level and their bodies are all one level in.</li>
 </ol>
 <p>Here’s the example from above, but this time using elif:</p>
-<div class="sourceCode" id="cb4" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1">person: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;Stanley&quot;</span></a>
-<a class="sourceLine" id="cb4-2" title="2"> </a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="bu">print</span>(<span class="st">&quot;What&#39;s my favorite food?&quot;</span>)</a>
-<a class="sourceLine" id="cb4-4" title="4"> </a>
-<a class="sourceLine" id="cb4-5" title="5"><span class="cf">if</span> (person <span class="op">==</span> <span class="st">&quot;Kevin&quot;</span>):</a>
-<a class="sourceLine" id="cb4-6" title="6">    <span class="bu">print</span>(<span class="st">&quot;chili&quot;</span>)</a>
-<a class="sourceLine" id="cb4-7" title="7"><span class="cf">elif</span> (person <span class="op">==</span> <span class="st">&quot;Stanley&quot;</span>):</a>
-<a class="sourceLine" id="cb4-8" title="8">    <span class="bu">print</span>(<span class="st">&quot;pretzels&quot;</span>)</a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="cf">else</span>:</a>
-<a class="sourceLine" id="cb4-10" title="10">    <span class="bu">print</span>(<span class="st">&quot;cake&quot;</span>)</a>
-<a class="sourceLine" id="cb4-11" title="11"> </a>
-<a class="sourceLine" id="cb4-12" title="12"><span class="co"># this program will print:</span></a>
-<a class="sourceLine" id="cb4-13" title="13"><span class="co">#  What&#39;s my favorite food?</span></a>
-<a class="sourceLine" id="cb4-14" title="14"><span class="co"># pretzels</span></a></code></pre></div>
+<div class="sourceCode" id="cb4" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>person: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;Stanley&quot;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a> </span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="bu">print</span>(<span class="st">&quot;What&#39;s my favorite food?&quot;</span>)</span>
+<span id="cb4-4"><a href="#cb4-4"></a> </span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="cf">if</span> (person <span class="op">==</span> <span class="st">&quot;Kevin&quot;</span>):</span>
+<span id="cb4-6"><a href="#cb4-6"></a>    <span class="bu">print</span>(<span class="st">&quot;chili&quot;</span>)</span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="cf">elif</span> (person <span class="op">==</span> <span class="st">&quot;Stanley&quot;</span>):</span>
+<span id="cb4-8"><a href="#cb4-8"></a>    <span class="bu">print</span>(<span class="st">&quot;pretzels&quot;</span>)</span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="cf">else</span>:</span>
+<span id="cb4-10"><a href="#cb4-10"></a>    <span class="bu">print</span>(<span class="st">&quot;cake&quot;</span>)</span>
+<span id="cb4-11"><a href="#cb4-11"></a> </span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="co"># this program will print:</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="co">#  What&#39;s my favorite food?</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="co"># pretzels</span></span></code></pre></div>
 <p>Using if-then, if-then-else, and elif statements help us direct the logical flow of a program by increasing our control over which boolean combinations lead to which output. We can make more complex code that does more with fewer lines!</p>
 <h2 id="try-except-blocks">try-except blocks</h2>
 <p><strong>Try/except</strong> blocks can be used to prevent programs from crashing when an error is encountered. If you expect certain lines of code to potentially raise an error (for example, <strong>ValueError</strong>), put them in a try block. If the error does actually end up occurring, then instead of crashing the program, the code in the except block will run. Since our solution is to simply ignore the error, the ellipsis are sufficient for the except block. If no error is raised when the try block runs, then the except block will be skipped over.</p>
 <p>For example, in the code below we except an error because the variable ~<del>person</del>~ is never defined, so the code in the excpet block would print.</p>
-<div class="sourceCode" id="cb5" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" title="1"><span class="cf">try</span>:</a>
-<a class="sourceLine" id="cb5-2" title="2">  <span class="bu">print</span>(person)</a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="cf">except</span>:</a>
-<a class="sourceLine" id="cb5-4" title="4">  <span class="bu">print</span>(<span class="st">&quot;An exception occurred&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb5" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="cf">try</span>:</span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="bu">print</span>(person)</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="cf">except</span>:</span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="bu">print</span>(<span class="st">&quot;An exception occurred&quot;</span>)</span></code></pre></div>
 </div>
 
     </div> 

@@ -7,7 +7,7 @@
     <title> Markdown Example - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1650484296.3904629">
+    <link rel="stylesheet" href="/static/style.css?v=1650892885.0734608">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -187,15 +187,21 @@
                 <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
-                        <ul><li><a href="#heading-1">Heading 1</a><ul>
-<li><a href="#heading-2">Heading 2</a><ul>
+                        <ul>doc-toc">
+<ul>
+<li><a href="#heading-1">Heading 1</a>
+<ul>
+<li><a href="#heading-2">Heading 2</a>
+<ul>
 <li><a href="#heading-3">Heading 3</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#general-styling">General Styling</a></li>
 <li><a href="#bullets-and-numbering">Bullets and Numbering</a></li>
-<li><a href="#images-and-links">Images and Links</a><ul>
-<li><a href="#links">Links</a><ul>
+<li><a href="#images-and-links">Images and Links</a>
+<ul>
+<li><a href="#links">Links</a>
+<ul>
 <li><a href="#linking-internally">Linking Internally</a></li>
 <li><a href="#linking-externally">Linking Externally</a></li>
 </ul></li>
@@ -252,13 +258,13 @@
 <h1 id="code-blocks">Code Blocks</h1>
 <p>Keep in mind that code blocks show up slightly off when viewing on the dev server. To see what code blocks will look like once they are published to the course site visit this page on the published site -&gt; https://21s.comp110.com/markdown-example.html</p>
 <p>For shorter code blocks, line numbers are not that helpful so use this formatting.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="cf">if</span> <span class="op">&lt;</span>conditional statement<span class="op">&gt;</span>:      </a>
-<a class="sourceLine" id="cb1-2" title="2">   <span class="co"># code to execute</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="cf">if</span> <span class="op">&lt;</span>conditional statement<span class="op">&gt;</span>:      </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>   <span class="co"># code to execute</span></span></code></pre></div>
 <p>For longer code blocks, line numbers are helpful for describing specific lines to students. Use the formatting below.</p>
-<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1"><span class="cf">if</span> <span class="op">&lt;</span>conditional statement<span class="op">&gt;</span>:    </a>
-<a class="sourceLine" id="cb2-2" title="2">    <span class="co"># code to execute</span></a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="cf">else</span>:</a>
-<a class="sourceLine" id="cb2-4" title="4">    <span class="co"># code that executes when conditional statement is false</span></a></code></pre></div>
+<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="cf">if</span> <span class="op">&lt;</span>conditional statement<span class="op">&gt;</span>:    </span>
+<span id="cb2-2"><a href="#cb2-2"></a>    <span class="co"># code to execute</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="cf">else</span>:</span>
+<span id="cb2-4"><a href="#cb2-4"></a>    <span class="co"># code that executes when conditional statement is false</span></span></code></pre></div>
 </div>
 
     </div> 

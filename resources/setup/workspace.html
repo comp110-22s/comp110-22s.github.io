@@ -7,7 +7,7 @@
     <title> Workspace Repository Setup - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1650484335.0464754">
+    <link rel="stylesheet" href="/static/style.css?v=1650892925.0978484">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -187,17 +187,21 @@
                 <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
-                        <ul><li><a href="#find-your-sakai-unc-e-mail-address">0. Find Your Sakai UNC E-mail Address</a></li>
+                        <ul>doc-toc">
+<ul>
+<li><a href="#find-your-sakai-unc-e-mail-address">0. Find Your Sakai UNC E-mail Address</a></li>
 <li><a href="#register-for-github">1. Register for GitHub</a></li>
 <li><a href="#setup-your-workspace-in-visual-studio-code">2. Setup your Workspace in Visual Studio Code</a></li>
 <li><a href="#installing-vscode-extensions">3. Installing VSCode Extensions</a></li>
-<li><a href="#installing-python-libraries">4. Installing Python Libraries</a><ul>
+<li><a href="#installing-python-libraries">4. Installing Python Libraries</a>
+<ul>
 <li><a href="#for-students-with-a-new-m1-macbook-only-follow-these-steps-5-6">FOR STUDENTS WITH A NEW M1 Macbook ONLY, follow these steps 5-6:</a></li>
 <li><a href="#everyone-including-m1-macbook-users-follow-these-steps-7-8">Everyone (including M1 Macbook users) follow these steps 7-8:</a></li>
 </ul></li>
 <li><a href="#setup-your-backup-workspace-on-github">5. Setup your Backup Workspace on GitHub</a></li>
 <li><a href="#configure-your-git-name-and-e-mail">6. Configure your <code>git</code> Name and E-mail</a></li>
-<li><a href="#operating-system-specific-configuration">7. Operating System Specific Configuration</a><ul>
+<li><a href="#operating-system-specific-configuration">7. Operating System Specific Configuration</a>
+<ul>
 <li><a href="#windows">Windows</a></li>
 <li><a href="#macos">macOS</a></li>
 </ul></li>
@@ -290,7 +294,7 @@
 <ol start="5" type="1">
 <li>In the <em>Terminal</em> type the following command, being careful to match it <em>exactly</em> to install the <code>numpy</code> library.</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1">    <span class="ex">python</span> -m pip install --only-binary=:all: numpy==1.21.3</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>    <span class="ex">python</span> -m pip install --only-binary=:all: numpy==1.21.3</span></code></pre></div>
 <ol start="6" type="1">
 <li>Press <code>Enter</code> to run the command. This command installs additional Python libraries, which give you functionalities we’ll use later in the course.</li>
 </ol>
@@ -298,7 +302,7 @@
 <ol start="7" type="1">
 <li>In the <em>Terminal</em> type the following command, being careful to match it <em>exactly</em>.</li>
 </ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1">    <span class="ex">python</span> -m pip install pip -r requirements.txt --user</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>    <span class="ex">python</span> -m pip install pip -r requirements.txt --user</span></code></pre></div>
 <ol start="8" type="1">
 <li>Press <code>Enter</code> to run the command. This command installs additional Python libraries, which give you functionalities we’ll use later in the course.</li>
 </ol>
@@ -337,11 +341,11 @@
 <li>If your <em>Terminal</em> window from above is still open from section 3, great! If not, open a new <em>Terminal</em> pane in VS Code.</li>
 <li>At the prompt, type the following command and press enter with your primary e-mail address inside the double quotes:</li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">git</span> config --global user.email <span class="st">&quot;your@primary.email&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="fu">git</span> config --global user.email <span class="st">&quot;your@primary.email&quot;</span></span></code></pre></div>
 <ol start="3" type="1">
 <li>Then, type tye following command and press enter with your first and last name inside the double quotes:</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">git</span> config --global user.name <span class="st">&quot;Your Name&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="fu">git</span> config --global user.name <span class="st">&quot;Your Name&quot;</span></span></code></pre></div>
 <p>After doing this, when you make backup commits in <code>git</code> (which you’ll do shortly!) they’ll be correctly attributed to you.</p>
 <h2 id="operating-system-specific-configuration">7. Operating System Specific Configuration</h2>
 <h3 id="windows">Windows</h3>

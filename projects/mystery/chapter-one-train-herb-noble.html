@@ -7,7 +7,7 @@
     <title> Chapter 1 - The Bell Tower - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1650484296.990708">
+    <link rel="stylesheet" href="/static/style.css?v=1650892885.737814">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -187,8 +187,11 @@
                 <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
-                        <ul><li><a href="#the-clue">The CLUE 🔎</a></li>
-<li><a href="#the-task-️">The TASK 🕵️</a><ul>
+                        <ul>doc-toc">
+<ul>
+<li><a href="#the-clue">The CLUE 🔎</a></li>
+<li><a href="#the-task">The TASK 🕵️</a>
+<ul>
 <li><a href="#handling-all-characters">0. Handling all characters</a></li>
 <li><a href="#refactoring-decode_char">1. Refactoring <code>decode_char</code></a></li>
 <li><a href="#decode_char_by_shift-function">2. <code>decode_char_by_shift</code> function</a></li>
@@ -218,7 +221,7 @@ You better find Kaki quickly! Review sessions have ground to a halt!
 </p>
 <h2 id="the-clue">The CLUE 🔎</h2>
 <p>Dl tpnoa ullk av ylabyu av aol jyptl zjlul… Zpaalyzvu pazlsm. Mylk Iyvvrz pz hsdhfz dhajopun vcly aol ibpskpun… myvt aol ivaavt msvvy. Wlyohwz ol zhd zvtlaopun? Ahrl h svvr ilulhao opt huk zll pm ol slma bz huf jsblz.</p>
-<h2 id="the-task-️">The TASK 🕵️</h2>
+<h2 id="the-task">The TASK 🕵️</h2>
 <p>It seems that whoever left this clue wanted it to be hard to read, we will have to decode it again. And what is with the number next to the clue? Weird… sometimes caesar ciphers shift by more than one character, perhaps that is it. There also is both uppercase and lowercase letters in this clue. Our cipher decoder will have to handle that too:</p>
 <h3 id="handling-all-characters">0. Handling all characters</h3>
 <p>We want our new and improved Caesar Cipher to be able to handle both uppercase and lowercase letters. We also want our decoder to leave numbers, spaces and punctuation untouched. Lucky for us, python has several built-in <code>str</code> methods that can help us check the case of character and determine if a character is part of the alphabet or not.</p>

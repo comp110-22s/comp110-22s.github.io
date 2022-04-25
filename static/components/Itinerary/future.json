@@ -1,42 +1,4 @@
 {
-    "2022-04-17": [],
-    "2022-04-18": [],
-    "2022-04-19": [
-        {
-            "kind": "LS",
-            "n": 29,
-            "title": "Recursion Introduction - Async",
-            "date": "2022-04-19",
-            "deadline": "2022-04-20",
-            "links": {
-                "Follow-along Lesson": "https://www.youtube.com/watch?v=nVv7RDDtwdg",
-                "Gradescope Questions": "https://gradescope.com"
-            }
-        },
-        {
-            "kind": "EX",
-            "n": 10,
-            "title": "Recursion Exercise - Due 4/27",
-            "date": "2022-04-19",
-            "deadline": "2022-04-27",
-            "links": {
-                "Write-up": "/exercises/ex10.html"
-            }
-        }
-    ],
-    "2022-04-20": [],
-    "2022-04-21": [
-        {
-            "kind": "CL",
-            "n": 26,
-            "title": "Recursion in-person",
-            "date": "2022-04-21",
-            "deadline": "None",
-            "links": {
-                "Quarantine Stream": "https://youtu.be/LmV4ArXOAXc"
-            }
-        }
-    ],
     "2022-04-22": [],
     "2022-04-23": [],
     "2022-04-24": [],
@@ -64,7 +26,8 @@
                 "Sec001 in Hamilton 100": "",
                 "Sec002 in Genome G100": "",
                 "Final Exam Conflict Reschedule - 8am May 1st in SN014": "",
-                "3 in 24 Reschedule - 8am May 1st in SN014": ""
+                "3 in 24 Reschedule - 8am May 1st in SN014": "",
+                "Final Exam Practice Questions": "/resources/practice/sp22/final-worksheet.html"
             }
         }
     ]

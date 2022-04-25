@@ -7,7 +7,7 @@
     <title> Chapter 4 - The Artists - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1650484295.4388897">
+    <link rel="stylesheet" href="/static/style.css?v=1650892883.9295216">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -187,8 +187,11 @@
                 <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
-                        <ul><li><a href="#the-clue">The CLUE 🔎</a></li>
-<li><a href="#the-task-️">The TASK 🕵️</a><ul>
+                        <ul>doc-toc">
+<ul>
+<li><a href="#the-clue">The CLUE 🔎</a></li>
+<li><a href="#the-task">The TASK 🕵️</a>
+<ul>
 <li><a href="#d-lists">0. 2D Lists</a></li>
 <li><a href="#print_2d_list-procedure">1. <code>print_2d_list</code> procedure</a></li>
 <li><a href="#testing-your-program">2. Testing your program</a></li>
@@ -218,7 +221,7 @@ we need her back! everything is falling apart
 <blockquote>
 <p>[[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0], [0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0], [1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1], [0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]]</p>
 </blockquote>
-<h2 id="the-task-️">The TASK 🕵️</h2>
+<h2 id="the-task">The TASK 🕵️</h2>
 <p>In honor of Hanes Art Center it is time to mix art and code together. ASCII art is a graphic technique where visuals are created using the characters you can see on your keyboard! A few examples are as follows:</p>
 <pre class="plaintext"><code>H   H EEEEE L     L      OOO       W   W  OOO  RRRR  L     DDDD  !!
 H   H E     L     L     O   O      W W W O   O R   R L     D   D !!
@@ -234,39 +237,39 @@ H   H EEEEE LLLLL LLLLL  OOO  ,,    W W   OOO  R   R LLLLL DDDD  !!</code></pre>
 <p>A 2d list is just a list of lists. the signature is actually quite simple:</p>
 <p><code>2d_list: list[list[int]] = [[1, 0], [2, 3]]</code></p>
 <p>notice that each index of the outer list is actually a list itself, with some number of elements inside it. If we change the formatting just a little bit, something interesting emerges:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1">[[<span class="dv">1</span>, <span class="dv">0</span>],</a>
-<a class="sourceLine" id="cb3-2" title="2"> [<span class="dv">2</span>, <span class="dv">3</span>]]</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>[[<span class="dv">1</span>, <span class="dv">0</span>],</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a> [<span class="dv">2</span>, <span class="dv">3</span>]]</span></code></pre></div>
 <p>The contents haven’t changed, but looking at it this way, the 2d list looks a lot like a table, with rows and columns! This is the superpower of 2d lists, and most applications of 2d lists utilize their rectangular nature. In this list</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1">big_2d_list <span class="op">=</span> [[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</a>
-<a class="sourceLine" id="cb4-2" title="2">               [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>],</a>
-<a class="sourceLine" id="cb4-3" title="3">               [<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>],</a>
-<a class="sourceLine" id="cb4-4" title="4">               [<span class="dv">12</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>]]</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>big_2d_list <span class="op">=</span> [[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>               [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>],</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>               [<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>],</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>               [<span class="dv">12</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>]]</span></code></pre></div>
 <p>we have 4 rows and 4 columns. Now how do we index into a 2d list? The syntax is as follows:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" title="1">big_2d_list[<span class="dv">0</span>][<span class="dv">0</span>] <span class="co"># this is the value 0</span></a>
-<a class="sourceLine" id="cb5-2" title="2">big_2d_list[<span class="dv">0</span>][<span class="dv">1</span>] <span class="co"># this is the value 1</span></a>
-<a class="sourceLine" id="cb5-3" title="3">big_2d_list[<span class="dv">1</span>][<span class="dv">0</span>] <span class="co"># this is the value 4</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>big_2d_list[<span class="dv">0</span>][<span class="dv">0</span>] <span class="co"># this is the value 0</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>big_2d_list[<span class="dv">0</span>][<span class="dv">1</span>] <span class="co"># this is the value 1</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>big_2d_list[<span class="dv">1</span>][<span class="dv">0</span>] <span class="co"># this is the value 4</span></span></code></pre></div>
 <p>The first <code>[index]</code> tells us which index of the outer list to look at, and the second <code>[index]</code> tells us which index of that list to get the value of. So for</p>
 <p><code>big_2d_list[2][3]</code></p>
 <p>we want to get index 2 in the <code>big_2d_list</code>, which is the list <code>[8, 9, 10, 11]</code>, and then index 3 in that list, which gets us to the value <code>11</code>, so</p>
 <p><code>big_2d_list[2][3]</code> is equal to <code>11</code></p>
 <p>Here are some simple 2D lists using a few different data types:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># a list of lists of booleans</span></a>
-<a class="sourceLine" id="cb6-2" title="2">[[true, false, true], [false, false, true]]</a>
-<a class="sourceLine" id="cb6-3" title="3"></a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="co"># a list of lists of integers, note that these lists don&#39;t have to have the same number of values</span></a>
-<a class="sourceLine" id="cb6-5" title="5">[[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], [<span class="dv">6</span>]]</a>
-<a class="sourceLine" id="cb6-6" title="6"></a>
-<a class="sourceLine" id="cb6-7" title="7"><span class="co"># a list of lists of strings</span></a>
-<a class="sourceLine" id="cb6-8" title="8">[[<span class="st">&quot;hi&quot;</span>, <span class="st">&quot;hello&quot;</span>, <span class="st">&quot;sup&quot;</span>],[<span class="st">&quot;bye&quot;</span>, <span class="st">&quot;see ya&quot;</span>]]</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co"># a list of lists of booleans</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>[[true, false, true], [false, false, true]]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="co"># a list of lists of integers, note that these lists don&#39;t have to have the same number of values</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>[[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], [<span class="dv">6</span>]]</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a><span class="co"># a list of lists of strings</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>[[<span class="st">&quot;hi&quot;</span>, <span class="st">&quot;hello&quot;</span>, <span class="st">&quot;sup&quot;</span>],[<span class="st">&quot;bye&quot;</span>, <span class="st">&quot;see ya&quot;</span>]]</span></code></pre></div>
 <h3 id="print_2d_list-procedure">1. <code>print_2d_list</code> procedure</h3>
 <p>So how does all this relate to ASCII art? Your clue contains a massive rectangular 2d list of 1’s and 0’s. To draw our ASCII art, we’re going to iterate through this 2d list and print something different based on if we see a 0 or a 1 at that index. You can think of this as saying 0’s will be areas that are not filled, and 1’s are areas that are filled (we will “fill” these areas with the <code>'@'</code> character). Let’s look at an example:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" title="1">ex_art <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>],</a>
-<a class="sourceLine" id="cb7-2" title="2">          [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>],</a>
-<a class="sourceLine" id="cb7-3" title="3">          [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>]]</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a>ex_art <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>],</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>          [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>],</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>          [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>]]</span></code></pre></div>
 <p>This is a smaller example of a 2d list. After running this <code>ex_art</code> list through your <code>print_2d_list</code> procedure, we expect this to print to the terminal:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" title="1"><span class="op">@</span> <span class="op">@</span></a>
-<a class="sourceLine" id="cb8-2" title="2">  <span class="op">@</span></a>
-<a class="sourceLine" id="cb8-3" title="3"><span class="op">@@@</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="op">@</span> <span class="op">@</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>  <span class="op">@</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="op">@@@</span></span></code></pre></div>
 <p>Good luck!</p>
 <h4 id="procedural-requirements-print_2d_list">Procedural Requirements – <code>print_2d_list</code></h4>
 <ol type="1">
@@ -281,7 +284,7 @@ H   H EEEEE LLLLL LLLLL  OOO  ,,    W W   OOO  R   R LLLLL DDDD  !!</code></pre>
 </ol>
 <h3 id="testing-your-program">2. Testing your program</h3>
 <p>To check that your procedure works as expected, you can load your <code>printer</code> file into a REPL by opening up a new <code>REPL</code>, and then running <code>from projects.mystery.printer import print_2D_list</code>. From here you can practice calling your procedure and seeing if the results match what you expected.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" title="1">print_2D_list([[<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>],[<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>],[<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>]])</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a>print_2D_list([[<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>],[<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>],[<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>]])</span></code></pre></div>
 <p>should output:</p>
 <pre class="plaintext"><code>@ @
  @

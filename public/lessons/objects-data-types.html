@@ -7,7 +7,7 @@
     <title> Objects and Data Types - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1650484311.2711103">
+    <link rel="stylesheet" href="/static/style.css?v=1650892900.8845174">
 </head>
 
 <body id="body" class="absolute-page">
@@ -80,10 +80,13 @@
                 <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
-                        <ul><li><a href="#bits-and-bit-patterns">Bits and Bit Patterns</a></li>
+                        <ul>doc-toc">
+<ul>
+<li><a href="#bits-and-bit-patterns">Bits and Bit Patterns</a></li>
 <li><a href="#classification-and-representation">Classification and Representation</a></li>
 <li><a href="#built-in-types">Built-in Types</a></li>
-<li><a href="#primitive-data-types">Primitive Data Types</a><ul>
+<li><a href="#primitive-data-types">Primitive Data Types</a>
+<ul>
 <li><a href="#literal-expressions-and-type-inspection">Literal Expressions and <code>type</code> inspection</a></li>
 <li><a href="#int---integers"><code>int</code> - Integers</a></li>
 <li><a href="#float---floating-point-decimal-numbers"><code>float</code> - Floating-point “Decimal” Numbers</a></li>
@@ -102,7 +105,7 @@
 <p><strong>Memory is your canvas and objects are your paint.</strong> Understanding the fundamental types of data you can work with, and their capabilities, is the first step on your journey toward programming!</p>
 <p>Let’s zoom in a bit to explore memory more closely, before zooming our way out toward thinking in terms of <em>objects</em> in memory.</p>
 <h2 id="bits-and-bit-patterns">Bits and Bit Patterns</h2>
-<p>Your computer’s memory is comprised of billions of electronic cells. These cells, called <em>transistors</em> are now the most frequently manufactured device in history, with over 13 sextillion produced<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>! Each transistor has two states, <em>off</em> or <em>on</em>. This is represented numerically as a <strong>bit</strong> whose value is either <code>0</code> or <code>1</code>. Despite <code>1</code> being the maximal value of a bit, notice there are <em>two</em> possible values thanks to <code>0</code>. Unlike humans, <strong>bits are binary</strong>.</p>
+<p>Your computer’s memory is comprised of billions of electronic cells. These cells, called <em>transistors</em> are now the most frequently manufactured device in history, with over 13 sextillion produced<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>! Each transistor has two states, <em>off</em> or <em>on</em>. This is represented numerically as a <strong>bit</strong> whose value is either <code>0</code> or <code>1</code>. Despite <code>1</code> being the maximal value of a bit, notice there are <em>two</em> possible values thanks to <code>0</code>. Unlike humans, <strong>bits are binary</strong>.</p>
 <p>You can form many unique patterns by <em>stringing</em> bits together. For example, with two bits strung together, you can form four different <strong>bit patterns</strong>: <code>00</code>, <code>01</code>, <code>10</code>, and <code>11</code>. With three bits strung together, you can form eight different combinations: <code>000</code>, <code>001</code>, <code>010</code>, <code>011</code>, <code>100</code>, <code>101</code>, <code>110</code>, <code>111</code>. How many <strong>bit patterns</strong> can you form with four bits?</p>
 <p>Each time you extend a bit pattern by another bit, you double the number of possible patterns. Thus, given any number of bits, you can calculate the possible unique patterns with the mathematical expression <span class="math inline">2<sup><em>b</em><em>i</em><em>t</em><em>s</em></sup></span>. With 8 bits, called a <strong>byte</strong> there are <span class="math inline">2<sup>8</sup></span>, which <em>evaluates to</em> 256, different patterns. Exponential growth is a powerful force! With only 64 bits, there are <span class="math inline">2<sup>64</sup></span> patterns, which <em>evaluates to</em> 18,446,744,073,709,551,616 possibilities.</p>
 <p>Humanity has settled on the decimal system as its defacto numbering system. Languages have their own alphabets for textual data. There is an emergent universal <em>character set</em> in emoji 🤠. As all of memory is the binary system of <code>0</code>s and <code>1</code>s, how can computers process these widely different <em><strong>types</strong> of data</em>?</p>
@@ -204,7 +207,7 @@
 <blockquote>
 <p>Note: When working in an interactive Python interpreter, the evaluation of each expression is displayed, or “printed”, back to you automatically. This is <em>great</em> for messing around! This <strong>will not</strong> be the case when writing stored programs. There you would need to surround any expression you want displayed in a <code>print</code> function call, for example <code>print(chr(0b01000011))</code>.</p>
 </blockquote>
-<p><strong>What an object’s <em>bit pattern</em> means or <em>represents</em> is decided entirely by the <em>type</em> of data you decide to <em>classify</em> it as.</strong> Thus, when programming in a high level language like Python, it is more important to understand the types of data you are working with than exactly how they are represented as bit patterns. This is one of the most important examples of data <em>abstraction</em> in computer science: we will not need to concern ourselves with the details of these lower, bit-level concerns for quite some time<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>!</p>
+<p><strong>What an object’s <em>bit pattern</em> means or <em>represents</em> is decided entirely by the <em>type</em> of data you decide to <em>classify</em> it as.</strong> Thus, when programming in a high level language like Python, it is more important to understand the types of data you are working with than exactly how they are represented as bit patterns. This is one of the most important examples of data <em>abstraction</em> in computer science: we will not need to concern ourselves with the details of these lower, bit-level concerns for quite some time<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>!</p>
 <h2 id="built-in-types">Built-in Types</h2>
 <p>Programming languages offer many built-in data types for you to work with, typically including:</p>
 <ul>
@@ -350,11 +353,11 @@ False</code></pre>
 <p>Note that Python, like most programming languages, is <em>case-sensitive</em>. The words <code>true</code>, <code>tRuE</code>, and <code>TrUe</code> are <strong>not</strong> <code>bool</code> values. Only <code>True</code> and <code>False</code> are valid <code>bool</code> values in Python.</p>
 <h2 id="an-object-is-a-typed-unit-of-data-in-memory">An object is a typed unit of data in memory</h2>
 <p>In the opening of this lesson it was said, “an object is a typed unit of data in memory”. There is a lot of information packed into that statement now that you know a bit more about memory and types! Types are important because they decide how data is interpreted and, as you will explore in the next lesson, inform how you can make use of the object and its capabilities. The operations you can perform on numbers, such as adding them or subtracting them, are different than the operations you can perform on strings. This is broadly true both in programming and the real world: when you have different types of objects you’ll want to do different things with them.</p>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>That’s 13,000,000,000,000,000,000,000 transistors produced! <a href="https://en.wikipedia.org/wiki/MOSFET" class="uri">https://en.wikipedia.org/wiki/MOSFET</a><a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>In later computer science courses you will encounter systems programming languages, as you work closer to the actual machine, and will learn in much more depth the various binary systems behind integer, floating point, ASCII/UTF-8 data, and more.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>That’s 13,000,000,000,000,000,000,000 transistors produced! <a href="https://en.wikipedia.org/wiki/MOSFET" class="uri">https://en.wikipedia.org/wiki/MOSFET</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>In later computer science courses you will encounter systems programming languages, as you work closer to the actual machine, and will learn in much more depth the various binary systems behind integer, floating point, ASCII/UTF-8 data, and more.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 </div>
@@ -392,15 +395,15 @@ False</code></pre>
 
     <!-- Load our React components. -->
 
-    <script type="text/babel" src="/static/components//Itinerary/EventSection.tsx?cache=1650484311.2711103"></script>
-    <script type="text/babel" src="/static/components//Itinerary/DateSection.tsx?cache=1650484311.2711103"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Dates.tsx?cache=1650484311.2711103"></script>
-        <script type="text/babel" src="/static/components//Itinerary/DropdownButton.tsx?cache=1650484311.2711103"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Dropdown.tsx?cache=1650484311.2711103"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Search.tsx?cache=1650484311.2711103"></script>
-    <script type="text/babel" src="/static/components//Itinerary/PillButtons.tsx?cache=1650484311.2711103"></script>
-    <script type="text/babel" src="/static/components//Itinerary/PillButton.tsx?cache=1650484311.2711103"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Itinerary.jsx?cache=1650484311.2711103"></script>
+    <script type="text/babel" src="/static/components//Itinerary/EventSection.tsx?cache=1650892900.8845174"></script>
+    <script type="text/babel" src="/static/components//Itinerary/DateSection.tsx?cache=1650892900.8845174"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dates.tsx?cache=1650892900.8845174"></script>
+        <script type="text/babel" src="/static/components//Itinerary/DropdownButton.tsx?cache=1650892900.8845174"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dropdown.tsx?cache=1650892900.8845174"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Search.tsx?cache=1650892900.8845174"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButtons.tsx?cache=1650892900.8845174"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButton.tsx?cache=1650892900.8845174"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Itinerary.jsx?cache=1650892900.8845174"></script>
 
 
 </body>

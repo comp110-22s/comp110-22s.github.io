@@ -7,7 +7,7 @@
     <title> EX00 - Hello, world. - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1650484341.9449315">
+    <link rel="stylesheet" href="/static/style.css?v=1650892932.4889815">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -187,7 +187,9 @@
                 <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
-                        <ul><li><a href="#complete-the-prerequisites">0. Complete the Prerequisites</a></li>
+                        <ul>doc-toc">
+<ul>
+<li><a href="#complete-the-prerequisites">0. Complete the Prerequisites</a></li>
 <li><a href="#write-your-first-program">1. Write Your First Program!</a></li>
 <li><a href="#make-a-backup-checkpoint-commit">3. Make a Backup Checkpoint “Commit”</a></li>
 <li><a href="#submit-to-gradescope-for-grading">4. Submit to Gradescope for Grading</a></li>
@@ -218,7 +220,7 @@
 <p>An empty file opens. The <code>.py</code> file extension is standard for Python programs.</p>
 <p>For the past 50 or so years it’s a tradition in the programming world for your first program to print the words “Hello, world.” We won’t break it.</p>
 <p>Write the line of code below in your file:</p>
-<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">print</span>(<span class="st">&quot;Hello, world.&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="bu">print</span>(<span class="st">&quot;Hello, world.&quot;</span>)</span></code></pre></div>
 <p>Next, <strong>save your program</strong> (shortcuts on Windows: <code>Control+S</code>, Mac: <code>Command+S</code>).</p>
 <p>To run your program, first open a terminal: <em>Terminal</em> &gt; <em>New Terminal</em></p>
 <p>Then, in the Terminal, type out the following command and press enter:</p>
@@ -230,10 +232,10 @@
 <p>What is this line of code doing? You are <em>calling</em> a <em>function</em> named <code>print</code>. The <code>print</code> function is <a href="https://docs.python.org/3/library/functions.html#print">built-in to the Python programming language</a> and results in data being “printed” out <em>somewhere</em>. By default, that <em>somewhere</em> is on your screen in the Terminal. The parentheses following the word <code>print</code> indicate extra information being given to the <code>print</code> function. In this example, you are giving a piece of textual information to print which is called a “string” and denoted by the double quotes surrounding the textual data. Don’t worry, we will break down all of this into more tangible detail soon!</p>
 <p>Your first program is <em>almost complete</em>! However, before submitting it there are a couple more style and documentation steps to complete.</p>
 <p>First, you should add a special kind of string value, called a <em>docstring</em> short for documentation string, to the top of your program file, which is a Python <em>module</em>. Then, you should add a line with a special variable named <code>__author__</code> assigned to be your 9-digit student PID. (Disclaimer: Out in the real world the <code>__author__</code> variable is typically your name and e-mail address, but since we will grade your programs we’d like to avoid potential bias in seeing your names as part of the programs as we’re grading.) Add the following lines above the line of code that calls the <code>print</code> function. Fill in <em>your</em> 9-digit UNC PID number, without any spaces or dashes, in the <code>__author__</code> string.</p>
-<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1"><span class="co">&quot;&quot;&quot;My first program for COMP110.&quot;&quot;&quot;</span></a>
-<a class="sourceLine" id="cb2-2" title="2"></a>
-<a class="sourceLine" id="cb2-3" title="3">__author__ <span class="op">=</span> <span class="st">&quot;1234567890&quot;</span></a>
-<a class="sourceLine" id="cb2-4" title="4"></a></code></pre></div>
+<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">&quot;&quot;&quot;My first program for COMP110.&quot;&quot;&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a>__author__ <span class="op">=</span> <span class="st">&quot;1234567890&quot;</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a></span></code></pre></div>
 <p>Save your program again and re-run it. You should still only see your printed output message. What must that mean about the two lines of code you just added? They’re for documentation purposes and must not impact the <em>printed output</em> of the program.</p>
 <h2 id="make-a-backup-checkpoint-commit">3. Make a Backup Checkpoint “Commit”</h2>
 <p>Now that your first program is complete, let’s practice making a backup. Visual Studio Code has built-in support for <code>git</code> source control management (SCM). SCM tools are made to help create versioned checkpoints of a project’s source code (your program is source code!) amont other uses. The current de facto SCM is called <code>git</code>. As one more piece of terminology, a checkpointed version in git is called a <code>commit</code>. Once your work is in a <code>commit</code> checkpoint, you can always return back to your project at that point in time without the risk of losing work. We encourage committing work to backup <em>at least</em> each time you submit a project for grading or are finishing out a working session for the day. Commits are free to make and can only help you avoid losing work; use them liberally!</p>

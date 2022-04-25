@@ -7,7 +7,7 @@
     <title> Lists and Dictionaries - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1650484346.404782">
+    <link rel="stylesheet" href="/static/style.css?v=1650892937.1909919">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -187,12 +187,16 @@
                 <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
-                        <ul><li><a href="#lists">Lists</a><ul>
+                        <ul>doc-toc">
+<ul>
+<li><a href="#lists">Lists</a>
+<ul>
 <li><a href="#what-is-an-index">What is an index?</a></li>
 <li><a href="#how-do-you-access-an-element">How do you access an element?</a></li>
 <li><a href="#adding-and-removing-elements-from-a-list">Adding and removing elements from a list</a></li>
 </ul></li>
-<li><a href="#dictionaries">Dictionaries</a><ul>
+<li><a href="#dictionaries">Dictionaries</a>
+<ul>
 <li><a href="#keys">Keys</a></li>
 <li><a href="#values">Values</a></li>
 <li><a href="#inserting-items-into-a-dictionary">Inserting items into a dictionary</a></li>
@@ -209,11 +213,11 @@
         <div id="content" class="content col-xl-9 col-lg-9 order-2 order-lg-1"><h2 id="lists">Lists</h2>
 <p>A <strong>list</strong> is a variable (with a name) that holds many elements of the same type addressed by indices.</p>
 <p>Here’s how you make a list:</p>
-<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="op">&lt;</span>name<span class="op">&gt;</span>: <span class="bu">list</span>[<span class="op">&lt;</span><span class="bu">type</span><span class="op">&gt;</span>] <span class="op">=</span> [<span class="op">&lt;</span>element1<span class="op">&gt;</span>, <span class="op">&lt;</span>element2<span class="op">&gt;</span>, <span class="op">&lt;</span>element3<span class="op">&gt;</span>, ...]</a></code></pre></div>
+<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="op">&lt;</span>name<span class="op">&gt;</span>: <span class="bu">list</span>[<span class="op">&lt;</span><span class="bu">type</span><span class="op">&gt;</span>] <span class="op">=</span> [<span class="op">&lt;</span>element1<span class="op">&gt;</span>, <span class="op">&lt;</span>element2<span class="op">&gt;</span>, <span class="op">&lt;</span>element3<span class="op">&gt;</span>, ...]</span></code></pre></div>
 <p>The above syntax includes declaration <em>and</em> initialization. It also includes information about the type of the array. Here’s some examples:</p>
-<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1">friends: <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">=</span> [<span class="st">&quot;Jim&quot;</span>, <span class="st">&quot;Kevin&quot;</span>, <span class="st">&quot;Erin&quot;</span>]</a>
-<a class="sourceLine" id="cb2-2" title="2">ratings: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">3</span>]</a>
-<a class="sourceLine" id="cb2-3" title="3">answers: <span class="bu">list</span>[<span class="bu">bool</span>] <span class="op">=</span> [<span class="va">True</span>, <span class="va">False</span>, <span class="va">False</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>friends: <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">=</span> [<span class="st">&quot;Jim&quot;</span>, <span class="st">&quot;Kevin&quot;</span>, <span class="st">&quot;Erin&quot;</span>]</span>
+<span id="cb2-2"><a href="#cb2-2"></a>ratings: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">3</span>]</span>
+<span id="cb2-3"><a href="#cb2-3"></a>answers: <span class="bu">list</span>[<span class="bu">bool</span>] <span class="op">=</span> [<span class="va">True</span>, <span class="va">False</span>, <span class="va">False</span>]</span></code></pre></div>
 <p>Let’s take a closer look at how lists work.</p>
 <h3 id="what-is-an-index">What is an index?</h3>
 <p>An index is the integer used to reference each element in a list.</p>
@@ -224,37 +228,37 @@
 <p>When you access an element, you can assign it to a variable to more easily access it later.</p>
 <p>You can also change individual elements in a list without having to create an entirely new list!</p>
 <p>Example:</p>
-<div class="sourceCode" id="cb3" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1">myFriends: <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">=</span> [<span class="st">&quot;Jim&quot;</span>, <span class="st">&quot;Kevin&quot;</span>, <span class="st">&quot;Erin&quot;</span>]</a>
-<a class="sourceLine" id="cb3-2" title="2"></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="co"># accessing first element in the friends list</span></a>
-<a class="sourceLine" id="cb3-4" title="4">myBestFriend: <span class="bu">str</span> <span class="op">=</span> friends[<span class="dv">0</span>]</a>
-<a class="sourceLine" id="cb3-5" title="5"></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="co"># reassigning elements in a list</span></a>
-<a class="sourceLine" id="cb3-7" title="7">myFriends[<span class="dv">2</span>] <span class="op">=</span> <span class="st">&quot;Pam&quot;</span></a>
-<a class="sourceLine" id="cb3-8" title="8"></a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="co"># myFriends is now: [&quot;Jim&quot;, &quot;Kevin&quot;, &quot;Pam&quot;]</span></a></code></pre></div>
+<div class="sourceCode" id="cb3" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>myFriends: <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">=</span> [<span class="st">&quot;Jim&quot;</span>, <span class="st">&quot;Kevin&quot;</span>, <span class="st">&quot;Erin&quot;</span>]</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="co"># accessing first element in the friends list</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>myBestFriend: <span class="bu">str</span> <span class="op">=</span> friends[<span class="dv">0</span>]</span>
+<span id="cb3-5"><a href="#cb3-5"></a></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co"># reassigning elements in a list</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>myFriends[<span class="dv">2</span>] <span class="op">=</span> <span class="st">&quot;Pam&quot;</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="co"># myFriends is now: [&quot;Jim&quot;, &quot;Kevin&quot;, &quot;Pam&quot;]</span></span></code></pre></div>
 <p>A big thing to remember is that since lists are 0-indexed, meaning the index numbers start with the first one being 0, the last index of a list is the length of the list - 1, or len(<listName>) - 1.</p>
 <h3 id="adding-and-removing-elements-from-a-list">Adding and removing elements from a list</h3>
 <p>Adding an element onto the end of a list is called <strong>appending</strong> the element to the list. We do this by using the append() method and putting the elemnt you want to add inside append. For example:</p>
-<div class="sourceCode" id="cb4" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1">myFriends: <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">=</span> [<span class="st">&quot;Jim&quot;</span>, <span class="st">&quot;Kevin&quot;</span>, <span class="st">&quot;Erin&quot;</span>]</a>
-<a class="sourceLine" id="cb4-2" title="2">myFriends.append(<span class="st">&quot;Pam&quot;</span>)</a>
-<a class="sourceLine" id="cb4-3" title="3"></a>
-<a class="sourceLine" id="cb4-4" title="4"><span class="co"># myFriends is now: [&quot;Jim&quot;, &quot;Kevin&quot;, &quot;Erin&quot;, &quot;Pam&quot;]</span></a></code></pre></div>
+<div class="sourceCode" id="cb4" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>myFriends: <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">=</span> [<span class="st">&quot;Jim&quot;</span>, <span class="st">&quot;Kevin&quot;</span>, <span class="st">&quot;Erin&quot;</span>]</span>
+<span id="cb4-2"><a href="#cb4-2"></a>myFriends.append(<span class="st">&quot;Pam&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># myFriends is now: [&quot;Jim&quot;, &quot;Kevin&quot;, &quot;Erin&quot;, &quot;Pam&quot;]</span></span></code></pre></div>
 <p>To remove the last element from a list, you can use the pop() method with no arguement. If you want to remove an element at a specific index, simply reference that index in the pop method. Here’s an example of both:</p>
-<div class="sourceCode" id="cb5" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" title="1">chores: <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">=</span> [<span class="st">&quot;sweep&quot;</span>, <span class="st">&quot;laundry&quot;</span>, <span class="st">&quot;mop&quot;</span>, <span class="st">&quot;dust&quot;</span>]</a>
-<a class="sourceLine" id="cb5-2" title="2">chores.pop()</a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="co"># chores is now: [&quot;sweep&quot;, &quot;laundry&quot;, &quot;mop&quot;]</span></a>
-<a class="sourceLine" id="cb5-4" title="4"></a>
-<a class="sourceLine" id="cb5-5" title="5">chores.pop(<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb5-6" title="6"><span class="co"># chores is now: [&quot;sweep&quot;, &quot;mop&quot;]</span></a></code></pre></div>
+<div class="sourceCode" id="cb5" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>chores: <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">=</span> [<span class="st">&quot;sweep&quot;</span>, <span class="st">&quot;laundry&quot;</span>, <span class="st">&quot;mop&quot;</span>, <span class="st">&quot;dust&quot;</span>]</span>
+<span id="cb5-2"><a href="#cb5-2"></a>chores.pop()</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># chores is now: [&quot;sweep&quot;, &quot;laundry&quot;, &quot;mop&quot;]</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a>chores.pop(<span class="dv">1</span>)</span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="co"># chores is now: [&quot;sweep&quot;, &quot;mop&quot;]</span></span></code></pre></div>
 <h2 id="dictionaries">Dictionaries</h2>
 <p>A <strong>dictionary</strong> is a data structure available in Python which lets you organize data into “key-value” pairs.</p>
 <p>The basic syntax of a dictionary is shown below:</p>
-<div class="sourceCode" id="cb6" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" title="1"><span class="op">&lt;</span>name<span class="op">&gt;</span>: <span class="bu">dict</span>[<span class="op">&lt;</span>keytype<span class="op">&gt;</span>, <span class="op">&lt;</span>valuetype<span class="op">&gt;</span>] <span class="op">=</span> {</a>
-<a class="sourceLine" id="cb6-2" title="2">    <span class="op">&lt;</span>key1<span class="op">&gt;</span>: <span class="op">&lt;</span>value1<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb6-3" title="3">    <span class="op">&lt;</span>key2<span class="op">&gt;</span>: <span class="op">&lt;</span>value2<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb6-4" title="4">    ...</a>
-<a class="sourceLine" id="cb6-5" title="5">}</a></code></pre></div>
+<div class="sourceCode" id="cb6" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="op">&lt;</span>name<span class="op">&gt;</span>: <span class="bu">dict</span>[<span class="op">&lt;</span>keytype<span class="op">&gt;</span>, <span class="op">&lt;</span>valuetype<span class="op">&gt;</span>] <span class="op">=</span> {</span>
+<span id="cb6-2"><a href="#cb6-2"></a>    <span class="op">&lt;</span>key1<span class="op">&gt;</span>: <span class="op">&lt;</span>value1<span class="op">&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>    <span class="op">&lt;</span>key2<span class="op">&gt;</span>: <span class="op">&lt;</span>value2<span class="op">&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>    ...</span>
+<span id="cb6-5"><a href="#cb6-5"></a>}</span></code></pre></div>
 <p>But what are keys and values exactly? Lets dive in a little deeper.</p>
 <h3 id="keys">Keys</h3>
 <p>Put simply, a <strong>key</strong> is what you look up a value by. Keys can be any <em>immutable</em> type, such as <strong>str</strong>, <strong>int</strong>, <strong>float</strong>, <strong>bool</strong>, but not <strong>lists</strong> or other <strong>dicts</strong> for example. Each key is uniquely paired with their corresponding value, meaning you cannot have two identical keys in your dictionary.</p>
@@ -262,35 +266,35 @@
 <p>The <strong>value</strong> in a dictionary refers to the data being stored. Unlike keys, values can be of any type. It is possible for two values in a dictionary to be identical, provided their associated keys are different.</p>
 <h3 id="inserting-items-into-a-dictionary">Inserting items into a dictionary</h3>
 <p>To construct a dictionary, you can declare it and initalize it in one go as shown below:</p>
-<div class="sourceCode" id="cb7" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" title="1">favColor: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>] <span class="op">=</span> {</a>
-<a class="sourceLine" id="cb7-2" title="2">    <span class="st">&quot;Ezri&quot;</span>: <span class="st">&quot;blue&quot;</span></a>
-<a class="sourceLine" id="cb7-3" title="3">    <span class="st">&quot;Claire&quot;</span>: <span class="st">&quot;yellow&quot;</span></a>
-<a class="sourceLine" id="cb7-4" title="4">    <span class="st">&quot;Tori&quot;</span>: <span class="st">&quot;green&quot;</span></a>
-<a class="sourceLine" id="cb7-5" title="5">}</a>
-<a class="sourceLine" id="cb7-6" title="6"><span class="co"># note: dictionaries can have different data types for their key-value pairs</span></a>
-<a class="sourceLine" id="cb7-7" title="7"><span class="co"># this example happens to have keys and values that are both of type str</span></a></code></pre></div>
+<div class="sourceCode" id="cb7" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>favColor: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>] <span class="op">=</span> {</span>
+<span id="cb7-2"><a href="#cb7-2"></a>    <span class="st">&quot;Ezri&quot;</span>: <span class="st">&quot;blue&quot;</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>    <span class="st">&quot;Claire&quot;</span>: <span class="st">&quot;yellow&quot;</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>    <span class="st">&quot;Tori&quot;</span>: <span class="st">&quot;green&quot;</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>}</span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="co"># note: dictionaries can have different data types for their key-value pairs</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="co"># this example happens to have keys and values that are both of type str</span></span></code></pre></div>
 <p>But it’s more useful to be able to add items after initializing your dictionary. To do so, reference the name of the dictionary followed by brackets surrounding whatever you want your key to be, then assign it to the corresponding value. For example,</p>
-<div class="sourceCode" id="cb8" data-startFrom="7"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb8-7" title="7">favColor[<span class="st">&quot;Kaki&quot;</span>] <span class="op">=</span> <span class="st">&quot;red&quot;</span></a>
-<a class="sourceLine" id="cb8-8" title="8"><span class="co"># in this example &quot;Kaki&quot; is the key and &quot;red&quot; is the value</span></a></code></pre></div>
+<div class="sourceCode" id="cb8" data-startFrom="7"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python" style="counter-reset: source-line 6;"><span id="cb8-7"><a href="#cb8-7"></a>favColor[<span class="st">&quot;Kaki&quot;</span>] <span class="op">=</span> <span class="st">&quot;red&quot;</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="co"># in this example &quot;Kaki&quot; is the key and &quot;red&quot; is the value</span></span></code></pre></div>
 <h3 id="remove-items-from-a-dictionary">Remove items from a dictionary</h3>
 <p>Similar to <strong>lists</strong>, you can remove an item from a dictionary by using the <em>pop()</em> method. To indicate which item you want to remove, use the key as the arguement for pop inside the parenthesis. In addition, the pop method will return the corresponding value.</p>
-<div class="sourceCode" id="cb9" data-startFrom="9"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb9-9" title="9">toriColor: <span class="bu">str</span> <span class="op">=</span> favColor.pop(<span class="st">&quot;Tori&quot;</span>)</a>
-<a class="sourceLine" id="cb9-10" title="10"><span class="co"># now the favColor contains {&quot;Ezri&quot;: &quot;blue&quot;, &quot;Claire&quot;: &quot;yellow&quot;, &quot;Kaki&quot;: &quot;red&quot;}</span></a>
-<a class="sourceLine" id="cb9-11" title="11"><span class="co"># toriColor&#39;s value is &quot;green&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb9" data-startFrom="9"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python" style="counter-reset: source-line 8;"><span id="cb9-9"><a href="#cb9-9"></a>toriColor: <span class="bu">str</span> <span class="op">=</span> favColor.pop(<span class="st">&quot;Tori&quot;</span>)</span>
+<span id="cb9-10"><a href="#cb9-10"></a><span class="co"># now the favColor contains {&quot;Ezri&quot;: &quot;blue&quot;, &quot;Claire&quot;: &quot;yellow&quot;, &quot;Kaki&quot;: &quot;red&quot;}</span></span>
+<span id="cb9-11"><a href="#cb9-11"></a><span class="co"># toriColor&#39;s value is &quot;green&quot;</span></span></code></pre></div>
 <h3 id="accessing-and-modifying-items">Accessing and modifying items</h3>
 <p>To access an item in a dictionary, write the name of your dictionary followed by brackets which enclose the key for the item you want to accesss. You can change the value of an item by reassigning the key to a new value:</p>
-<div class="sourceCode" id="cb10" data-startFrom="13"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb10-13" title="13">favColor[<span class="st">&quot;Ezri&quot;</span>] <span class="op">=</span> <span class="st">&quot;purple&quot;</span></a>
-<a class="sourceLine" id="cb10-14" title="14"><span class="co"># we changed the value associatetd with Ezri from &quot;blue&quot; to &quot;purple&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb10" data-startFrom="13"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python" style="counter-reset: source-line 12;"><span id="cb10-13"><a href="#cb10-13"></a>favColor[<span class="st">&quot;Ezri&quot;</span>] <span class="op">=</span> <span class="st">&quot;purple&quot;</span></span>
+<span id="cb10-14"><a href="#cb10-14"></a><span class="co"># we changed the value associatetd with Ezri from &quot;blue&quot; to &quot;purple&quot;</span></span></code></pre></div>
 <p>Sometimes it can be useful to modify a value based on what is was previously, an example of this is shown below.</p>
-<div class="sourceCode" id="cb11" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb11-1" title="1"></a>
-<a class="sourceLine" id="cb11-2" title="2">points: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>] <span class="op">=</span> {</a>
-<a class="sourceLine" id="cb11-3" title="3">    <span class="st">&quot;player1&quot;</span>: <span class="dv">10</span></a>
-<a class="sourceLine" id="cb11-4" title="4">    <span class="st">&quot;player2&quot;</span>: <span class="dv">11</span></a>
-<a class="sourceLine" id="cb11-5" title="5">    <span class="st">&quot;player3&quot;</span>: <span class="dv">6</span></a>
-<a class="sourceLine" id="cb11-6" title="6">}</a>
-<a class="sourceLine" id="cb11-7" title="7"></a>
-<a class="sourceLine" id="cb11-8" title="8">points[<span class="st">&quot;player3&quot;</span>] <span class="op">=</span> points[<span class="st">&quot;player3&quot;</span>] <span class="op">+</span> <span class="dv">2</span></a>
-<a class="sourceLine" id="cb11-9" title="9"><span class="co"># now the value corresponding to player3 is 8</span></a></code></pre></div>
+<div class="sourceCode" id="cb11" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2"></a>points: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>] <span class="op">=</span> {</span>
+<span id="cb11-3"><a href="#cb11-3"></a>    <span class="st">&quot;player1&quot;</span>: <span class="dv">10</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>    <span class="st">&quot;player2&quot;</span>: <span class="dv">11</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>    <span class="st">&quot;player3&quot;</span>: <span class="dv">6</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>}</span>
+<span id="cb11-7"><a href="#cb11-7"></a></span>
+<span id="cb11-8"><a href="#cb11-8"></a>points[<span class="st">&quot;player3&quot;</span>] <span class="op">=</span> points[<span class="st">&quot;player3&quot;</span>] <span class="op">+</span> <span class="dv">2</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a><span class="co"># now the value corresponding to player3 is 8</span></span></code></pre></div>
 </div>
 
     </div> 

@@ -7,7 +7,7 @@
     <title> Pandas Tutorial - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1650484351.8630266">
+    <link rel="stylesheet" href="/static/style.css?v=1650892943.018168">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -187,11 +187,15 @@
                 <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview<img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-right.png" style="height:15px;"></button>
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
-                        <ul><li><a href="#exds_00-getting-started">exds_00: Getting Started</a><ul>
+                        <ul>doc-toc">
+<ul>
+<li><a href="#exds_00-getting-started">exds_00: Getting Started</a>
+<ul>
 <li><a href="#introduction">Introduction:</a></li>
 <li><a href="#pandas-and-data-science-in-python"><code>pandas</code> and Data Science in Python:</a></li>
 </ul></li>
-<li><a href="#importing-pandas">Importing pandas</a><ul>
+<li><a href="#importing-pandas">Importing pandas</a>
+<ul>
 <li><a href="#the-end-all-be-all-of-pandas-the-dataframe">The End-all Be-all of <code>pandas</code>: the <code>DataFrame</code></a></li>
 <li><a href="#importing-data-with-pandas">Importing Data with <code>pandas</code></a></li>
 <li><a href="#summarizing-the-data-in-your-dataframe">Summarizing the data in your <code>DataFrame</code></a></li>
@@ -214,18 +218,18 @@
 <p>Learning Python in this class has already given you a headstart in data science, since Python is incredibly well-equipped for handling large datasets with many specialized third-party libraries. The industry standard for this type of work is a library called <code>pandas</code>. There are other libraries that work well with data science in Python that we may explore later, but <code>pandas</code> is all you need for now! :)</p>
 <p>Below, you will see the usual convention for importing pandas:</p>
 <h2 id="importing-pandas">Importing pandas</h2>
-<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a></code></pre></div>
+<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code></pre></div>
 <p>Now, that was not so bad! :) but we have a ways to go…</p>
 <h3 id="the-end-all-be-all-of-pandas-the-dataframe">The End-all Be-all of <code>pandas</code>: the <code>DataFrame</code></h3>
 <p>In <code>pandas</code>, the primary data type that you will work is known as a <code>DataFrame</code>. Those who have worked in R may know this by the same name, and those who have in the SAS programming lanaguage may know this as a data set! Here, you will see a declaration of a <code>DataFrame</code> in <code>pandas</code>:</p>
-<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># Setting up the dictionary with str keys and list[int] values</span></a>
-<a class="sourceLine" id="cb2-2" title="2">d: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">list</span>[<span class="bu">int</span>]] <span class="op">=</span> {<span class="st">&#39;col1&#39;</span>: [<span class="dv">1</span>, <span class="dv">2</span>], <span class="st">&#39;col2&#39;</span>: [<span class="dv">3</span>, <span class="dv">4</span>]}</a>
-<a class="sourceLine" id="cb2-3" title="3"></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="co"># Creating the DataFrame from the above structure</span></a>
-<a class="sourceLine" id="cb2-5" title="5">df <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>d)</a>
-<a class="sourceLine" id="cb2-6" title="6"></a>
-<a class="sourceLine" id="cb2-7" title="7"><span class="co"># We do not have to use df.head() (more info to come) here because the DataFrame is quite small (this will not be true going forward)</span></a>
-<a class="sourceLine" id="cb2-8" title="8"><span class="bu">print</span>(df)</a></code></pre></div>
+<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Setting up the dictionary with str keys and list[int] values</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>d: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">list</span>[<span class="bu">int</span>]] <span class="op">=</span> {<span class="st">&#39;col1&#39;</span>: [<span class="dv">1</span>, <span class="dv">2</span>], <span class="st">&#39;col2&#39;</span>: [<span class="dv">3</span>, <span class="dv">4</span>]}</span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># Creating the DataFrame from the above structure</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>df <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>d)</span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="co"># We do not have to use df.head() (more info to come) here because the DataFrame is quite small (this will not be true going forward)</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="bu">print</span>(df)</span></code></pre></div>
 <pre class="plaintext"><code>   col1  col2
 0     1     3
 1     2     4</code></pre>
@@ -233,30 +237,30 @@
 <h3 id="importing-data-with-pandas">Importing Data with <code>pandas</code></h3>
 <p>It stands to reason that, to work with data, we need data! In <code>pandas</code>, we can read in many kinds of files, but the most common for datasets is the csv or “comma-separated value” file. The dataset imported below contains information about some Pokemon! To view your data, you should use a command of the form <code>print(dataframe.head(n))</code>, where n is the number of top rows you wish to display. If left blank, this will default to 5.</p>
 <p>Additionally, if we choose to modify the <code>DataFrame</code>, we can actually <code>write</code> to a new csv that will include the modifications using a similar command to the one you will see below. Do NOT worry if the code for modification seems foreign, we will get to that in time, but the gist of it is that we are ordering or sorting the pokemon <code>DataFrame</code> by ascending values of HP! It is worth noting that we could write back to the original csv, but in some cases it may be worth preserving the original dataset.</p>
-<div class="sourceCode" id="cb4" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># Reading in the CSV</span></a>
-<a class="sourceLine" id="cb4-2" title="2">pokemon <span class="op">=</span> pd.read_csv(<span class="st">&quot;pokemon.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb4-3" title="3"></a>
-<a class="sourceLine" id="cb4-4" title="4"><span class="co"># Sorting the values rows and resetting their indices</span></a>
-<a class="sourceLine" id="cb4-5" title="5">pokemon_sorted <span class="op">=</span> pokemon.sort_values(<span class="st">&quot;HP&quot;</span>,ascending<span class="op">=</span><span class="va">True</span>)</a>
-<a class="sourceLine" id="cb4-6" title="6">pokemon_sorted <span class="op">=</span> pokemon_sorted.reset_index(drop<span class="op">=</span><span class="va">True</span>)</a>
-<a class="sourceLine" id="cb4-7" title="7"></a>
-<a class="sourceLine" id="cb4-8" title="8"><span class="co"># Writing the new DataFrame to the new csv</span></a>
-<a class="sourceLine" id="cb4-9" title="9">pokemon_sorted.to_csv(<span class="st">&quot;pokemon_new.csv&quot;</span>,index<span class="op">=</span><span class="va">False</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb4" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Reading in the CSV</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>pokemon <span class="op">=</span> pd.read_csv(<span class="st">&quot;pokemon.csv&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># Sorting the values rows and resetting their indices</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>pokemon_sorted <span class="op">=</span> pokemon.sort_values(<span class="st">&quot;HP&quot;</span>,ascending<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-6"><a href="#cb4-6"></a>pokemon_sorted <span class="op">=</span> pokemon_sorted.reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-7"><a href="#cb4-7"></a></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="co"># Writing the new DataFrame to the new csv</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>pokemon_sorted.to_csv(<span class="st">&quot;pokemon_new.csv&quot;</span>,index<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
 <h3 id="summarizing-the-data-in-your-dataframe">Summarizing the data in your <code>DataFrame</code></h3>
 <p>After we load the data, the structure of our <code>DataFrame</code> may not be immediately obvious, and usually using a command such as <code>df.head()</code> works totally fine. But, sometimes we need a bit more information to understand our data before we attempt to analyze it. See the code below for some commands that may be useful in interpreting the structure of your <code>DataFrame</code>.</p>
-<div class="sourceCode" id="cb5" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># Getting the number of rows in your DataFrame</span></a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="bu">print</span>(<span class="bu">len</span>(pokemon))</a>
-<a class="sourceLine" id="cb5-3" title="3"></a>
-<a class="sourceLine" id="cb5-4" title="4"><span class="co"># Getting the dimensions of your DataFrame (rows, columns)</span></a>
-<a class="sourceLine" id="cb5-5" title="5">pokemon.shape</a>
-<a class="sourceLine" id="cb5-6" title="6"></a>
-<a class="sourceLine" id="cb5-7" title="7"><span class="co"># Getting a list of the column names in your DataFrame</span></a>
-<a class="sourceLine" id="cb5-8" title="8">pokemon.columns</a>
-<a class="sourceLine" id="cb5-9" title="9"></a>
-<a class="sourceLine" id="cb5-10" title="10"><span class="co"># Provides the most comprehensive overview of the columns in your DataFrame</span></a>
-<a class="sourceLine" id="cb5-11" title="11"><span class="co"># also provides the name, count of non-null values and datatype of each column</span></a>
-<a class="sourceLine" id="cb5-12" title="12"><span class="co"># as well as some information about memory usage!</span></a>
-<a class="sourceLine" id="cb5-13" title="13">pokemon.info()</a></code></pre></div>
+<div class="sourceCode" id="cb5" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Getting the number of rows in your DataFrame</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="bu">print</span>(<span class="bu">len</span>(pokemon))</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># Getting the dimensions of your DataFrame (rows, columns)</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>pokemon.shape</span>
+<span id="cb5-6"><a href="#cb5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># Getting a list of the column names in your DataFrame</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a>pokemon.columns</span>
+<span id="cb5-9"><a href="#cb5-9"></a></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="co"># Provides the most comprehensive overview of the columns in your DataFrame</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="co"># also provides the name, count of non-null values and datatype of each column</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="co"># as well as some information about memory usage!</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a>pokemon.info()</span></code></pre></div>
 <pre class="plaintext"><code>800
 &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 800 entries, 0 to 799
@@ -282,34 +286,34 @@ memory usage: 82.2+ KB</code></pre>
 <h3 id="subsetting-by-variable-column-in-a-dataframe">Subsetting by variable (column) in a <code>DataFrame</code></h3>
 <p>Of course, having the csv loaded is great, but there is not much use in a <code>DataFrame</code> if we can not actually get to the data and perform meaningful analyses. So, we will start by selecting columns! In <code>pandas</code>, there several ways to do this. See the code below and read the comments for insight into the action of each command and note the addition of another library called <code>numpy</code>, which will help us perform some basic analysis on the data we collect.</p>
 <p>Something of note is that the very last command uses something called a <em>regular expression</em>. We do not cover this topic in COMP 110, but they are quite useful and something you will learn more about in later COMP courses if you so choose to take them! :)</p>
-<div class="sourceCode" id="cb7" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># Importing numpy</span></a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="im">import</span> numpy <span class="im">as</span> np</a>
-<a class="sourceLine" id="cb7-3" title="3"></a>
-<a class="sourceLine" id="cb7-4" title="4"><span class="co"># Selecting a column using . notation and find the mean HP of the pokemon in our dataset</span></a>
-<a class="sourceLine" id="cb7-5" title="5">hp <span class="op">=</span> pokemon.HP</a>
-<a class="sourceLine" id="cb7-6" title="6"><span class="bu">print</span>(np.mean(hp))</a>
-<a class="sourceLine" id="cb7-7" title="7"></a>
-<a class="sourceLine" id="cb7-8" title="8"><span class="co"># Selecting a column using subscription notation (should be more familiar), also finding the standard deviation using numpy</span></a>
-<a class="sourceLine" id="cb7-9" title="9">defense <span class="op">=</span> pokemon[<span class="st">&quot;Defense&quot;</span>]</a>
-<a class="sourceLine" id="cb7-10" title="10"><span class="bu">print</span>(np.std(defense))</a>
-<a class="sourceLine" id="cb7-11" title="11"></a>
-<a class="sourceLine" id="cb7-12" title="12"><span class="co"># Selecting multiple columns, can be useful to &quot;declutter&quot; your data or more directly compare columns</span></a>
-<a class="sourceLine" id="cb7-13" title="13">narrowed_pokemon <span class="op">=</span> pokemon[[<span class="st">&quot;Name&quot;</span>,<span class="st">&quot;HP&quot;</span>,<span class="st">&quot;Attack&quot;</span>,<span class="st">&quot;Defense&quot;</span>]]</a>
-<a class="sourceLine" id="cb7-14" title="14"><span class="bu">print</span>(narrowed_pokemon.head())</a>
-<a class="sourceLine" id="cb7-15" title="15"></a>
-<a class="sourceLine" id="cb7-16" title="16"><span class="co"># Selecting columns in a range using .loc() and columns at certian indices using .iloc()</span></a>
-<a class="sourceLine" id="cb7-17" title="17">names_and_types <span class="op">=</span> pokemon.loc[:,<span class="st">&#39;Name&#39;</span>:<span class="st">&#39;Type 2&#39;</span>]</a>
-<a class="sourceLine" id="cb7-18" title="18">narrowed_pokemon <span class="op">=</span> pokemon.iloc[:,[<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>]] <span class="co"># note that this achieves the same thing as the subscription notation above!</span></a>
-<a class="sourceLine" id="cb7-19" title="19"><span class="bu">print</span>(names_and_types.head())</a>
-<a class="sourceLine" id="cb7-20" title="20"><span class="bu">print</span>(narrowed_pokemon.head())</a>
-<a class="sourceLine" id="cb7-21" title="21"></a>
-<a class="sourceLine" id="cb7-22" title="22"><span class="co"># Filtering columns using .filter(), getting only the columns that start with T</span></a>
-<a class="sourceLine" id="cb7-23" title="23">types_and_total <span class="op">=</span> pokemon.<span class="bu">filter</span>(regex<span class="op">=</span><span class="st">&quot;^T&quot;</span>)</a>
-<a class="sourceLine" id="cb7-24" title="24"><span class="bu">print</span>(types_and_total.head())</a>
-<a class="sourceLine" id="cb7-25" title="25"></a>
-<a class="sourceLine" id="cb7-26" title="26"><span class="co"># Selecting columns based on data type, only columns of a numeric types</span></a>
-<a class="sourceLine" id="cb7-27" title="27">numbers_only <span class="op">=</span> pokemon.select_dtypes(include<span class="op">=</span><span class="st">&#39;number&#39;</span>)</a>
-<a class="sourceLine" id="cb7-28" title="28"><span class="bu">print</span>(numbers_only.head())</a></code></pre></div>
+<div class="sourceCode" id="cb7" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Importing numpy</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># Selecting a column using . notation and find the mean HP of the pokemon in our dataset</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>hp <span class="op">=</span> pokemon.HP</span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="bu">print</span>(np.mean(hp))</span>
+<span id="cb7-7"><a href="#cb7-7"></a></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="co"># Selecting a column using subscription notation (should be more familiar), also finding the standard deviation using numpy</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a>defense <span class="op">=</span> pokemon[<span class="st">&quot;Defense&quot;</span>]</span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="bu">print</span>(np.std(defense))</span>
+<span id="cb7-11"><a href="#cb7-11"></a></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="co"># Selecting multiple columns, can be useful to &quot;declutter&quot; your data or more directly compare columns</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a>narrowed_pokemon <span class="op">=</span> pokemon[[<span class="st">&quot;Name&quot;</span>,<span class="st">&quot;HP&quot;</span>,<span class="st">&quot;Attack&quot;</span>,<span class="st">&quot;Defense&quot;</span>]]</span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="bu">print</span>(narrowed_pokemon.head())</span>
+<span id="cb7-15"><a href="#cb7-15"></a></span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="co"># Selecting columns in a range using .loc() and columns at certian indices using .iloc()</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a>names_and_types <span class="op">=</span> pokemon.loc[:,<span class="st">&#39;Name&#39;</span>:<span class="st">&#39;Type 2&#39;</span>]</span>
+<span id="cb7-18"><a href="#cb7-18"></a>narrowed_pokemon <span class="op">=</span> pokemon.iloc[:,[<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>]] <span class="co"># note that this achieves the same thing as the subscription notation above!</span></span>
+<span id="cb7-19"><a href="#cb7-19"></a><span class="bu">print</span>(names_and_types.head())</span>
+<span id="cb7-20"><a href="#cb7-20"></a><span class="bu">print</span>(narrowed_pokemon.head())</span>
+<span id="cb7-21"><a href="#cb7-21"></a></span>
+<span id="cb7-22"><a href="#cb7-22"></a><span class="co"># Filtering columns using .filter(), getting only the columns that start with T</span></span>
+<span id="cb7-23"><a href="#cb7-23"></a>types_and_total <span class="op">=</span> pokemon.<span class="bu">filter</span>(regex<span class="op">=</span><span class="st">&quot;^T&quot;</span>)</span>
+<span id="cb7-24"><a href="#cb7-24"></a><span class="bu">print</span>(types_and_total.head())</span>
+<span id="cb7-25"><a href="#cb7-25"></a></span>
+<span id="cb7-26"><a href="#cb7-26"></a><span class="co"># Selecting columns based on data type, only columns of a numeric types</span></span>
+<span id="cb7-27"><a href="#cb7-27"></a>numbers_only <span class="op">=</span> pokemon.select_dtypes(include<span class="op">=</span><span class="st">&#39;number&#39;</span>)</span>
+<span id="cb7-28"><a href="#cb7-28"></a><span class="bu">print</span>(numbers_only.head())</span></code></pre></div>
 <pre class="plaintext"><code>69.25875
 31.164004777146342
                     Name  HP  Attack  Defense
@@ -351,27 +355,27 @@ memory usage: 82.2+ KB</code></pre>
 4           1  </code></pre>
 <h3 id="subsetting-by-observation-row-in-a-dataframe">Subsetting by observation (row) in a <code>DataFrame</code></h3>
 <p>Next, we will focus on how to subset data by row. This is where Boolean expressions come into play since we typically want the rows we filter to meet a specific requirement such as one of its values falling within a range of numbers or being equal to some particular string. In this section, you will see how to generate a <em>sample</em> from larger dataset. However, pay particular attention to the use of Boolean conditions to filter rows of the <code>DataFrame</code>, as this is the most common and readable method in <code>pandas</code>.</p>
-<div class="sourceCode" id="cb9" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" title="1"><span class="co"># Using .head() and tail() to select the first and last &#39;n&#39; rows respectively (n defaults to 5)</span></a>
-<a class="sourceLine" id="cb9-2" title="2">first_5 <span class="op">=</span> pokemon.head(<span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb9-3" title="3">last_5 <span class="op">=</span> pokemon.tail(<span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb9-4" title="4"><span class="bu">print</span>(first_5)</a>
-<a class="sourceLine" id="cb9-5" title="5"><span class="bu">print</span>(last_5)</a>
-<a class="sourceLine" id="cb9-6" title="6"></a>
-<a class="sourceLine" id="cb9-7" title="7"><span class="co"># Filtering rows for a specific Boolean condition, all Pokemon with HP greater than 100</span></a>
-<a class="sourceLine" id="cb9-8" title="8">healthy_pokemon <span class="op">=</span> pokemon[pokemon.HP <span class="op">&gt;</span> <span class="dv">100</span>]</a>
-<a class="sourceLine" id="cb9-9" title="9"><span class="bu">print</span>(healthy_pokemon.head())</a>
-<a class="sourceLine" id="cb9-10" title="10"></a>
-<a class="sourceLine" id="cb9-11" title="11"><span class="co"># Dropping duplicate observations from a DataFrame</span></a>
-<a class="sourceLine" id="cb9-12" title="12">no_repeats <span class="op">=</span> pokemon.drop_duplicates()</a>
-<a class="sourceLine" id="cb9-13" title="13"><span class="bu">print</span>(no_repeats.head())</a>
-<a class="sourceLine" id="cb9-14" title="14"></a>
-<a class="sourceLine" id="cb9-15" title="15"><span class="co"># Randomly sample (select) (1-frac)100% of the rows in the DataFrame</span></a>
-<a class="sourceLine" id="cb9-16" title="16">sample_frac <span class="op">=</span> pokemon.sample(frac<span class="op">=</span><span class="fl">0.25</span>)</a>
-<a class="sourceLine" id="cb9-17" title="17"><span class="bu">print</span>(sample_frac.head())</a>
-<a class="sourceLine" id="cb9-18" title="18"></a>
-<a class="sourceLine" id="cb9-19" title="19"><span class="co"># Randomly sample (select) n of the rows in the DataFrame</span></a>
-<a class="sourceLine" id="cb9-20" title="20">sample_n <span class="op">=</span> pokemon.sample(n<span class="op">=</span><span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb9-21" title="21"><span class="bu">print</span>(sample_n)</a></code></pre></div>
+<div class="sourceCode" id="cb9" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Using .head() and tail() to select the first and last &#39;n&#39; rows respectively (n defaults to 5)</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>first_5 <span class="op">=</span> pokemon.head(<span class="dv">5</span>)</span>
+<span id="cb9-3"><a href="#cb9-3"></a>last_5 <span class="op">=</span> pokemon.tail(<span class="dv">5</span>)</span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="bu">print</span>(first_5)</span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="bu">print</span>(last_5)</span>
+<span id="cb9-6"><a href="#cb9-6"></a></span>
+<span id="cb9-7"><a href="#cb9-7"></a><span class="co"># Filtering rows for a specific Boolean condition, all Pokemon with HP greater than 100</span></span>
+<span id="cb9-8"><a href="#cb9-8"></a>healthy_pokemon <span class="op">=</span> pokemon[pokemon.HP <span class="op">&gt;</span> <span class="dv">100</span>]</span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="bu">print</span>(healthy_pokemon.head())</span>
+<span id="cb9-10"><a href="#cb9-10"></a></span>
+<span id="cb9-11"><a href="#cb9-11"></a><span class="co"># Dropping duplicate observations from a DataFrame</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a>no_repeats <span class="op">=</span> pokemon.drop_duplicates()</span>
+<span id="cb9-13"><a href="#cb9-13"></a><span class="bu">print</span>(no_repeats.head())</span>
+<span id="cb9-14"><a href="#cb9-14"></a></span>
+<span id="cb9-15"><a href="#cb9-15"></a><span class="co"># Randomly sample (select) (1-frac)100% of the rows in the DataFrame</span></span>
+<span id="cb9-16"><a href="#cb9-16"></a>sample_frac <span class="op">=</span> pokemon.sample(frac<span class="op">=</span><span class="fl">0.25</span>)</span>
+<span id="cb9-17"><a href="#cb9-17"></a><span class="bu">print</span>(sample_frac.head())</span>
+<span id="cb9-18"><a href="#cb9-18"></a></span>
+<span id="cb9-19"><a href="#cb9-19"></a><span class="co"># Randomly sample (select) n of the rows in the DataFrame</span></span>
+<span id="cb9-20"><a href="#cb9-20"></a>sample_n <span class="op">=</span> pokemon.sample(n<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb9-21"><a href="#cb9-21"></a><span class="bu">print</span>(sample_n)</span></code></pre></div>
 <pre class="plaintext"><code>   Unnamed: 0  #                   Name Type 1  Type 2  Total  HP  Attack  \
 0           0  1              Bulbasaur  Grass  Poison    318  45      49   
 1           1  2                Ivysaur  Grass  Poison    405  60      62   

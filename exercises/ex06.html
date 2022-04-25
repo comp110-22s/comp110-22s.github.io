@@ -7,7 +7,7 @@
     <title> EX06 - Dictionary Functions - COMP110 - 22S</title>
     <link rel="icon" type="image/png" href="/static/tabbrand.png" />
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css?v=1650484341.2583451">
+    <link rel="stylesheet" href="/static/style.css?v=1650892931.8154123">
     <script src="/static/scripts/scroll-handler.js"></script>
     <script src="/static/scripts/sunset_sunrise.js"></script>
 
@@ -225,9 +225,9 @@ KeyError</code></pre>
 <li>Make sure to <code>import pytest</code></li>
 <li>Use the following code as an example:</li>
 </ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1">    <span class="cf">with</span> pytest.raises(<span class="pp">KeyError</span>):</a>
-<a class="sourceLine" id="cb2-2" title="2">        my_dictionary <span class="op">=</span> {<span class="st">&#39;kris&#39;</span>: <span class="st">&#39;jordan&#39;</span>, <span class="st">&#39;michael&#39;</span>: <span class="st">&#39;jordan&#39;</span>}</a>
-<a class="sourceLine" id="cb2-3" title="3">        invert(my_dictionary)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>    <span class="cf">with</span> pytest.raises(<span class="pp">KeyError</span>):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>        my_dictionary <span class="op">=</span> {<span class="st">&#39;kris&#39;</span>: <span class="st">&#39;jordan&#39;</span>, <span class="st">&#39;michael&#39;</span>: <span class="st">&#39;jordan&#39;</span>}</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>        invert(my_dictionary)</span></code></pre></div>
 <h2 id="favorite-colors">2. <code>favorite colors</code></h2>
 <p>Create a function in your <code>dictionary.py</code> file called <code>favorite_color</code>. It has the following specifications:</p>
 <ol type="1">
@@ -239,7 +239,7 @@ KeyError</code></pre>
 </ol>
 <p>You can also check the correctness of your <code>favorite_color</code> function by calling it in <code>main</code>, printing the result, then running the program with the same command from above.</p>
 <p>An example:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1">    <span class="bu">print</span>(favorite_color({<span class="st">&quot;Marc&quot;</span>: <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;Ezri&quot;</span>: <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;Kris&quot;</span>: <span class="st">&quot;blue&quot;</span>}))</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>    <span class="bu">print</span>(favorite_color({<span class="st">&quot;Marc&quot;</span>: <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;Ezri&quot;</span>: <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;Kris&quot;</span>: <span class="st">&quot;blue&quot;</span>}))</span></code></pre></div>
 <p>The results of which would look like:</p>
 <pre class="plaintext"><code>$ python -m exercises.ex06.favorite_color
 blue</code></pre>
