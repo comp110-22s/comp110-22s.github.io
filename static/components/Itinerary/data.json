@@ -869,5 +869,17 @@
                 "Final Exam Practice Questions": "/resources/practice/sp22/final-worksheet.html"
             }
         }
+    ],
+    "2022-04-27": [
+        {
+            "kind": "RV",
+            "n": 3,
+            "title": "Final Review Session (Remote Only)",
+            "date": "2022-04-27",
+            "deadline": "None",
+            "links": {
+                "Live Stream from 7pm-8pm": "https://youtu.be/BFYjxSVUKzs"
+            }
+        }
     ]
 }

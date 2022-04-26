@@ -1,5 +1,4 @@
 {
-    "2022-04-22": [],
     "2022-04-23": [],
     "2022-04-24": [],
     "2022-04-25": [],
@@ -28,6 +27,18 @@
                 "Final Exam Conflict Reschedule - 8am May 1st in SN014": "",
                 "3 in 24 Reschedule - 8am May 1st in SN014": "",
                 "Final Exam Practice Questions": "/resources/practice/sp22/final-worksheet.html"
+            }
+        }
+    ],
+    "2022-04-27": [
+        {
+            "kind": "RV",
+            "n": 3,
+            "title": "Final Review Session (Remote Only)",
+            "date": "2022-04-27",
+            "deadline": "None",
+            "links": {
+                "Live Stream from 7pm-8pm": "https://youtu.be/BFYjxSVUKzs"
             }
         }
     ]
