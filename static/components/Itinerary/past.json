@@ -838,5 +838,48 @@
             }
         }
     ],
-    "2022-04-22": []
+    "2022-04-22": [],
+    "2022-04-23": [],
+    "2022-04-24": [],
+    "2022-04-25": [],
+    "2022-04-26": [
+        {
+            "kind": "CL",
+            "n": 27,
+            "title": "LDOC",
+            "date": "2022-04-26",
+            "deadline": "None",
+            "links": {
+                "Quarantine Stream": "https://youtu.be/mVrHPx1RqSo"
+            }
+        }
+    ],
+    "2022-04-30": [
+        {
+            "kind": "FN",
+            "n": 0,
+            "title": "Final @ 8:00AM",
+            "date": "2022-04-30",
+            "deadline": "None",
+            "links": {
+                "Sec001 in Hamilton 100": "",
+                "Sec002 in Genome G100": "",
+                "Final Exam Conflict Reschedule - 8am May 1st in SN014": "",
+                "3 in 24 Reschedule - 8am May 1st in SN014": "",
+                "Final Exam Practice Questions": "/resources/practice/sp22/final-worksheet.html"
+            }
+        }
+    ],
+    "2022-04-27": [
+        {
+            "kind": "RV",
+            "n": 3,
+            "title": "Final Review Session (Remote Only)",
+            "date": "2022-04-27",
+            "deadline": "None",
+            "links": {
+                "Live Stream from 7pm-8pm": "https://youtu.be/BFYjxSVUKzs"
+            }
+        }
+    ]
 }
